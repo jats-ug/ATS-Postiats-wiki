@@ -1,1 +1,1 @@
-Welcome to the ATS-Postiats wiki!
+Currently the ATS2 wiki is [located on sourceforge](http://sourceforge.net/p/ats2-lang/wiki/Home/).
