@@ -27,7 +27,7 @@ Several examples can be found [here][8] (ATS1).
 
 **Where can I find a reference or documentation?**
 
-For ATS, there is an unofficial (and incomplete) reference [available][9] ([source][10]). ATS2 has [automatically generated library documentation][11]. See [Home] on this wiki for links to wiki pages containing further documentation.
+For ATS, there is an unofficial (and incomplete) reference [available][9] ([source][10]). ATS2 has [automatically generated library documentation][11]. See the [[homepage|Home]] on this wiki for links to wiki pages containing further documentation.
 
 [9]: http://www.bluishcoder.co.nz/ats/ats-reference.pdf
 [10]: https://github.com/doublec/ats-reference
