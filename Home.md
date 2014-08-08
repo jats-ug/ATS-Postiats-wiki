@@ -8,13 +8,13 @@ ATS also has another [website][1] (built using ATS itself). For a thorough intro
 
 This wiki contains the following pages.
 
-- [Frequently asked questions].
-- [Building and installing].
-- ATS code style: [Style guide], Detecting and avoiding [Memory leaks], [Code optimization]. 
-- Library reference: [Built-in datatypes], [Built-in functions], [Built-in operators], [Error messages], [Input and output], [Dependent types], [Linear types], [ATS/LF](ATS-LF).
-- Extensions: [Writing interfaces to C libraries].
-- ATS internals: [Built-in constraint solving], [Stack and heap allocation], [Internal types].
-- Information on specific keywords in ATS: [char], [dataviewtype], [sort], [type].
+- [[Frequently asked questions|Frequently asked questions]].
+- [[Building and installing|Building and installing]].
+- ATS code style: [[Style guide|Style guide]], Detecting and avoiding [[Memory leaks|Memory leaks]], [[Code optimization|Code optimization]]. 
+- Library reference: [[Built-in datatypes|Built-in datatypes]], [[Built-in functions|Built-in functions]], [[Built-in operators|Built-in operators]], [[Error messages|Error messages]], [[Input and output|Input and output]], [[Dependent types|Dependent types]], [[Linear types|Linear types]], [[ATS/LF|ATS/LF]].
+- Extensions: [[Writing interfaces to C libraries|Writing interfaces to C libraries]].
+- ATS internals: [Built-in constraint solving], [[Stack and heap allocation|Stack and heap allocation]], [[Internal types|Internal types]].
+- Information on specific keywords in ATS: [[char|char]], [[dataviewtype|dataviewtype]], [[sort|sort]], [[type|type]].
 
 For the first version of ATS, there is a largely unmaintained [wiki][3].
 
