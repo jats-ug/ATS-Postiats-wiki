@@ -18,8 +18,15 @@ Set PATH to include the directory ~/postiats/bin so that the second half of the 
 
 Now, build ATS2:
 
+```
+make -f Makefile_devl all
+```
+This command effectively run both of the following:
+
+```
 make -f codegen/Makefile_atslib # this is only needed for the first time
 make -f Makefile_devl
+```
 
 Optionally, put `~/postiats/bin` on your PATH, e.g., by adding the following line to your `.bashrc`:
 
@@ -45,6 +52,19 @@ If that does not work, it is worth trying to clean up atslib as well:
     make -f codegen/Makefile_atslib cleanall
 
 The above make rule should be executed whenever one wishes to use updated [atslib] code from the upstream github repository.
+
+ATS in a virtual machine
+===================================
+ATS can be installed in a docker container using the following command:
+
+```
+docker run -ti -v [your source directory]:/src steinwaywhw/ats 
+```
+
+This gives you the ability to edit/compile any ATS code on any platform as long as docker is installed.
+More information and the docker install file is available at https://github.com/steinwaywhw/docker-ats. 
+
+A Vagrantfile could be written based on that Dockerfile, which enables booting up a real virtual machine (instead of a container).
 
 [1]: http://www.ats-lang.org/DOWNLOAD
 [2]: https://github.com/githwxi/ATS-Postiats
