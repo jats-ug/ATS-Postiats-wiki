@@ -1,5 +1,5 @@
-Note that staload  in ATS is a bit like #include in C. However,
-staload and #include are implemented totally differently.
+Note that staload  in ATS is a bit like `#include` in C. However,
+`staload` and `#include` are implemented totally differently.
 
 By staloading a file 'foo.sats' as follows, a namespace is created
 for 'foo.sats':
