@@ -62,10 +62,24 @@ We can now overload `&&` with a function of our choice. Of course, the original 
 work in the same scope.
 
 
-
-
 ## Creating new symbols with macros
 
+A combination of macros (macdefs) and fixity assignments can be used
+to introduce syntactic sugar for specialized symbols. For instance,
+the example below allows `^t` to be used as a postfix operator used
+to take the transpose (function transp_LAgmat) of a matrix: 
+
+```
+(* ****** ****** *)
+//
+// HX: a hackery of a little fun
+//
+#define t 't'
+infixr ^
+macdef ^ (M, t) = transp_LAgmat (,(M))
+//
+(* ****** ****** *)
+```
 
 # Caveats
 
