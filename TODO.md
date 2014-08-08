@@ -6,6 +6,7 @@
 ## Incomplete 
 (Of course, it is hard to say what is complete, but here we mean listings that are highly incomplete or articles that only barely scratch the surface.)
 * [[char|char]]
+* [[code generation|code generation]]
 * [[loops|loops]]
 * [[safety|safety]]
 * [[sort|sort]]
