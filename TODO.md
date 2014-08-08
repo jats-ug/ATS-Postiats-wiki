@@ -13,3 +13,4 @@ Also note that you do not have to know everything about a topic to possibly
 make improvements listed here.)
 * [[char|char]]
 * [[sort|sort]]
+* [[type|type]]
