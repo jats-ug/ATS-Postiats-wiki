@@ -26,8 +26,8 @@ staload "foo.sats"
 which opens up the namespace for 'foo.sats' so that names declared
 in 'foo.sats' can be referred to directly.
 
-There is also support for #include in ATS, which simply pastes any
-file to be included at the point where #include is located.
+There is also support for `#include` in ATS, which simply pastes any
+file to be included at the point where `#include` is located.
 
 Another use of staload is to make template implementations available to
 the ATS compiler. For instance, the following line makes the template
