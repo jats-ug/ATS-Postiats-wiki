@@ -1,4 +1,4 @@
-Dataviewtypes are linear analogues of datatypes. As such, their memory must be managed explicitly, which typically entails creating a free function for each dataviewtype introduced. Due to potential complexity in type checking and proofs (as well as it being a concrete type) it is advised to make use of an [absviewtype] provide an interface for dataviewtypes.
+Dataviewtypes are linear analogues of datatypes. As such, their memory must be managed explicitly, which typically entails creating a free function for each dataviewtype introduced. Due to potential complexity in type checking and proofs (as well as it being a concrete type) it is advised to make use of an [[absviewtype|absviewtype]] provide an interface for dataviewtypes.
 
 ## Folding
 An important notion in dealing with dataviewtypes is being able to access the arguments of constructors. The implications differ if we want to use the arguments as l-values or just as r-values. For instance, take the following example:
