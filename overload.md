@@ -6,7 +6,7 @@ and `with` keywords. We choose a string to become a symbol using `symintr`,
 then overload a function with this symbol. For instance, a standard
 way of doing this is as follows:
 
-```
+```ocaml
 symintr foo
 
 fun foo1(x: atype): btype
@@ -22,7 +22,7 @@ exactly which function is being used in practice; when in doubt, use the
 actual function name when calling the function. Building on the 
 previous example:
 
-```
+```ocaml
 symintr foo
 
 fun foo1(x: atype): btype
@@ -39,7 +39,8 @@ if we have a call like foo(atype).
 
 Whether an operator is infix or postfix can be declared using the  `infix`, `infixl`, `infixr`, `prefix`, and `postfix` keywords. For instance, the following changes `+` to be a postfix operator, and we can overload it with
 some function of our choice, say myfun(atype).
-```
+
+```ocaml
 postfix +
 overload + with myfun
 // Now instead of doing myfun(atype) we can do:
@@ -54,7 +55,7 @@ val m = 3 + 5
 Some strings are reserved for other purposes by default in ATS. For instance, `&&` is a macro.
 However, if we do
 
-```
+```ocaml
 symintr &&
 ```
 
@@ -69,7 +70,7 @@ to introduce syntactic sugar for specialized symbols. For instance,
 the example below allows `^t` to be used as a postfix operator used
 to take the transpose (function transp_LAgmat) of a matrix: 
 
-```
+```ocaml
 (* ****** ****** *)
 //
 // HX: a hackery of a little fun
