@@ -1,7 +1,6 @@
 ATS is perhaps more advanced than any other languages when it comes to applying type theory an actual language, though this is not its only merit.
 
-For [dependent types], also see the [[FAQ|Frequently asked questions]].
-For [linear types], also see the [[FAQ|Frequently asked questions]].
+For [[dependent types|dependent type]] and [[linear types|linear type]], also see the [[FAQ|Frequently asked questions]].
 
 A type is one of the many [sorts](sort) that a static expression or static identifier can be. Other sorts are:
 
@@ -48,7 +47,7 @@ For each of the type, view, prop, it is possible to alias, declare abstract quan
 <td style="width:60px">datatype</td>
 <td style="width:60px">dataview</td>
 <td style="width:60px">dataprop</td>
-<td style="width:60px"><a href="https://sourceforge.net/p/ats2-lang/wiki/dataviewtype/">dataviewtype</a></td>
+<td style="width:60px"><a href="https://github.com/githwxi/ATS-Postiats/wiki/dataviewtype">dataviewtype</a></td>
 </tr>
 </tbody>
 </table>
