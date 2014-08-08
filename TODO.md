@@ -7,6 +7,7 @@
 * [[char|char]]
 * [[sort|sort]]
 * [[loops|loops]]
+* [[template|template]]
 
 ## Needs Expert Review
 (Authors are not confident in some important statements being made.
