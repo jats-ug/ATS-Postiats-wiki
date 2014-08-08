@@ -62,11 +62,15 @@ For type annotation during value binding, it is important to remember the follow
 
 There is a subtle difference between
 
+```ocaml
 val x = e: T
+```
 
 and
 
+```ocaml
 val x: T = e
+```
 
 It is almost always the case that one requires the former style of annotation
 in ATS.
