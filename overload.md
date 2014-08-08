@@ -43,10 +43,10 @@ some function of our choice, say myfun(atype).
 ```ocaml
 postfix +
 overload + with myfun
-// Now instead of doing myfun(atype) we can do:
+(* Now instead of doing myfun(atype) we can do: *)
 val x: atype = some_val
 x+
-// But we can no longer do this in the same scope:
+(* But we can no longer do this in the same scope: *)
 val m = 3 + 5
 ```
 
@@ -72,9 +72,9 @@ to take the transpose (function transp_LAgmat) of a matrix:
 
 ```ocaml
 (* ****** ****** *)
-//
-// HX: a hackery of a little fun
-//
+(*
+   HX: a hackery of a little fun
+*)
 #define t 't'
 infixr ^
 macdef ^ (M, t) = transp_LAgmat (,(M))
