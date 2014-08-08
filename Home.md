@@ -14,7 +14,7 @@ This wiki contains the following pages.
 - Library reference: [[built-in datatypes|Built-in datatypes]], [[built-in functions|Built-in functions]], [[built-in operators|Built-in operators]], [[error messages|Error messages]], [[input and output|Input and output]], [[dependent types|Dependent types]], [[linear types|Linear types]].
 - Extensions: [[writing interfaces to C libraries|Writing interfaces to C libraries]], [[ATS/LF|ATS/LF]] (theorem proving).
 - ATS internals: [[built-in constraint solving|Built-in constraint solving]], [[stack and heap allocation|Stack and heap allocation]], [[internal types|Internal types]].
-- Information on specific keywords in ATS: [[char|char]], [[dataviewtype|dataviewtype]], [[overload|overload]],[[sort|sort]], [[type|type]].
+- Information on specific keywords in ATS: [[char|char]], [[dataviewtype|dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]].
 
 For the first version of ATS, there is a largely unmaintained [wiki][3].
 
