@@ -1,10 +1,8 @@
-Compiling ATS/Postiats from source archives
-===================================
+## Compiling ATS/Postiats from source archives
 
 Please see the [directions][1] on the ATS site. 
 
-Compiling ATS/Postiats from git sources (developer version).
-===================================
+## Compiling ATS/Postiats from git sources (developer version).
 
 
 Assuming you've got ATS/Anairiats functioning on your system, you can use it to bootstrap Postiats (currently version 0.2.11 is required). Please proceed as described next.
@@ -40,8 +38,7 @@ Finally, a couple of environmental variables really need to be set.
 In general, ${PATSHOMERELOC} is the directory where you put ats2-lang-contrib.
 The current plan is to use PATSHOMERELOC for supporting automatically downloading ATS packages located on the Internet.
 
-What to try if the build of ATS/Postiats fails
-===================================
+## What to try if the build of ATS/Postiats fails
 
 Should the build fail at some point, it may be necessary to clean up:
 
@@ -53,8 +50,8 @@ If that does not work, it is worth trying to clean up atslib as well:
 
 The above make rule should be executed whenever one wishes to use updated [atslib] code from the upstream github repository.
 
-ATS in a virtual machine
-===================================
+## ATS in a virtual machine
+
 ATS can be installed in a docker container using the following command:
 
 ```
