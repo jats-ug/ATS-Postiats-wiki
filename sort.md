@@ -7,7 +7,7 @@ These are sorts that are present as types in C. (Is this true?) Combined with ot
 
 ## Other sorts
 
-**cls, eff, prop, t@ype, type, view, viewt@ype, viewtype, tkind** (alias tk).
+**cls, eff, prop, tkind** (alias tk), **t@ype, type, view, viewt@ype, viewtype**.
 
 **eff 's** are function [[effects|effects]]. The [internal type](Internal types) is S2Eeff.  
 
