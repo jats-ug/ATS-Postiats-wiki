@@ -7,8 +7,10 @@ These are sorts that are present as types in C. (Is this true?) Combined with ot
 
 ## Other sorts
 
-**cls, eff, prop, t@ype, type, view, viewt@ype, viewtype**
+**cls, eff, prop, t@ype, type, view, viewt@ype, viewtype**, tkind (alias tk).
 
 **eff 's** are function [[effects|effects]]. The [internal type](Internal types) is S2Eeff.  
 
 **Views** are linear resources that signify a certain type is accessible from an associated variable. At-views, or @ views, are a special case of views which signify that a certain type is dereferencable at a specified memory location; they are used with pointers.
+
+**tkind** is like 'type'; it is algebraic (that is, not involving quantifiers). The plan is to use tkind to support a more flexible/powerful way of [[template|templates]] instantiation.
