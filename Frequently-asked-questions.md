@@ -1,4 +1,5 @@
 **Why does my code typecheck but not compile?**
+
 There could be several reasons, but please note specially the one in the [[compiler errors|compiler errors]] article referring to `share/atspre_staload.hats`. 
 
 **Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**
