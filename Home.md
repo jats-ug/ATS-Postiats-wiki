@@ -11,7 +11,7 @@ This wiki contains the following pages.
 - [[Frequently asked questions|Frequently asked questions]].
 - [[Building and installing|Building and installing]].
 - ATS code style: [[style guide|Style guide]], detecting and avoiding [[memory leaks|Memory leaks]], [[code optimization|Code optimization]]. 
-- Library and language reference: [[atslib|atslib]], [[contrib|contrib]], [[built-in datatypes|Built-in datatypes]], [[built-in functions|Built-in functions]], [[built-in operators|Built-in operators]], [[error messages|Error messages]], [[input and output|Input and output]], [[dependent types|Dependent types]], [[linear types|Linear types]], [[ATS Libraries and C Library bindings|ATS Libraries and C Library bindings]].
+- Library and language reference: [[atslib|atslib]], [[contrib|contrib]], [[built-in datatypes|Built-in datatypes]], [[built-in functions|Built-in functions]], [[built-in operators|Built-in operators]], [[error messages|Error messages]], [[input and output|Input and output]], [[dependent types|Dependent types]], [[linear types|Linear types]], [[Scientific Computing|Scientific Computing]], [[ATS Libraries and C Library bindings|ATS Libraries and C Library bindings]].
 - Extensions: [[writing interfaces to C libraries|Writing interfaces to C libraries]], [[ATS/LF|ATS/LF]] (theorem proving).
 - ATS internals: [[built-in constraint solving|Built-in constraint solving]], [[stack and heap allocation|Stack and heap allocation]], [[internal types|Internal types]].
 - Information on specific keywords in ATS: [[char|char]], [[dataviewtype|dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]].
