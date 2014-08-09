@@ -4,14 +4,14 @@ There could be several reasons, but please note specially the one in the [[compi
 
 **ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**
 
-Short answer: **No**.
+*Short answer*: **No**.
 
-Long answer: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.
+*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.
 
 If one uses GCC to generate object code from C source one owns, then one owns the generated object code. Then if you use ATS/Postiats to generate C code from ATS source you own, then you own the
 generated C code.
 
-Longer answer: 
+*Longer answer*: 
 
 [[ATSLIB|atslib]] is primarily used to generate C code, and the generated
 C code, which is owned by the author of its ATS source, can
