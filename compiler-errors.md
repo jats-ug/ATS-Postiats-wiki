@@ -37,7 +37,8 @@ Then you introduce cast functions where needed to convert between the abstract t
 
 ## Missing Linker Flag Errors
 
-**Didn't specify which malloc to use**
+**Didn't specify which memory allocation functions to use**
+
 Usually you'll want to properly pass -DATS_MEMALLOC_LIBC to patscc. The main thing you'll see  here is `undefined
 reference to `atsruntime_malloc_undef'` (usually several times).
 
