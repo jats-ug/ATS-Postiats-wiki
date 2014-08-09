@@ -56,12 +56,6 @@ Finally, for some guidance on understanding certain errors, see [[error messages
 [14]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/bnROVnWcFMU
 [15]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/oFuXRr4K8ts
 
-**Why did I get a segmentation fault?**
-
-You probably have an unintended infinite recursion; these are generally easy to find. For more information, see [[loop|Loop]]s.
-
-If you are doing something unsafe with memory, though, there are other possibilities. For more information, see [[memory leaks|Memory leaks]].
-
 **I have two different types being used together in the same data structure, and they typecheck! Is this a bug?**
 
 After perhaps being exposed to the rigor of dependent types, one may occasionally be surprised: but the short answer is it probably isn't a bug. [Here][16] is an example where `list0` will accept multiple values, each with a distinct type, as inputs (for example, `string`s, `float`s, or `int`s). [Here][17] is an example with templates. The notion has to do with ["subtypes"][18], and specifically, how ATS defines subtypes. This should not be a problem in ATS2, and is one of the [major reasons for ATS2][19].
