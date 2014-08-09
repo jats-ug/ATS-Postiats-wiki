@@ -7,3 +7,8 @@ Compiler optimization issues crop up from time to time, as every compiler is dif
 * GCC 4.8: possible loop optimization issues: may need `--fno-aggressive-loop-optimization`
 
 
+## Segmentation faults
+
+These are generally pretty rare, and can occur because of an unintended infinite recursion; these are generally easy to find. For more information, see [[loop|Loop]]s. These can generally be avoid by using [[termination metrics|termination metrics]].
+
+If you are doing something unsafe with memory, though, particularly when interfacing with other C code, there are other possibilities. For more information, see [[memory leaks|Memory leaks]].
