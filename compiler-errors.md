@@ -1,4 +1,24 @@
-**Template-related errors.**
+##Template-related errors
+
+**Not loading template implementations**
+
+Errors look like:
+
+```
+// gcc
+'XXX' undeclared (first use in this function)
+expected expression before ‘YYY’
+```
+
+There are a lot of standard template implementations commonly used in ATS2, and they are not loaded by default (for instance, in kernel or embedded programming, it is best not to load what one doesn't need). This can usually be fixed by adding this at the start of your file:
+
+```ocaml
+#include "share/atspre_staload.hats"
+```
+By default, the ATS compiler only [[staloads|staload]] everything in [[prelude|atslib]] except its template implementations.
+
+**Template functions on non-abstract types**
+
 Using a function template on a non-abstract type can result in this (the rules for templates are not all written down and the implementation is not finished):
 
     falcon_cnfize_dats.c: In function âATSLIB_056_prelude__list_vt_freelin__clear__7__1â:
@@ -15,9 +35,11 @@ To avoid this, either don't use a template (for now), or try to use an abstract 
 
 Then you introduce cast functions where needed to convert between the abstract type and other (view)types.
 
-**Missing Linker Flag Errors**
+## Missing Linker Flag Errors
 
-Forgot to properly pass -DATS_MEMALLOC_LIBC to patscc.
+**Didn't specify which malloc to use**
+Usually you'll want to properly pass -DATS_MEMALLOC_LIBC to patscc. The main thing you'll see  here is `undefined
+reference to `atsruntime_malloc_undef'` (usually several times).
 
     /tmp/cchxHdy9.o: In function atspre_arrayptr_free':
     gurobi_mip1_dats.c:(.text+0x1d4): undefined reference toatsruntime_mfree_undef'
@@ -25,3 +47,5 @@ Forgot to properly pass -DATS_MEMALLOC_LIBC to patscc.
     gurobi_mip1_dats.c:(.text+0x4dc): undefined reference toatsruntime_malloc_undef'
     gurobi_mip1_dats.c:(.text+0x54e): undefined reference to `atsruntime_malloc_undef'
     collect2: ld returned 1 exit status
+
+Alternatively, for more customization, see [[Stack and heap allocation|Stack and heap allocation]].
