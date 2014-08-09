@@ -2,11 +2,12 @@
 
 Please see the [directions][1] on the ATS site. 
 
-## Compiling ATS2 from github-hosted ATS1-source.
+## Compiling ATS2 from github-hosted source.
 
 Please note that compiling ATS2 in this style is recommended
 primarily for people who are interested in helping develop ATS2.
 
+ATS2 is implemented in ATS1.
 Currently, the required version of ATS1 (ATS/Anairiats) for bootstrapping ATS2 (ATS/Postiats) is 0.2.11.
 Assume that you have already installed ATS1-0.2.11.
 
