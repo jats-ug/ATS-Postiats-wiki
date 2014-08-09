@@ -1,4 +1,4 @@
-## Compiling ATS2 from packaged C-source.
+## Compiling ATS2 from pre-packaged C-source.
 
 Please see the [directions][1] on the ATS site. 
 
@@ -38,7 +38,7 @@ Finally, a couple of environmental variables need to be properly set:
     export PATSHOME=${HOME}/postiats #For the example install above, or wherever ATS2 is located.
 
 If you also want to use ats2-lang-contrib, then please set the environmental variable PATSHOMERELOC to
-the name of the directory where ats2-lang-contrib is resides.
+the name of the directory where ats2-lang-contrib resides.
 
 ## What to try if the build of ATS/Postiats fails
 
