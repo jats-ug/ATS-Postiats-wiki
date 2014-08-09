@@ -2,6 +2,25 @@
 
 There could be several reasons, but please note specially the one in the [[compiler errors|compiler errors]] article referring to `share/atspre_staload.hats`. 
 
+**ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**
+
+Short answer: **No**.
+
+Long answer: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.
+
+If one uses GCC to generate object code from C source one owns, then one owns the generated object code. Then if you use ATS/Postiats to generate C code from ATS source you own, then you own the
+generated C code.
+
+Longer answer: 
+
+[[ATSLIB|atslib]] is primarily used to generate C code, and the generated
+C code, which is owned by the author of its ATS source, can
+be compiled as long as the header files (that is, CATS-files) in
+ATS2-Postiats-include are available. Currently,
+ATS2-Postiats-include-0.1.1.tgz is released separately under a
+BSD-like license. Related to this, the preferred way to write portable ATS code should
+avoid using `-latslib` to generate executables.
+
 **Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**
 
 First, read one of the [official tutorials][1]. Second, [these ATS programming tips][2] may be helpful. Third, there is a Google group, [ats-lang-users][3] for asking any kind of question, no matter how trivial, including slightly off-topic or less general-interest issues. Fourth, some of the discussions on the [SourceForge mailing list archive][4] may also prove instructive. Fifth, for other community resources, see the [official community page][5].
