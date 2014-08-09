@@ -5,7 +5,7 @@ Please see the [directions][1] on the ATS site.
 ## Compiling ATS/Postiats from git sources (developer version).
 
 
-Assuming you've got ATS/Anairiats functioning on your system, you can use it to bootstrap Postiats (currently version 0.2.11 is required). Please proceed as described next.
+Assuming you've got ATS/Anairiats (ATS1) functioning on your system, you can use it to bootstrap ATS/Postiats. Please note that ATS1-0.2.11 is required for the purpose of bootstrapping ATS2.
 
 Checkout Postiats from [sources][2] by downloading the zip file or using the following command (assuming that `~/postiats` is a directory where the repository is to be put locally):
 
