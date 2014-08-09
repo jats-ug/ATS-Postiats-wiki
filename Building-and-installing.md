@@ -1,4 +1,4 @@
-## Compiling ATS2 from pre-packaged C-source.
+## Compiling ATS2 from packaged C-source.
 
 Please see the [directions][1] on the ATS site. 
 
