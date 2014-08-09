@@ -1,4 +1,4 @@
-Error messages are evolving in ATS2. There are four primary classes of error messages: [[parsing errors|parsing errors]], [[linker errors|linker errors]], [[compiler errors|compiler errors]], and the most common -- [[typechecking errors|typechecking errors]]. For error messages known to have been used in the past, especially in ATS1, please see the [old wiki][1].
+Error messages are evolving in ATS2. There are five primary classes of error messages: [[parsing errors|parsing errors]], [[linker errors|linker errors]], [[runtime errors|runtime errors]], [[compiler errors|compiler errors]], and the most common -- [[typechecking errors|typechecking errors]]. For error messages known to have been used in the past, especially in ATS1, please see the [old wiki][1].
 
 ----------------
 
