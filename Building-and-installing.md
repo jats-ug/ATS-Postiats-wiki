@@ -4,8 +4,8 @@ Please see the [directions][1] on the ATS site.
 
 ## Compiling ATS/Postiats from git sources (developer version).
 
-
-Assuming you've got ATS/Anairiats (ATS1) functioning on your system, you can use it to bootstrap ATS/Postiats. Please note that ATS1-0.2.11 is required for the purpose of bootstrapping ATS2.
+Currently, the required version of ATS1 (ATS/Anairiats) for bootstrapping ATS2 (ATS/Postiats) is 0.2.11.
+Assume that you have already installed ATS1-0.2.11.
 
 Checkout Postiats from [sources][2] by downloading the zip file or using the following command (assuming that `~/postiats` is a directory where the repository is to be put locally):
 
@@ -19,7 +19,7 @@ Now, build ATS2:
 ```
 make -f Makefile_devl all
 ```
-This command effectively run both of the following:
+This command effectively executes both of the following:
 
 ```
 make -f codegen/Makefile_atslib # this is only needed for the first time
@@ -28,15 +28,14 @@ make -f Makefile_devl
 
 Optionally, put `~/postiats/bin` on your PATH, e.g., by adding the following line to your `.bashrc`:
 
-    export PATH=$PATH:$HOME/postiats/bin
+    export PATH=${PATH}:${HOME}/postiats/bin
 
-Finally, a couple of environmental variables really need to be set. 
+Finally, a couple of environmental variables need to be properly set:
 
-    export PATSHOME=$HOME/postiats #For the example install above, or wherever ATS2 is located.
-    export PATSHOMERELOC=$PATSHOME #For the git install only these are equal to each other.
+    export PATSHOME=${HOME}/postiats #For the example install above, or wherever ATS2 is located.
 
-In general, ${PATSHOMERELOC} is the directory where you put ats2-lang-contrib.
-The current plan is to use PATSHOMERELOC for supporting automatically downloading ATS packages located on the Internet.
+If you also want to use ats2-lang-contrib, then please set the environmental variable PATSHOMERELOC to
+the name of the directory where ats2-lang-contrib is resides.
 
 ## What to try if the build of ATS/Postiats fails
 
