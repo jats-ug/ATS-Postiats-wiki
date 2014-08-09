@@ -1,3 +1,6 @@
+**Why does my code typecheck but not compile?**
+There could be several reasons, but please note specially the one in the [[compiler errors|compiler errors]] article referring to `share/atspre_staload.hats`. 
+
 **Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**
 
 First, read one of the [official tutorials][1]. Second, [these ATS programming tips][2] may be helpful. Third, there is a Google group, [ats-lang-users][3] for asking any kind of question, no matter how trivial, including slightly off-topic or less general-interest issues. Fourth, some of the discussions on the [SourceForge mailing list archive][4] may also prove instructive. Fifth, for other community resources, see the [official community page][5].
