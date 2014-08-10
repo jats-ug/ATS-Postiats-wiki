@@ -8,7 +8,7 @@ Ground sorts: int, bool, char, addr. They form the basis of dependent type indic
 View, which are linear (in the sense of linear logic) propositions.
 Prop, which are classical propositions.
 
-A t@ype or (any)t@ype may be any size, whereas a type must be the size of a pointer; a polymorphic or template function taking some t@ype as an argument should also take a type. Please not that, in some places, a '0' may replace the '@' in some type-related keywords. For instance, t0ype is introduced as an alpha-numeric alternative to t@ype. However, @[...] can *not* be changed into 0[...].
+A t@ype or (any)t@ype may be any size, whereas a type must be the size of a pointer; a polymorphic or template function taking some t@ype as an argument should also take a type. Please not that, in some places, a '0' may replace the '@' in some type-related keywords. For instance, t0ype is introduced as an alpha-numeric alternative to t@ype . However, @[...] can *not* be changed into 0[...].
 
 Viewtype, which are linear types. It can be seen as a type combined with a view.
 You can define a new sort using datasort. The first few lines of sllist.dats demonstrate how to define a sort that resembles a list. You can also alias sorts using sortdef, which also lets you piggy-back constraints to a sort called subset sort. See prelude/sortdef.sats for examples. A constraint is simply a static expression of a boolean sort.
