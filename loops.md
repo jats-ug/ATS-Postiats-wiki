@@ -1,3 +1,7 @@
+### Need to copy most info from here:
+https://groups.google.com/forum/#!searchin/ats-lang-users/%22for$20loop%22/ats-lang-users/NfHeSJpaq78/zjys-ug5eMUJ
+
+
 ### This page discusses briefly several mechanisms for using loops in ATS.
 
 **Infinitely recursive functions may be a cause for a segfault.** 
