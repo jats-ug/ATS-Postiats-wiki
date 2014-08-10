@@ -41,5 +41,8 @@ type of !z: S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), S2Eintinf(7))
 
 which shows that !z is now the same type as x. This reflects that by default, integers have types parameterized by their values in ATS, as was the case for x.
 
+## See also
+
+[[Internal Types|Internal-types]], to understand the `S2Eapp`, `S2Ecst`, etc, which often appears in error messages.
 
 [1]: https://sourceforge.net/p/ats-lang/wiki/Error%20messages/
