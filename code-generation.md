@@ -6,6 +6,11 @@ Currently, this is possible for the following languages:
 * [Python](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/projects/MEDIUM/ATS-parse-emit/Python)
 
 ### Language translating functions
+
+For more complete documentation, please see:
+
+https://github.com/hsk/docs/blob/master/ats/compiled_c_macro.md
+
 * `ATSINSlab/ATSINSgoto` are used for pattern matching compilation.
 * `ATSINSflab/ATSINSfgoto` are used to support tail-call optimization.
 * `ATSmove_boxrec(tmp, T)` creates an uninitialized record of the type T, and
