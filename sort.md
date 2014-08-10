@@ -17,4 +17,4 @@ These are sorts that are present as types in C. (Is this true?) Combined with ot
 
 ## See also
 
-[type]
+[[Types|type]]
