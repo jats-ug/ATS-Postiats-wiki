@@ -32,7 +32,7 @@ fun foo2(x: atype): btype
 overload foo with foo2 of 20
 ```
 
-A higher number after `of` signifies a higher priority, so all else being equal, foo1 will be used
+A higher number after `of` signifies a higher priority, so all else being equal, foo2 will be used
 if we have a call like foo(atype).
 
 ### Operator fixity
