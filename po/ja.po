@@ -1,0 +1,3352 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-08-14 20:08+0900\n"
+"PO-Revision-Date: 2014-08-14 20:07+0900\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: Plain text
+#: compiler-errors.md:2
+msgid "##Template-related errors"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:4
+#, no-wrap
+msgid "**Not loading template implementations**\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:6
+msgid "Errors look like:"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:12
+msgid ""
+"``` // gcc 'XXX' undeclared (first use in this function)  expected "
+"expression before ‘YYY’ ```"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:14
+msgid ""
+"There are a lot of standard template implementations commonly used in ATS2, "
+"and they are not loaded by default (for instance, in kernel or embedded "
+"programming, it is best not to load what one doesn't need). This can usually "
+"be fixed by adding this at the start of your file:"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:19
+msgid ""
+"```ocaml #include \"share/atspre_staload.hats\" ``` By default, the ATS "
+"compiler only [[staloads|staload]] everything in [[prelude|atslib]] except "
+"its template implementations, which is a very common point of confusion for "
+"ATS newcomers."
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:21
+#, no-wrap
+msgid "**Template functions on non-abstract types**\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:23
+msgid ""
+"Using a function template on a non-abstract type can result in this (the "
+"rules for templates are not all written down and the implementation is not "
+"finished):"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:31
+#, no-wrap
+msgid ""
+"    falcon_cnfize_dats.c: In function âATSLIB_056_prelude__list_vt_freelin__clear__7__1â:\n"
+"    falcon_cnfize_dats.c:1698:1: error: âPMVtmpltcstmatâ undeclared (first use in this function)\n"
+"    falcon_cnfize_dats.c:1698:1: note: each undeclared identifier is reported only once for each function     it appears in\n"
+"    falcon_cnfize_dats.c:1698:1: error: âgclear_refâ undeclared (first use in this function)\n"
+"    falcon_cnfize_dats.c:1698:1: warning: implicit declaration of function âS2EVarâ [-Wimplicit-function-declaration]\n"
+"    falcon_cnfize_dats.c:1698:1: error: expected expression before â)â token\n"
+"    exec(gcc -std=c99 -D_XOPEN_SOURCE -I/home/brandon/ATS-Postiats -I/home/brandon/ATS-Postiats/ccomp/runtime -I/home/brandon/ATS-Postiats/contrib -DATS_MEMALLOC_LIBC -D_GNU_SOURCE -c falcon_cnfize_dats.c) = 256\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:33
+msgid ""
+"To avoid this, either don't use a template (for now), or try to use an "
+"abstract type:"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:35
+#, no-wrap
+msgid "    abstype mytype = ptr\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:37
+msgid ""
+"Then you introduce cast functions where needed to convert between the "
+"abstract type and other (view)types."
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:39
+msgid "## Missing Linker Flag Errors"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:41
+#, no-wrap
+msgid "**Didn't specify which memory allocation functions to use**\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:44
+msgid ""
+"Usually you'll want to properly pass -DATS_MEMALLOC_LIBC to patscc. The main "
+"thing you'll see here is `undefined reference to `atsruntime_malloc_undef'` "
+"(usually several times)."
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:51
+#, no-wrap
+msgid ""
+"    /tmp/cchxHdy9.o: In function atspre_arrayptr_free':\n"
+"    gurobi_mip1_dats.c:(.text+0x1d4): undefined reference toatsruntime_mfree_undef'\n"
+"    /tmp/cchxHdy9.o: In function  _057_media_057_RAID5_057_home_057_brandon_057_ATS_055_Postiats_057_contrib_057_libats_055_bbarker_057_ats    optml_057_TEST_057_gurobi_mip1_056_dats__mytest_main':\n"
+"    gurobi_mip1_dats.c:(.text+0x4dc): undefined reference toatsruntime_malloc_undef'\n"
+"    gurobi_mip1_dats.c:(.text+0x54e): undefined reference to `atsruntime_malloc_undef'\n"
+"    collect2: ld returned 1 exit status\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:52
+msgid ""
+"Alternatively, for more customization, see [[Stack and heap allocation|Stack "
+"and heap allocation]]."
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:2
+msgid ""
+"ATS has many facilities that enable effective, efficient, and [[safe|"
+"safety]] scientific computing. The language's focus on safety and efficiency "
+"is obvious, but actually making efficient scientific code is often far from "
+"easy (in any language)."
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:6
+msgid ""
+"## Parallel programming * [OpenMP](https://github.com/githwxi/ATS-Postiats-"
+"contrib/tree/master/contrib/OpenMP) For shared memory systems; stands for "
+"[Open Multi-Processing](https://en.wikipedia.org/wiki/Openmp).  * [MPI]"
+"(https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/MPI) "
+"For shared and/or distributed memory systems; stands for [Message Passing "
+"Interface](https://en.wikipedia.org/wiki/Message_Passing_Interface)."
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:9
+msgid ""
+"## Optimization * Linear and convex optimization: [Gurobi interface](https://"
+"github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/gurobi)"
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:12
+msgid ""
+"## Python [[code generation|code generation]] Python is perhaps one of the "
+"most popular general scientific computing languages, alongside MATLAB, "
+"though the R language has a notable lead with available statistics software "
+"(particularly related to Biology)."
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:15
+msgid ""
+"## Matrix operations Efficient matrix operations are difficult in practice."
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:17
+msgid "### Native ATS2 matrix algebra implementations"
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:20
+msgid "### BLAS interfaces (none yet?)"
+msgstr ""
+
+#. type: Plain text
+#: Scientific-Computing.md:21
+msgid "### Benchmarks"
+msgstr ""
+
+#. type: Plain text
+#: Built-in-operators.md:2
+msgid "This page lists built-in operators for ATS."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-operators.md:10
+msgid ""
+"`!=` - \"Not equal to\" (float/double/int). Also the same as <>, but "
+"preferred since it is easier to read for most and does not share the same "
+"string as the function effect <>."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-operators.md:10
+msgid ""
+"`<>` - \"Not equal to\" (float/double/int). Also the same as !=, but not "
+"recommended in general since it is less common than != in most programming "
+"languages and does not share the same string as the function effect <>."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-operators.md:10
+msgid ""
+"`=>` - Similar to `=`, but used to define the body of a lambda function or a "
+"case expression."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-operators.md:10
+msgid ""
+"`=>>` - Similar to `=>`, but indicates to the typechecker that this clause "
+"needs to be typechecked under the sequentiality assumption that the given "
+"value that matches it does not match the pattern guards associated with any "
+"previous clauses. For more information, see [Sequentiality of Pattern "
+"Matching][1] or the [forums][2]."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-operators.md:10
+msgid ""
+"`=/=>` - Similar to `=>>` but indicates to the typechecker that the proof "
+"following `=/=>` must prove falsehood. During compilation (after "
+"typechecking), the third clause is removed as it can never be chosen at run-"
+"time [because matching v against yields falsehood][3]."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-operators.md:10
+msgid "`=/=>>` combines the features of `=/=>` and `=>>`."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-operators.md:10
+msgid ""
+"`#` - Allows static variables present in a function return type to be used "
+"in the statics of the function's arguments. For example, if we want `b` from "
+"the return type to be in the scope of the statics in the arguments, (that "
+"is, `b` in `opt (a,b)`):"
+msgstr ""
+
+#. type: Plain text
+#: Built-in-operators.md:15
+msgid ""
+"```ocaml fun{a:t@ype} linset_choose (xs: !set a, x0: &a? >> opt (a, b)) : "
+"#[b:bool] bool (b)  ```"
+msgstr ""
+
+#. type: Plain text
+#: Built-in-operators.md:18
+msgid ""
+"[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.  [2]: https://"
+"groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ [3]: https://"
+"groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:2
+msgid "## Compiling ATS2 from packaged C-source."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:4
+msgid "Please see the [directions][1] on the ATS site."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:6
+msgid "## Compiling ATS2 from github-hosted source."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:9
+msgid ""
+"Please note that compiling ATS2 in this style is recommended primarily for "
+"people who are interested in helping develop ATS2."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:13
+msgid ""
+"ATS2 is implemented in ATS1.  Currently, the required version of ATS1 (ATS/"
+"Anairiats) for bootstrapping ATS2 (ATS/Postiats) is 0.2.11.  Assume that you "
+"have already installed ATS1-0.2.11."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:15
+msgid ""
+"Checkout Postiats from [sources][2] by downloading the zip file or using the "
+"following command (assuming that `~/postiats` is a directory where the "
+"repository is to be put locally):"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:18
+#, no-wrap
+msgid "    git clone https://github.com/githwxi/ATS-Postiats.git ~/postiats\n"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:20
+msgid ""
+"Set PATH to include the directory ~/postiats/bin so that the second half of "
+"the building process knows where to locate the created \"patsopt\"."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:22
+msgid "Now, build ATS2:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:27
+msgid ""
+"``` make -f Makefile_devl all ``` This command effectively executes both of "
+"the following:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:32
+msgid ""
+"``` make -f codegen/Makefile_atslib # this is only needed for the first time "
+"make -f Makefile_devl ```"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:34
+msgid ""
+"Optionally, put `~/postiats/bin` on your PATH, e.g., by adding the following "
+"line to your `.bashrc`:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:36
+#, no-wrap
+msgid "    export PATH=${PATH}:${HOME}/postiats/bin\n"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:38
+msgid "Finally, a couple of environmental variables need to be properly set:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:40
+#, no-wrap
+msgid "    export PATSHOME=${HOME}/postiats #For the example install above, or wherever ATS2 is located.\n"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:43
+msgid ""
+"If you also want to use ats2-lang-contrib, then please set the environmental "
+"variable PATSHOMERELOC to the name of the directory where ats2-lang-contrib "
+"resides."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:45
+msgid "## What to try if the build of ATS/Postiats fails"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:47
+msgid "Should the build fail at some point, it may be necessary to clean up:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:49
+#, no-wrap
+msgid "    make -C src cleanall\n"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:51
+msgid "If that does not work, it is worth trying to clean up atslib as well:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:53
+#, no-wrap
+msgid "    make -f codegen/Makefile_atslib cleanall\n"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:55
+msgid ""
+"The above make rule should be executed whenever one wishes to use updated "
+"[atslib] code from the upstream github repository."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:57
+msgid "## ATS in a virtual machine"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:59
+msgid "ATS can be installed in a docker container using the following command:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:63
+msgid "``` docker run -ti -v [your source directory]:/src steinwaywhw/ats ```"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:66
+msgid ""
+"This gives you the ability to edit/compile any ATS code on any platform as "
+"long as docker is installed.  More information and the docker install file "
+"is available at https://github.com/steinwaywhw/docker-ats."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:68
+msgid ""
+"A Vagrantfile could be written based on that Dockerfile, which enables "
+"booting up a real virtual machine (instead of a container)."
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:70
+msgid ""
+"[1]: http://www.ats-lang.org/DOWNLOAD [2]: https://github.com/githwxi/ATS-"
+"Postiats"
+msgstr ""
+
+#. type: Plain text
+#: Internal-types.md:2
+msgid ""
+"Internal types are introduced in the file `pats_staexp2.sats`, and having a "
+"better understanding of how these types relate to actual ATS types will be "
+"[[helpful in debugging|Error messages]]."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Eapp` - an application term."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Ecst` - a type constant (for instance, int, bool, list, etc.)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Eeff` - function effects."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Eexi` - an existentially quantified type."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Eint` - machine precision integer."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid ""
+"`S2Eintinf` - infinite precision integer; commonly used for integer sorts in "
+"most compiled versions of atsopt (patsopt)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Evar` - a (typically universally quantified) variable."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Etop (0; T)` means `T?` `//Need to verify in ATS2`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid "`S2Etop (1; T)` means `T?!` `//Need to verify in ATS2`"
+msgstr ""
+
+#. type: Bullet: '* '
+#: Internal-types.md:12
+msgid ""
+"`S2EVar` - an (existentially quantified) unification variable introduced by "
+"the typechecker."
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:2
+msgid ""
+"For a beginner, perhaps the most important tool to learn is *good functional "
+"style* and *abstraction*. This [code example for a calculator](http://www.cs."
+"bu.edu/~hwxi/academic/courses/CS320/Spring13/code/calculator/), while not "
+"exactly a tutorial, demonstrates these principles. [Discussion on the "
+"calculator example is located here](https://groups.google.com/forum/?"
+"fromgroups=#!topic/ats-lang-users/ad5S6SY0I0E)."
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:4
+msgid ""
+"Currently, the ATS site has [several tutorials and references](http://www."
+"ats-lang.org/DOCUMENT/), several of which are described below. There is also "
+"a more [dense tutorial or language overview reference](http://cs.likai.org/"
+"ats/ml-programmers-guide-to-ats) that is highly recommended."
+msgstr ""
+
+#. type: Bullet: '* '
+#: tutorials.md:8
+msgid ""
+"Chris Double has written [many blogs on ATS](http://www.bluishcoder.co.nz/"
+"tags/ats/). There are also [many useful topical tutorials](http://www.ats-"
+"lang.org/htdocs-old/TUTORIAL/tutorial.html) on the ATS site. Of course, "
+"there may be [resources not mentioned here](https://www.google.com/search?"
+"as_q=ATS+language&as_epq=&as_oq=tutorial+blog"
+"+programming&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&tbs=&as_filetype=&as_rights=)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: tutorials.md:8
+msgid ""
+"[[A Tutorial on Programming Features in ATS|http://www.ats-lang.org/DOCUMENT/"
+"ATS2TUTORIAL/HTML/book1.html]] covers several topics common to many "
+"programming languaages, as well as some tutorials on linear types."
+msgstr ""
+
+#. type: Bullet: '* '
+#: tutorials.md:8
+msgid ""
+"[Graphics tutorial using ATS/Cairo](http://www.ats-lang.org/DOCUMENT/"
+"ATS2CAIRO/HTML/book1.html)."
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:10
+msgid "## Algorithms in ATS"
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:12
+#, no-wrap
+msgid "**[[The ATS Book|http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html]]** is a good source of algorithms at various levels of rigor.\n"
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:14
+#, no-wrap
+msgid "**Rosetta Code** has several [entries for ATS](http://rosettacode.org/wiki/Category:ATS).\n"
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:16
+msgid ""
+"Once familiar enough with the language, [[atslib|atslib]] is also a great "
+"source to find many algorithms implemented in ATS, sometimes in several "
+"different ways (linear, non-linear, etc.)"
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:18
+msgid "## Other small tutorials"
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:20
+msgid "An example demonstrating [dataviewtype]s."
+msgstr ""
+
+#. type: Plain text
+#: tutorials.md:21
+msgid ""
+"An [ATS wiki book](http://en.wikibooks.org/wiki/ATS:"
+"_Programming_with_Theorem-Proving) exists, but currently only has a few "
+"pages (and appears to be rather dated, i.e. uses ATS1)."
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:2
+msgid ""
+"There are many different string types available in ATS2 (see some of these "
+"in `prelude/basics_sta.sats`). Which should be used?"
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:4
+msgid "For something relatively small, using 'strptr1' for strings is fine."
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:7
+msgid ""
+"For something more complicated that requires sharing of strings, one may "
+"want to use ref-counted strings. In ATS2, there is a type [strobjref]"
+"(https://github.com/githwxi/ATS-Postiats/blob/master/libats/SATS/strobjref."
+"sats) for reference-counted strings."
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:10
+msgid ""
+"At the beginning of a project, it is usually uncertain what kind of string "
+"is needed.  An abstract type can be introduced:"
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:14
+msgid "```ocaml absviewtype mystring (l:addr)  ```"
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:17
+msgid ""
+"First, `mystring` can be implemented based on `strptr`. Later, the "
+"implementation can be easily changed, making it based on `strobjref` or "
+"something else."
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:21
+msgid ""
+"In practice, if string sharing is allowed. then memory leaks are often very "
+"difficult to prevent.  For instance, there are many leaks in graphviz "
+"(according to bug reports). ATS is very good for stopping this kind of "
+"problems[\\[1\\]][1]."
+msgstr ""
+
+#. type: Plain text
+#: Strings.md:22
+msgid ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/MrWe5tFnR_8/4uTj6ER67OoJ"
+msgstr ""
+
+#. type: Plain text
+#: safety.md:2
+msgid ""
+"ATS2 has many safety features, though they are not all obvious. Here we list "
+"a few examples"
+msgstr ""
+
+#. type: Bullet: '*  '
+#: safety.md:3
+msgid ""
+"[Arithmetic overflow](../tree/master/doc/EXAMPLE/MISC/arith_overflow.dats)"
+msgstr ""
+
+#. type: Plain text
+#: ATS-LF.md:2
+msgid ""
+"ATS/LF ([Logical Framework](https://en.wikipedia.org/wiki/"
+"Logical_framework)) supports a form of (interactive) theorem-proving; ATS "
+"advocates a programmer-centric approach to program verification that "
+"combines programming with theorem-proving in a syntactically intertwined "
+"manner."
+msgstr ""
+
+#. type: Plain text
+#: ATS-LF.md:4
+msgid "## Proofs, theorems, and axioms"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATS-LF.md:9
+msgid ""
+"axiom - `praxi`; States a theorem without proof. Use only under careful "
+"consideration."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATS-LF.md:9
+msgid ""
+"proof - `prfun`; States a theorem where the author should give a proof, "
+"however in ATS2, it is currently not required to do so, making it similar to "
+"a praxi in practice [\\[1\\]][1]."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATS-LF.md:9
+msgid "proof - `prfn`; non-recursive version of prfun"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATS-LF.md:9
+msgid "theorem - `prop`; a type in ATS that represents a theorem."
+msgstr ""
+
+#. type: Plain text
+#: ATS-LF.md:11
+msgid ""
+"Note that proof functions can (and should) be implemented using the "
+"`primplement` keyword, similar to `implement` for dynamic function "
+"implementations. More details can be found in the ATS2 Book."
+msgstr ""
+
+#. type: Plain text
+#: ATS-LF.md:13
+msgid ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/enDXT0GaoaM/HKJcjCJSdoYJ)"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:2
+msgid "## Downloading ATS Contrib"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:4
+msgid ""
+"Releases are currently available [[at sourceforge|https://sourceforge.net/"
+"projects/ats2-lang-contrib/]], though those developing libraries for ATS "
+"contrib should use the [[github repository|https://github.com/githwxi/ATS-"
+"Postiats-contrib]]."
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:7
+msgid "## Setting up ATS Contrib"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:10
+msgid ""
+"An example of how to set up environment variables for ATS-contrib (alongside "
+"ATS):"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:14
+msgid ""
+"```bash export POSTIATS=${HOME}/research/Postiats/git export "
+"POSTIATS_contrib=${HOME}/research/Postiats-contrib/git"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:16
+msgid "######"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:20
+msgid ""
+"export PATSHOME=${POSTIATS} export PATSHOMERELOC=${POSTIATS_contrib} ```"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:23
+msgid "## Using ATS Contrib"
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:26
+msgid ""
+"It may be the case that you want to contribute to an existing package, or "
+"create a new package that will gradually be curated to be in the main "
+"`contrib` directory. User codes are generally put in a separate subdirectory "
+"of ATS contrib. For instance, there is a user directory `contrib/libats-/"
+"bbarker/OpenMP` for OpenMP, and a curated version of OpenMP in `contrib/"
+"OpenMP`."
+msgstr ""
+
+#. type: Plain text
+#: contrib.md:27
+msgid ""
+"In order to switch between using these various packages, [[atspkgreloc|"
+"atspkgreloc]] is a useful tool that may automate the process. It can "
+"additionally be used with other repositories or forms of code storage."
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:2
+msgid "## Overview of the stack and heap ##"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:4
+msgid ""
+"This page lists common types found in ATS according to whether they are "
+"allocated on the stack or heap, or both. Data that is heap allocated can be "
+"disposed of using linear types and associated memory allocation and "
+"deallocation functions (e.g. malloc and free), or by using a garbage "
+"collector (GC). The popular [Boehm GC](http://www.hpl.hp.com/personal/"
+"Hans_Boehm/gc/) is known to be supported in ATS2."
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:6
+msgid ""
+"The following types are allocated on the stack when used in val or var "
+"assignments: types associated with ground sorts (int, bool, char, and addr). "
+"Any type with sort `t@ype` (e.g. integers) or type (e.g. addresses)."
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:8
+msgid ""
+"The following types are allocated on the heap: boxed tuples, viewtypes, "
+"datatypes, dataviewtypes, exceptions (they are a dataytpe), lazy types, c-"
+"types accessed by pointer, and ref types. [[Strings|Strings]] usually fall "
+"under this classification, for instance, they are usually represented as "
+"abstypes and/or viewtypes for heap-allocated C strings. Note that a viewtype "
+"can be used for stack-allocated variables as well , though this seems to be "
+"less common, outside of its [use with var](http://www.ats-lang.org/DOCUMENT/"
+"INTPROGINATS/HTML/x3352.html). It is usually the case that heap-allocated "
+"types are only amenable to use with the GC or to linear types, not both. For "
+"instance, datatypes are for use with a GC, whereas dataviewtypes are linear "
+"types managed by the programmer."
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:11
+msgid "## Using the GC ##"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:13
+msgid ""
+"The flag -DATS_MEMALLOC_GCBDW is passed to gcc to support the use of libgc "
+"(Bohem GC) for handling memory allocation/deallocation. See this [small "
+"project](https://github.com/githwxi/ATS-Postiats/tree/master/doc/PROJECT/"
+"SMALL/calculator) for an example Makefile [\\[1\\]][1]. If using gcc "
+"directly on ATS-generated C files for the purpose of portable code, use the -"
+"lgc."
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:15
+msgid "## Linear Malloc and Free Functions ##"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:17
+msgid "#### Built-in ATS (de)allocation functions ####"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:19
+msgid ""
+"Unlike in C/C++, malloc in ATS does not return null if enough memory is not "
+"available, but aborts instead [\\[2\\]][2]."
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:21
+msgid "#### Custom memory (de)allocation functions ####"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:23
+msgid ""
+"Here is an example showing a simple way to use user-defined malloc/free "
+"[\\[3\\]][3]:"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:25
+msgid ""
+"https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/CA-HSR2/"
+"program-1-2"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:28
+msgid ""
+"The flag -DATS_MEMALLOC_USER indicates to the ATS compiler that the "
+"following two functions are used for memory allocation/deallocation (for "
+"more details on interoperability between C and ATS, see this [chapter on "
+"interaction with C](http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/"
+"c1960.html)):"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:33
+msgid "```C extern void *atsruntime_malloc_user (size_t bsz) ;"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:37
+msgid "extern void atsruntime_mfree_user (void* ptr) ; ````"
+msgstr ""
+
+#. type: Plain text
+#: Stack-and-heap-allocation.md:40
+msgid ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/SL7fb01wsnk/vU3d9pv-RTkJ "
+"[2]: https://groups.google.com/d/msg/ats-lang-users/eAMszM15vIE/MYi3Rfxe48QJ "
+"[3]: https://groups.google.com/d/msg/ats-lang-users/uRQami8woQQ/l44QkqGq-IoJ"
+msgstr ""
+
+#. type: Plain text
+#: Rosetta-Stone.md:1
+msgid ""
+"This is meant to be a listing of common functions and types that can be "
+"quickly used and are analogous to other popular programming languages (e.g. "
+"C)."
+msgstr ""
+
+#. type: Plain text
+#: atslib.md:2
+msgid ""
+"Atslib is a set of libraries included with ATS, which seems to include all "
+"libraries except those included in [[contrib|contrib]] and a few others that "
+"are primarily designed to be used by ATS itself, such as [libatslex](../../"
+"tree/master/libatslex)."
+msgstr ""
+
+#. type: Plain text
+#: atslib.md:4
+msgid ""
+"Atslib currently includes [prelude](../../tree/master/prelude), [libc](../../"
+"tree/master/libc), and [libats](../../tree/master/libats) (see [codegen/"
+"Makefile_atslib](../../tree/master/codegen/Makefile_atslib) for how atslib "
+"is built)."
+msgstr ""
+
+#. type: Plain text
+#: atslib.md:5
+msgid ""
+"Examples using atslib can be found in [doc/EXAMPLE/ATSLIB](../../tree/master/"
+"doc/EXAMPLE/ATSLIB)."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:2
+msgid "Welcome to the wiki for ATS2."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:4
+msgid "The most recent released version of ATS2 is ATS2-0.1.1."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:6
+msgid ""
+"The programming language ATS is a statically typed language with a type "
+"system rooted in the framework Applied Type System. ATS unifies "
+"specification and implementation by accommodating a programmer-centric "
+"approach to program verification: How do we know a program being implemented "
+"correctly? We ask the programmer to demonstrate it with a proof."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:8
+msgid ""
+"ATS also has another [website][1] (built using ATS itself). For a thorough "
+"introduction to ATS, see the book *[Introduction to Programming in ATS][2]*."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:10
+msgid "This wiki contains the following pages."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:20
+msgid ""
+"- [[Frequently asked questions|Frequently asked questions]].  - [[Building "
+"and installing|Building and installing]].  - ATS code style: [[style guide|"
+"Style guide]], detecting and avoiding [[memory leaks|Memory leaks]], [[code "
+"optimization|Code optimization]].  - Language reference: [[built-in "
+"operators|Built-in operators]], [[dependent types|Dependent types]], "
+"[[linear types|Linear types]], [[error messages|Error messages]].  - Library "
+"reference: [[atslib|atslib]], [[contrib|contrib]], [[built-in datatypes|"
+"Built-in datatypes]], [[built-in functions|Built-in functions]], [[input and "
+"output|Input and output]], [[Scientific Computing|Scientific Computing]], "
+"[[ATS Libraries and C Library bindings|ATS Libraries and C Library "
+"bindings]].  - Extensions: [[writing interfaces to C libraries|Writing "
+"interfaces to C libraries]], [[ATS/LF|ATS/LF]] (theorem proving).  - ATS "
+"internals: [[built-in constraint solving|Built-in constraint solving]], "
+"[[stack and heap allocation|Stack and heap allocation]], [[internal types|"
+"Internal types]].  - Information on specific keywords in ATS: [[char|char]], "
+"[[dataviewtype|dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|"
+"type]].  - Wiki [[TODO|TODO]]: A list of wiki pages that need the most help."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:22
+msgid ""
+"For the first version of ATS, there is a largely unmaintained [wiki][3]."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:24
+msgid ""
+"ATS2 is distributed under the GNU General Public License version 3 (GPLv3), "
+"or any later version."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:27
+msgid ""
+"[1]: http://www.ats-lang.org/ [2]: http://www.ats-lang.org/DOCUMENT/"
+"INT2PROGINATS/HTML/book1.html [3]: https://sourceforge.net/p/ats-lang/wiki/"
+"Home/"
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:2
+msgid ""
+"While the usual way to interact with other languages is to interact through "
+"C interfaces in both ATS and the other language, in some cases it may be "
+"desirable to directly compile ATS to another language."
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:7
+msgid ""
+"Currently, this is possible for the following languages: * C (The default; "
+"several compilers are known to work, including GCC, LLVM/Clang, and "
+"TinyCC.)  * Javascript (Compilation is supported by the emscripten compiler "
+"which compiles C code to javascript [\\[1\\]][1].)  * [Python](https://"
+"github.com/githwxi/ATS-Postiats-contrib/tree/master/projects/MEDIUM/ATS-"
+"parse-emit/Python)"
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:9
+msgid "### Language translating functions"
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:11
+msgid "For more complete documentation, please see:"
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:13
+msgid "https://github.com/hsk/docs/blob/master/ats/compiled_c_macro.md"
+msgstr ""
+
+#. type: Bullet: '* '
+#: code-generation.md:23
+msgid "`ATSINSlab/ATSINSgoto` are used for pattern matching compilation."
+msgstr ""
+
+#. type: Bullet: '* '
+#: code-generation.md:23
+msgid "`ATSINSflab/ATSINSfgoto` are used to support tail-call optimization."
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:23
+#, no-wrap
+msgid ""
+"* `ATSmove_boxrec(tmp, T)` creates an uninitialized record of the type T, and\n"
+"assign it to tmp.\n"
+"* `ATSmove_boxrec` is always followed by a few assignments for field initialization;\n"
+"they should probably grouped together and then translated into something like:\n"
+"```python\n"
+"tmp = (v1, v2, ..., vn) # (python)\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:27
+msgid ""
+"### Python For compiling code to Python, there is currently no plan to "
+"handle pointer operations.  Or one may go the Cython road."
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:30
+msgid ""
+"Because Python does not support jumps, ATSINSgoto and ATSINSfgoto need to be "
+"removed. I will try to do it."
+msgstr ""
+
+#. type: Plain text
+#: code-generation.md:33
+msgid ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/WVje4zG4bKA/p-XulrfBFwIJ"
+msgstr ""
+
+#. type: Plain text
+#: typechecking-errors.md:2
+#, no-wrap
+msgid "**Template-related errors.**\n"
+msgstr ""
+
+#. type: Plain text
+#: typechecking-errors.md:5
+msgid "- The template is expected to be fully applied but it is not."
+msgstr ""
+
+#. type: Plain text
+#: typechecking-errors.md:6
+msgid ""
+"This error will pop up from leaving out a template argument in some form, "
+"and it is often the case (especially for beginners), that they've put the a "
+"template argument on the wrong side of the function name."
+msgstr ""
+
+#. type: Plain text
+#: FAQ.md:1
+msgid "see [[Frequently asked questions|Frequently asked questions]]"
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:2
+msgid ""
+"Dataviewtypes are linear analogues of datatypes. As such, their memory must "
+"be managed explicitly, which typically entails creating a free function for "
+"each dataviewtype introduced. Due to potential complexity in type checking "
+"and proofs (as well as it being a concrete type) it is advised to make use "
+"of an [[absviewtype|absviewtype]] provide an interface for dataviewtypes."
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:5
+msgid ""
+"## Folding An important notion in dealing with dataviewtypes is being able "
+"to access the arguments of constructors. The implications differ if we want "
+"to use the arguments as l-values or just as r-values. For instance, take the "
+"following example:"
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:10
+#, no-wrap
+msgid ""
+"```ocaml\n"
+"datavtype dvt =\n"
+"  | dvt0 of ()\n"
+"  | dvt2 of (dvt,dvt)\n"
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:17
+#, no-wrap
+msgid ""
+"fun foo (x: !dvt): void =\n"
+"  case+ x of\n"
+"  | dvt0 () => ()\n"
+"  | dvt2 (x1, x2) => ()        // x1 and x2 are values\n"
+"  | @dvt2 (x1, x2) => fold@(x) // x1 and x2 are l-values\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:22
+msgid ""
+"Basically, you need to put @ in front of a linear constructor if you want to "
+"use the arguments of the constructor as l-values. Why l-values? Because an l-"
+"value allows its content to be modified. Note that explicit folding (fold@)  "
+"is needed if @ is used."
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:24
+msgid "### A more complex example ###"
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:27
+msgid ""
+"This example is primarily used to build on the above while introducing a "
+"higher degree of nesting, and is based on an example from the ATS1 wiki "
+"(warning, [external link](https://sourceforge.net/p/ats-lang/wiki/"
+"dataviewtype/)). Also note that this example doesn't explicitly mention the "
+"difference between the l-values and r-values in the comments, since the "
+"difference wasn't accessible in ATS1:"
+msgstr ""
+
+#. type: Plain text
+#: dataviewtype.md:60
+#, no-wrap
+msgid ""
+"```ocaml\n"
+"dataviewtype dvt =\n"
+"    | dvt_0 of ()\n"
+"    | dvt_1 of (dvt)\n"
+"    | dvt_2 of (dvt,dvt)\n"
+"(*\n"
+"                                                       (a)ccessible/usable\n"
+"                                                       (u)nfolded\n"
+"                                                       (f)olded\n"
+"                                                       (n)o view available\n"
+"                                                       (-) not in scope\n"
+"                                                          d0   d1   d11  d12 d121\n"
+"                                                          ----------------------- *)\n"
+"fun use_dvt(d0: !dvt):void = case+ d0 of               (* a    -    -    -   -    *)\n"
+"  | @dvt_1 (d1 as dvt_2(d11,d12) ) => let              (* u    a    a    a   -    *)\n"
+"    val () = case+ (d11,d12) of                        (*                         *)\n"
+"      | (@dvt_0 (), @dvt_1 (d121) ) => let             (* u    a    u    u   a    *)\n"
+"        prval () = fold@ d11 and () = fold@ d12        (* u    a    af   af  n    *)\n"
+"        in () end                                      \n"
+"      | (_,_) => ()                                    \n"
+"    prval () = fold@ d0                                (* af   n    n    n   -    *)\n"
+"    in () end                                          (* d0   d1   d2  d11  d12  *)\n"
+"                                                       (*------------------------ *)\n"
+"  | @dvt_2 (d1,d2) =>                                  (* u    a    a             *)\n"
+"    (case+ d1 of                                       (*                         *)\n"
+"      | @dvt_2 (d11,d12) => let                        (* u    u    a   a    a    *)\n"
+"        prval () = fold@ d1                            (* u    af   a   n    n    *)\n"
+"        prval () = fold@ d0                            (* af   n    n   n    n    *)\n"
+"        in () end\n"
+"      | _ => fold@ d0\n"
+"    )\n"
+"  | _ =>  ()\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: runtime-errors.md:2
+msgid ""
+"Runtime errors are unusual in ATS, particularly segmentation faults, but "
+"there are a few common reasons for this. Also see the [[memory leaks|Memory "
+"leaks]] article."
+msgstr ""
+
+#. type: Plain text
+#: runtime-errors.md:5
+msgid ""
+"## Unexpected behavior from a C compiler Compiler optimization issues crop "
+"up from time to time, as every compiler is different for some cases."
+msgstr ""
+
+#. type: Plain text
+#: runtime-errors.md:8
+msgid ""
+"### GCC * GCC 4.8: possible loop optimization issues: may need `--fno-"
+"aggressive-loop-optimization`"
+msgstr ""
+
+#. type: Plain text
+#: runtime-errors.md:11
+msgid "## Segmentation faults"
+msgstr ""
+
+#. type: Plain text
+#: runtime-errors.md:13
+msgid ""
+"These are generally pretty rare, and can occur because of an unintended "
+"infinite recursion; these are generally easy to find. For more information, "
+"see the [[loops|loops]] article. These can generally be avoid by using "
+"[[termination metrics|termination metrics]], or if no termination proof is "
+"to be provided, the compiler can generate run‑time termination checks, if it "
+"is passed this command‑line option: `-D_ATS_TERMINATION_CHECK`."
+msgstr ""
+
+#. type: Plain text
+#: runtime-errors.md:14
+msgid ""
+"If you are doing something unsafe with memory, though, particularly when "
+"interfacing with other C code, there are other possibilities. For more "
+"information, see [[memory leaks|Memory leaks]]."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:3
+msgid ""
+"Note that staload in ATS is a bit like `#include` in C. However, `staload` "
+"and `#include` are implemented totally differently."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:6
+msgid ""
+"By staloading a file 'foo.sats' as follows, a namespace is created for 'foo."
+"sats':"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:10
+msgid "```ocaml staload FOO = \"foo.sats\" ```"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:12
+msgid "A name xyz declared in 'foo.sats' should be referred to as $FOO.xyz."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:14
+msgid "If we next do:"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:19
+msgid ""
+"```ocaml staload FOO2 = \"foo.sats\" ``` then there is no actual loading "
+"except FOO2 becomes an alias of FOO."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:21
+msgid "We can also do"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:25
+msgid "```ocaml staload \"foo.sats\" ```"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:28
+msgid ""
+"which opens up the namespace for 'foo.sats' so that names declared in 'foo."
+"sats' can be referred to directly."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:31
+msgid ""
+"There is also support for `#include` in ATS, which simply pastes any file to "
+"be included at the point where `#include` is located."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:36
+msgid ""
+"Another use of staload is to make template implementations available to the "
+"ATS compiler. For instance, the following line makes the template "
+"implementations in foo.dats available for the purpose of code generation "
+"(from ATS source to C target):"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:42
+msgid ""
+"```ocaml staload _ = \"foo.dats\" ``` The use of '_' is to make sure that "
+"nothing declared in 'foo.dats' gets spilled out accidentally [\\[1\\]][1]."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:44
+msgid "Additional references: [\\[2\\]][2]"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:46
+msgid ""
+"[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/%22staload$20_"
+"%22/ats-lang-users/qO7XsiR8xA8/E0tufu9pJVkJ [2]: https://groups.google.com/d/"
+"msg/ats-lang-users/4_d_tmGZXIA/8Hc7kMLfsesJ"
+msgstr ""
+
+#. type: Plain text
+#: Built-in-constraint-solving.md:2
+msgid ""
+"ATS can solve linear inequality constraints with [Fourier-Motzkin "
+"elimination][1]."
+msgstr ""
+
+#. type: Plain text
+#: Built-in-constraint-solving.md:4
+msgid ""
+"According to [this mailing list post][2], ATS2 will support some additional "
+"(semi-)automated constraint solving."
+msgstr ""
+
+#. type: Plain text
+#: Built-in-constraint-solving.md:6
+msgid ""
+"[1]: http://en.wikipedia.org/wiki/Fourier%E2%80%93Motzkin_elimination [2]: "
+"https://sourceforge.net/mailarchive/forum.php?thread_name=Pine."
+"LNX.4.64.1203041139230.8530%40csa2.bu.edu&forum_name=ats-lang-users"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:2
+msgid "## Overloading basics"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:8
+msgid ""
+"Only functions can be overloaded; this includes both polymorphic and "
+"template functions.  Overloading of functions is accomplished with the "
+"`overload` and `with` keywords. We choose a string to become a symbol using "
+"`symintr`, then overload a function with this symbol. For instance, a "
+"standard way of doing this is as follows:"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:11 overload.md:27
+msgid "```ocaml symintr foo"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:15
+msgid "fun foo1(x: atype): btype overload foo with foo1 ```"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:24
+msgid ""
+"### Overloading precedence If the appropriate function cannot be resolved "
+"based on type, a precedence mechanism can be specified by using the `of` "
+"keyword followed by an (non-negative? positive?) integer.  Of course, one "
+"may want to think carefully about using overloading in this way, since it "
+"could be easy to forget exactly which function is being used in practice; "
+"when in doubt, use the actual function name when calling the function. "
+"Building on the previous example:"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:30
+msgid "fun foo1(x: atype): btype overload foo with foo1 of 10"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:34
+msgid "fun foo2(x: atype): btype overload foo with foo2 of 20 ```"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:37
+msgid ""
+"A higher number after `of` signifies a higher priority, so all else being "
+"equal, foo2 will be used if we have a call like foo(atype)."
+msgstr ""
+
+#. type: Plain text
+#: overload.md:39
+msgid "### Operator fixity"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:42
+msgid ""
+"Whether an operator is infix or postfix can be declared using the `infix`, "
+"`infixl`, `infixr`, `prefix`, and `postfix` keywords. For instance, the "
+"following changes `+` to be a postfix operator, and we can overload it with "
+"some function of our choice, say myfun(atype)."
+msgstr ""
+
+#. type: Plain text
+#: overload.md:52
+msgid ""
+"```ocaml postfix + overload + with myfun (* Now instead of doing "
+"myfun(atype) we can do: *)  val x: atype = some_val x+ (* But we can no "
+"longer do this in the same scope: *)  val m = 3 + 5 ```"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:57
+msgid ""
+"### Renewing a string to be a symbol Some strings are reserved for other "
+"purposes by default in ATS. For instance, `&&` is a macro.  However, if we do"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:61
+msgid "```ocaml symintr && ```"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:64
+msgid ""
+"We can now overload `&&` with a function of our choice. Of course, the "
+"original functionality of `&&` will no longer work in the same scope."
+msgstr ""
+
+#. type: Plain text
+#: overload.md:67
+msgid "### Creating new symbols with macros"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:72
+msgid ""
+"A combination of macros (macdefs) and fixity assignments can be used to "
+"introduce syntactic sugar for specialized symbols. For instance, the example "
+"below allows `^t` to be used as a postfix operator used to take the "
+"transpose (function transp_LAgmat) of a matrix:"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:84
+#, no-wrap
+msgid ""
+"```ocaml\n"
+"(* ****** ****** *)\n"
+"(*\n"
+"   HX: a hackery of a little fun\n"
+"*)\n"
+"#define t 't'\n"
+"infixr ^\n"
+"macdef ^ (M, t) = transp_LAgmat (,(M))\n"
+"//\n"
+"(* ****** ****** *)\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:86
+msgid "## Caveats"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:88
+msgid "### Overloading doesn't work with indexed types"
+msgstr ""
+
+#. type: Plain text
+#: overload.md:90
+msgid ""
+"Insert simplified version of failed example: https://groups.google.com/"
+"forum/?utm_medium=email&utm_source=footer#!msg/ats-lang-users/Y1PxLL-9jfU/"
+"kyjkxB0wwPkJ"
+msgstr ""
+
+#. type: Plain text
+#: Memory-leaks.md:2
+msgid ""
+"The design of ATS helps the programmer to create code without memory leaks. "
+"Still, there are a few ways to create leaky code."
+msgstr ""
+
+#. type: Bullet: '  1. '
+#: Memory-leaks.md:5
+msgid "Using unsafe features in ATS"
+msgstr ""
+
+#. type: Bullet: '  2. '
+#: Memory-leaks.md:5
+msgid "Using C code or other non-ATS code that is not memory-safe"
+msgstr ""
+
+#. type: Plain text
+#: Memory-leaks.md:7
+msgid "Here are some strategies for creating memory-safe code in ATS."
+msgstr ""
+
+#. type: Plain text
+#: Memory-leaks.md:8
+msgid "> Fill me in!"
+msgstr ""
+
+#. type: Bullet: '* '
+#: Typechecking-directives.md:3
+msgid ""
+"`$effmask_all` - tells the typechecker to ignore the tracking of function "
+"[[effects|effects]], which is not really helpful for most types of "
+"programming. It is used by writing `$effmask_all(...)` where the `...` is a "
+"function call [\\[1\\]][1]."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Typechecking-directives.md:3
+msgid ""
+"`$showtype` - prints out the type of a value or variable in ATS's internal "
+"type representation. Very helpful for understanding type errors, but the "
+"exact meaning of the output can still be cryptic for more complicated cases. "
+"See [[internal types|Internal types]] for more information and [[error "
+"messages|Error messages]] for an example."
+msgstr ""
+
+#. type: Plain text
+#: Typechecking-directives.md:4
+msgid ""
+"[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/mask$20effect/"
+"ats-lang-users/yqldklykEuM/021vPg65v9gJ"
+msgstr ""
+
+#. type: Plain text
+#: type.md:2
+msgid ""
+"ATS is perhaps more advanced than any other languages when it comes to "
+"applying type theory an actual language, though this is not its only merit."
+msgstr ""
+
+#. type: Plain text
+#: type.md:4
+msgid ""
+"For [[dependent types|dependent type]] and [[linear types|linear type]], "
+"also see the [[FAQ|Frequently asked questions]]."
+msgstr ""
+
+#. type: Plain text
+#: type.md:6
+msgid ""
+"A type is one of the many [sorts](sort) that a static expression or static "
+"identifier can be. Other sorts are:"
+msgstr ""
+
+#. type: Plain text
+#: type.md:10
+msgid ""
+"Ground sorts: int, bool, char, addr. They form the basis of dependent type "
+"indices.  View, which are linear (in the sense of linear logic) "
+"propositions.  Prop, which are classical propositions."
+msgstr ""
+
+#. type: Plain text
+#: type.md:12
+msgid ""
+"A t@ype or (any)t@ype may be any size, whereas a type must be the size of a "
+"pointer; a polymorphic or template function taking some t@ype as an argument "
+"should also take a type. Please not that, in some places, a '0' may replace "
+"the '@' in some type-related keywords. For instance, t0ype is introduced as "
+"an alpha-numeric alternative to t@ype . However, @[...] can *not* be changed "
+"into 0[...]."
+msgstr ""
+
+#. type: Plain text
+#: type.md:15
+msgid ""
+"Viewtype, which are linear types. It can be seen as a type combined with a "
+"view.  You can define a new sort using datasort. The first few lines of "
+"sllist.dats demonstrate how to define a sort that resembles a list. You can "
+"also alias sorts using sortdef, which also lets you piggy-back constraints "
+"to a sort called subset sort. See prelude/sortdef.sats for examples. A "
+"constraint is simply a static expression of a boolean sort."
+msgstr ""
+
+#. type: Plain text
+#: type.md:17
+msgid ""
+"For each of the type, view, prop, it is possible to alias, declare abstract "
+"quantities, and form algebraic constructors."
+msgstr ""
+
+#. type: Plain text
+#: type.md:54
+msgid ""
+"<table border=\"1\" bordercolor=\"#888888\" cellspacing=\"0\" style=\"border-"
+"color:rgb(136,136,136);border-width:1px;border-collapse:collapse\"> <tbody> "
+"<tr> <td style=\"width:60px\"> </td> <td style=\"width:60px\">Static</td> "
+"<td style=\"width:60px\">Type</td> <td style=\"width:60px\">View</td> <td "
+"style=\"width:60px\">Prop</td> <td style=\"width:60px\">Viewtype</td> </tr> "
+"<tr> <td>Aliasing</td> <td>stadef</td> <td style=\"width:60px\">typedef</td> "
+"<td>viewdef</td> <td>propdef</td> <td>viewtypedef</td> </tr> <tr> "
+"<td>Abstract</td> <td>sta</td> <td>abstype</td> <td>absview</td> "
+"<td>absprop</td> <td>absviewtype</td> </tr> <tr> <td style=\"width:60px"
+"\">Algebraic</td> <td style=\"width:60px\">(N/A)</td> <td style=\"width:60px"
+"\">datatype</td> <td style=\"width:60px\">dataview</td> <td style="
+"\"width:60px\">dataprop</td> <td style=\"width:60px\"><a href=\"https://"
+"github.com/githwxi/ATS-Postiats/wiki/dataviewtype\">dataviewtype</a></td> </"
+"tr> </tbody> </table>"
+msgstr ""
+
+#. type: Plain text
+#: type.md:56
+msgid ""
+"Type, view, prop, and viewtype are special cases of statics, so whenever you "
+"see typedef, viewdef, propdef and viewtypedef, you can just use stadef. "
+"Similarly, for abstract declarations, you can use sta for abstype, absview, "
+"absprop, and absviewtype. However, datasort, datatype, dataview, dataprop "
+"and dataviewtype are not interchangeable. They define algebraic constructors "
+"for a new \"thing\" (e.g. datatype gives you constructors for a new type, "
+"dataview gives you constructors for a new view, and so on). [Reference and "
+"further discussion](http://cs.likai.org/ats/ml-programmers-guide-to-ats)."
+msgstr ""
+
+#. type: Plain text
+#: type.md:57
+#, no-wrap
+msgid "-----------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: type.md:59
+#, no-wrap
+msgid ""
+"Type Annotation\n"
+"-----------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: type.md:62
+msgid ""
+"For type annotation during value binding, it is important to remember the "
+"following:"
+msgstr ""
+
+#. type: Plain text
+#: type.md:64
+msgid "There is a subtle difference between"
+msgstr ""
+
+#. type: Plain text
+#: type.md:68
+msgid "```ocaml val x = e: T ```"
+msgstr ""
+
+#. type: Plain text
+#: type.md:70
+msgid "and"
+msgstr ""
+
+#. type: Plain text
+#: type.md:74
+msgid "```ocaml val x: T = e ```"
+msgstr ""
+
+#. type: Plain text
+#: type.md:77
+msgid ""
+"It is almost always the case that one requires the former style of "
+"annotation in ATS."
+msgstr ""
+
+#. type: Plain text
+#: type.md:79
+msgid "The latter only checks that the type of e is a subtype of T."
+msgstr ""
+
+#. type: Plain text
+#: type.md:80
+msgid ""
+"This is most commonly addressed when dealing with case or if-then-else "
+"expressions."
+msgstr ""
+
+#. type: Plain text
+#: effects.md:2
+msgid ""
+"Functions can have various effects that may be tracked by the typechecker "
+"[\\[1\\]][1].  These are described immediately after the : in the function "
+"definition (note that there should be no space between the ':' and the '<>'. "
+"As well as :<> meaning pure and : (no '<>') meaning any effects may occur, "
+"there are various other things that can appear between the '<>' symbols."
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`!exn` - the function possibly raises exceptions"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`!ntm` - the function possibly is non-terminating"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`!ref` - the function possibly updates shared memory"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`0` - the function is pure (has no effects)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`1` - the function can have all effects"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`fun` - the function is an ordinary, non-closure, function"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`clo` - the function is a stack allocated closure"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`cloptr` - the function is a linear closure that must be explicitly freed"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`cloref` - the function is a peristent closure that requires the garbage "
+"collector to be freed."
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`lin` - the function i slinear and can be called only once"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`prf` - the function is a proof function"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`!wrt` - indicates that a function may write to a location it owns. For "
+"instance, ptr_set incurs such an effect."
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`!ref` - can read from or write to a location that one knows exists but does "
+"not own."
+msgstr ""
+
+#. type: Plain text
+#: effects.md:18
+msgid ""
+"These can be combined, eg. <lincloptr1>. Function effects are all of [[sort|"
+"sort]] `eff`."
+msgstr ""
+
+#. type: Plain text
+#: effects.md:19
+msgid ""
+"[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/function"
+"$20effects/ats-lang-users/88CYxwKl0M0/GAvDQQKkzJ8J"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:2
+msgid ""
+"Atspkgreloc is meant to be a convenient tool for people to share ATS code "
+"[\\[1\\]][1]."
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:4
+msgid "The command plus some examples can be found at:"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:6
+msgid "https://github.com/githwxi/ATS-Postiats/tree/master/utils/atspkgreloc/"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:8
+msgid "Say we have the following line in some code;"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:12
+msgid ""
+"```ocaml staload T = \"{http://www.ats-lang.org/LIBRARY}/contrib/libats-hwxi/"
+"intinf/SATS/intinf_t.sats\" ```"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:15
+msgid ""
+"What is inside {...} is to be replaced with the value of `ATSPKGRELOCROOT` "
+"after pre-processing.  Following is a complete example. Say the example is "
+"stored in a file named test02.dats. If you do"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:19
+msgid "``` patsopt --pkgreloc -d test02.dats ```"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:21
+msgid ""
+"you will see some text in JSON format printed out. For instance, one entry "
+"looks like this:"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:31
+msgid ""
+"```json { \"pkgreloc_kind\": \"staload\" , \"pkgreloc_target\": \"/tmp/."
+"ATSPKGRELOCROOT-hwxi/contrib/libats-hwxi/intinf/DATS/intinf_t.dats\" , "
+"\"pkgreloc_source\": \"http://www.ats-lang.org/LIBRARY/contrib/libats-hwxi/"
+"intinf/DATS/intinf_t.dats\" } ```"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:33
+msgid ""
+"You can use the command atspkgreloc to relocate the source to the target:"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:37
+msgid "``` patsopt --pkgreloc -d test02.dats | atspkgreloc ```"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:39
+msgid ""
+"Then test02.dats can be compiled by using patscc. The following Makefile "
+"contains all the details needed:"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:41
+msgid ""
+"https://github.com/githwxi/ATS-Postiats/blob/master/utils/atspkgreloc/TEST/"
+"Makefile"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:52
+msgid ""
+"```ocaml (* ** A test for atspkgreloc *)  (* ****** ****** *)  // #include "
+"\"share/atspre_staload.hats\" // (* ****** ****** *)"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:55
+msgid "#define ATS_PACKNAME \"atspkgreloc_test02\""
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:65
+msgid ""
+"(* ****** ****** *)  // require \"{http://www.ats-lang.org/LIBRARY}/contrib/"
+"libgmp/CATS/gmp.cats\" // require(*HX-2014-05-01: this one is required by "
+"others*)  \"{http://www.ats-lang.org/LIBRARY}/contrib/libats-hwxi/intinf/"
+"SATS/intinf_vt.sats\" // (* ****** ****** *)"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:70
+msgid ""
+"staload \"{http://www.ats-lang.org/LIBRARY}/contrib/libats-hwxi/intinf/SATS/"
+"intinf.sats\" staload T = \"{http://www.ats-lang.org/LIBRARY}/contrib/libats-"
+"hwxi/intinf/SATS/intinf_t.sats\" staload _ = \"{http://www.ats-lang.org/"
+"LIBRARY}/contrib/libats-hwxi/intinf/DATS/intinf_t.dats\" staload _ = "
+"\"{http://www.ats-lang.org/LIBRARY}/contrib/libats-hwxi/intinf/DATS/"
+"intinf_vt.dats\""
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:72 atspkgreloc.md:92 atspkgreloc.md:96 atspkgreloc.md:107
+msgid "(* ****** ****** *)"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:90
+#, no-wrap
+msgid ""
+"fun\n"
+"fact{i:nat}\n"
+"(\n"
+"  x: int (i)\n"
+") : $T.Intinf = let\n"
+"in\n"
+"//\n"
+"if x = 0\n"
+"  then $T.int2intinf(1)\n"
+"  else let\n"
+"    val r1 = fact (x - 1)\n"
+"  in\n"
+"    $T.mul_int_intinf (x, r1)\n"
+"  end // end of [else]\n"
+"// end of [if]\n"
+"//\n"
+"end // end of [fact]\n"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:94
+msgid "overload print with $T.print_intinf"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:105
+msgid ""
+"implement main0 () = () where { // val N = 100 val () = println! (\"fact(\", "
+"N, \") = \", fact(N))  // } (* end of [main0] *)"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:110
+msgid "(* end of [test02.dats] *)  ```"
+msgstr ""
+
+#. type: Plain text
+#: atspkgreloc.md:112
+msgid ""
+"[1]: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!"
+"msg/ats-lang-users/yjYFjH5bskk/BJxhB67owGEJ"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATS-Libraries-and-C-Library-bindings.md:2
+msgid ""
+"[ATS Resources](http://www.ats-lang.org/RESOURCE/).  Not strictly libraries, "
+"but useful for many projects."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:5
+msgid ""
+"+ [ATSfloat](http://scg.ece.ucsb.edu/ats.html).  ATSfloat is a layer written "
+"on top of the ATS CBLAS and LAPACK interfaces. The primary function of "
+"ATSfloat is to provide convenient and uniform ATS style access to BLAS and "
+"LAPACK routines. However, I also intend to interface to other numerical "
+"libraries that I need. For example, currently ATSfloat already has a partial "
+"interface to libsndfile. Furthermore, ATSfloat will also contain the codes "
+"for the fast algorithms that we are developing for HSS and FMM matrices, and "
+"also implementations of GMSN methods for approximation, solution of "
+"differential equations and signal and image processing problems."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:8
+msgid ""
+"+ [ATS/OpenGL] Examples on using OpenGL from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:11
+msgid ""
+"+ [ATS/Cairo](http://www.ats-lang.org/DOCUMENT/ATSCAIRO/HTML/book1.html) "
+"Information on using the 2d graphics library Cairo from ATS. Also see the "
+"contrib subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:14
+msgid ""
+"+ [ATS/GTK] Examples on using GTK from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:17
+msgid ""
+"+ [ATS/pango] Examples on using pango from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:20
+msgid ""
+"+ [ATS/glib] Examples on using glib from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:23
+msgid ""
+"+ [ATS/X11] Examples on using X11 from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:26
+msgid ""
+"+ [ATS/MySQL] Examples on using MySQL from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:28
+msgid ""
+"+ [ATS CMake](https://ats-cmake-documentaition.readthedocs.org/en/latest/) "
+"Modern build tool for projects involving ATS and other languages."
+msgstr ""
+
+#. type: Plain text
+#: ATS-Libraries-and-C-Library-bindings.md:29
+msgid ""
+"+ [Linux Epoll interface](https://ezcrypt.it/rZ5n#MhHrh9mRydNuomSwXhP8XS6N)"
+msgstr ""
+
+#. type: Plain text
+#: Built-in-datatypes.md:2
+msgid ""
+"ATS has a number of data structures found in both functional and imperative "
+"programming. We summarize them here."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-datatypes.md:7
+msgid ""
+"**Maps (dictionaries).** Several implementations of maps are available, with "
+"nearly identical interfaces in most cases. Look for linmap or funmap. These "
+"are based on [AVL trees](http://en.wikipedia.org/wiki/AVL_tree) or [red-"
+"black trees](http://en.wikipedia.org/wiki/Red%E2%80%93black_tree). Use "
+"funmap variants unless you wish to employ linear types."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-datatypes.md:7
+msgid ""
+"**Strings (C strings).** ATS provides a safe mechanism to use the infamous "
+"but efficient C string."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-datatypes.md:7
+msgid "**Arrays.**"
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-datatypes.md:7
+msgid ""
+"**Sets.** ATS includes linear sets as `linset` and functional sets as "
+"`funset`. These are based on [AVL trees][1], [red-black trees][2], or "
+"ordered-lists."
+msgstr ""
+
+#. type: Plain text
+#: Built-in-datatypes.md:9
+#, no-wrap
+msgid "    Integer multisets are also available. The book **Introduction to Programming in ATS** includes a [discussion and implementation of red-black trees][3] useful for sets.\n"
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Built-in-datatypes.md:11
+msgid ""
+"**Regular expressions.** ATS provides an interface to PCRE, a library for "
+"Perl-style regular expressions."
+msgstr ""
+
+#. type: Plain text
+#: Built-in-datatypes.md:14
+msgid ""
+"[1]: http://en.wikipedia.org/wiki/AVL_tree [2]: http://en.wikipedia.org/wiki/"
+"Red%E2%80%93black_tree [3]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/"
+"HTML/x2786.html"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:5
+msgid ""
+"## Stubs (practically no content)  * [[atsdoc|atsdoc]] * [[Rosetta Stone|"
+"Rosetta Stone]]"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:16
+msgid ""
+"## Incomplete (Of course, it is hard to say what is complete, but here we "
+"mean listings that are highly incomplete or articles that only barely "
+"scratch the surface.)  * [[char|char]] * [[code generation|code generation]] "
+"* [[loops|loops]] * [[safety|safety]] * [[Scientific Computing|Scientific "
+"Computing]] * [[sort|sort]] * [[template|template]]"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:25
+msgid ""
+"## Needs Expert Review (Authors are not confident in some important "
+"statements being made.  Also note that you do not have to know everything "
+"about a topic to possibly make improvements listed here.)  * [[char|char]] * "
+"[[sort|sort]] * [[type|type]]"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:30
+msgid ""
+"## Mostly ATS1 (Needs to be updated to ATS2)  * [[ATS Libraries and C "
+"Library bindings|ATS Libraries and C Library bindings]] * [[loops|loops]]"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:2
+msgid "## Loops as recursive functions"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:4
+msgid "(need to reference termination metrics at some point here)"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:7
+msgid ""
+"## For and While loops In ATS2, it is usually encouraged to use recursive "
+"functions instead of loops (as it is in most programming languages that "
+"allow functional programming). However, there are cases where it may be "
+"desirable to have for loops or while loops. For loops in particular are "
+"useful for certain parallel programming environments, such as the [fork–join "
+"model](http://en.wikipedia.org/wiki/Fork%E2%80%93join_model), which is "
+"available in ATS2 through [OpenMP](https://github.com/githwxi/ATS-Postiats-"
+"contrib/tree/master/contrib/OpenMP). While loops naturally lend themselves "
+"towards waiting for some condition to change, but unlike the use-case "
+"mentioned above using for loops, this construct is typically easy to do with "
+"recursive functions, so while loops are rarer in ATS2."
+msgstr ""
+
+#. type: Plain text
+#: loops.md:10
+#, no-wrap
+msgid ""
+"**Need to copy most info from here**\n"
+"https://groups.google.com/forum/#!searchin/ats-lang-users/%22for$20loop%22/ats-lang-users/NfHeSJpaq78/zjys-ug5eMUJ\n"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:13
+msgid "### A simple example"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:15
+msgid "### An example using termination metrics"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:17
+msgid ""
+"### This page discusses briefly several mechanisms for using loops in ATS."
+msgstr ""
+
+#. type: Plain text
+#: loops.md:20
+#, no-wrap
+msgid ""
+"**Infinitely recursive functions may be a cause for a segfault.** \n"
+"(But sometimes, one may want infinite recursion, as in a main loop; when is it not an issue?)  To avoid this possibility, one can take advantage of dependent types and termination metrics, as in [this example](http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2439.html).\n"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:24
+#, no-wrap
+msgid "**A main loop, useful for creating an application that will keep running until something causes it to return.** This can be implemented in several ways.\n"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:26
+msgid "Firstly,"
+msgstr ""
+
+#. type: Plain text
+#: loops.md:30
+msgid "```ocaml implement main () = main() where { ... } ```"
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:2
+msgid "The sole purpose of dynload is for doing initialization."
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:4
+msgid "Say in a file named 'foo.dats', we have the following line:"
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:8
+msgid "```ocaml dynload \"bar.dats\" ```"
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:12
+msgid ""
+"This line gets compiled to a call to the initialization function associated "
+"with 'bar.dats'. Without this line, a link-time error message of the form "
+"\"..._dynload_flag is undefined\" is to be reported."
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:16
+msgid ""
+"If you don't want the initialization function (generated automatically by "
+"the compiler for any .dats file) for 'bar.dats' to be called, then please "
+"add the following line in 'bar.dats':"
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:21
+msgid "```ocaml #define ATS_DYNLOADFLAG 0 ``` Please do this with caution."
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:24
+msgid ""
+"Normally, 'dynload' lines should only occur in the file that contains the "
+"implementation of the 'main' function [\\[1\\]][1]"
+msgstr ""
+
+#. type: Plain text
+#: dynload.md:25
+msgid ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/jqFEAf1drXc/uv5x_rx3aMEJ"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:2
+msgid ""
+"Error messages are evolving in ATS2. There are five primary classes of error "
+"messages: [[parsing errors|parsing errors]], [[linker errors|linker "
+"errors]], [[runtime errors|runtime errors]], [[compiler errors|compiler "
+"errors]], and the most common -- [[typechecking errors|typechecking "
+"errors]]. For error messages known to have been used in the past, especially "
+"in ATS1, please see the [old wiki][1]."
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:3
+#, no-wrap
+msgid "----------------\n"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:7
+msgid ""
+"Perhaps the most common error for most people new to ATS will be "
+"[[typechecking errors|typechecking errors]]. For this reason, the "
+"typechecking directive `$showtype` can be immensely helpful. For example, in "
+"the following simple example:"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:11
+msgid "```ocaml val x = 7 val _ = $showtype x"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:17
+msgid ""
+"val y = ref<int> 7 val _ = $showtype y val _ = $showtype !y ``` we might "
+"think !y and x should have the same type. This can be checked by the `"
+"$showtype` output when running the typechecker:"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:21
+#, no-wrap
+msgid ""
+"    **SHOWTYPE**(/home/myhome/showtype_test.dats: 143(line=12, offs=19) -- 144(line=12, offs=20)): S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), S2Eintinf(7))\n"
+"    **SHOWTYPE**(/home/myhome/showtype_test.dats: 183(line=15, offs=19) -- 184(line=15, offs=20)): S2Eapp(S2Ecst(ref_vt0ype_type); S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind)))\n"
+"    **SHOWTYPE**(/home/myhome/showtype_test.dats: 203(line=16, offs=19) -- 205(line=16, offs=21)): S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind))\n"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:24
+msgid "More concisely,"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:30
+msgid ""
+"``` type of x: S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), "
+"S2Eintinf(7))  type of y: S2Eapp(S2Ecst(ref_vt0ype_type); "
+"S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind)))  type of !y: "
+"S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind))  ```"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:32
+msgid ""
+"So we can see that the assumption proved incorrect. Let's try again with a "
+"new val, z:"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:37
+msgid "```ocaml val z = ref<int(7)> 7 val _ = $showtype !z ````"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:41
+msgid ""
+"```` type of !z: S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), "
+"S2Eintinf(7))  ```"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:43
+msgid ""
+"which shows that !z is now the same type as x. This reflects that by "
+"default, integers have types parameterized by their values in ATS, as was "
+"the case for x."
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:45 sort.md:19
+msgid "## See also"
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:47
+msgid ""
+"[[Internal Types|Internal-types]], to understand the `S2Eapp`, `S2Ecst`, "
+"etc, which often appears in error messages."
+msgstr ""
+
+#. type: Plain text
+#: Error-messages.md:48
+msgid "[1]: https://sourceforge.net/p/ats-lang/wiki/Error%20messages/"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:2
+msgid "## When not to attempt clever code optimization ##"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:4
+msgid ""
+"- A `macdef` in ATS2 can involve type. Use macros only in cases where using "
+"functions would be inconvenient. [Using macros probably does not make your "
+"code run more quickly][1], since `gcc -O2` already inlines functions very "
+"aggressively."
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:6
+#, no-wrap
+msgid "  [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7kJ3Ww0J\n"
+msgstr ""
+
+#. type: Bullet: ' - '
+#: Code-optimization.md:8
+msgid ""
+"Making use of the knowledge that separate val declarations within the same "
+"scope technically denote different vals on the stack should not preclude one "
+"from using a natural style. For instance:"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:13
+#, no-wrap
+msgid ""
+"~~~~~~~~~~~~~~~\n"
+"    val x = 5\n"
+"    val x = 7\n"
+"~~~~~~~~~~~~~~~\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:15
+msgid ""
+"here no extra space is allocated for the second 'x' due to constant "
+"propagation. It is in generally unlikely that such a coding style would "
+"incur any penalty."
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:17
+msgid "## Optimization tips ##"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:19
+msgid ""
+"- Instead of freeing an instance of a linear type and immediately creating "
+"and returning a new one with the same value in a case expression, like this"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:22
+#, no-wrap
+msgid ""
+"        case+ x of\n"
+"        | ~GRgenes (genes) => GRgenes (genes)\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:24
+#, no-wrap
+msgid "    do this\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:27
+#, no-wrap
+msgid ""
+"        case+ x of\n"
+"        | GRgenes _ => (fold@ x; x)\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:29
+#, no-wrap
+msgid "    because `@fold` is compiled into a \"noop\".\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:33
+msgid ""
+"- Remove anonymous closure definitions from function calls when possible, to "
+"avoid having them created each time the loop is called. For instance, a "
+"simple string comparison function can be created like so:"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:35
+#, no-wrap
+msgid "        val cmp_str = lam(x:string,y:string):int =<cloref> compare (x, y)\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:38
+msgid "## Making Lean Code ##"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:40
+msgid ""
+"When the size of your code matters, for instance, in embedded applications, "
+"consider the following:"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:42
+msgid "### Exception-free-code ###"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:44
+msgid ""
+"Note that using exceptions at all may cause memory leaks or require a GC, so "
+"there is already some potential for overhead due to this. If your ATS code "
+"does not make use of exceptions, then you can add the following flag when "
+"compiling the code[\\[1\\]][1]:"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:46
+msgid "\\-D_ATS_EXCEPTION_NONE"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:48
+msgid "This will make the generated object code even more compact."
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:50
+msgid "Let hello.dats be a file containing the following line:"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:54
+msgid "```ocaml implement main0 () = print \"Hello, world!\\n\" ```"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:60
+#, no-wrap
+msgid ""
+"```\n"
+"patscc -o hello1 hello.dats\n"
+"size hello1\n"
+"   text    data     bss     dec     hex filename\n"
+"   3434     668      40    4142    102e hello1\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:66
+#, no-wrap
+msgid ""
+"patscc -D_ATS_EXCEPTION_NONE -o hello2 hello.dats\n"
+"size hello2\n"
+"   text    data     bss     dec     hex filename\n"
+"   1787     512      32    2331     91b hello2\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: Code-optimization.md:67
+msgid ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/NEJDC7yY9cw/IWeK_0YRhksJ"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:2
+msgid ""
+"This is a list of sorts (*i.e.* static types) that are the basis for the "
+"static language of ATS."
+msgstr ""
+
+#. type: Plain text
+#: sort.md:4
+msgid "## Ground Sorts"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:7
+msgid ""
+"These are sorts that are present as types in C. (Is this true?) Combined "
+"with other sorts and features of ATS, this allows us to prove at compile-"
+"time propositions made involving C types (or more complex types involving "
+"these ground sorts). This means also that every ground sort has an analogous "
+"dynamic type of the sort t@ype: **int, bool char, addr**"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:9
+msgid "## Other sorts"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:11
+#, no-wrap
+msgid "**cls, eff, prop, tkind** (alias tk), **t@ype, type, view, viewt@ype, viewtype**.\n"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:13
+#, no-wrap
+msgid "**eff 's** are function [[effects|effects]]. The [internal type](Internal types) is S2Eeff.  \n"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:15
+#, no-wrap
+msgid "**Views** are linear resources that signify a certain type is accessible from an associated variable. At-views, or @ views, are a special case of views which signify that a certain type is dereferencable at a specified memory location; they are used with pointers.\n"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:17
+#, no-wrap
+msgid "**tkind** is like 'type'; it is algebraic (that is, not involving quantifiers). The plan is to use tkind to support a more flexible/powerful way of [[template|templates]] instantiation.\n"
+msgstr ""
+
+#. type: Plain text
+#: sort.md:20
+msgid "[[Types|type]]"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:2
+#, no-wrap
+msgid "**Why does my code typecheck but not compile?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:4
+msgid ""
+"There could be several reasons, but please note specially the one in the "
+"[[compiler errors|compiler errors]] article referring to `share/"
+"atspre_staload.hats`."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:6
+#, no-wrap
+msgid "**ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:8
+#, no-wrap
+msgid "*Short answer*: **No**.\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:10
+#, no-wrap
+msgid "*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:13
+msgid ""
+"If one uses GCC to generate object code from C source one owns, then one "
+"owns the generated object code. Then if you use ATS/Postiats to generate C "
+"code from ATS source you own, then you own the generated C code."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:15
+#, no-wrap
+msgid "*Longer answer*: \n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:23
+msgid ""
+"[[ATSLIB|atslib]] is primarily used to generate C code, and the generated C "
+"code, which is owned by the author of its ATS source, can be compiled as "
+"long as the header files (that is, CATS-files) in ATS2-Postiats-include are "
+"available. Currently, ATS2-Postiats-include-0.1.1.tgz is released separately "
+"under a BSD-like license. Related to this, the preferred way to write "
+"portable ATS code should avoid using `-latslib` to generate executables."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:25
+#, no-wrap
+msgid "**Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:27
+msgid ""
+"First, read one of the [official tutorials][1]. Second, [these ATS "
+"programming tips][2] may be helpful. Third, there is a Google group, [ats-"
+"lang-users][3] for asking any kind of question, no matter how trivial, "
+"including slightly off-topic or less general-interest issues. Fourth, some "
+"of the discussions on the [SourceForge mailing list archive][4] may also "
+"prove instructive. Fifth, for other community resources, see the [official "
+"community page][5]."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:29
+msgid ""
+"For information about (the sometimes opaque) ATS error messages, see [[error "
+"messages|Error messages]] on this wiki."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:31
+msgid ""
+"If you are not highly practiced with functional programming, it may be best "
+"to learn some [Standard ML][6] before learning ATS. The aid of [SML "
+"textbook(s) or introductory ATS notes][7] may be helpful."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:39
+msgid ""
+"[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook [2]: http://scg.ece.ucsb."
+"edu/software/notes.pdf [3]: https://groups.google.com/forum/?fromgroups#!"
+"forum/ats-lang-users [4]: https://sourceforge.net/mailarchive/forum.php?"
+"forum_name=ats-lang-users [5]: http://www.ats-lang.org/COMMUNITY/# [6]: "
+"http://en.wikipedia.org/wiki/Standard_ML [7]: http://www.cs.bu.edu/~hwxi/"
+"academic/courses/Spring13/CS320.html"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:41
+#, no-wrap
+msgid "**Where can I find tutorials?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:43
+msgid ""
+"See [[tutorials|Tutorials]] on this wiki, or the [Effective ATS series][26] "
+"(also [on git][27]). Also see the answer to the previous question."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:46
+#, no-wrap
+msgid "**Where can I find some code or algorithm examples?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:48
+msgid "Several examples can be found [here][8] (ATS1)."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:50
+msgid "[8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:52
+#, no-wrap
+msgid "**Where can I find a reference or documentation?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:54
+msgid ""
+"For ATS, there is an unofficial (and incomplete) reference [available][9] "
+"([source][10]). ATS2 has [automatically generated library documentation]"
+"[11]. See the [[homepage|Home]] on this wiki for links to wiki pages "
+"containing further documentation."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:58
+msgid ""
+"[9]: http://www.bluishcoder.co.nz/ats/ats-reference.pdf [10]: https://github."
+"com/doublec/ats-reference [11]: http://www.ats-lang.org/LIBRARY/"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:60
+#, no-wrap
+msgid "**I'm getting type errors or unsolved constraints, but everything looks right. What might I be doing wrong?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:62
+msgid ""
+"Probably many things. Dependent types involve constraints; make sure you are "
+"using the right type at every step and not accidentally mixing similar "
+"types. There are many similar types in ATS (including functions with similar "
+"types) used for dealing with slightly different situations. We recommend "
+"*avoiding heavy use of dependent types when starting out* in order to avoid "
+"finding yourself in a situation with unsolved constraints that is very "
+"difficult to resolve. However, `if` and `case` expressions likely need to be "
+"annotated with types in general."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:64
+msgid ""
+"If you use emacs, consider using [ATS Flymake][12] as a possible measure to "
+"avoid such problems in the first place."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:66
+msgid ""
+"For examples of what can go wrong and some solutions see the following "
+"examples."
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Frequently-asked-questions.md:70
+msgid "[Example 1][13]"
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Frequently-asked-questions.md:70
+msgid "[Example 2][14]"
+msgstr ""
+
+#. type: Bullet: '  - '
+#: Frequently-asked-questions.md:70
+msgid "[Example 3][15]"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:72
+msgid ""
+"Finally, for some guidance on understanding certain errors, see [[error "
+"messages|Error messages]] on this wiki."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:77
+msgid ""
+"[12]: http://www.reddit.com/r/ATS/comments/vx4lq/ats_flymake/ [13]: https://"
+"sourceforge.net/mailarchive/forum.php?thread_name=Pine."
+"LNX.4.64.1207201538580.21676%40csa2.bu.edu&forum_name=ats-lang-users [14]: "
+"https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/"
+"bnROVnWcFMU [15]: https://groups.google.com/forum/?fromgroups=#!topic/ats-"
+"lang-users/oFuXRr4K8ts"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:79
+#, no-wrap
+msgid "**I have two different types being used together in the same data structure, and they typecheck! Is this a bug?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:81
+msgid ""
+"After perhaps being exposed to the rigor of dependent types, one may "
+"occasionally be surprised: but the short answer is it probably isn't a bug. "
+"[Here][16] is an example where `list0` will accept multiple values, each "
+"with a distinct type, as inputs (for example, `string`s, `float`s, or "
+"`int`s). [Here][17] is an example with templates. The notion has to do with "
+"[\"subtypes\"][18], and specifically, how ATS defines subtypes. This should "
+"not be a problem in ATS2, and is one of the [major reasons for ATS2][19]."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:86
+msgid ""
+"[16]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x1099.html [17]: "
+"https://sourceforge.net/mailarchive/forum.php?thread_name=Pine."
+"LNX.4.64.1204041554160.22282%40csa2.bu.edu&forum_name=ats-lang-users [18]: "
+"http://en.wikipedia.org/wiki/"
+"Covariance_and_contravariance_(computer_science)  [19]: https://sourceforge."
+"net/mailarchive/forum.php?"
+"thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge."
+"net&forum_name=ats-lang-users"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:88
+#, no-wrap
+msgid "**What are dependent types?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:90
+msgid ""
+"A [dependent type][20] is a type that depends on a value. As a simple "
+"example in ATS, `int (5)` is a type such that all integers belonging to it "
+"are equal to 5 (so it is in fact a singleton type)."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:92
+msgid "[20]: http://en.wikipedia.org/wiki/Dependent_type"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:94
+#, no-wrap
+msgid "**What are linear types?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:96
+msgid ""
+"Linear types make use of [linear logic][21]. The notion of linear types may "
+"be explained as viewing variables as resources that are consumed by "
+"expressions, which allows for static resource tracking. For example, if you "
+"consider the expression `(a or b)`, you've produced a new expression but "
+"you've destroyed `a` and `b`. This is useful for dealing with memory "
+"allocation safely and efficiently, for instance. For more information, see "
+"the [ATS book][22], the [Wikipedia article on linear types][23], or [[linear "
+"types|Linear types]] on this wiki."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:100
+msgid ""
+"[21]: http://en.wikipedia.org/wiki/Linear_logic [22]: http://www.ats-lang."
+"org/DOCUMENT/INTPROGINATS/HTML/c3217.html [23]: http://en.wikipedia.org/wiki/"
+"Substructural_type_system#Linear_type_systems"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:102
+#, no-wrap
+msgid "**Is there a Windows version of ATS?**\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:104
+msgid ""
+"Not for the near future, at least. However, you can install ATS on top of "
+"[Cygwin][24] using the same build instructions as for other platforms."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:106
+msgid ""
+"You can also try ATS2 using [this experimental online tool][25], or try "
+"using a virtual machine (see [[building and installing|Building and "
+"installing]] ATS)."
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:109
+msgid ""
+"[24]: http://www.cygwin.com/ [25]: http://xrats.illtyped.com/code/patsopt"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:113
+msgid ""
+"[26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/ [27]: https://github.com/"
+"githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/EFFECTIVATS"
+msgstr ""
+
+#. type: Plain text
+#: atsdoc.md:1
+msgid "This is a stub."
+msgstr ""
+
+#. type: Plain text
+#: template.md:2
+#, no-wrap
+msgid "**INV**\n"
+msgstr ""
+
+#. type: Plain text
+#: template.md:5
+msgid ""
+"INV (for invariant) is essentially marker for typechecking [\\[1\\]][1]. For "
+"instance, say you have a function foo declared as follows:"
+msgstr ""
+
+#. type: Plain text
+#: template.md:9
+msgid "```ocaml fun{a:t@ype} foo (xs: list0 (a)): void ```"
+msgstr ""
+
+#. type: Plain text
+#: template.md:11
+msgid ""
+"Assume that `mylst` is of the type `list0 (T)` for some `T`. When "
+"typechecking `foo(mylst)`, the typechecker will expand the expression as "
+"follows by picking a placeholder `T1`:"
+msgstr ""
+
+#. type: Plain text
+#: template.md:15
+msgid "```ocaml foo<T1>(mylst)  ```"
+msgstr ""
+
+#. type: Plain text
+#: template.md:17
+msgid ""
+"where `T <= T1` is assumed, so that mylst can contain any subtype--in the "
+"[covariant](http://en.wikipedia.org/wiki/"
+"Covariance_and_contravariance_(computer_science)#Formal_definition) sense--"
+"of T1 [\\[2\\]][2]. Say that `foo2` is declared as follows:"
+msgstr ""
+
+#. type: Plain text
+#: template.md:21
+msgid "```ocaml fun{a:t@ype} foo2 (xs: list0 (INV(a))): void ```"
+msgstr ""
+
+#. type: Plain text
+#: template.md:23
+msgid ""
+"When `foo2(mylst)` is typechecked, the typechecker simply expands the "
+"expression to the following one:"
+msgstr ""
+
+#. type: Plain text
+#: template.md:27
+msgid "```ocaml foo2<T>(mylst)  ```"
+msgstr ""
+
+#. type: Plain text
+#: template.md:29
+msgid "preventing types other than precisely `T` to be a part of `mylst`."
+msgstr ""
+
+#. type: Plain text
+#: template.md:31
+msgid ""
+"[1]: https://groups.google.com/forum/#!topic/ats-lang-users/ptwztS9IHWg [2]: "
+"http://sourceforge.net/mailarchive/forum.php?thread_name=alpine."
+"LRH.2.02.1302120729160.29395%40csa2.bu.edu&forum_name=ats-lang-users"
+msgstr ""
+
+#. type: Plain text
+#: char.md:2
+msgid ""
+"Characters are demarcated with single quotes, i.e. the character c is "
+"written 'c'. Some characters may need an escape character (the back-slash) "
+"because the sequence *'char* for the char being discussed has a special "
+"meaning in ATS. One such example is '(, so we actually write '\\\\(' to "
+"denote the left parentheses. We note here that strings, in contrast, are "
+"demarcated with double quotes."
+msgstr ""
+
+#. type: Plain text
+#: char.md:4
+#, no-wrap
+msgid ""
+"Escape sequences for characters\n"
+"-------------------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:6
+msgid "The following list is believed to be exhaustive:"
+msgstr ""
+
+#. type: Plain text
+#: char.md:17
+#, no-wrap
+msgid ""
+"* C conventions are used for some characters, e.g.:\n"
+"    * newline is written as '\\\\n'\n"
+"    * carriage return is written as '\\\\r'\n"
+"    * to input a single backlash, use two backslashes, '\\\\\\\\'\n"
+"    * to input a single colon, use '\\\\''\n"
+"* additionally, some characters may \"clash\" with ATS conventions, so they are escaped too:\n"
+"    * '\\\\(' for left parenthesis (clashes with boxed tuple type)\n"
+"    * '\\\\{' for left brace (clashes with boxed record type)\n"
+"    * '\\\\[' for left bracket (clashes with singly-linked list literal)\n"
+"* also, it is possible to specify a character in octal notation: '\\\\000' (backlash, then one to three octal digits 0-7), or in hexadecimal notation, with '\\\\0x00' (backlash, then leading zero, then 'x' or 'X', then one or more hexadecimal digit, which is either 0-9 or a-z or A-Z)\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:19
+msgid "(How do we specify ASCII codes in Hex, Bin, Dec, Oct, etc?)"
+msgstr ""
+
+#. type: Plain text
+#: char.md:21
+#, no-wrap
+msgid ""
+"*char* and Unicode\n"
+"------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:23
+msgid ""
+"Please note that 'char' maps directly to C type 'char', therefore it is the "
+"size of 1 byte, and cannot be used to represent any multi-byte encoding, "
+"such as UTF-16 or UTF-32."
+msgstr ""
+
+#. type: Plain text
+#: char.md:25
+#, no-wrap
+msgid ""
+"Conversion functions for *char*\n"
+"-----------------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:27
+msgid ""
+"(Also see our [[Rosetta Stone|Rosetta Stone]] (This section, and the Rosetta "
+"Stone, need ATS2 versions))"
+msgstr ""
+
+#. type: Plain text
+#: char.md:29
+#, no-wrap
+msgid "**char to string**\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:37
+#, no-wrap
+msgid ""
+"```ocaml\n"
+"(*\n"
+"   HX: the return is dynamically allocated\n"
+"*)\n"
+"fun tostring_char\n"
+"  (c: char):<> strnptr(1) = \"mac#%\"\n"
+"overload tostring with tostring_char\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:3
+msgid ""
+"## ATS Compiler atscc, sometimes called patscc in ATS/Postiats, is a wrapper "
+"utility to allow easier compilation of ATS source code than by using patsopt "
+"directly."
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:5
+msgid "Here is more information on 'patscc' and 'patsopt':"
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:7
+msgid "http://www.ats-lang.org/RESOURCE/#ATS_utility"
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:10
+msgid "In order to compile ATS2 programs, you can now do something like:"
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:14
+msgid "``` patscc -o test test.dats test_header.sats test_helper.dats ```"
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:16
+msgid ""
+"For considerably large and complex projects (involving both ATS code and C "
+"code), it may be beneficial to use 'patsopt' directly in a Makefile. In most "
+"cases, 'patscc' is adequate for handling the compilation of ATS code."
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:19
+msgid "## Using Makefiles"
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:22
+msgid "## Using CMake"
+msgstr ""
+
+#. type: Plain text
+#: Compiling-ATS-code.md:23
+msgid "## Compiling Portable Code"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:2
+#, no-wrap
+msgid ""
+"Functional Programming (FP) style in ATS.\n"
+"-----------------------------------------------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:6
+#, no-wrap
+msgid "**General Advice**\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:8
+#, no-wrap
+msgid "**(Insert sagely advice in this paragraph)** As with many things, optimal learning can be achieved by different people in different ways. A suggestion for functional programming in general, to those who have experience in imperative programming, is to read examples, understand examples, and ***implement examples***. Much like math or writing literature, most people need practice and experience to really become effective. Abstraction is an important mechanism in making good style (and good code) possible. This [code example for a calculator](http://www.cs.bu.edu/~hwxi/academic/courses/CS320/Spring13/code/calculator/), while not exactly a tutorial, demonstrates these principles. [Discussion on the calculator example is located here](https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/ad5S6SY0I0E).\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:11
+msgid ""
+"(Any good journals or sites accessible to a beginner that aren't ATS "
+"specific but still applicable for an ATS beginner?)"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:13
+msgid ""
+"There are many examples in the [ATS2 Book](http://www.ats-lang.org/DOCUMENT/"
+"INT2PROGINATS/HTML/book1.html), and also [some examples listed separately]"
+"(http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html)."
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:16
+#, no-wrap
+msgid "**Some examples of poor versus good implementations in ATS:**\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:18
+msgid ""
+"[A simple tokenizer.](https://groups.google.com/forum/?fromgroups#!topic/ats-"
+"lang-users/SeVHXg8jcxA)"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:20
+msgid ""
+"[How **NOT** to use references.](http://www.ats-lang.org/DOCUMENT/"
+"INTPROGINATS/HTML/x1357.html)"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:23
+#, no-wrap
+msgid ""
+"**Using case with conditionals.**\n"
+"An alternative to using a string of if-then-else expressions is to use a case-when expression. This is more powerful and elegant than if-then-else because pattern matching can also be integrated, and the syntax is more compact. For a simple example emulating switch-case without pattern matching, see the following:\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:35
+msgid ""
+"```ocaml (* We are testing x for several possible values.  We use case+ of "
+"0, but we could use \"of anything\" since the anything doesn't matter in "
+"this case.  *)  case+ 0 of | _ when x = 1 || x = 3 => print(\"An odd int < "
+"5\\n\")  | _ when x = 2 || x = 4 => print(\"An even int < 5\\n\")  | _ => "
+"print(\"Not 1, 2, 3, or 4.\\n\")  ```"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:38
+#, no-wrap
+msgid ""
+"**val vs var**\n"
+"Some very good material on how to deal with val and var bindings, which come from functional and imperative programming respectively, can be found on the [old ATS site](http://www.ats-lang.org/htdocs-old/TUTORIAL/contents/val-and-var.html).\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:40
+msgid ""
+"Additionally, some static assignment features supported by val [are "
+"currently unsupported by var](https://groups.google.com/d/msg/ats-lang-users/"
+"V7Mr-NZcB5E/mbaTioLJPv0J), but in principle could be added. As a work "
+"around, intermediate vals can be used."
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:43
+#, no-wrap
+msgid "**Loops**\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:45
+msgid ""
+"Examples abound on using tail-recursive functions as loops in place of while "
+"and for loops to achieve the same effect in a functional programming style. "
+"Often, it is useful to declare a function as being &lt;cloref&gt; to allow "
+"the function to use variables defined outside of its body or argument list; "
+"&lt;cloref&gt; means \"the function is a peristent closure that requires the "
+"garbage collector to be freed\". [Apparently](https://groups.google.com/d/"
+"msg/ats-lang-users/2LtZdgNO9W8/H_PjUDG1uUUJ), this does not mean that a "
+"closure is actually created each time a &lt;cloref&gt; function is called, "
+"as it is heap allocated. See [this tutorial](http://bluishcoder.co."
+"nz/2010/06/20/closures-in-ats.html) for further details."
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:48
+#, no-wrap
+msgid ""
+"Style with dependent types.\n"
+"---------------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:50
+msgid ""
+"Dependent types are often difficult to use, and should be avoided when "
+"possible on the first pass of writing an implementation. Their use can "
+"overly complicate program implementation by a very large margin; so a non-"
+"dependent \"program-first program verification\" approach, possibly with "
+"linear types, is encouraged."
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:52
+msgid ""
+"An example of this is a [[sort|sort]] for doubles and floats, which no "
+"longer exists in ATS due to its propensity for complicating code."
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:54
+msgid ""
+"The same caution and program-first program verification approach can likely "
+"be applied to writing proof functions in ATS."
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:57
+#, no-wrap
+msgid ""
+"Style with linear types.\n"
+"---------------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:59
+msgid ""
+"Linear types are generally easy to use, with a few exceptions, such as "
+"[[dataviewtype|dataviewtype]]s. No knowledge of linear logic formalisms is "
+"necessary for using linear types in ATS. Perhaps the main issue for "
+"beginners with linear types, or at least linear types in ATS, will be "
+"getting used to a somewhat large body of syntactical features; many of these "
+"share some overlap in their conceptual usage but operate on different "
+"resources. This is somewhat in contrast to dependent types, where the syntax "
+"is relatively easy, but keeping track of the logic in one's mind can become "
+"quite a burden. This makes using dependent type all too easy to get one in "
+"to trouble with the typechecker (see above)."
+msgstr ""
+
+#. type: Plain text
+#: Style-guide.md:60
+msgid ""
+"An [example of using linear types with unlimited precision integers](https://"
+"groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/Cdk-_gbeVfE) "
+"(using [GMP](http://gmplib.org/)) is available, which should be useful for "
+"beginners to learn linear types."
+msgstr ""
