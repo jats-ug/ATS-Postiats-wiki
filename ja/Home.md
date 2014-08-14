@@ -11,23 +11,23 @@ ATS にはまた別の [Web サイト][1] があります。(このサイトは 
 
 この wiki には次のようなページがあります。
 
-- [[よくある質問|Frequently asked questions]]
-- [[ビルドとインストール|Building and installing]]
-- ATS のコードスタイル: [[スタイルガイド|Style guide]], [[メモリリーク|Memory leaks]] の検出と回避,
-[[コードの最適化|Code optimization]]
-- 言語リファレンス: [[ビルトイン演算子|Built-in operators]], [[依存型|Dependent types]],
-[[線形型|Linear types]], [[エラーメッセージ|Error messages]].
-- ライブラリリファレンス: [[atslib|atslib]], [[contrib|contrib]], [[ビルトインデータ型|Built-in
-datatypes]], [[ビルトイン関数|Built-in functions]], [[入出力|Input and output]],
-[[科学計算|Scientific Computing]], [[ATS ライブラリとC言語ライブラリバインディング|ATS Libraries and
-C Library bindings]].
-- 拡張: [[Cライブラリへのインターフェイス|Writing interfaces to C libraries]],
-[[ATS/LF|ATS/LF]] (定理証明)
-- ATS の内部実装: [[ビルトインの強制解決|Built-in constraint solving]],
-[[スタックとヒープへのメモリ確保|Stack and heap allocation]], [[内部の型|Internal types]]
-- ATS における特殊なキーワードについて: [[char|char]], [[dataviewtype|dataviewtype]],
-[[overload|overload]], [[sort|sort]], [[type|type]]
-- Wiki [[TODO|TODO]]: 助けが必要な wiki ページのリスト
+- [よくある質問|Frequently asked questions](Frequently-asked-questions.md)
+- [ビルドとインストール](Building-and-installing.md)
+- ATS のコードスタイル: [スタイルガイド|Style guide](Style-guide.md),
+[メモリリーク](Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)
+- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md),
+[線形型](Linear-types.md), [エラーメッセージ](Error-messages.md)
+- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md),
+[ビルトインデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions.md),
+[入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [ATS
+ライブラリとC言語ライブラリバインディング](ATS-Libraries-and-C-Library-bindings.md)
+- 拡張: [Cライブラリへのインターフェイス|Writing-interfaces-to-C-libraries.md],
+[ATS/LF](ATS-LF.md) (定理証明)
+- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md),
+[スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型](Internal-types.md)
+- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype](dataviewtype.md),
+[overload](overload.md), [sort](sort.md), [type](type.md)
+- Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト
  
 旧バージョンの ATS については、ほとんどメンテナンスされていない [wiki][3] があります。
 
