@@ -11,10 +11,10 @@ ATS にはまた別の [Web サイト][1] があります。(このサイトは 
 
 この wiki には次のようなページがあります。
 
-- [よくある質問|Frequently asked questions](Frequently-asked-questions.md)
+- [よくある質問](Frequently-asked-questions.md)
 - [ビルドとインストール](Building-and-installing.md)
-- ATS のコードスタイル: [スタイルガイド|Style guide](Style-guide.md),
-[メモリリーク](Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)
+- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避,
+[コードの最適化](Code-optimization.md)
 - 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md),
 [線形型](Linear-types.md), [エラーメッセージ](Error-messages.md)
 - ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md),
