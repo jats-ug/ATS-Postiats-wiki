@@ -1,4 +1,4 @@
-MD_ORIG      := $(wildcard *.md)
+MD_ORIG      := $(filter-out README.md,$(wildcard *.md))
 MD_JA        := $(patsubst %.md,ja/%.md,${MD_ORIG})
 OPT_UPDATEPO := $(patsubst %.md,-m %.md,${MD_ORIG})
 
