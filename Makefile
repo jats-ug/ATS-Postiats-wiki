@@ -8,4 +8,4 @@ updatepo: ${MD_ORIG}
 	po4a-updatepo -M utf8 -f text ${OPT_UPDATEPO} -p po/ja.po
 
 ja/%.md: %.md po/ja.po
-	po4a-translate -M utf8 -f text -m $< -p po/ja.po -l $@
+	po4a-translate -M utf8 -f text -k 0 -m $< -p po/ja.po -l $@
