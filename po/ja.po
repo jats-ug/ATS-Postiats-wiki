@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-14 20:08+0900\n"
-"PO-Revision-Date: 2014-08-14 20:07+0900\n"
+"PO-Revision-Date: 2014-08-14 20:47+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -946,12 +946,12 @@ msgstr ""
 #. type: Plain text
 #: Home.md:2
 msgid "Welcome to the wiki for ATS2."
-msgstr ""
+msgstr "ようこそ ATS2 wiki へ!"
 
 #. type: Plain text
 #: Home.md:4
 msgid "The most recent released version of ATS2 is ATS2-0.1.1."
-msgstr ""
+msgstr "ATS2 の最新リリース版は ATS2-0.1.1 です。"
 
 #. type: Plain text
 #: Home.md:6
@@ -961,19 +961,19 @@ msgid ""
 "specification and implementation by accommodating a programmer-centric "
 "approach to program verification: How do we know a program being implemented "
 "correctly? We ask the programmer to demonstrate it with a proof."
-msgstr ""
+msgstr "プログラミング言語 ATS は Applied Type System に基づいた型システムを持つ静的型付けプログラミング言語です。ATS は形式的な仕様と実装で統一されていて、プログラムの検証にプログラマ中心のアプローチを提供します: どうやってプログラムが正しく実装されているか知ることができるでしょうか？私達は証明を使って立証することをプログラマに要請しています。"
 
 #. type: Plain text
 #: Home.md:8
 msgid ""
 "ATS also has another [website][1] (built using ATS itself). For a thorough "
 "introduction to ATS, see the book *[Introduction to Programming in ATS][2]*."
-msgstr ""
+msgstr "ATS にはまた別の [Web サイト][1] があります。(このサイトは ATS 自身を使って構築されています。) ATS の詳細な入門記事は *[Introduction to Programming in ATS][2]* から読むことができます。"
 
 #. type: Plain text
 #: Home.md:10
 msgid "This wiki contains the following pages."
-msgstr ""
+msgstr "この wiki には次のようなページがあります。"
 
 #. type: Plain text
 #: Home.md:20
@@ -996,19 +996,28 @@ msgid ""
 "[[dataviewtype|dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|"
 "type]].  - Wiki [[TODO|TODO]]: A list of wiki pages that need the most help."
 msgstr ""
+"- [[よくある質問|Frequently asked questions]]\n"
+"- [[ビルドとインストール|Building and installing]]\n"
+"- ATS のコードスタイル: [[スタイルガイド|Style guide]], [[メモリリーク|Memory leaks]] の検出と回避, [[コードの最適化|Code optimization]]\n"
+"- 言語リファレンス: [[ビルトイン演算子|Built-in operators]], [[依存型|Dependent types]], [[線形型|Linear types]], [[エラーメッセージ|Error messages]].\n"
+"- ライブラリリファレンス: [[atslib|atslib]], [[contrib|contrib]], [[ビルトインデータ型|Built-in datatypes]], [[ビルトイン関数|Built-in functions]], [[入出力|Input and output]], [[科学計算|Scientific Computing]], [[ATS ライブラリとC言語ライブラリバインディング|ATS Libraries and C Library bindings]].\n"
+"- 拡張: [[Cライブラリへのインターフェイス|Writing interfaces to C libraries]], [[ATS/LF|ATS/LF]] (定理証明)\n"
+"- ATS の内部実装: [[ビルトインの強制解決|Built-in constraint solving]], [[スタックとヒープへのメモリ確保|Stack and heap allocation]], [[内部の型|Internal types]]\n"
+"- ATS における特殊なキーワードについて: [[char|char]], [[dataviewtype|dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]]\n"
+"- Wiki [[TODO|TODO]]: 助けが必要な wiki ページのリスト"
 
 #. type: Plain text
 #: Home.md:22
 msgid ""
 "For the first version of ATS, there is a largely unmaintained [wiki][3]."
-msgstr ""
+msgstr "旧バージョンの ATS については、ほとんどメンテナンスされていない [wiki][3] があります。"
 
 #. type: Plain text
 #: Home.md:24
 msgid ""
 "ATS2 is distributed under the GNU General Public License version 3 (GPLv3), "
 "or any later version."
-msgstr ""
+msgstr "ATS2 は、GNU General Public License version 3 (GPLv3)、またはこれ以降のバージョンで配布されています。"
 
 #. type: Plain text
 #: Home.md:27
@@ -1017,6 +1026,9 @@ msgid ""
 "INT2PROGINATS/HTML/book1.html [3]: https://sourceforge.net/p/ats-lang/wiki/"
 "Home/"
 msgstr ""
+"[1]: http://www.ats-lang.org/\n"
+"[2]: http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html\n"
+"[3]: https://sourceforge.net/p/ats-lang/wiki/Home/"
 
 #. type: Plain text
 #: code-generation.md:2
