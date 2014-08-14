@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-14 20:08+0900\n"
-"PO-Revision-Date: 2014-08-14 21:07+0900\n"
+"PO-Revision-Date: 2014-08-15 02:19+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -2641,7 +2641,7 @@ msgstr ""
 #: Frequently-asked-questions.md:2
 #, no-wrap
 msgid "**Why does my code typecheck but not compile?**\n"
-msgstr ""
+msgstr "**なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:4
@@ -2649,25 +2649,25 @@ msgid ""
 "There could be several reasons, but please note specially the one in the "
 "[[compiler errors|compiler errors]] article referring to `share/"
 "atspre_staload.hats`."
-msgstr ""
+msgstr "いくつかの理由が考えられますが、特に [コンパイルエラー](compiler-errors.md) の記事にある `share/atspre_staload.hats` に注意してください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:6
 #, no-wrap
 msgid "**ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**\n"
-msgstr ""
+msgstr "**ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも GPLv3 で配布しなければならないのですか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:8
 #, no-wrap
 msgid "*Short answer*: **No**.\n"
-msgstr ""
+msgstr "*短かい答*: **いいえ**.\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:10
 #, no-wrap
 msgid "*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.\n"
-msgstr ""
+msgstr "*長い答*: ATS2 コンパイラ (ATS/Postiats) を GCC のように考えてください。\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:13
@@ -2675,13 +2675,13 @@ msgid ""
 "If one uses GCC to generate object code from C source one owns, then one "
 "owns the generated object code. Then if you use ATS/Postiats to generate C "
 "code from ATS source you own, then you own the generated C code."
-msgstr ""
+msgstr "GCC を使って所有するC言語ソースコードからオブジェクトを生成すると、あなたは生成されたオブジェクトを所有することになります。そして、ATS/Postiats を使ってあなたが所有する ATS ソースコードからC言語コードを生成すると、生成されたC言語コードを所有することになります。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:15
 #, no-wrap
 msgid "*Longer answer*: \n"
-msgstr ""
+msgstr "*より長い答*: \n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:23
@@ -2692,13 +2692,13 @@ msgid ""
 "available. Currently, ATS2-Postiats-include-0.1.1.tgz is released separately "
 "under a BSD-like license. Related to this, the preferred way to write "
 "portable ATS code should avoid using `-latslib` to generate executables."
-msgstr ""
+msgstr "[ATSLIB](atslib.md) は第一にC言語コードを生成するために使われます。そして、その ATS ソースコードの作者によって所有された生成済みC言語コードは、ATS2-Postiats-include のヘッダファイル (つまり CATS ファイル) さえあればコンパイルできます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD ライクライセンスの下で独立してリリースされています。これに関連しますが、ポータブルな ATS コードを書くのであれば、実行オブジェクトの生成時に `-latslib` オプションを使わないことをおすすめします。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:25
 #, no-wrap
 msgid "**Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**\n"
-msgstr ""
+msgstr "**よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:27
@@ -2711,6 +2711,11 @@ msgid ""
 "prove instructive. Fifth, for other community resources, see the [official "
 "community page][5]."
 msgstr ""
+"1番目に、[公式のチュートリアル][1] を読んでください。\n"
+"2番目に、[ATS プログラミングのヒント][2] が助けになるかもしれません。\n"
+"3番目に、そのような質問をするための Google グループ [ats-lang-users][3] があります。どんなに自明でも、少しオフトピックがあっても、一般に興味がないと思われる事柄でもかまいません。\n"
+"4番目に、[SourceForge のメーリングリスト][4] での議論も有益かもしれません。\n"
+"5番目に、その他のコミュニティについては [公式のコミュニティページ][5] を見てください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:29
@@ -2737,6 +2742,13 @@ msgid ""
 "http://en.wikipedia.org/wiki/Standard_ML [7]: http://www.cs.bu.edu/~hwxi/"
 "academic/courses/Spring13/CS320.html"
 msgstr ""
+"[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook\n"
+"[2]: http://scg.ece.ucsb.edu/software/notes.pdf\n"
+"[3]: https://groups.google.com/forum/?fromgroups#!forum/ats-lang-users\n"
+"[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-users\n"
+"[5]: http://www.ats-lang.org/COMMUNITY/#\n"
+"[6]: http://en.wikipedia.org/wiki/Standard_ML\n"
+"[7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:41
