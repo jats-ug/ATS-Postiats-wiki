@@ -2,4 +2,4 @@ Atslib is a set of libraries included with ATS, which seems to include all libra
 
 Atslib currently includes [prelude](../../tree/master/prelude), [libc](../../tree/master/libc), and [libats](../../tree/master/libats) (see [codegen/Makefile_atslib](../../tree/master/codegen/Makefile_atslib) for how atslib is built).
 
-Examples using atslib can be found in [doc/EXAMPLE/ATSLIB](../../tree/master/doc/EXAMPLE/ATSLIB).
+Examples using ATSLIB can be found in [doc/EXAMPLE/ATSLIB](../../tree/master/doc/EXAMPLE/ATSLIB).
