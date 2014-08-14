@@ -1,3 +1,9 @@
+Checking recent edits is a good way to make sure the wiki remains as correct
+as possible, as well as a good way to learn new things from other users. The
+wiki doesn't support diff view currently, but a regularly updated repository
+with diff view is maintained at
+https://github.com/bbarker/ATS-Postiats-wiki.
+
 ## Stubs (practically no content)  * [[atsdoc|atsdoc]] * [[Rosetta
 Stone|Rosetta Stone]]
 

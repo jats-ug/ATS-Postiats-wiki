@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-14 20:08+0900\n"
+"POT-Creation-Date: 2014-08-15 02:35+0900\n"
 "PO-Revision-Date: 2014-08-15 02:19+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -395,7 +395,7 @@ msgstr ""
 
 #. type: Plain text
 #: Building-and-installing.md:51
-msgid "If that does not work, it is worth trying to clean up atslib as well:"
+msgid "If that does not work, it is worth trying to clean up ATSLIB as well:"
 msgstr ""
 
 #. type: Plain text
@@ -408,7 +408,7 @@ msgstr ""
 #: Building-and-installing.md:55
 msgid ""
 "The above make rule should be executed whenever one wishes to use updated "
-"[atslib] code from the upstream github repository."
+"[ATSLIB] code from the upstream github repository."
 msgstr ""
 
 #. type: Plain text
@@ -669,7 +669,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ATS-LF.md:2
+#: ATSLF.md:2
 msgid ""
 "ATS/LF ([Logical Framework](https://en.wikipedia.org/wiki/"
 "Logical_framework)) supports a form of (interactive) theorem-proving; ATS "
@@ -679,37 +679,37 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ATS-LF.md:4
-msgid "## Proofs, theorems, and axioms"
+#: ATSLF.md:4
+msgid "## Axioms, Proofs, and Theorems"
 msgstr ""
 
 #. type: Bullet: '* '
-#: ATS-LF.md:9
+#: ATSLF.md:9
+msgid "axiom - `praxi`; it states a theorem without proof."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATSLF.md:9
+msgid "proof - `prfn`; it is the non-recursive version of prfun"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATSLF.md:9
 msgid ""
-"axiom - `praxi`; States a theorem without proof. Use only under careful "
-"consideration."
+"proof - `prfun`; it states a theorem where the author is required to give a "
+"proof. In ATS2, the requirement is not currently enforced, making prfun "
+"similar to praxi in practice [\\[1\\]][1]."
 msgstr ""
 
 #. type: Bullet: '* '
-#: ATS-LF.md:9
+#: ATSLF.md:9
 msgid ""
-"proof - `prfun`; States a theorem where the author should give a proof, "
-"however in ATS2, it is currently not required to do so, making it similar to "
-"a praxi in practice [\\[1\\]][1]."
-msgstr ""
-
-#. type: Bullet: '* '
-#: ATS-LF.md:9
-msgid "proof - `prfn`; non-recursive version of prfun"
-msgstr ""
-
-#. type: Bullet: '* '
-#: ATS-LF.md:9
-msgid "theorem - `prop`; a type in ATS that represents a theorem."
+"theorem - `prop`; it is for classifying a type in ATS that represents a "
+"theorem."
 msgstr ""
 
 #. type: Plain text
-#: ATS-LF.md:11
+#: ATSLF.md:11
 msgid ""
 "Note that proof functions can (and should) be implemented using the "
 "`primplement` keyword, similar to `implement` for dynamic function "
@@ -717,77 +717,9 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ATS-LF.md:13
+#: ATSLF.md:13
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/enDXT0GaoaM/HKJcjCJSdoYJ)"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:2
-msgid "## Downloading ATS Contrib"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:4
-msgid ""
-"Releases are currently available [[at sourceforge|https://sourceforge.net/"
-"projects/ats2-lang-contrib/]], though those developing libraries for ATS "
-"contrib should use the [[github repository|https://github.com/githwxi/ATS-"
-"Postiats-contrib]]."
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:7
-msgid "## Setting up ATS Contrib"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:10
-msgid ""
-"An example of how to set up environment variables for ATS-contrib (alongside "
-"ATS):"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:14
-msgid ""
-"```bash export POSTIATS=${HOME}/research/Postiats/git export "
-"POSTIATS_contrib=${HOME}/research/Postiats-contrib/git"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:16
-msgid "######"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:20
-msgid ""
-"export PATSHOME=${POSTIATS} export PATSHOMERELOC=${POSTIATS_contrib} ```"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:23
-msgid "## Using ATS Contrib"
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:26
-msgid ""
-"It may be the case that you want to contribute to an existing package, or "
-"create a new package that will gradually be curated to be in the main "
-"`contrib` directory. User codes are generally put in a separate subdirectory "
-"of ATS contrib. For instance, there is a user directory `contrib/libats-/"
-"bbarker/OpenMP` for OpenMP, and a curated version of OpenMP in `contrib/"
-"OpenMP`."
-msgstr ""
-
-#. type: Plain text
-#: contrib.md:27
-msgid ""
-"In order to switch between using these various packages, [[atspkgreloc|"
-"atspkgreloc]] is a useful tool that may automate the process. It can "
-"additionally be used with other repositories or forms of code storage."
 msgstr ""
 
 #. type: Plain text
@@ -939,7 +871,7 @@ msgstr ""
 #. type: Plain text
 #: atslib.md:5
 msgid ""
-"Examples using atslib can be found in [doc/EXAMPLE/ATSLIB](../../tree/master/"
+"Examples using ATSLIB can be found in [doc/EXAMPLE/ATSLIB](../../tree/master/"
 "doc/EXAMPLE/ATSLIB)."
 msgstr ""
 
@@ -961,14 +893,22 @@ msgid ""
 "specification and implementation by accommodating a programmer-centric "
 "approach to program verification: How do we know a program being implemented "
 "correctly? We ask the programmer to demonstrate it with a proof."
-msgstr "プログラミング言語 ATS は Applied Type System に基づいた型システムを持つ静的型付けプログラミング言語です。ATS は形式的な仕様と実装で統一されていて、プログラムの検証にプログラマ中心のアプローチを提供します: どうやってプログラムが正しく実装されているか知ることができるでしょうか？私達は証明を使って立証することをプログラマに要請しています。"
+msgstr ""
+"プログラミング言語 ATS は Applied Type System に基づいた型システムを持つ静的"
+"型付けプログラミング言語です。ATS は形式的な仕様と実装で統一されていて、プロ"
+"グラムの検証にプログラマ中心のアプローチを提供します: どうやってプログラムが"
+"正しく実装されているか知ることができるでしょうか？私達は証明を使って立証する"
+"ことをプログラマに要請しています。"
 
 #. type: Plain text
 #: Home.md:8
 msgid ""
 "ATS also has another [website][1] (built using ATS itself). For a thorough "
 "introduction to ATS, see the book *[Introduction to Programming in ATS][2]*."
-msgstr "ATS にはまた別の [Web サイト][1] があります。(このサイトは ATS 自身を使って構築されています。) ATS の詳細な入門記事は *[Introduction to Programming in ATS][2]* から読むことができます。"
+msgstr ""
+"ATS にはまた別の [Web サイト][1] があります。(このサイトは ATS 自身を使って構"
+"築されています。) ATS の詳細な入門記事は *[Introduction to Programming in "
+"ATS][2]* から読むことができます。"
 
 #. type: Plain text
 #: Home.md:10
@@ -998,26 +938,42 @@ msgid ""
 msgstr ""
 "- [よくある質問](Frequently-asked-questions.md)\n"
 "- [ビルドとインストール](Building-and-installing.md)\n"
-"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)\n"
-"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-messages.md)\n"
-"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルトインデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions.md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [ATS ライブラリとC言語ライブラリバインディング](ATS-Libraries-and-C-Library-bindings.md)\n"
-"- 拡張: [Cライブラリへのインターフェイス|Writing-interfaces-to-C-libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
-"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型](Internal-types.md)\n"
-"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype](dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type.md)\n"
+"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク]"
+"(Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)\n"
+"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型]"
+"(Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-"
+"messages.md)\n"
+"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルト"
+"インデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions."
+"md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), "
+"[ATS ライブラリとC言語ライブラリバインディング](ATS-Libraries-and-C-Library-"
+"bindings.md)\n"
+"- 拡張: [Cライブラリへのインターフェイス|Writing-interfaces-to-C-libraries."
+"md], [ATS/LF](ATS-LF.md) (定理証明)\n"
+"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [ス"
+"タックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型]"
+"(Internal-types.md)\n"
+"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype]"
+"(dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type."
+"md)\n"
 "- Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト"
 
 #. type: Plain text
 #: Home.md:22
 msgid ""
 "For the first version of ATS, there is a largely unmaintained [wiki][3]."
-msgstr "旧バージョンの ATS については、ほとんどメンテナンスされていない [wiki][3] があります。"
+msgstr ""
+"旧バージョンの ATS については、ほとんどメンテナンスされていない [wiki][3] が"
+"あります。"
 
 #. type: Plain text
 #: Home.md:24
 msgid ""
 "ATS2 is distributed under the GNU General Public License version 3 (GPLv3), "
 "or any later version."
-msgstr "ATS2 は、GNU General Public License version 3 (GPLv3)、またはこれ以降のバージョンで配布されています。"
+msgstr ""
+"ATS2 は、GNU General Public License version 3 (GPLv3)、またはこれ以降のバー"
+"ジョンで配布されています。"
 
 #. type: Plain text
 #: Home.md:27
@@ -1124,6 +1080,90 @@ msgid ""
 "This error will pop up from leaving out a template argument in some form, "
 "and it is often the case (especially for beginners), that they've put the a "
 "template argument on the wrong side of the function name."
+msgstr ""
+
+#. type: Bullet: '* '
+#: Contributed-Libraries.md:2
+msgid ""
+"[ATS Resources](http://www.ats-lang.org/RESOURCE/).  Not strictly libraries, "
+"but useful for many projects."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:5
+msgid ""
+"+ [ATSfloat](http://scg.ece.ucsb.edu/ats.html).  ATSfloat is a layer written "
+"on top of the ATS CBLAS and LAPACK interfaces. The primary function of "
+"ATSfloat is to provide convenient and uniform ATS style access to BLAS and "
+"LAPACK routines. However, I also intend to interface to other numerical "
+"libraries that I need. For example, currently ATSfloat already has a partial "
+"interface to libsndfile. Furthermore, ATSfloat will also contain the codes "
+"for the fast algorithms that we are developing for HSS and FMM matrices, and "
+"also implementations of GMSN methods for approximation, solution of "
+"differential equations and signal and image processing problems."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:8
+msgid ""
+"+ [ATS/OpenGL] Examples on using OpenGL from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:11
+msgid ""
+"+ [ATS/Cairo](http://www.ats-lang.org/DOCUMENT/ATSCAIRO/HTML/book1.html) "
+"Information on using the 2d graphics library Cairo from ATS. Also see the "
+"contrib subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:14
+msgid ""
+"+ [ATS/GTK] Examples on using GTK from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:17
+msgid ""
+"+ [ATS/pango] Examples on using pango from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:20
+msgid ""
+"+ [ATS/glib] Examples on using glib from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:23
+msgid ""
+"+ [ATS/X11] Examples on using X11 from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:26
+msgid ""
+"+ [ATS/MySQL] Examples on using MySQL from ATS can be found in the contrib "
+"subdirectory in the ATS source."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:28
+msgid ""
+"+ [ATS CMake](https://ats-cmake-documentaition.readthedocs.org/en/latest/) "
+"Modern build tool for projects involving ATS and other languages."
+msgstr ""
+
+#. type: Plain text
+#: Contributed-Libraries.md:29
+msgid ""
+"+ [Linux Epoll interface](https://ezcrypt.it/rZ5n#MhHrh9mRydNuomSwXhP8XS6N)"
 msgstr ""
 
 #. type: Plain text
@@ -1535,6 +1575,102 @@ msgid ""
 "Insert simplified version of failed example: https://groups.google.com/"
 "forum/?utm_medium=email&utm_source=footer#!msg/ats-lang-users/Y1PxLL-9jfU/"
 "kyjkxB0wwPkJ"
+msgstr ""
+
+#. type: Plain text
+#: char.md:2
+msgid ""
+"Characters are demarcated with single quotes, i.e. the character c is "
+"written 'c'. Some characters may need an escape character (the back-slash) "
+"because the sequence *'char* for the char being discussed has a special "
+"meaning in ATS. One such example is '(, so we actually write '\\\\(' to "
+"denote the left parentheses. We note here that strings, in contrast, are "
+"demarcated with double quotes."
+msgstr ""
+
+#. type: Plain text
+#: char.md:4
+#, no-wrap
+msgid ""
+"Escape sequences for characters\n"
+"-------------------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:6
+msgid "The following list is believed to be exhaustive:"
+msgstr ""
+
+#. type: Plain text
+#: char.md:17
+#, no-wrap
+msgid ""
+"* C conventions are used for some characters, e.g.:\n"
+"    * newline is written as '\\\\n'\n"
+"    * carriage return is written as '\\\\r'\n"
+"    * to input a single backlash, use two backslashes, '\\\\\\\\'\n"
+"    * to input a single colon, use '\\\\''\n"
+"* additionally, some characters may \"clash\" with ATS conventions, so they are escaped too:\n"
+"    * '\\\\(' for left parenthesis (clashes with boxed tuple type)\n"
+"    * '\\\\{' for left brace (clashes with boxed record type)\n"
+"    * '\\\\[' for left bracket (clashes with singly-linked list literal)\n"
+"* also, it is possible to specify a character in octal notation: '\\\\000' (backlash, then one to three octal digits 0-7), or in hexadecimal notation, with '\\\\0x00' (backlash, then leading zero, then 'x' or 'X', then one or more hexadecimal digit, which is either 0-9 or a-z or A-Z)\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:19
+msgid "(How do we specify ASCII codes in Hex, Bin, Dec, Oct, etc?)"
+msgstr ""
+
+#. type: Plain text
+#: char.md:21
+#, no-wrap
+msgid ""
+"*char* and Unicode\n"
+"------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:23
+msgid ""
+"Please note that 'char' maps directly to C type 'char', therefore it is the "
+"size of 1 byte, and cannot be used to represent any multi-byte encoding, "
+"such as UTF-16 or UTF-32."
+msgstr ""
+
+#. type: Plain text
+#: char.md:25
+#, no-wrap
+msgid ""
+"Conversion functions for *char*\n"
+"-----------------------------\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:27
+msgid ""
+"(Also see our [[Rosetta Stone|Rosetta Stone]] (This section, and the Rosetta "
+"Stone, need ATS2 versions))"
+msgstr ""
+
+#. type: Plain text
+#: char.md:29
+#, no-wrap
+msgid "**char to string**\n"
+msgstr ""
+
+#. type: Plain text
+#: char.md:37
+#, no-wrap
+msgid ""
+"```ocaml\n"
+"(*\n"
+"   HX: the return is dynamically allocated\n"
+"*)\n"
+"fun tostring_char\n"
+"  (c: char):<> strnptr(1) = \"mac#%\"\n"
+"overload tostring with tostring_char\n"
+"```\n"
 msgstr ""
 
 #. type: Plain text
@@ -2003,90 +2139,6 @@ msgid ""
 "msg/ats-lang-users/yjYFjH5bskk/BJxhB67owGEJ"
 msgstr ""
 
-#. type: Bullet: '* '
-#: ATS-Libraries-and-C-Library-bindings.md:2
-msgid ""
-"[ATS Resources](http://www.ats-lang.org/RESOURCE/).  Not strictly libraries, "
-"but useful for many projects."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:5
-msgid ""
-"+ [ATSfloat](http://scg.ece.ucsb.edu/ats.html).  ATSfloat is a layer written "
-"on top of the ATS CBLAS and LAPACK interfaces. The primary function of "
-"ATSfloat is to provide convenient and uniform ATS style access to BLAS and "
-"LAPACK routines. However, I also intend to interface to other numerical "
-"libraries that I need. For example, currently ATSfloat already has a partial "
-"interface to libsndfile. Furthermore, ATSfloat will also contain the codes "
-"for the fast algorithms that we are developing for HSS and FMM matrices, and "
-"also implementations of GMSN methods for approximation, solution of "
-"differential equations and signal and image processing problems."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:8
-msgid ""
-"+ [ATS/OpenGL] Examples on using OpenGL from ATS can be found in the contrib "
-"subdirectory in the ATS source."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:11
-msgid ""
-"+ [ATS/Cairo](http://www.ats-lang.org/DOCUMENT/ATSCAIRO/HTML/book1.html) "
-"Information on using the 2d graphics library Cairo from ATS. Also see the "
-"contrib subdirectory in the ATS source."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:14
-msgid ""
-"+ [ATS/GTK] Examples on using GTK from ATS can be found in the contrib "
-"subdirectory in the ATS source."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:17
-msgid ""
-"+ [ATS/pango] Examples on using pango from ATS can be found in the contrib "
-"subdirectory in the ATS source."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:20
-msgid ""
-"+ [ATS/glib] Examples on using glib from ATS can be found in the contrib "
-"subdirectory in the ATS source."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:23
-msgid ""
-"+ [ATS/X11] Examples on using X11 from ATS can be found in the contrib "
-"subdirectory in the ATS source."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:26
-msgid ""
-"+ [ATS/MySQL] Examples on using MySQL from ATS can be found in the contrib "
-"subdirectory in the ATS source."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:28
-msgid ""
-"+ [ATS CMake](https://ats-cmake-documentaition.readthedocs.org/en/latest/) "
-"Modern build tool for projects involving ATS and other languages."
-msgstr ""
-
-#. type: Plain text
-#: ATS-Libraries-and-C-Library-bindings.md:29
-msgid ""
-"+ [Linux Epoll interface](https://ezcrypt.it/rZ5n#MhHrh9mRydNuomSwXhP8XS6N)"
-msgstr ""
-
 #. type: Plain text
 #: Built-in-datatypes.md:2
 msgid ""
@@ -2146,14 +2198,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:5
+#: TODO.md:2
+msgid ""
+"Checking recent edits is a good way to make sure the wiki remains as correct "
+"as possible, as well as a good way to learn new things from other users. The "
+"wiki doesn't support diff view currently, but a regularly updated repository "
+"with diff view is maintained at https://github.com/bbarker/ATS-Postiats-wiki."
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:7
 msgid ""
 "## Stubs (practically no content)  * [[atsdoc|atsdoc]] * [[Rosetta Stone|"
 "Rosetta Stone]]"
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:16
+#: TODO.md:18
 msgid ""
 "## Incomplete (Of course, it is hard to say what is complete, but here we "
 "mean listings that are highly incomplete or articles that only barely "
@@ -2163,7 +2224,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:25
+#: TODO.md:27
 msgid ""
 "## Needs Expert Review (Authors are not confident in some important "
 "statements being made.  Also note that you do not have to know everything "
@@ -2172,7 +2233,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:30
+#: TODO.md:32
 msgid ""
 "## Mostly ATS1 (Needs to be updated to ATS2)  * [[ATS Libraries and C "
 "Library bindings|ATS Libraries and C Library bindings]] * [[loops|loops]]"
@@ -2649,7 +2710,9 @@ msgid ""
 "There could be several reasons, but please note specially the one in the "
 "[[compiler errors|compiler errors]] article referring to `share/"
 "atspre_staload.hats`."
-msgstr "いくつかの理由が考えられますが、特に [コンパイルエラー](compiler-errors.md) の記事にある `share/atspre_staload.hats` に注意してください。"
+msgstr ""
+"いくつかの理由が考えられますが、特に [コンパイルエラー](compiler-errors.md) "
+"の記事にある `share/atspre_staload.hats` に注意してください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:6
@@ -2675,7 +2738,11 @@ msgid ""
 "If one uses GCC to generate object code from C source one owns, then one "
 "owns the generated object code. Then if you use ATS/Postiats to generate C "
 "code from ATS source you own, then you own the generated C code."
-msgstr "GCC を使って所有するC言語ソースコードからオブジェクトを生成すると、あなたは生成されたオブジェクトを所有することになります。そして、ATS/Postiats を使ってあなたが所有する ATS ソースコードからC言語コードを生成すると、生成されたC言語コードを所有することになります。"
+msgstr ""
+"GCC を使って所有するC言語ソースコードからオブジェクトを生成すると、あなたは生"
+"成されたオブジェクトを所有することになります。そして、ATS/Postiats を使ってあ"
+"なたが所有する ATS ソースコードからC言語コードを生成すると、生成されたC言語"
+"コードを所有することになります。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:15
@@ -2692,7 +2759,14 @@ msgid ""
 "available. Currently, ATS2-Postiats-include-0.1.1.tgz is released separately "
 "under a BSD-like license. Related to this, the preferred way to write "
 "portable ATS code should avoid using `-latslib` to generate executables."
-msgstr "[ATSLIB](atslib.md) は第一にC言語コードを生成するために使われます。そして、その ATS ソースコードの作者によって所有された生成済みC言語コードは、ATS2-Postiats-include のヘッダファイル (つまり CATS ファイル) さえあればコンパイルできます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD ライクライセンスの下で独立してリリースされています。これに関連しますが、ポータブルな ATS コードを書くのであれば、実行オブジェクトの生成時に `-latslib` オプションを使わないことをおすすめします。"
+msgstr ""
+"[ATSLIB](atslib.md) は第一にC言語コードを生成するために使われます。そして、そ"
+"の ATS ソースコードの作者によって所有された生成済みC言語コードは、ATS2-"
+"Postiats-include のヘッダファイル (つまり CATS ファイル) さえあればコンパイル"
+"できます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD ライクライセンス"
+"の下で独立してリリースされています。これに関連しますが、ポータブルな ATS コー"
+"ドを書くのであれば、実行オブジェクトの生成時に `-latslib` オプションを使わな"
+"いことをおすすめします。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:25
@@ -2713,9 +2787,12 @@ msgid ""
 msgstr ""
 "1番目に、[公式のチュートリアル][1] を読んでください。\n"
 "2番目に、[ATS プログラミングのヒント][2] が助けになるかもしれません。\n"
-"3番目に、そのような質問をするための Google グループ [ats-lang-users][3] があります。どんなに自明でも、少しオフトピックがあっても、一般に興味がないと思われる事柄でもかまいません。\n"
+"3番目に、そのような質問をするための Google グループ [ats-lang-users][3] があ"
+"ります。どんなに自明でも、少しオフトピックがあっても、一般に興味がないと思わ"
+"れる事柄でもかまいません。\n"
 "4番目に、[SourceForge のメーリングリスト][4] での議論も有益かもしれません。\n"
-"5番目に、その他のコミュニティについては [公式のコミュニティページ][5] を見てください。"
+"5番目に、その他のコミュニティについては [公式のコミュニティページ][5] を見て"
+"ください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:29
@@ -2745,7 +2822,8 @@ msgstr ""
 "[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook\n"
 "[2]: http://scg.ece.ucsb.edu/software/notes.pdf\n"
 "[3]: https://groups.google.com/forum/?fromgroups#!forum/ats-lang-users\n"
-"[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-users\n"
+"[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-"
+"users\n"
 "[5]: http://www.ats-lang.org/COMMUNITY/#\n"
 "[6]: http://en.wikipedia.org/wiki/Standard_ML\n"
 "[7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html"
@@ -2979,8 +3057,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: atsdoc.md:1
-msgid "This is a stub."
+#: atsdoc.md:2
+msgid ""
+"The command atsdoc is a utility in ATS1 for turning a text file laden with "
+"texting function calls into one in which these calls are replaced with the "
+"strings represented by their return values. This utility is designed for "
+"people who have some basic knowledge of programmming in ATS1."
+msgstr ""
+
+#. type: Plain text
+#: atsdoc.md:4
+msgid ""
+"For more detail, please see following.  http://www.ats-lang.org/htdocs-old/"
+"DOCUMENT/atsdocman/atsdocman.html"
 msgstr ""
 
 #. type: Plain text
@@ -3054,99 +3143,71 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: char.md:2
+#: Contrib.md:2
+msgid "## Downloading Contrib"
+msgstr ""
+
+#. type: Plain text
+#: Contrib.md:4
 msgid ""
-"Characters are demarcated with single quotes, i.e. the character c is "
-"written 'c'. Some characters may need an escape character (the back-slash) "
-"because the sequence *'char* for the char being discussed has a special "
-"meaning in ATS. One such example is '(, so we actually write '\\\\(' to "
-"denote the left parentheses. We note here that strings, in contrast, are "
-"demarcated with double quotes."
+"Releases are currently available [[at sourceforge|https://sourceforge.net/"
+"projects/ats2-lang-contrib/]], though those developing libraries for ATS "
+"contrib should use the [[github repository|https://github.com/githwxi/ATS-"
+"Postiats-contrib]]."
 msgstr ""
 
 #. type: Plain text
-#: char.md:4
-#, no-wrap
+#: Contrib.md:6
+msgid "## Setting up for using Contrib"
+msgstr ""
+
+#. type: Plain text
+#: Contrib.md:8
 msgid ""
-"Escape sequences for characters\n"
-"-------------------------------\n"
+"An example of how to set up environment variables for ATS-contrib (alongside "
+"ATS):"
 msgstr ""
 
 #. type: Plain text
-#: char.md:6
-msgid "The following list is believed to be exhaustive:"
-msgstr ""
-
-#. type: Plain text
-#: char.md:17
-#, no-wrap
+#: Contrib.md:12
 msgid ""
-"* C conventions are used for some characters, e.g.:\n"
-"    * newline is written as '\\\\n'\n"
-"    * carriage return is written as '\\\\r'\n"
-"    * to input a single backlash, use two backslashes, '\\\\\\\\'\n"
-"    * to input a single colon, use '\\\\''\n"
-"* additionally, some characters may \"clash\" with ATS conventions, so they are escaped too:\n"
-"    * '\\\\(' for left parenthesis (clashes with boxed tuple type)\n"
-"    * '\\\\{' for left brace (clashes with boxed record type)\n"
-"    * '\\\\[' for left bracket (clashes with singly-linked list literal)\n"
-"* also, it is possible to specify a character in octal notation: '\\\\000' (backlash, then one to three octal digits 0-7), or in hexadecimal notation, with '\\\\0x00' (backlash, then leading zero, then 'x' or 'X', then one or more hexadecimal digit, which is either 0-9 or a-z or A-Z)\n"
+"```bash export POSTIATS=${HOME}/research/Postiats/git export "
+"POSTIATS_contrib=${HOME}/research/Postiats-contrib/git"
 msgstr ""
 
 #. type: Plain text
-#: char.md:19
-msgid "(How do we specify ASCII codes in Hex, Bin, Dec, Oct, etc?)"
+#: Contrib.md:14
+msgid "######"
 msgstr ""
 
 #. type: Plain text
-#: char.md:21
-#, no-wrap
+#: Contrib.md:18
 msgid ""
-"*char* and Unicode\n"
-"------------------\n"
+"export PATSHOME=${POSTIATS} export PATSHOMERELOC=${POSTIATS_contrib} ```"
 msgstr ""
 
 #. type: Plain text
-#: char.md:23
+#: Contrib.md:21
+msgid "## Using ATS Contrib"
+msgstr ""
+
+#. type: Plain text
+#: Contrib.md:24
 msgid ""
-"Please note that 'char' maps directly to C type 'char', therefore it is the "
-"size of 1 byte, and cannot be used to represent any multi-byte encoding, "
-"such as UTF-16 or UTF-32."
+"It may be the case that you want to contribute to an existing package, or "
+"create a new package that will gradually be curated to be in the main "
+"`contrib` directory. User codes are generally put in a separate subdirectory "
+"of ATS contrib. For instance, there is a user directory `contrib/libats-/"
+"bbarker/OpenMP` for OpenMP, and a curated version of OpenMP in `contrib/"
+"OpenMP`."
 msgstr ""
 
 #. type: Plain text
-#: char.md:25
-#, no-wrap
+#: Contrib.md:25
 msgid ""
-"Conversion functions for *char*\n"
-"-----------------------------\n"
-msgstr ""
-
-#. type: Plain text
-#: char.md:27
-msgid ""
-"(Also see our [[Rosetta Stone|Rosetta Stone]] (This section, and the Rosetta "
-"Stone, need ATS2 versions))"
-msgstr ""
-
-#. type: Plain text
-#: char.md:29
-#, no-wrap
-msgid "**char to string**\n"
-msgstr ""
-
-#. type: Plain text
-#: char.md:37
-#, no-wrap
-msgid ""
-"```ocaml\n"
-"(*\n"
-"   HX: the return is dynamically allocated\n"
-"*)\n"
-"fun tostring_char\n"
-"  (c: char):<> strnptr(1) = \"mac#%\"\n"
-"overload tostring with tostring_char\n"
-"```\n"
+"In order to switch between using these various packages, [[atspkgreloc|"
+"atspkgreloc]] is a useful tool that may automate the process. It can "
+"additionally be used with other repositories or forms of code storage."
 msgstr ""
 
 #. type: Plain text

@@ -8,5 +8,5 @@ Atslib currently includes [prelude](../../tree/master/prelude),
 [codegen/Makefile_atslib](../../tree/master/codegen/Makefile_atslib) for how
 atslib is built).
 
-Examples using atslib can be found in
+Examples using ATSLIB can be found in
 [doc/EXAMPLE/ATSLIB](../../tree/master/doc/EXAMPLE/ATSLIB).

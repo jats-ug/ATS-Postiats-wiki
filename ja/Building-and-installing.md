@@ -48,12 +48,12 @@ Should the build fail at some point, it may be necessary to clean up:
 
     make -C src cleanall
 
-If that does not work, it is worth trying to clean up atslib as well:
+If that does not work, it is worth trying to clean up ATSLIB as well:
 
     make -f codegen/Makefile_atslib cleanall
 
 The above make rule should be executed whenever one wishes to use updated
-[atslib] code from the upstream github repository.
+[ATSLIB] code from the upstream github repository.
 
 ## ATS in a virtual machine
 

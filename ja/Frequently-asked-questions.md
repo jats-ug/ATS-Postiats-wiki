@@ -1,37 +1,34 @@
-**Why does my code typecheck but not compile?**
+**なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？**
 
-There could be several reasons, but please note specially the one in the
-[[compiler errors|compiler errors]] article referring to
-`share/atspre_staload.hats`.
+いくつかの理由が考えられますが、特に [コンパイルエラー](compiler-errors.md) の記事にある
+`share/atspre_staload.hats` に注意してください。
 
-**ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**
+**ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも GPLv3 で配布しなければならないのですか？**
 
-*Short answer*: **No**.
+*短かい答*: **いいえ**.
 
-*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.
+*長い答*: ATS2 コンパイラ (ATS/Postiats) を GCC のように考えてください。
 
-If one uses GCC to generate object code from C source one owns, then one
-owns the generated object code. Then if you use ATS/Postiats to generate C
-code from ATS source you own, then you own the generated C code.
+GCC
+を使って所有するC言語ソースコードからオブジェクトを生成すると、あなたは生成されたオブジェクトを所有することになります。そして、ATS/Postiats
+を使ってあなたが所有する ATS ソースコードからC言語コードを生成すると、生成されたC言語コードを所有することになります。
 
-*Longer answer*: 
+*より長い答*: 
 
-[[ATSLIB|atslib]] is primarily used to generate C code, and the generated C
-code, which is owned by the author of its ATS source, can be compiled as
-long as the header files (that is, CATS-files) in ATS2-Postiats-include are
-available. Currently, ATS2-Postiats-include-0.1.1.tgz is released separately
-under a BSD-like license. Related to this, the preferred way to write
-portable ATS code should avoid using `-latslib` to generate executables.
+[ATSLIB](atslib.md) は第一にC言語コードを生成するために使われます。そして、その ATS
+ソースコードの作者によって所有された生成済みC言語コードは、ATS2-Postiats-include のヘッダファイル (つまり CATS ファイル)
+さえあればコンパイルできます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD
+ライクライセンスの下で独立してリリースされています。これに関連しますが、ポータブルな ATS コードを書くのであれば、実行オブジェクトの生成時に
+`-latslib` オプションを使わないことをおすすめします。
 
-**Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**
+**よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**
 
-First, read one of the [official tutorials][1]. Second, [these ATS
-programming tips][2] may be helpful. Third, there is a Google group,
-[ats-lang-users][3] for asking any kind of question, no matter how trivial,
-including slightly off-topic or less general-interest issues. Fourth, some
-of the discussions on the [SourceForge mailing list archive][4] may also
-prove instructive. Fifth, for other community resources, see the [official
-community page][5].
+1番目に、[公式のチュートリアル][1] を読んでください。
+2番目に、[ATS プログラミングのヒント][2] が助けになるかもしれません。
+3番目に、そのような質問をするための Google グループ [ats-lang-users][3]
+があります。どんなに自明でも、少しオフトピックがあっても、一般に興味がないと思われる事柄でもかまいません。
+4番目に、[SourceForge のメーリングリスト][4] での議論も有益かもしれません。
+5番目に、その他のコミュニティについては [公式のコミュニティページ][5] を見てください。
 
 For information about (the sometimes opaque) ATS error messages, see [[error
 messages|Error messages]] on this wiki.
@@ -40,13 +37,13 @@ If you are not highly practiced with functional programming, it may be best
 to learn some [Standard ML][6] before learning ATS. The aid of [SML
 textbook(s) or introductory ATS notes][7] may be helpful.
 
-[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook [2]:
-http://scg.ece.ucsb.edu/software/notes.pdf [3]:
-https://groups.google.com/forum/?fromgroups#!forum/ats-lang-users [4]:
-https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-users [5]:
-http://www.ats-lang.org/COMMUNITY/# [6]:
-http://en.wikipedia.org/wiki/Standard_ML [7]:
-http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html
+[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook
+[2]: http://scg.ece.ucsb.edu/software/notes.pdf
+[3]: https://groups.google.com/forum/?fromgroups#!forum/ats-lang-users
+[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-users
+[5]: http://www.ats-lang.org/COMMUNITY/#
+[6]: http://en.wikipedia.org/wiki/Standard_ML
+[7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html
 
 **Where can I find tutorials?**
 
