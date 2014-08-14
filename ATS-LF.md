@@ -2,7 +2,7 @@ ATS/LF ([Logical Framework](https://en.wikipedia.org/wiki/Logical_framework)) su
 
 ## Proofs, theorems, and axioms 
 
-* axiom - `praxi`; States a theorem without proof. Use only under careful consideration.
+* axiom - `praxi`; States a theorem without proof.
 * proof - `prfun`; States a theorem where the author is required to give a proof. In ATS2, the requirement is not currently enforced, making prfun similar to praxi in practice [\[1\]][1].
 * proof - `prfn`; non-recursive version of prfun
 * theorem - `prop`; a type in ATS that represents a theorem.
