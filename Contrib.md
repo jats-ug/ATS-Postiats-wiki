@@ -2,7 +2,7 @@
 
 Releases are currently available [[at sourceforge|https://sourceforge.net/projects/ats2-lang-contrib/]], though those developing libraries for ATS contrib should use the [[github repository|https://github.com/githwxi/ATS-Postiats-contrib]].
 
-## Setting up ATS Contrib
+## Setting up for using Contrib
 
 An example of how to set up environment variables for ATS-contrib (alongside ATS):
 
