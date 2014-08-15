@@ -1,0 +1,2 @@
+* For kernels and drivers in ATS, see [[kernels|kernels]].
+* For operating systems supporting ATS development, currently Linux, Mac OS X, and Windows/Cygwin are supported, but see the [download page](http://www.ats-lang.org/DOWNLOAD/) for more information.
