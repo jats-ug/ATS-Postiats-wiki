@@ -13,3 +13,6 @@ C-x `     // for locating the source of the next error
 
 ## Vim 
 There is existing code for a vim mode, but most of the ATS users seem to use emacs. See [this issue](https://github.com/githwxi/ATS-Postiats/issues/30) for a full discussion and code links.
+
+## SublimeText
+This is just a syntax highlight file, not a full mode. You can install it at the [Package Control](https://sublime.wbond.net/packages/ATS%20Syntax%20Highlight). 
