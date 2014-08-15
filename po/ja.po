@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-15 02:35+0900\n"
-"PO-Revision-Date: 2014-08-15 02:19+0900\n"
+"PO-Revision-Date: 2014-08-15 18:07+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -2799,7 +2799,7 @@ msgstr ""
 msgid ""
 "For information about (the sometimes opaque) ATS error messages, see [[error "
 "messages|Error messages]] on this wiki."
-msgstr ""
+msgstr "(時にあいまいな) ATS のエラーメッセージについては、この wiki の [エラーメッセージ](Error-messages.md) を参照してください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:31
@@ -2807,7 +2807,7 @@ msgid ""
 "If you are not highly practiced with functional programming, it may be best "
 "to learn some [Standard ML][6] before learning ATS. The aid of [SML "
 "textbook(s) or introductory ATS notes][7] may be helpful."
-msgstr ""
+msgstr "もし関数型プログラミングの熟練者でなければ、ATS を学ぶ前になんらかの [Standard ML][6] 言語を学んだ方が良いかもしれません。[SML textbook(s) or introductory ATS notes][7] がその助けになるかもしれません。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:39
@@ -2822,8 +2822,7 @@ msgstr ""
 "[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook\n"
 "[2]: http://scg.ece.ucsb.edu/software/notes.pdf\n"
 "[3]: https://groups.google.com/forum/?fromgroups#!forum/ats-lang-users\n"
-"[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-"
-"users\n"
+"[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-users\n"
 "[5]: http://www.ats-lang.org/COMMUNITY/#\n"
 "[6]: http://en.wikipedia.org/wiki/Standard_ML\n"
 "[7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html"
@@ -2832,36 +2831,36 @@ msgstr ""
 #: Frequently-asked-questions.md:41
 #, no-wrap
 msgid "**Where can I find tutorials?**\n"
-msgstr ""
+msgstr "**チュートリアルはどこにありますか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:43
 msgid ""
 "See [[tutorials|Tutorials]] on this wiki, or the [Effective ATS series][26] "
 "(also [on git][27]). Also see the answer to the previous question."
-msgstr ""
+msgstr "この wiki の [チュートリアル](tutorials.md) を参照してください。もしくは [Effective ATS series][26] と [その git リポジトリ][27] も参考になります。また、1つ前の質問に対する回答も読んでください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:46
 #, no-wrap
 msgid "**Where can I find some code or algorithm examples?**\n"
-msgstr ""
+msgstr "**コードやアルゴリズムの例はどこにありますか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:48
 msgid "Several examples can be found [here][8] (ATS1)."
-msgstr ""
+msgstr "いくつかの例が [ここ][8] にあります。 (ATS1 の例になります)。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:50
 msgid "[8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html"
-msgstr ""
+msgstr "[8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:52
 #, no-wrap
 msgid "**Where can I find a reference or documentation?**\n"
-msgstr ""
+msgstr "**リファレンスやドキュメントはどこにありますか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:54
@@ -2871,6 +2870,10 @@ msgid ""
 "[11]. See the [[homepage|Home]] on this wiki for links to wiki pages "
 "containing further documentation."
 msgstr ""
+"ATS1 については、非公式 (そして不完全な) リファレンスが [入手可能です][9]。\n"
+"([そのソースコードもあります。][10])\n"
+"ATS2 には [自動生成されたライブラリドキュメント][11] があります。\n"
+"この wiki の [ホームページ](Home.md) には、より多くのドキュメントを含む wiki ページへのリンクがあります。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:58
@@ -2878,12 +2881,15 @@ msgid ""
 "[9]: http://www.bluishcoder.co.nz/ats/ats-reference.pdf [10]: https://github."
 "com/doublec/ats-reference [11]: http://www.ats-lang.org/LIBRARY/"
 msgstr ""
+"[9]: http://www.bluishcoder.co.nz/ats/ats-reference.pdf\n"
+"[10]: https://github.com/doublec/ats-reference\n"
+"[11]: http://www.ats-lang.org/LIBRARY/"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:60
 #, no-wrap
 msgid "**I'm getting type errors or unsolved constraints, but everything looks right. What might I be doing wrong?**\n"
-msgstr ""
+msgstr "**問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間違えているのでしょうか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:62
@@ -2897,42 +2903,50 @@ msgid ""
 "difficult to resolve. However, `if` and `case` expressions likely need to be "
 "annotated with types in general."
 msgstr ""
+"おそらく、たくさんの原因があると考えられます。\n"
+"依存型は強制を意味します。\n"
+"あなたが正しい型をどの段階においても使っていて、意図せず似た型を混ぜてしまわないか確かめます。\n"
+"ATS にはたくさんの同じような型 (や同じような型を持つ関数) があります。\n"
+"それらは少し違う状況を扱うために使われます。\n"
+"*ATS に入門したばかりの間は依存型をあまり使わない* ことを推奨します。\n"
+"それは解決困難な未解決の強制が起きるのを予防するためです。\n"
+"けれども、一般的には `if` と `case` 式には型注釈を付ける必要があるでしょう。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:64
 msgid ""
 "If you use emacs, consider using [ATS Flymake][12] as a possible measure to "
 "avoid such problems in the first place."
-msgstr ""
+msgstr "もし emacs を使っているなら、最初の段階でそのような問題を避けるために [ATS Flymake][12] を使うことを検討してください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:66
 msgid ""
 "For examples of what can go wrong and some solutions see the following "
 "examples."
-msgstr ""
+msgstr "発生する問題といくつかの解決策について、次の例を参照してください。"
 
 #. type: Bullet: '  - '
 #: Frequently-asked-questions.md:70
 msgid "[Example 1][13]"
-msgstr ""
+msgstr "[Example 1][13]"
 
 #. type: Bullet: '  - '
 #: Frequently-asked-questions.md:70
 msgid "[Example 2][14]"
-msgstr ""
+msgstr "[Example 2][14]"
 
 #. type: Bullet: '  - '
 #: Frequently-asked-questions.md:70
 msgid "[Example 3][15]"
-msgstr ""
+msgstr "[Example 3][15]"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:72
 msgid ""
 "Finally, for some guidance on understanding certain errors, see [[error "
 "messages|Error messages]] on this wiki."
-msgstr ""
+msgstr "最後に、ある種のエラーに対するガイドラインとして、この wiki の [エラーメッセージ](Error-messages.md) を参照してください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:77
@@ -2944,12 +2958,16 @@ msgid ""
 "bnROVnWcFMU [15]: https://groups.google.com/forum/?fromgroups=#!topic/ats-"
 "lang-users/oFuXRr4K8ts"
 msgstr ""
+"[12]: http://www.reddit.com/r/ATS/comments/vx4lq/ats_flymake/\n"
+"[13]: https://sourceforge.net/mailarchive/forum.php?thread_name=Pine.LNX.4.64.1207201538580.21676%40csa2.bu.edu&forum_name=ats-lang-users\n"
+"[14]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/bnROVnWcFMU\n"
+"[15]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/oFuXRr4K8ts"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:79
 #, no-wrap
 msgid "**I have two different types being used together in the same data structure, and they typecheck! Is this a bug?**\n"
-msgstr ""
+msgstr "**同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいました!これはバグですか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:81
@@ -2962,6 +2980,12 @@ msgid ""
 "[\"subtypes\"][18], and specifically, how ATS defines subtypes. This should "
 "not be a problem in ATS2, and is one of the [major reasons for ATS2][19]."
 msgstr ""
+"依存型の厳格さを体感した後では、ときおり驚くことでしょう。\n"
+"しかし短かい答えとして、それはおそらくバグではありません。\n"
+"[これ][16] は入力として異なる型の値 (例えば `string`, `float`, `int`) を受け付ける `list0` の例です。\n"
+"[これ][17] はテンプレートにおける例です。\n"
+"[サブタイピング][18]、とりわけ ATS がどのようにサブタイピングを定義するかに関連することがあります。\n"
+"これはATS2 における問題ではなく、[ATS2 のあるメジャーリリース][19] で起きたことです。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:86
@@ -2975,12 +2999,16 @@ msgid ""
 "thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge."
 "net&forum_name=ats-lang-users"
 msgstr ""
+"[16]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x1099.html\n"
+"[17]: https://sourceforge.net/mailarchive/forum.php?thread_name=Pine.LNX.4.64.1204041554160.22282%40csa2.bu.edu&forum_name=ats-lang-users\n"
+"[18]: http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)\n"
+"[19]: https://sourceforge.net/mailarchive/forum.php?thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge.net&forum_name=ats-lang-users"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:88
 #, no-wrap
 msgid "**What are dependent types?**\n"
-msgstr ""
+msgstr "**依存型とは何ですか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:90
@@ -2989,17 +3017,20 @@ msgid ""
 "example in ATS, `int (5)` is a type such that all integers belonging to it "
 "are equal to 5 (so it is in fact a singleton type)."
 msgstr ""
+"[依存型][20] は値に依存した型です。\n"
+"ATS における単純な例として、`int (5)` は 5 と等しいくなるような全ての整数であるような型です。\n"
+"そのため、これは実際にはシングルトン型です。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:92
 msgid "[20]: http://en.wikipedia.org/wiki/Dependent_type"
-msgstr ""
+msgstr "[20]: http://en.wikipedia.org/wiki/Dependent_type"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:94
 #, no-wrap
 msgid "**What are linear types?**\n"
-msgstr ""
+msgstr "**線形型とは何ですか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:96
@@ -3013,6 +3044,12 @@ msgid ""
 "the [ATS book][22], the [Wikipedia article on linear types][23], or [[linear "
 "types|Linear types]] on this wiki."
 msgstr ""
+"線形型は [線形論理][21] を利用します。\n"
+"線形型の概念は、静的なリソースの追跡ができる式によって消費されるリソースとしての観測値、と説明できます。\n"
+"例えば、式 `(a or b)` を考えるとき、あなたは新しい式を生成しています。\n"
+"しかし、あなたは `a` と `b` を破棄しなければなりません。\n"
+"これは、例えば、安全で効果的なメモリ確保を扱うのに有用です。\n"
+"より詳しくは、[ATSプログラミング入門][22]、[Wikipedia にある線形型に関する記事][23]、この wiki の [線形型](Linear-types.md) を参照してください。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:100
@@ -3021,12 +3058,15 @@ msgid ""
 "org/DOCUMENT/INTPROGINATS/HTML/c3217.html [23]: http://en.wikipedia.org/wiki/"
 "Substructural_type_system#Linear_type_systems"
 msgstr ""
+"[21]: http://en.wikipedia.org/wiki/Linear_logic\n"
+"[22]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/c3217.html\n"
+"[23]: http://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:102
 #, no-wrap
 msgid "**Is there a Windows version of ATS?**\n"
-msgstr ""
+msgstr "**ATS には Windows 版がありますか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:104
@@ -3034,6 +3074,8 @@ msgid ""
 "Not for the near future, at least. However, you can install ATS on top of "
 "[Cygwin][24] using the same build instructions as for other platforms."
 msgstr ""
+"少なくとも近い未来においては入手できません。\n"
+"けれども、他のプラットフォームと同じビルド手順を使って、[Cygwin][24] 上に ATS をインストールすることはできます。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:106
@@ -3042,12 +3084,17 @@ msgid ""
 "using a virtual machine (see [[building and installing|Building and "
 "installing]] ATS)."
 msgstr ""
+"また [実験的なオンラインツール][25] を使って ATS2 を試すこともできます。\n"
+"もしくは仮想環境を使って試すこともできます。\n"
+"ATS の [ビルドとインストール](Building-and-installing.md) を参照してくだい。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:109
 msgid ""
 "[24]: http://www.cygwin.com/ [25]: http://xrats.illtyped.com/code/patsopt"
 msgstr ""
+"[24]: http://www.cygwin.com/\n"
+"[25]: http://xrats.illtyped.com/code/patsopt"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:113
@@ -3055,6 +3102,8 @@ msgid ""
 "[26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/ [27]: https://github.com/"
 "githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/EFFECTIVATS"
 msgstr ""
+"[26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/\n"
+"[27]: https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/EFFECTIVATS"
 
 #. type: Plain text
 #: atsdoc.md:2

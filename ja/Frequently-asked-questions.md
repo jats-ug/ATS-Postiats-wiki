@@ -30,12 +30,11 @@ GCC
 4番目に、[SourceForge のメーリングリスト][4] での議論も有益かもしれません。
 5番目に、その他のコミュニティについては [公式のコミュニティページ][5] を見てください。
 
-For information about (the sometimes opaque) ATS error messages, see [[error
-messages|Error messages]] on this wiki.
+(時にあいまいな) ATS のエラーメッセージについては、この wiki の [エラーメッセージ](Error-messages.md)
+を参照してください。
 
-If you are not highly practiced with functional programming, it may be best
-to learn some [Standard ML][6] before learning ATS. The aid of [SML
-textbook(s) or introductory ATS notes][7] may be helpful.
+もし関数型プログラミングの熟練者でなければ、ATS を学ぶ前になんらかの [Standard ML][6] 言語を学んだ方が良いかもしれません。[SML
+textbook(s) or introductory ATS notes][7] がその助けになるかもしれません。
 
 [1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook
 [2]: http://scg.ece.ucsb.edu/software/notes.pdf
@@ -45,112 +44,112 @@ textbook(s) or introductory ATS notes][7] may be helpful.
 [6]: http://en.wikipedia.org/wiki/Standard_ML
 [7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html
 
-**Where can I find tutorials?**
+**チュートリアルはどこにありますか？**
 
-See [[tutorials|Tutorials]] on this wiki, or the [Effective ATS series][26]
-(also [on git][27]). Also see the answer to the previous question.
+この wiki の [チュートリアル](tutorials.md) を参照してください。もしくは [Effective ATS series][26]
+と [その git リポジトリ][27] も参考になります。また、1つ前の質問に対する回答も読んでください。
 
 
-**Where can I find some code or algorithm examples?**
+**コードやアルゴリズムの例はどこにありますか？**
 
-Several examples can be found [here][8] (ATS1).
+いくつかの例が [ここ][8] にあります。 (ATS1 の例になります)。
 
 [8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html
 
-**Where can I find a reference or documentation?**
+**リファレンスやドキュメントはどこにありますか？**
 
-For ATS, there is an unofficial (and incomplete) reference [available][9]
-([source][10]). ATS2 has [automatically generated library
-documentation][11]. See the [[homepage|Home]] on this wiki for links to wiki
-pages containing further documentation.
+ATS1 については、非公式 (そして不完全な) リファレンスが [入手可能です][9]。
+([そのソースコードもあります。][10])
+ATS2 には [自動生成されたライブラリドキュメント][11] があります。
+この wiki の [ホームページ](Home.md) には、より多くのドキュメントを含む wiki ページへのリンクがあります。
 
-[9]: http://www.bluishcoder.co.nz/ats/ats-reference.pdf [10]:
-https://github.com/doublec/ats-reference [11]:
-http://www.ats-lang.org/LIBRARY/
+[9]: http://www.bluishcoder.co.nz/ats/ats-reference.pdf
+[10]: https://github.com/doublec/ats-reference
+[11]: http://www.ats-lang.org/LIBRARY/
 
-**I'm getting type errors or unsolved constraints, but everything looks right. What might I be doing wrong?**
+**問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間違えているのでしょうか？**
 
-Probably many things. Dependent types involve constraints; make sure you are
-using the right type at every step and not accidentally mixing similar
-types. There are many similar types in ATS (including functions with similar
-types) used for dealing with slightly different situations. We recommend
-*avoiding heavy use of dependent types when starting out* in order to avoid
-finding yourself in a situation with unsolved constraints that is very
-difficult to resolve. However, `if` and `case` expressions likely need to be
-annotated with types in general.
+おそらく、たくさんの原因があると考えられます。
+依存型は強制を意味します。
+あなたが正しい型をどの段階においても使っていて、意図せず似た型を混ぜてしまわないか確かめます。
+ATS にはたくさんの同じような型 (や同じような型を持つ関数) があります。
+それらは少し違う状況を扱うために使われます。
+*ATS に入門したばかりの間は依存型をあまり使わない* ことを推奨します。
+それは解決困難な未解決の強制が起きるのを予防するためです。
+けれども、一般的には `if` と `case` 式には型注釈を付ける必要があるでしょう。
 
-If you use emacs, consider using [ATS Flymake][12] as a possible measure to
-avoid such problems in the first place.
+もし emacs を使っているなら、最初の段階でそのような問題を避けるために [ATS Flymake][12] を使うことを検討してください。
 
-For examples of what can go wrong and some solutions see the following
-examples.
+発生する問題といくつかの解決策について、次の例を参照してください。
 
   - [Example 1][13]
   - [Example 2][14]
   - [Example 3][15]
 
-Finally, for some guidance on understanding certain errors, see [[error
-messages|Error messages]] on this wiki.
+最後に、ある種のエラーに対するガイドラインとして、この wiki の [エラーメッセージ](Error-messages.md) を参照してください。
 
-[12]: http://www.reddit.com/r/ATS/comments/vx4lq/ats_flymake/ [13]:
+[12]: http://www.reddit.com/r/ATS/comments/vx4lq/ats_flymake/
+[13]:
 https://sourceforge.net/mailarchive/forum.php?thread_name=Pine.LNX.4.64.1207201538580.21676%40csa2.bu.edu&forum_name=ats-lang-users
 [14]:
 https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/bnROVnWcFMU
 [15]:
 https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/oFuXRr4K8ts
 
-**I have two different types being used together in the same data structure, and they typecheck! Is this a bug?**
+**同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいました!これはバグですか？**
 
-After perhaps being exposed to the rigor of dependent types, one may
-occasionally be surprised: but the short answer is it probably isn't a
-bug. [Here][16] is an example where `list0` will accept multiple values,
-each with a distinct type, as inputs (for example, `string`s, `float`s, or
-`int`s). [Here][17] is an example with templates. The notion has to do with
-["subtypes"][18], and specifically, how ATS defines subtypes. This should
-not be a problem in ATS2, and is one of the [major reasons for ATS2][19].
+依存型の厳格さを体感した後では、ときおり驚くことでしょう。
+しかし短かい答えとして、それはおそらくバグではありません。
+[これ][16] は入力として異なる型の値 (例えば `string`, `float`, `int`) を受け付ける `list0` の例です。
+[これ][17] はテンプレートにおける例です。
+[サブタイピング][18]、とりわけ ATS がどのようにサブタイピングを定義するかに関連することがあります。
+これはATS2 における問題ではなく、[ATS2 のあるメジャーリリース][19] で起きたことです。
 
-[16]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x1099.html [17]:
+[16]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x1099.html
+[17]:
 https://sourceforge.net/mailarchive/forum.php?thread_name=Pine.LNX.4.64.1204041554160.22282%40csa2.bu.edu&forum_name=ats-lang-users
 [18]:
 http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
 [19]:
 https://sourceforge.net/mailarchive/forum.php?thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge.net&forum_name=ats-lang-users
 
-**What are dependent types?**
+**依存型とは何ですか？**
 
-A [dependent type][20] is a type that depends on a value. As a simple
-example in ATS, `int (5)` is a type such that all integers belonging to it
-are equal to 5 (so it is in fact a singleton type).
+[依存型][20] は値に依存した型です。
+ATS における単純な例として、`int (5)` は 5 と等しいくなるような全ての整数であるような型です。
+そのため、これは実際にはシングルトン型です。
 
 [20]: http://en.wikipedia.org/wiki/Dependent_type
 
-**What are linear types?**
+**線形型とは何ですか？**
 
-Linear types make use of [linear logic][21]. The notion of linear types may
-be explained as viewing variables as resources that are consumed by
-expressions, which allows for static resource tracking. For example, if you
-consider the expression `(a or b)`, you've produced a new expression but
-you've destroyed `a` and `b`. This is useful for dealing with memory
-allocation safely and efficiently, for instance. For more information, see
-the [ATS book][22], the [Wikipedia article on linear types][23], or [[linear
-types|Linear types]] on this wiki.
+線形型は [線形論理][21] を利用します。
+線形型の概念は、静的なリソースの追跡ができる式によって消費されるリソースとしての観測値、と説明できます。
+例えば、式 `(a or b)` を考えるとき、あなたは新しい式を生成しています。
+しかし、あなたは `a` と `b` を破棄しなければなりません。
+これは、例えば、安全で効果的なメモリ確保を扱うのに有用です。
+より詳しくは、[ATSプログラミング入門][22]、[Wikipedia にある線形型に関する記事][23]、この wiki の
+[線形型](Linear-types.md) を参照してください。
 
-[21]: http://en.wikipedia.org/wiki/Linear_logic [22]:
-http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/c3217.html [23]:
+[21]: http://en.wikipedia.org/wiki/Linear_logic
+[22]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/c3217.html
+[23]:
 http://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems
 
-**Is there a Windows version of ATS?**
+**ATS には Windows 版がありますか？**
 
-Not for the near future, at least. However, you can install ATS on top of
-[Cygwin][24] using the same build instructions as for other platforms.
+少なくとも近い未来においては入手できません。
+けれども、他のプラットフォームと同じビルド手順を使って、[Cygwin][24] 上に ATS をインストールすることはできます。
 
-You can also try ATS2 using [this experimental online tool][25], or try
-using a virtual machine (see [[building and installing|Building and
-installing]] ATS).
+また [実験的なオンラインツール][25] を使って ATS2 を試すこともできます。
+もしくは仮想環境を使って試すこともできます。
+ATS の [ビルドとインストール](Building-and-installing.md) を参照してくだい。
 
-[24]: http://www.cygwin.com/ [25]: http://xrats.illtyped.com/code/patsopt
+[24]: http://www.cygwin.com/
+[25]: http://xrats.illtyped.com/code/patsopt
 
 
 
-[26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/ [27]:
+[26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/
+[27]:
 https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/EFFECTIVATS
