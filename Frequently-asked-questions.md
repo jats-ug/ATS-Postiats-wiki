@@ -1,17 +1,17 @@
-**Why does my code typecheck but not compile?**
+### Why does my code typecheck but not compile?
 
 There could be several reasons, but please note specially the one in the [[compiler errors|compiler errors]] article referring to `share/atspre_staload.hats`. 
 
-**ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**
+### ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**
 
-*Short answer*: **No**.
+***Short answer***: **No**.
 
-*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.
+***Long answer***: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.
 
 If one uses GCC to generate object code from C source one owns, then one owns the generated object code. Then if you use ATS/Postiats to generate C code from ATS source you own, then you own the
 generated C code.
 
-*Longer answer*: 
+***Longer answer***: 
 
 [[ATSLIB|atslib]] is primarily used to generate C code, and the generated
 C code, which is owned by the author of its ATS source, can
@@ -21,7 +21,27 @@ ATS2-Postiats-include-0.1.1.tgz is released separately under a
 BSD-like license. Related to this, the preferred way to write portable ATS code should
 avoid using `-latslib` to generate executables.
 
-**Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**
+Another analogy is taken from a GNU-related site:
+
+*Question*: Can I use GPL-covered editors such as GNU Emacs to develop non-free
+programs? Can I use GPL-covered tools such as GCC to compile them?
+(#CanIUseGPLToolsForNF)
+
+*Answer*: Yes, because the copyright on the editors and tools does not cover the
+code you write. Using them does not place any restrictions, legally, on
+the license you use for your code. Some programs copy parts of themselves into 
+the output for technical reasons—for example, Bison copies a standard parser 
+program into its output file. In such cases, the copied text in the output is covered 
+by the same license that covers it in the source code. Meanwhile, the part of
+the output which is derived from the program's input inherits the
+copyright status of the input. As it happens, Bison can also be used 
+to develop non-free programs.
+This is because we decided to explicitly permit the use of the Bison
+standard parser program in Bison output files without restriction. We made
+the decision because there were other tools comparable to Bison which
+already permitted use for non-free programs.
+
+### Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?
 
 First, read one of the [official tutorials][1]. Second, [these ATS programming tips][2] may be helpful. Third, there is a Google group, [ats-lang-users][3] for asking any kind of question, no matter how trivial, including slightly off-topic or less general-interest issues. Fourth, some of the discussions on the [SourceForge mailing list archive][4] may also prove instructive. Fifth, for other community resources, see the [official community page][5].
 
@@ -37,18 +57,18 @@ If you are not highly practiced with functional programming, it may be best to l
 [6]: http://en.wikipedia.org/wiki/Standard_ML
 [7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html
 
-**Where can I find tutorials?**
+### Where can I find tutorials?
 
 See [[tutorials|Tutorials]] on this wiki, or the [Effective ATS series][26] (also [on git][27]). Also see the answer to the previous question.
 
 
-**Where can I find some code or algorithm examples?**
+### Where can I find some code or algorithm examples?
 
 Several examples can be found [here][8] (ATS1).
 
 [8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html
 
-**Where can I find a reference or documentation?**
+### Where can I find a reference or documentation?
 
 For ATS, there is an unofficial (and incomplete) reference [available][9] ([source][10]). ATS2 has [automatically generated library documentation][11]. See the [[homepage|Home]] on this wiki for links to wiki pages containing further documentation.
 
@@ -56,7 +76,7 @@ For ATS, there is an unofficial (and incomplete) reference [available][9] ([sour
 [10]: https://github.com/doublec/ats-reference
 [11]: http://www.ats-lang.org/LIBRARY/
 
-**I'm getting type errors or unsolved constraints, but everything looks right. What might I be doing wrong?**
+### I'm getting type errors or unsolved constraints, but everything looks right. What might I be doing wrong?
 
 Probably many things. Dependent types involve constraints; make sure you are using the right type at every step and not accidentally mixing similar types. There are many similar types in ATS (including functions with similar types) used for dealing with slightly different situations. We recommend *avoiding heavy use of dependent types when starting out* in order to avoid finding yourself in a situation with unsolved constraints that is very difficult to resolve. However, `if` and `case` expressions likely need to be annotated with types in general.
 
@@ -75,7 +95,7 @@ Finally, for some guidance on understanding certain errors, see [[error messages
 [14]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/bnROVnWcFMU
 [15]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/oFuXRr4K8ts
 
-**I have two different types being used together in the same data structure, and they typecheck! Is this a bug?**
+### I have two different types being used together in the same data structure, and they typecheck! Is this a bug?
 
 After perhaps being exposed to the rigor of dependent types, one may occasionally be surprised: but the short answer is it probably isn't a bug. [Here][16] is an example where `list0` will accept multiple values, each with a distinct type, as inputs (for example, `string`s, `float`s, or `int`s). [Here][17] is an example with templates. The notion has to do with ["subtypes"][18], and specifically, how ATS defines subtypes. This should not be a problem in ATS2, and is one of the [major reasons for ATS2][19].
 
@@ -84,13 +104,13 @@ After perhaps being exposed to the rigor of dependent types, one may occasionall
 [18]: http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
 [19]: https://sourceforge.net/mailarchive/forum.php?thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge.net&forum_name=ats-lang-users
 
-**What are dependent types?**
+### What are dependent types?
 
 A [dependent type][20] is a type that depends on a value. As a simple example in ATS, `int (5)` is a type such that all integers belonging to it are equal to 5 (so it is in fact a singleton type). 
 
 [20]: http://en.wikipedia.org/wiki/Dependent_type
 
-**What are linear types?**
+### What are linear types?
 
 Linear types make use of [linear logic][21]. The notion of linear types may be explained as viewing variables as resources that are consumed by expressions, which allows for static resource tracking. For example, if you consider the expression `(a or b)`, you've produced a new expression but you've destroyed `a` and `b`. This is useful for dealing with memory allocation safely and efficiently, for instance. For more information, see the [ATS book][22], the [Wikipedia article on linear types][23], or [[linear types|Linear types]] on this wiki.
 
@@ -98,7 +118,7 @@ Linear types make use of [linear logic][21]. The notion of linear types may be e
 [22]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/c3217.html
 [23]: http://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems
 
-**Is there a Windows version of ATS?**
+### Is there a Windows version of ATS?
 
 Not for the near future, at least. However, you can install ATS on top of [Cygwin][24] using the same build instructions as for other platforms.
 
