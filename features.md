@@ -17,6 +17,7 @@ and ... = do_that (pf2 | ...) // do_that is checked to be pure
 ```
 Basically, the requirement is that (1) `do_this` and `do_that` can
 only manipulate resources they own and (2) they do not share
-any resources between them.
+any resources between them. See 
+[here](https://github.com/githwxi/ATS-Postiats/issues/79) for possible test code.
 
 * Self-hosting compiler in ATS2 ([not anytime soon](https://groups.google.com/d/msg/ats-lang-users/QIoMx1t6aLI/TAk7ugSsMB0J)).
