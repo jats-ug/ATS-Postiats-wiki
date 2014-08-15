@@ -4,7 +4,9 @@ This page lists features present in ATS, either in the current version, or in a 
 For now, there is no comprehensive list, but please check [here](http://www.ats-lang.org/) for an overview.
 
 ## Prior features
-* Checking that `prfun` and `prfn` implementations exist (see [[ATS/LF|ATSLF]]).
+The last know implementation for the feature is shown in parentheses.
+* Checking that `prfun` and `prfn` implementations exist (ATS/Anairiats; see [[ATS/LF|ATSLF]]).
+* Dependent types for floating point values (ATS/Geizella or ATS/Proto?). Too complicated both internally (?) and using in practice.
 
 ## Possible features
 * Concurrent val statement evaluation, e.g., 
