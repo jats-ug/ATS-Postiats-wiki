@@ -1,6 +1,6 @@
 ## Considerations for editing the wiki
 * Checking recent edits is a good way to make sure the wiki remains as correct as possible, as well as a good way to learn new things from other users. The wiki doesn't support diff view currently, but a regularly updated repository with diff view is maintained at https://github.com/bbarker/ATS-Postiats-wiki.
-* If you change the name of the page, please git-pull the wiki and do a `grep` to see which pages reference the page name you are changing, and then make the appropriate changes; the wiki software currently will not automatically update references.
+* If you change the name of the page, either: **(1)** `git pull` the wiki and do a `grep` to see which pages reference the page name you are changing, and then make the appropriate changes; the wiki software currently will not automatically update references. Alternatively **(2)**, create a link from the old page name to the new page name. For instance, the old page might have only "See [new page name].", where [new page name] is a link to the new page.
 
 ## Stubs
 (practically no content)
