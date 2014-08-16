@@ -1,78 +1,82 @@
-## Compiling ATS2 from packaged C-source.
+## C言語ソースパッケージから ATS2 をコンパイルする
 
-Please see the [directions][1] on the ATS site.
+ATS の Web サイトでの [説明][1] を参考にしてください。
 
-## Compiling ATS2 from github-hosted source.
+## github にホスティングされているソースコードから ATS2 をコンパイルする
 
-Please note that compiling ATS2 in this style is recommended primarily for
-people who are interested in helping develop ATS2.
+このスタイルでの ATS2 コンパイルは、ATS2 の開発に参加することに興味のある人向けであることに注意してください。
 
-ATS2 is implemented in ATS1.  Currently, the required version of ATS1
-(ATS/Anairiats) for bootstrapping ATS2 (ATS/Postiats) is 0.2.11.  Assume
-that you have already installed ATS1-0.2.11.
+ATS2 は ATS1 で実装されています。
+現時点では、ATS2 (ATS/Postiats) をブートストラップするのに必要な ATS1 (ATS/Anairiats) のバージョンは
+0.2.11 です。
+以下の説明は、すでに ATS1-0.2.11 がインストールされていると仮定しています。
 
-Checkout Postiats from [sources][2] by downloading the zip file or using the
-following command (assuming that `~/postiats` is a directory where the
-repository is to be put locally):
+Postiats の [ソースコード][2] を zip ファイルとしてダウンロードするか、
+次のコマンドを使ってチェックアウトしてください。
+(`~/postiats` をローカルにチェックアウトしたリポジトリのディレクトリとしています):
 
 
     git clone https://github.com/githwxi/ATS-Postiats.git ~/postiats
 
-Set PATH to include the directory ~/postiats/bin so that the second half of
-the building process knows where to locate the created "patsopt".
+~/postiats/bin ディレクトリを PATH に含めてください。
+これはビルドプロセスの後半が生成された "patsopt" を使うためです。
 
-Now, build ATS2:
+そして ATS2 をビルドします:
 
-``` make -f Makefile_devl all ``` This command effectively executes both of
-the following:
+```
+make -f Makefile_devl all
+```
 
-``` make -f codegen/Makefile_atslib # this is only needed for the first time
-make -f Makefile_devl ```
+このコマンドは実際には次も実行してくれます:
 
-Optionally, put `~/postiats/bin` on your PATH, e.g., by adding the following
-line to your `.bashrc`:
+```
+make -f codegen/Makefile_atslib # これは最初の make -f Makefile_devl を実行するときのみ必要です
+```
+
+必要なら、自分の PATH にも `~/postiats/bin` を含めてください。
+例えば、次のような行を `.bashrc` に追加するでしょう:
 
     export PATH=${PATH}:${HOME}/postiats/bin
 
-Finally, a couple of environmental variables need to be properly set:
+最後に、2つの環境変数を適切に設定する必要があります:
 
-    export PATSHOME=${HOME}/postiats #For the example install above, or wherever ATS2 is located.
+    export PATSHOME=${HOME}/postiats # このインストール例の場合です。もしくは ATS2 の位置を指定してください。
 
-If you also want to use ats2-lang-contrib, then please set the environmental
-variable PATSHOMERELOC to the name of the directory where ats2-lang-contrib
-resides.
+ats2-lang-contrib も使うのであれば、環境変数 PATSHOMERELOC に ats2-lang-contrib
+が置かれたディレクトリの名前を設定してください。
 
-## What to try if the build of ATS/Postiats fails
+## もし ATS/Postiats のビルドに失敗したら何をすべきでしょうか
 
-Should the build fail at some point, it may be necessary to clean up:
+どこかでビルドが失敗してしまうのであれば、クリーンアップする必要があるかもしれません:
 
     make -C src cleanall
 
-If that does not work, it is worth trying to clean up ATSLIB as well:
+それでもうまくいかない場合、ATSLIB もクリーンアップしてみてください:
 
     make -f codegen/Makefile_atslib cleanall
 
-The above make rule should be executed whenever one wishes to use updated
-[ATSLIB] code from the upstream github repository.
+github リポジトリで更新された [ATSLIB] コードを使うときは、上記の make ターゲットを必ず実行すべきです。
 
-## Install ATS using package system
+## パッケージシステムを使って ATS をインストールする
 
 ### Debian GNU/Linux unstable(sid)
 
 $ sudo apt-get install ats2-lang
 
-## ATS in a virtual machine
+## 仮想環境での ATS
 
-ATS can be installed in a docker container using the following command:
+ATS は次コマンドで docker コンテナにインストールすることができます:
 
-``` docker run -ti -v [your source directory]:/src steinwaywhw/ats ```
+```
+docker run -ti -v [your source directory]:/src steinwaywhw/ats
+```
 
-This gives you the ability to edit/compile any ATS code on any platform as
-long as docker is installed.  More information and the docker install file
-is available at https://github.com/steinwaywhw/docker-ats.
+docker さえインストールされていれば、どんなプラットフォームでもどんな ATS コードも編集/コンパイルできます。
+さらなる情報と docker インストールファイルが https://github.com/steinwaywhw/docker-ats
+から入手できます。
 
-A Vagrantfile could be written based on that Dockerfile, which enables
-booting up a real virtual machine (instead of a container).
+Vagrantfile をこの Dockerfile を元にして書くこともできます。
+(コンテナの代わりに) 実際の仮想マシンで起動することもできるでしょう。
 
-[1]: http://www.ats-lang.org/DOWNLOAD [2]:
-https://github.com/githwxi/ATS-Postiats
+[1]: http://www.ats-lang.org/DOWNLOAD
+[2]: https://github.com/githwxi/ATS-Postiats
