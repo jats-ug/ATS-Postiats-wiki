@@ -13,7 +13,9 @@
 もし誤訳などを見つけた方は拡張子が ".md" であるmarkdownファイルではなく、
 ["po/ja.po" ファイル](po/ja.po)
 に pull request をいただけたら助かります。
-ja.po の編集方法については、この後の "[3] translate into Japanese" の章を読んでください。
+ja.po の編集方法については、この後の
+["[3] translate into Japanese" の章](#3-translate-into-japanese)
+を読んでください。
 
 ![](draw/translate_flow.png)
 
