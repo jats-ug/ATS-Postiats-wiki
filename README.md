@@ -139,6 +139,43 @@ $ git diff|tail -20
 
 ### [3] translate into Japanese
 
+["po/ja.po" ファイル](po/ja.po) を翻訳者が翻訳します。この翻訳作業はどなたでも Pull Request できます。
+
+ja.po ファイルは以下のような内容を持ちます。
+
+```
+$ grep -C 9 "Welcome to the wiki for ATS2" po/ja.po
+#. type: Plain text
+#: atslib.md:5
+msgid ""
+"Examples using ATSLIB can be found in [doc/EXAMPLE/ATSLIB](../../tree/master/"
+"doc/EXAMPLE/ATSLIB)."
+msgstr ""
+
+#. type: Plain text
+#: Home.md:2
+msgid "Welcome to the wiki for ATS2."
+msgstr "ようこそ ATS2 wiki へ!"
+
+#. type: Plain text
+#: Home.md:4
+msgid "The most recent released version of ATS2 is ATS2-0.1.1."
+msgstr "ATS2 の最新リリース版は ATS2-0.1.1 です。"
+
+#. type: Plain text
+#: Home.md:6
+```
+
+これは [gettext](http://ja.wikipedia.org/wiki/Gettext) という翻訳ツールのファイル形式です。
+簡単に言うと "msgid" が元の英語文、 "msgstr" が当該英語文を翻訳した結果の日本語文です。
+翻訳をする際にはこの "msgstr" の欄を書くことになります。
+
+この ja.po ファイルをそのまま編集しても良いのですが、gettext を編集するツールがあります。
+どのツールがおすすめかということなのですが、git リポジトリとの相性の関係上、
+[Emacs の PO Mode](https://www.gnu.org/software/gettext/manual/html_node/PO-Mode.html)
+が一番良いと思われます。
+他のツールは編集箇所以外の msgid や msgstr を崩してしまう傾向があるようです。
+
 ### [4] po4a-translate & git push
 
 この作業は [JATS-UG のメンバー](https://github.com/orgs/jats-ug/people) が行ないます。
