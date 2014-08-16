@@ -6,7 +6,7 @@ In the above workflow (and the example below of executing the workflow), "ja" is
 
 ## Example run
 
-### 1. Git pull upstream master
+### Git pull upstream master
 
 ```
 $ pwd
@@ -51,7 +51,7 @@ Fast-forward
 Contributed-Libraries.md (100%)
 ```
 
-### 2. Git merge changes into translate_ja
+### Git merge changes into translate_ja
 
 ```
 $ git branch
@@ -79,7 +79,7 @@ Merge made by the 'recursive' strategy.
 Contributed-Libraries.md (100%)
 ```
 
-### 3. Updatepo
+### Updatepo
 
 ```
 $ make updatepo
@@ -120,7 +120,7 @@ $ git diff|tail -20
  #. type: Plain text
 ```
 
-### 4. Translate using gettext
+### Translate using gettext
 
 ```
 $ make
@@ -171,7 +171,7 @@ $ git diff ja/Building-and-installing.md | tail
  ## ATS in a virtual machine
 ```
 
-### 5. Publish it
+### Publish it
 
 ```
 $ git add .
