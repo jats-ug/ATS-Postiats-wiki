@@ -10,7 +10,9 @@
 ### 概要
 
 このリポジトリは [po4a](http://po4a.alioth.debian.org/) を使って以下のような翻訳ワークフローで管理されています。
-もし誤訳などを見つけた方は拡張子が ".md" であるmarkdownファイルではなく、"po/ja.po" ファイルに pull request をいただけたら助かります。
+もし誤訳などを見つけた方は拡張子が ".md" であるmarkdownファイルではなく、
+["po/ja.po" ファイル](po/ja.po)
+に pull request をいただけたら助かります。
 
 ![](draw/translate_flow.png)
 
