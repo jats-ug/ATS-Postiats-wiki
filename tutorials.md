@@ -12,7 +12,7 @@ Currently, the ATS site has [several tutorials and references](http://www.ats-la
 
 **Rosetta Code** has several [entries for ATS](http://rosettacode.org/wiki/Category:ATS).
 
-Once familiar enough with the language, [[atslib|atslib]] is also a great source to find many algorithms implemented in ATS, sometimes in several different ways (linear, non-linear, etc.)
+Once familiar enough with the language, [[ATSLIB|ATSLIB]] is also a great source to find many algorithms implemented in ATS, sometimes in several different ways (linear, non-linear, etc.)
 
 ## Other small tutorials
 
