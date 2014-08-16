@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-15 02:35+0900\n"
+"POT-Creation-Date: 2014-08-16 18:03+0900\n"
 "PO-Revision-Date: 2014-08-16 17:58+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,129 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. type: Plain text
-#: compiler-errors.md:2
-msgid "##Template-related errors"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:4
-#, no-wrap
-msgid "**Not loading template implementations**\n"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:6
-msgid "Errors look like:"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:12
+#: emacs.md:1
 msgid ""
-"``` // gcc 'XXX' undeclared (first use in this function)  expected "
-"expression before ‘YYY’ ```"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:14
-msgid ""
-"There are a lot of standard template implementations commonly used in ATS2, "
-"and they are not loaded by default (for instance, in kernel or embedded "
-"programming, it is best not to load what one doesn't need). This can usually "
-"be fixed by adding this at the start of your file:"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:19
-msgid ""
-"```ocaml #include \"share/atspre_staload.hats\" ``` By default, the ATS "
-"compiler only [[staloads|staload]] everything in [[prelude|atslib]] except "
-"its template implementations, which is a very common point of confusion for "
-"ATS newcomers."
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:21
-#, no-wrap
-msgid "**Template functions on non-abstract types**\n"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:23
-msgid ""
-"Using a function template on a non-abstract type can result in this (the "
-"rules for templates are not all written down and the implementation is not "
-"finished):"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:31
-#, no-wrap
-msgid ""
-"    falcon_cnfize_dats.c: In function âATSLIB_056_prelude__list_vt_freelin__clear__7__1â:\n"
-"    falcon_cnfize_dats.c:1698:1: error: âPMVtmpltcstmatâ undeclared (first use in this function)\n"
-"    falcon_cnfize_dats.c:1698:1: note: each undeclared identifier is reported only once for each function     it appears in\n"
-"    falcon_cnfize_dats.c:1698:1: error: âgclear_refâ undeclared (first use in this function)\n"
-"    falcon_cnfize_dats.c:1698:1: warning: implicit declaration of function âS2EVarâ [-Wimplicit-function-declaration]\n"
-"    falcon_cnfize_dats.c:1698:1: error: expected expression before â)â token\n"
-"    exec(gcc -std=c99 -D_XOPEN_SOURCE -I/home/brandon/ATS-Postiats -I/home/brandon/ATS-Postiats/ccomp/runtime -I/home/brandon/ATS-Postiats/contrib -DATS_MEMALLOC_LIBC -D_GNU_SOURCE -c falcon_cnfize_dats.c) = 256\n"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:33
-msgid ""
-"To avoid this, either don't use a template (for now), or try to use an "
-"abstract type:"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:35
-#, no-wrap
-msgid "    abstype mytype = ptr\n"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:37
-msgid ""
-"Then you introduce cast functions where needed to convert between the "
-"abstract type and other (view)types."
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:39
-msgid "## Missing Linker Flag Errors"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:41
-#, no-wrap
-msgid "**Didn't specify which memory allocation functions to use**\n"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:44
-msgid ""
-"Usually you'll want to properly pass -DATS_MEMALLOC_LIBC to patscc. The main "
-"thing you'll see here is `undefined reference to `atsruntime_malloc_undef'` "
-"(usually several times)."
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:51
-#, no-wrap
-msgid ""
-"    /tmp/cchxHdy9.o: In function atspre_arrayptr_free':\n"
-"    gurobi_mip1_dats.c:(.text+0x1d4): undefined reference toatsruntime_mfree_undef'\n"
-"    /tmp/cchxHdy9.o: In function  _057_media_057_RAID5_057_home_057_brandon_057_ATS_055_Postiats_057_contrib_057_libats_055_bbarker_057_ats    optml_057_TEST_057_gurobi_mip1_056_dats__mytest_main':\n"
-"    gurobi_mip1_dats.c:(.text+0x4dc): undefined reference toatsruntime_malloc_undef'\n"
-"    gurobi_mip1_dats.c:(.text+0x54e): undefined reference to `atsruntime_malloc_undef'\n"
-"    collect2: ld returned 1 exit status\n"
-msgstr ""
-
-#. type: Plain text
-#: compiler-errors.md:52
-msgid ""
-"Alternatively, for more customization, see [[Stack and heap allocation|Stack "
-"and heap allocation]]."
+"See [[editors|https://github.com/githwxi/ATS-Postiats/wiki/editors#emacs]]."
 msgstr ""
 
 #. type: Plain text
@@ -510,6 +390,19 @@ msgid ""
 "the typechecker."
 msgstr ""
 
+#. type: Bullet: '* '
+#: operating-systems.md:2
+msgid "For kernels and drivers in ATS, see [[kernels|kernels]]."
+msgstr ""
+
+#. type: Bullet: '* '
+#: operating-systems.md:2
+msgid ""
+"For operating systems supporting ATS development, currently Linux, Mac OS X, "
+"and Windows/Cygwin are supported, but see the [download page](http://www.ats-"
+"lang.org/DOWNLOAD/) for more information."
+msgstr ""
+
 #. type: Plain text
 #: tutorials.md:2
 msgid ""
@@ -843,6 +736,53 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
+#: editors.md:2
+msgid "Several editors support ATS(2)."
+msgstr ""
+
+#. type: Plain text
+#: editors.md:7
+msgid ""
+"## Emacs * ATS2-mode supports syntax highlighting of ATS and embedded C "
+"code. For download, see the [official repository](https://github.com/mrd/"
+"ats2-mode) or possible forks ([1](https://github.com/githwxi/ATS-Postiats-"
+"contrib/blob/master/contrib/libats-/bbarker/emacs/ats2-mode.el), [2](../tree/"
+"master/utils/emacs/ats2-mode.el)).  * ATS2-flymake depends on ATS2-mode. It "
+"is available [with ATS2/Postiats](../tree/master/utils/emacs/ats2-flymake."
+"el). It can highlight the location of the source of a type-error pretty well "
+"but it may have some room for improvement. Currently, one can use ` C-x `` "
+"(that is backquote) to locate the source of a type-error. Basically, you can "
+"do the following (with ats2-mode for emacs being turned on):"
+msgstr ""
+
+#. type: Plain text
+#: editors.md:13
+#, no-wrap
+msgid ""
+"```\n"
+"C-c C-c // for compilation\n"
+"C-x `     // for locating the source of the first error\n"
+"C-x `     // for locating the source of the next error\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: editors.md:16
+msgid ""
+"## Vim There is existing code for a vim mode, but most of the ATS users seem "
+"to use emacs. See [this issue](https://github.com/githwxi/ATS-Postiats/"
+"issues/30) for a full discussion and code links."
+msgstr ""
+
+#. type: Plain text
+#: editors.md:18
+msgid ""
+"## SublimeText This is just a syntax highlight file, not a full mode. You "
+"can install it at the [Package Control](https://sublime.wbond.net/packages/"
+"ATS%20Syntax%20Highlight)."
+msgstr ""
+
+#. type: Plain text
 #: Rosetta-Stone.md:1
 msgid ""
 "This is meant to be a listing of common functions and types that can be "
@@ -917,19 +857,39 @@ msgstr "この wiki には次のようなページがあります。"
 
 #. type: Plain text
 #: Home.md:20
+#, fuzzy
+#| msgid ""
+#| "- [[Frequently asked questions|Frequently asked questions]].  - "
+#| "[[Building and installing|Building and installing]].  - ATS code style: "
+#| "[[style guide|Style guide]], detecting and avoiding [[memory leaks|Memory "
+#| "leaks]], [[code optimization|Code optimization]].  - Language reference: "
+#| "[[built-in operators|Built-in operators]], [[dependent types|Dependent "
+#| "types]], [[linear types|Linear types]], [[error messages|Error "
+#| "messages]].  - Library reference: [[atslib|atslib]], [[contrib|contrib]], "
+#| "[[built-in datatypes|Built-in datatypes]], [[built-in functions|Built-in "
+#| "functions]], [[input and output|Input and output]], [[Scientific "
+#| "Computing|Scientific Computing]], [[ATS Libraries and C Library bindings|"
+#| "ATS Libraries and C Library bindings]].  - Extensions: [[writing "
+#| "interfaces to C libraries|Writing interfaces to C libraries]], [[ATS/LF|"
+#| "ATS/LF]] (theorem proving).  - ATS internals: [[built-in constraint "
+#| "solving|Built-in constraint solving]], [[stack and heap allocation|Stack "
+#| "and heap allocation]], [[internal types|Internal types]].  - Information "
+#| "on specific keywords in ATS: [[char|char]], [[dataviewtype|"
+#| "dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]].  - "
+#| "Wiki [[TODO|TODO]]: A list of wiki pages that need the most help."
 msgid ""
 "- [[Frequently asked questions|Frequently asked questions]].  - [[Building "
 "and installing|Building and installing]].  - ATS code style: [[style guide|"
 "Style guide]], detecting and avoiding [[memory leaks|Memory leaks]], [[code "
 "optimization|Code optimization]].  - Language reference: [[built-in "
 "operators|Built-in operators]], [[dependent types|Dependent types]], "
-"[[linear types|Linear types]], [[error messages|Error messages]].  - Library "
-"reference: [[atslib|atslib]], [[contrib|contrib]], [[built-in datatypes|"
-"Built-in datatypes]], [[built-in functions|Built-in functions]], [[input and "
-"output|Input and output]], [[Scientific Computing|Scientific Computing]], "
-"[[ATS Libraries and C Library bindings|ATS Libraries and C Library "
-"bindings]].  - Extensions: [[writing interfaces to C libraries|Writing "
-"interfaces to C libraries]], [[ATS/LF|ATS/LF]] (theorem proving).  - ATS "
+"[[linear types|Linear types]], [[error messages|Error messages]], [[features|"
+"features]].  - Library reference: [[atslib|atslib]], [[contrib|contrib]], "
+"[[built-in datatypes|Built-in datatypes]], [[built-in functions|Built-in "
+"functions]], [[input and output|Input and output]], [[scientific computing|"
+"Scientific Computing]], and [[contributed libraries|Contributed "
+"Libraries]].  - Extensions: [[writing interfaces to C libraries|Writing "
+"interfaces to C libraries]], [[ATS/LF|ATSLF]] (theorem proving).  - ATS "
 "internals: [[built-in constraint solving|Built-in constraint solving]], "
 "[[stack and heap allocation|Stack and heap allocation]], [[internal types|"
 "Internal types]].  - Information on specific keywords in ATS: [[char|char]], "
@@ -985,6 +945,95 @@ msgstr ""
 "[1]: http://www.ats-lang.org/\n"
 "[2]: http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html\n"
 "[3]: https://sourceforge.net/p/ats-lang/wiki/Home/"
+
+#. type: Plain text
+#: staload.md:3
+msgid ""
+"Note that staload in ATS is a bit like `#include` in C. However, `staload` "
+"and `#include` are implemented totally differently."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:6
+msgid ""
+"By staloading a file 'foo.sats' as follows, a namespace is created for 'foo."
+"sats':"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:10
+msgid "```ocaml staload FOO = \"foo.sats\" ```"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:12
+msgid "A name xyz declared in 'foo.sats' should be referred to as $FOO.xyz."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:14
+msgid "If we next do:"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:19
+msgid ""
+"```ocaml staload FOO2 = \"foo.sats\" ``` then there is no actual loading "
+"except FOO2 becomes an alias of FOO."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:21
+msgid "We can also do"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:25
+msgid "```ocaml staload \"foo.sats\" ```"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:28
+msgid ""
+"which opens up the namespace for 'foo.sats' so that names declared in 'foo."
+"sats' can be referred to directly."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:31
+msgid ""
+"There is also support for `#include` in ATS, which simply pastes any file to "
+"be included at the point where `#include` is located."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:36
+msgid ""
+"Another use of staload is to make template implementations available to the "
+"ATS compiler. For instance, the following line makes the template "
+"implementations in foo.dats available for the purpose of code generation "
+"(from ATS source to C target):"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:42
+msgid ""
+"```ocaml staload _ = \"foo.dats\" ``` The use of '_' is to make sure that "
+"nothing declared in 'foo.dats' gets spilled out accidentally [\\[1\\]][1]."
+msgstr ""
+
+#. type: Plain text
+#: staload.md:44
+msgid "Additional references: [\\[2\\]][2]"
+msgstr ""
+
+#. type: Plain text
+#: staload.md:46
+msgid ""
+"[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/%22staload$20_"
+"%22/ats-lang-users/qO7XsiR8xA8/E0tufu9pJVkJ [2]: https://groups.google.com/d/"
+"msg/ats-lang-users/4_d_tmGZXIA/8Hc7kMLfsesJ"
+msgstr ""
 
 #. type: Plain text
 #: code-generation.md:2
@@ -1061,6 +1110,83 @@ msgstr ""
 #: code-generation.md:33
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/WVje4zG4bKA/p-XulrfBFwIJ"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:4
+msgid ""
+"## Considerations for editing the wiki * Checking recent edits is a good way "
+"to make sure the wiki remains as correct as possible, as well as a good way "
+"to learn new things from other users. The wiki doesn't support diff view "
+"currently, but a regularly updated repository with diff view is maintained "
+"at https://github.com/bbarker/ATS-Postiats-wiki.  * If you change the name "
+"of the page, either: **(1)** `git pull` the wiki and do a `grep` to see "
+"which pages reference the page name you are changing, and then make the "
+"appropriate changes; the wiki software currently will not automatically "
+"update references. Alternatively **(2)**, create a link from the old page "
+"name to the new page name. For instance, the old page might have only \"See "
+"[new page name].\", where [new page name] is a link to the new page."
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:7
+msgid ""
+"## General TODO * Consider improving the [[wiki homepage|home]] to be more "
+"beginner-friendly and easy on the eyes, e.g. https://wiki.python.org/moin/"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:12
+msgid ""
+"## Stubs (practically no content)  * [[atsdoc|atsdoc]] * [[Rosetta Stone|"
+"Rosetta Stone]]"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:24
+msgid ""
+"## Incomplete (Of course, it is hard to say what is complete, but here we "
+"mean listings that are highly incomplete or articles that only barely "
+"scratch the surface.)  * [[char|char]] * [[code generation|code generation]] "
+"* [[features|features]] * [[loops|loops]] * [[safety|safety]] * [[Scientific "
+"Computing|Scientific Computing]] * [[sort|sort]] * [[template|template]]"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:33
+msgid ""
+"## Needs Expert Review (Authors are not confident in some important "
+"statements being made.  Also note that you do not have to know everything "
+"about a topic to possibly make improvements listed here.)  * [[char|char]] * "
+"[[sort|sort]] * [[type|type]]"
+msgstr ""
+
+#. type: Plain text
+#: TODO.md:38
+msgid ""
+"## Mostly ATS1 (Needs to be updated to ATS2)  * [[Contributed Libraries|"
+"Contributed Libraries]] * [[loops|loops]]"
+msgstr ""
+
+#. type: Plain text
+#: kernels.md:3
+msgid ""
+"## Operating system kernels using ATS * [Terrier](https://github.com/mrd/"
+"terrier) is an ARM-based operating system and a fork of [Puppy](http://"
+"github.com/mrd/puppy). It is nearly 9% ATS and 84% C."
+msgstr ""
+
+#. type: Plain text
+#: kernels.md:5
+msgid ""
+"## Kernel development resources * Some kernel development tutorials are "
+"available in [[contrib|contrib]] in the [KernelBuilding](https://github.com/"
+"githwxi/ATS-Postiats-contrib/tree/master/projects/MEDIUM/KernelBuilding) "
+"directory. In particular there is a tutorial based on the [singpolyma-kernel]"
+"(https://singpolyma.net/category/singpolyma-kernel/) kernel programming "
+"tutorial, originally written in C by [Stephen Paul Weber](https://singpolyma."
+"net/). For additional discussion see [here](https://groups.google.com/d/msg/"
+"ats-lang-users/Df1CBVD5dXA/jUFem797W6AJ)."
 msgstr ""
 
 #. type: Plain text
@@ -1169,6 +1295,11 @@ msgstr ""
 #. type: Plain text
 #: FAQ.md:1
 msgid "see [[Frequently asked questions|Frequently asked questions]]"
+msgstr ""
+
+#. type: Plain text
+#: OS-kernels.md:1
+msgid "See [[kernels|kernels]]."
 msgstr ""
 
 #. type: Plain text
@@ -1323,92 +1454,175 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: staload.md:3
+#: implementations.md:1
+msgid "See [[ATS implementations|ATS implementations]]."
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:2
+msgid "## ATS2"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:4
+msgid "### ATS/Postiats"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:6
 msgid ""
-"Note that staload in ATS is a bit like `#include` in C. However, `staload` "
-"and `#include` are implemented totally differently."
+"The name for the current compiler of ATS2, the successor of ATS (or ATS1)."
 msgstr ""
 
 #. type: Plain text
-#: staload.md:6
+#: ATS-implementations.md:8
 msgid ""
-"By staloading a file 'foo.sats' as follows, a namespace is created for 'foo."
-"sats':"
+"The actual implementation of ATS/Postiats started in the March of 2011, and "
+"it took about two and one-half years to reach the first release of ATS2 at "
+"the beginning of September, 2013. As of now, the code base for the compiler "
+"of ATS2 consists of 150,000+ lines of code (LOC), which are nearly all "
+"written in ATS1."
 msgstr ""
 
 #. type: Plain text
-#: staload.md:10
-msgid "```ocaml staload FOO = \"foo.sats\" ```"
-msgstr ""
-
-#. type: Plain text
-#: staload.md:12
-msgid "A name xyz declared in 'foo.sats' should be referred to as $FOO.xyz."
-msgstr ""
-
-#. type: Plain text
-#: staload.md:14
-msgid "If we next do:"
-msgstr ""
-
-#. type: Plain text
-#: staload.md:19
+#: ATS-implementations.md:10
 msgid ""
-"```ocaml staload FOO2 = \"foo.sats\" ``` then there is no actual loading "
-"except FOO2 becomes an alias of FOO."
+"When compared to ATS1, the single most important new feature is the template "
+"system of ATS2. This is a feature that could potentially change the way a "
+"programmer writes his or her code. One can certainly feel that this is a "
+"very powerful feature (a bit like feeling that OOP is a very powerful "
+"feature). However, how this feature should be properly and effectively used "
+"in practice needs a lot more investigation."
 msgstr ""
 
 #. type: Plain text
-#: staload.md:21
-msgid "We can also do"
-msgstr ""
-
-#. type: Plain text
-#: staload.md:25
-msgid "```ocaml staload \"foo.sats\" ```"
-msgstr ""
-
-#. type: Plain text
-#: staload.md:28
+#: ATS-implementations.md:12
 msgid ""
-"which opens up the namespace for 'foo.sats' so that names declared in 'foo."
-"sats' can be referred to directly."
+"Another thing about ATS2 is that it is a lot leaner than ATS. One can make "
+"good use of ATS2 without any need for compiled library (libatslib.a). Also, "
+"GC support in ATS1 is now removed; if needed, third-party GC (e.g., Bohem-"
+"GC) can be readily employed."
 msgstr ""
 
 #. type: Plain text
-#: staload.md:31
+#: ATS-implementations.md:14
+msgid "## ATS1"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:16
+msgid "### ATS/Anairiats"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:18
 msgid ""
-"There is also support for `#include` in ATS, which simply pastes any file to "
-"be included at the point where `#include` is located."
+"The first implementation written in ATS itself, consisting of nearly 100,000 "
+"lines of source code. When compared to ATS/Geizella, a previous "
+"implementation of ATS, ATS/Anairiats is significantly more efficient, and in "
+"general it issues more informative messages for identifying program errors."
 msgstr ""
 
 #. type: Plain text
-#: staload.md:36
+#: ATS-implementations.md:20
 msgid ""
-"Another use of staload is to make template implementations available to the "
-"ATS compiler. For instance, the following line makes the template "
-"implementations in foo.dats available for the purpose of code generation "
-"(from ATS source to C target):"
+"Bootstrapping via gcc In order to bootstrap ATS/Anairiats, one needs to "
+"first check out the following svn directory and name it as some local "
+"directory, say, \"FOO\":"
 msgstr ""
 
 #. type: Plain text
-#: staload.md:42
+#: ATS-implementations.md:24
 msgid ""
-"```ocaml staload _ = \"foo.dats\" ``` The use of '_' is to make sure that "
-"nothing declared in 'foo.dats' gets spilled out accidentally [\\[1\\]][1]."
+"`svn co https://ats-lang.svn.sourceforge.net/svnroot/ats-lang/trunk FOO` "
+"Note that this checkout puts the C code needed for bootstrapping in a "
+"directory of the name `FOO/bootstrap0`.  Please go into the directory \"FOO"
+"\" and then execute 'make all'."
 msgstr ""
 
 #. type: Plain text
-#: staload.md:44
-msgid "Additional references: [\\[2\\]][2]"
-msgstr ""
-
-#. type: Plain text
-#: staload.md:46
+#: ATS-implementations.md:26
 msgid ""
-"[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/%22staload$20_"
-"%22/ats-lang-users/qO7XsiR8xA8/E0tufu9pJVkJ [2]: https://groups.google.com/d/"
-"msg/ats-lang-users/4_d_tmGZXIA/8Hc7kMLfsesJ"
+"Bootstrapping via ocaml It is also possible to use the ATS/Geizella compiler "
+"(written in OCaml) for bootstrapping ATS/Anairiats. This can be done by "
+"checking out the following svn directory and name it as the local directory "
+"`FOO/bootstrap0`:"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:31
+#, no-wrap
+msgid ""
+"```\n"
+"svn co https://ats-lang.svn.sourceforge.net/svnroot/ats-lang/bootstrap/geizella \\\n"
+"  FOO/bootstrap0\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:33
+msgid ""
+"After this is done, please go into the directory `FOO` and then execute "
+"`make all-geizella`."
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:35
+msgid "### ATS/Geizella"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:37
+msgid ""
+"A previously released implementation of ATS (written in OCaml and C). In "
+"this implementation, the native unboxed data representation (as is in C) is "
+"adopted, and this makes ATS/Geizella particularly well suited for direct "
+"interaction with C. As for parametric polymorphism, it is supported in ATS/"
+"Geizella through the use of templates. ATS/Geizella is now largely out of "
+"active use as ATS/Anairiats, a compiler for ATS that is almost entirely "
+"written in ATS, has been bootstrapped successfully (with the help of ATS/"
+"Geizella)."
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:39
+msgid "### ATS/Proto"
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:41
+msgid ""
+"The first implementation of ATS. In this implementation, the standard boxed "
+"data representation is used to support parametric polymorphism. As of now, "
+"ATS/Proto is no longer actively maintained and its main purpose is to serve "
+"as an example for future reference."
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:43
+msgid "## Predecessors"
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATS-implementations.md:46
+msgid ""
+"[Xanadu](http://www.cs.bu.edu/~hwxi/Xanadu/Xanadu.html); mainly for "
+"dependent types with imperative style."
+msgstr ""
+
+#. type: Bullet: '* '
+#: ATS-implementations.md:46
+msgid ""
+"[Dependent ML](http://www.cs.bu.edu/~hwxi/DML/DML.html); mainly for "
+"dependent types with functional style."
+msgstr ""
+
+#. type: Plain text
+#: ATS-implementations.md:49
+msgid ""
+"## Influential languages * [Standard ML](https://en.wikipedia.org/wiki/"
+"Standard_ML); mainly the syntax.  * [C](https://en.wikipedia.org/wiki/"
+"C_(programming_language)); mainly the semantics."
 msgstr ""
 
 #. type: Plain text
@@ -1575,6 +1789,12 @@ msgid ""
 "Insert simplified version of failed example: https://groups.google.com/"
 "forum/?utm_medium=email&utm_source=footer#!msg/ats-lang-users/Y1PxLL-9jfU/"
 "kyjkxB0wwPkJ"
+msgstr ""
+
+#. type: Plain text
+#: vim.md:1
+msgid ""
+"See [[editors|https://github.com/githwxi/ATS-Postiats/wiki/editors#vim]]."
 msgstr ""
 
 #. type: Plain text
@@ -1877,99 +2097,19 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: effects.md:2
+#: license.md:2
 msgid ""
-"Functions can have various effects that may be tracked by the typechecker "
-"[\\[1\\]][1].  These are described immediately after the : in the function "
-"definition (note that there should be no space between the ':' and the '<>'. "
-"As well as :<> meaning pure and : (no '<>') meaning any effects may occur, "
-"there are various other things that can appear between the '<>' symbols."
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`!exn` - the function possibly raises exceptions"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`!ntm` - the function possibly is non-terminating"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`!ref` - the function possibly updates shared memory"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`0` - the function is pure (has no effects)"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`1` - the function can have all effects"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`fun` - the function is an ordinary, non-closure, function"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`clo` - the function is a stack allocated closure"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid ""
-"`cloptr` - the function is a linear closure that must be explicitly freed"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid ""
-"`cloref` - the function is a peristent closure that requires the garbage "
-"collector to be freed."
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`lin` - the function i slinear and can be called only once"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid "`prf` - the function is a proof function"
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid ""
-"`!wrt` - indicates that a function may write to a location it owns. For "
-"instance, ptr_set incurs such an effect."
-msgstr ""
-
-#. type: Bullet: '* '
-#: effects.md:16
-msgid ""
-"`!ref` - can read from or write to a location that one knows exists but does "
-"not own."
+"ATS/Postiats is covered under the GPLv3; see the [COPYING](../tree/master/"
+"COPYING) file for more information and verification of the latest license."
 msgstr ""
 
 #. type: Plain text
-#: effects.md:18
+#: license.md:3
 msgid ""
-"These can be combined, eg. <lincloptr1>. Function effects are all of [[sort|"
-"sort]] `eff`."
-msgstr ""
-
-#. type: Plain text
-#: effects.md:19
-msgid ""
-"[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/function"
-"$20effects/ats-lang-users/88CYxwKl0M0/GAvDQQKkzJ8J"
+"There is a [related question about implications for licensing your projects "
+"when using ATS](https://github.com/githwxi/ATS-Postiats/wiki/Frequently-"
+"asked-questions#ats-library-code-is-gplv3-so-does-this-mean-my-compiled-code-"
+"also-must-be-gplv3)."
 msgstr ""
 
 #. type: Plain text
@@ -2198,45 +2338,129 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:2
-msgid ""
-"Checking recent edits is a good way to make sure the wiki remains as correct "
-"as possible, as well as a good way to learn new things from other users. The "
-"wiki doesn't support diff view currently, but a regularly updated repository "
-"with diff view is maintained at https://github.com/bbarker/ATS-Postiats-wiki."
+#: compiler-errors.md:2
+msgid "##Template-related errors"
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:7
-msgid ""
-"## Stubs (practically no content)  * [[atsdoc|atsdoc]] * [[Rosetta Stone|"
-"Rosetta Stone]]"
+#: compiler-errors.md:4
+#, no-wrap
+msgid "**Not loading template implementations**\n"
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:18
-msgid ""
-"## Incomplete (Of course, it is hard to say what is complete, but here we "
-"mean listings that are highly incomplete or articles that only barely "
-"scratch the surface.)  * [[char|char]] * [[code generation|code generation]] "
-"* [[loops|loops]] * [[safety|safety]] * [[Scientific Computing|Scientific "
-"Computing]] * [[sort|sort]] * [[template|template]]"
+#: compiler-errors.md:6
+msgid "Errors look like:"
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:27
+#: compiler-errors.md:12
 msgid ""
-"## Needs Expert Review (Authors are not confident in some important "
-"statements being made.  Also note that you do not have to know everything "
-"about a topic to possibly make improvements listed here.)  * [[char|char]] * "
-"[[sort|sort]] * [[type|type]]"
+"``` // gcc 'XXX' undeclared (first use in this function)  expected "
+"expression before ‘YYY’ ```"
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:32
+#: compiler-errors.md:14
 msgid ""
-"## Mostly ATS1 (Needs to be updated to ATS2)  * [[ATS Libraries and C "
-"Library bindings|ATS Libraries and C Library bindings]] * [[loops|loops]]"
+"There are a lot of standard template implementations commonly used in ATS2, "
+"and they are not loaded by default (for instance, in kernel or embedded "
+"programming, it is best not to load what one doesn't need). This can usually "
+"be fixed by adding this at the start of your file:"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:19
+msgid ""
+"```ocaml #include \"share/atspre_staload.hats\" ``` By default, the ATS "
+"compiler only [[staloads|staload]] everything in [[prelude|atslib]] except "
+"its template implementations, which is a very common point of confusion for "
+"ATS newcomers."
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:21
+#, no-wrap
+msgid "**Template functions on non-abstract types**\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:23
+msgid ""
+"Using a function template on a non-abstract type can result in this (the "
+"rules for templates are not all written down and the implementation is not "
+"finished):"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:31
+#, no-wrap
+msgid ""
+"    falcon_cnfize_dats.c: In function âATSLIB_056_prelude__list_vt_freelin__clear__7__1â:\n"
+"    falcon_cnfize_dats.c:1698:1: error: âPMVtmpltcstmatâ undeclared (first use in this function)\n"
+"    falcon_cnfize_dats.c:1698:1: note: each undeclared identifier is reported only once for each function     it appears in\n"
+"    falcon_cnfize_dats.c:1698:1: error: âgclear_refâ undeclared (first use in this function)\n"
+"    falcon_cnfize_dats.c:1698:1: warning: implicit declaration of function âS2EVarâ [-Wimplicit-function-declaration]\n"
+"    falcon_cnfize_dats.c:1698:1: error: expected expression before â)â token\n"
+"    exec(gcc -std=c99 -D_XOPEN_SOURCE -I/home/brandon/ATS-Postiats -I/home/brandon/ATS-Postiats/ccomp/runtime -I/home/brandon/ATS-Postiats/contrib -DATS_MEMALLOC_LIBC -D_GNU_SOURCE -c falcon_cnfize_dats.c) = 256\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:33
+msgid ""
+"To avoid this, either don't use a template (for now), or try to use an "
+"abstract type:"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:35
+#, no-wrap
+msgid "    abstype mytype = ptr\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:37
+msgid ""
+"Then you introduce cast functions where needed to convert between the "
+"abstract type and other (view)types."
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:39
+msgid "## Missing Linker Flag Errors"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:41
+#, no-wrap
+msgid "**Didn't specify which memory allocation functions to use**\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:44
+msgid ""
+"Usually you'll want to properly pass -DATS_MEMALLOC_LIBC to patscc. The main "
+"thing you'll see here is `undefined reference to `atsruntime_malloc_undef'` "
+"(usually several times)."
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:51
+#, no-wrap
+msgid ""
+"    /tmp/cchxHdy9.o: In function atspre_arrayptr_free':\n"
+"    gurobi_mip1_dats.c:(.text+0x1d4): undefined reference toatsruntime_mfree_undef'\n"
+"    /tmp/cchxHdy9.o: In function  _057_media_057_RAID5_057_home_057_brandon_057_ATS_055_Postiats_057_contrib_057_libats_055_bbarker_057_ats    optml_057_TEST_057_gurobi_mip1_056_dats__mytest_main':\n"
+"    gurobi_mip1_dats.c:(.text+0x4dc): undefined reference toatsruntime_malloc_undef'\n"
+"    gurobi_mip1_dats.c:(.text+0x54e): undefined reference to `atsruntime_malloc_undef'\n"
+"    collect2: ld returned 1 exit status\n"
+msgstr ""
+
+#. type: Plain text
+#: compiler-errors.md:52
+msgid ""
+"Alternatively, for more customization, see [[Stack and heap allocation|Stack "
+"and heap allocation]]."
 msgstr ""
 
 #. type: Plain text
@@ -2452,7 +2676,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: Error-messages.md:45 sort.md:19
+#: Error-messages.md:45 sort.md:20
 msgid "## See also"
 msgstr ""
 
@@ -2643,19 +2867,27 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: sort.md:2
+#: ATS1.md:1
 msgid ""
-"This is a list of sorts (*i.e.* static types) that are the basis for the "
-"static language of ATS."
+"See [ATS implementations](https://github.com/githwxi/ATS-Postiats/wiki/ATS-"
+"implementations#ats1)."
 msgstr ""
 
 #. type: Plain text
-#: sort.md:4
+#: sort.md:3
+msgid ""
+"This is a list of sorts (*i.e.* static types) that are the basis for the "
+"static language of ATS; ATS is a layered system: sorts are used to classify "
+"static terms, and static terms are used to classify dynamic terms."
+msgstr ""
+
+#. type: Plain text
+#: sort.md:5
 msgid "## Ground Sorts"
 msgstr ""
 
 #. type: Plain text
-#: sort.md:7
+#: sort.md:8
 msgid ""
 "These are sorts that are present as types in C. (Is this true?) Combined "
 "with other sorts and features of ATS, this allows us to prove at compile-"
@@ -2665,44 +2897,47 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: sort.md:9
+#: sort.md:10
 msgid "## Other sorts"
 msgstr ""
 
 #. type: Plain text
-#: sort.md:11
+#: sort.md:12
 #, no-wrap
 msgid "**cls, eff, prop, tkind** (alias tk), **t@ype, type, view, viewt@ype, viewtype**.\n"
 msgstr ""
 
 #. type: Plain text
-#: sort.md:13
+#: sort.md:14
 #, no-wrap
 msgid "**eff 's** are function [[effects|effects]]. The [internal type](Internal types) is S2Eeff.  \n"
 msgstr ""
 
 #. type: Plain text
-#: sort.md:15
+#: sort.md:16
 #, no-wrap
 msgid "**Views** are linear resources that signify a certain type is accessible from an associated variable. At-views, or @ views, are a special case of views which signify that a certain type is dereferencable at a specified memory location; they are used with pointers.\n"
 msgstr ""
 
 #. type: Plain text
-#: sort.md:17
+#: sort.md:18
 #, no-wrap
 msgid "**tkind** is like 'type'; it is algebraic (that is, not involving quantifiers). The plan is to use tkind to support a more flexible/powerful way of [[template|templates]] instantiation.\n"
 msgstr ""
 
 #. type: Plain text
-#: sort.md:20
+#: sort.md:21
 msgid "[[Types|type]]"
 msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:2
-#, no-wrap
-msgid "**Why does my code typecheck but not compile?**\n"
-msgstr "**なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？**\n"
+#, fuzzy
+#| msgid "**Why does my code typecheck but not compile?**\n"
+msgid "### Why does my code typecheck but not compile?"
+msgstr ""
+"**なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？"
+"**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:4
@@ -2716,20 +2951,29 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:6
-#, no-wrap
-msgid "**ATS library code is GPLv3, so does this mean my compiled code also must be GPLv3?**\n"
-msgstr "**ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも GPLv3 で配布しなければならないのですか？**\n"
+#, fuzzy
+#| msgid ""
+#| "**ATS library code is GPLv3, so does this mean my compiled code also must "
+#| "be GPLv3?**\n"
+msgid ""
+"### ATS library code is GPLv3, so does this mean my compiled code also must "
+"be GPLv3?**"
+msgstr ""
+"**ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも "
+"GPLv3 で配布しなければならないのですか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:8
-#, no-wrap
-msgid "*Short answer*: **No**.\n"
+#, fuzzy, no-wrap
+#| msgid "*Short answer*: **No**.\n"
+msgid "***Short answer***: **No**.\n"
 msgstr "*短かい答*: **いいえ**.\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:10
-#, no-wrap
-msgid "*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.\n"
+#, fuzzy, no-wrap
+#| msgid "*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.\n"
+msgid "***Long answer***: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.\n"
 msgstr "*長い答*: ATS2 コンパイラ (ATS/Postiats) を GCC のように考えてください。\n"
 
 #. type: Plain text
@@ -2746,8 +2990,9 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:15
-#, no-wrap
-msgid "*Longer answer*: \n"
+#, fuzzy, no-wrap
+#| msgid "*Longer answer*: \n"
+msgid "***Longer answer***: \n"
 msgstr "*より長い答*: \n"
 
 #. type: Plain text
@@ -2770,12 +3015,52 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:25
-#, no-wrap
-msgid "**Where can I find information on common pitfalls? Where can I ask newbie questions about writing ATS code?**\n"
-msgstr "**よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**\n"
+msgid "Another analogy is taken from a GNU-related site:"
+msgstr ""
 
 #. type: Plain text
-#: Frequently-asked-questions.md:27
+#: Frequently-asked-questions.md:29
+#, no-wrap
+msgid ""
+"*Question*: Can I use GPL-covered editors such as GNU Emacs to develop non-free\n"
+"programs? Can I use GPL-covered tools such as GCC to compile them?\n"
+"(#CanIUseGPLToolsForNF)\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:43
+#, no-wrap
+msgid ""
+"*Answer*: Yes, because the copyright on the editors and tools does not cover the\n"
+"code you write. Using them does not place any restrictions, legally, on\n"
+"the license you use for your code. Some programs copy parts of themselves into \n"
+"the output for technical reasons—for example, Bison copies a standard parser \n"
+"program into its output file. In such cases, the copied text in the output is covered \n"
+"by the same license that covers it in the source code. Meanwhile, the part of\n"
+"the output which is derived from the program's input inherits the\n"
+"copyright status of the input. As it happens, Bison can also be used \n"
+"to develop non-free programs.\n"
+"This is because we decided to explicitly permit the use of the Bison\n"
+"standard parser program in Bison output files without restriction. We made\n"
+"the decision because there were other tools comparable to Bison which\n"
+"already permitted use for non-free programs.\n"
+msgstr ""
+
+#. type: Plain text
+#: Frequently-asked-questions.md:45
+#, fuzzy
+#| msgid ""
+#| "**Where can I find information on common pitfalls? Where can I ask newbie "
+#| "questions about writing ATS code?**\n"
+msgid ""
+"### Where can I find information on common pitfalls? Where can I ask newbie "
+"questions about writing ATS code?"
+msgstr ""
+"**よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に"
+"初心者的な質問をどこで聞くことができますか？**\n"
+
+#. type: Plain text
+#: Frequently-asked-questions.md:47
 msgid ""
 "First, read one of the [official tutorials][1]. Second, [these ATS "
 "programming tips][2] may be helpful. Third, there is a Google group, [ats-"
@@ -2795,22 +3080,27 @@ msgstr ""
 "ください。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:29
+#: Frequently-asked-questions.md:49
 msgid ""
 "For information about (the sometimes opaque) ATS error messages, see [[error "
 "messages|Error messages]] on this wiki."
-msgstr "(時にあいまいな) ATS のエラーメッセージについては、この wiki の [エラーメッセージ](Error-messages.md) を参照してください。"
+msgstr ""
+"(時にあいまいな) ATS のエラーメッセージについては、この wiki の [エラーメッ"
+"セージ](Error-messages.md) を参照してください。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:31
+#: Frequently-asked-questions.md:51
 msgid ""
 "If you are not highly practiced with functional programming, it may be best "
 "to learn some [Standard ML][6] before learning ATS. The aid of [SML "
 "textbook(s) or introductory ATS notes][7] may be helpful."
-msgstr "もし関数型プログラミングの熟練者でなければ、ATS を学ぶ前になんらかの [Standard ML][6] 言語を学んだ方が良いかもしれません。[SML textbook(s) or introductory ATS notes][7] がその助けになるかもしれません。"
+msgstr ""
+"もし関数型プログラミングの熟練者でなければ、ATS を学ぶ前になんらかの "
+"[Standard ML][6] 言語を学んだ方が良いかもしれません。[SML textbook(s) or "
+"introductory ATS notes][7] がその助けになるかもしれません。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:39
+#: Frequently-asked-questions.md:59
 msgid ""
 "[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook [2]: http://scg.ece.ucsb."
 "edu/software/notes.pdf [3]: https://groups.google.com/forum/?fromgroups#!"
@@ -2822,48 +3112,55 @@ msgstr ""
 "[1]: http://www.ats-lang.org/DOCUMENT/#ATSINTRObook\n"
 "[2]: http://scg.ece.ucsb.edu/software/notes.pdf\n"
 "[3]: https://groups.google.com/forum/?fromgroups#!forum/ats-lang-users\n"
-"[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-users\n"
+"[4]: https://sourceforge.net/mailarchive/forum.php?forum_name=ats-lang-"
+"users\n"
 "[5]: http://www.ats-lang.org/COMMUNITY/#\n"
 "[6]: http://en.wikipedia.org/wiki/Standard_ML\n"
 "[7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:41
-#, no-wrap
-msgid "**Where can I find tutorials?**\n"
+#: Frequently-asked-questions.md:61
+#, fuzzy
+#| msgid "**Where can I find tutorials?**\n"
+msgid "### Where can I find tutorials?"
 msgstr "**チュートリアルはどこにありますか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:43
+#: Frequently-asked-questions.md:63
 msgid ""
 "See [[tutorials|Tutorials]] on this wiki, or the [Effective ATS series][26] "
 "(also [on git][27]). Also see the answer to the previous question."
-msgstr "この wiki の [チュートリアル](tutorials.md) を参照してください。もしくは [Effective ATS series][26] と [その git リポジトリ][27] も参考になります。また、1つ前の質問に対する回答も読んでください。"
+msgstr ""
+"この wiki の [チュートリアル](tutorials.md) を参照してください。もしくは "
+"[Effective ATS series][26] と [その git リポジトリ][27] も参考になります。ま"
+"た、1つ前の質問に対する回答も読んでください。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:46
-#, no-wrap
-msgid "**Where can I find some code or algorithm examples?**\n"
+#: Frequently-asked-questions.md:66
+#, fuzzy
+#| msgid "**Where can I find some code or algorithm examples?**\n"
+msgid "### Where can I find some code or algorithm examples?"
 msgstr "**コードやアルゴリズムの例はどこにありますか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:48
+#: Frequently-asked-questions.md:68
 msgid "Several examples can be found [here][8] (ATS1)."
 msgstr "いくつかの例が [ここ][8] にあります。 (ATS1 の例になります)。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:50
+#: Frequently-asked-questions.md:70
 msgid "[8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html"
 msgstr "[8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:52
-#, no-wrap
-msgid "**Where can I find a reference or documentation?**\n"
+#: Frequently-asked-questions.md:72
+#, fuzzy
+#| msgid "**Where can I find a reference or documentation?**\n"
+msgid "### Where can I find a reference or documentation?"
 msgstr "**リファレンスやドキュメントはどこにありますか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:54
+#: Frequently-asked-questions.md:74
 msgid ""
 "For ATS, there is an unofficial (and incomplete) reference [available][9] "
 "([source][10]). ATS2 has [automatically generated library documentation]"
@@ -2873,10 +3170,11 @@ msgstr ""
 "ATS1 については、非公式 (そして不完全な) リファレンスが [入手可能です][9]。\n"
 "([そのソースコードもあります。][10])\n"
 "ATS2 には [自動生成されたライブラリドキュメント][11] があります。\n"
-"この wiki の [ホームページ](Home.md) には、より多くのドキュメントを含む wiki ページへのリンクがあります。"
+"この wiki の [ホームページ](Home.md) には、より多くのドキュメントを含む wiki "
+"ページへのリンクがあります。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:58
+#: Frequently-asked-questions.md:78
 msgid ""
 "[9]: http://www.bluishcoder.co.nz/ats/ats-reference.pdf [10]: https://github."
 "com/doublec/ats-reference [11]: http://www.ats-lang.org/LIBRARY/"
@@ -2886,13 +3184,20 @@ msgstr ""
 "[11]: http://www.ats-lang.org/LIBRARY/"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:60
-#, no-wrap
-msgid "**I'm getting type errors or unsolved constraints, but everything looks right. What might I be doing wrong?**\n"
-msgstr "**問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間違えているのでしょうか？**\n"
+#: Frequently-asked-questions.md:80
+#, fuzzy
+#| msgid ""
+#| "**I'm getting type errors or unsolved constraints, but everything looks "
+#| "right. What might I be doing wrong?**\n"
+msgid ""
+"### I'm getting type errors or unsolved constraints, but everything looks "
+"right. What might I be doing wrong?"
+msgstr ""
+"**問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間"
+"違えているのでしょうか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:62
+#: Frequently-asked-questions.md:82
 msgid ""
 "Probably many things. Dependent types involve constraints; make sure you are "
 "using the right type at every step and not accidentally mixing similar "
@@ -2905,7 +3210,8 @@ msgid ""
 msgstr ""
 "おそらく、たくさんの原因があると考えられます。\n"
 "依存型は強制を意味します。\n"
-"あなたが正しい型をどの段階においても使っていて、意図せず似た型を混ぜてしまわないか確かめます。\n"
+"あなたが正しい型をどの段階においても使っていて、意図せず似た型を混ぜてしまわ"
+"ないか確かめます。\n"
 "ATS にはたくさんの同じような型 (や同じような型を持つ関数) があります。\n"
 "それらは少し違う状況を扱うために使われます。\n"
 "*ATS に入門したばかりの間は依存型をあまり使わない* ことを推奨します。\n"
@@ -2913,43 +3219,47 @@ msgstr ""
 "けれども、一般的には `if` と `case` 式には型注釈を付ける必要があるでしょう。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:64
+#: Frequently-asked-questions.md:84
 msgid ""
 "If you use emacs, consider using [ATS Flymake][12] as a possible measure to "
 "avoid such problems in the first place."
-msgstr "もし emacs を使っているなら、最初の段階でそのような問題を避けるために [ATS Flymake][12] を使うことを検討してください。"
+msgstr ""
+"もし emacs を使っているなら、最初の段階でそのような問題を避けるために [ATS "
+"Flymake][12] を使うことを検討してください。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:66
+#: Frequently-asked-questions.md:86
 msgid ""
 "For examples of what can go wrong and some solutions see the following "
 "examples."
 msgstr "発生する問題といくつかの解決策について、次の例を参照してください。"
 
 #. type: Bullet: '  - '
-#: Frequently-asked-questions.md:70
+#: Frequently-asked-questions.md:90
 msgid "[Example 1][13]"
 msgstr "[Example 1][13]"
 
 #. type: Bullet: '  - '
-#: Frequently-asked-questions.md:70
+#: Frequently-asked-questions.md:90
 msgid "[Example 2][14]"
 msgstr "[Example 2][14]"
 
 #. type: Bullet: '  - '
-#: Frequently-asked-questions.md:70
+#: Frequently-asked-questions.md:90
 msgid "[Example 3][15]"
 msgstr "[Example 3][15]"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:72
+#: Frequently-asked-questions.md:92
 msgid ""
 "Finally, for some guidance on understanding certain errors, see [[error "
 "messages|Error messages]] on this wiki."
-msgstr "最後に、ある種のエラーに対するガイドラインとして、この wiki の [エラーメッセージ](Error-messages.md) を参照してください。"
+msgstr ""
+"最後に、ある種のエラーに対するガイドラインとして、この wiki の [エラーメッ"
+"セージ](Error-messages.md) を参照してください。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:77
+#: Frequently-asked-questions.md:97
 msgid ""
 "[12]: http://www.reddit.com/r/ATS/comments/vx4lq/ats_flymake/ [13]: https://"
 "sourceforge.net/mailarchive/forum.php?thread_name=Pine."
@@ -2959,18 +3269,28 @@ msgid ""
 "lang-users/oFuXRr4K8ts"
 msgstr ""
 "[12]: http://www.reddit.com/r/ATS/comments/vx4lq/ats_flymake/\n"
-"[13]: https://sourceforge.net/mailarchive/forum.php?thread_name=Pine.LNX.4.64.1207201538580.21676%40csa2.bu.edu&forum_name=ats-lang-users\n"
-"[14]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/bnROVnWcFMU\n"
-"[15]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/oFuXRr4K8ts"
+"[13]: https://sourceforge.net/mailarchive/forum.php?thread_name=Pine."
+"LNX.4.64.1207201538580.21676%40csa2.bu.edu&forum_name=ats-lang-users\n"
+"[14]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/"
+"bnROVnWcFMU\n"
+"[15]: https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/"
+"oFuXRr4K8ts"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:79
-#, no-wrap
-msgid "**I have two different types being used together in the same data structure, and they typecheck! Is this a bug?**\n"
-msgstr "**同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいました!これはバグですか？**\n"
+#: Frequently-asked-questions.md:99
+#, fuzzy
+#| msgid ""
+#| "**I have two different types being used together in the same data "
+#| "structure, and they typecheck! Is this a bug?**\n"
+msgid ""
+"### I have two different types being used together in the same data "
+"structure, and they typecheck! Is this a bug?"
+msgstr ""
+"**同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいまし"
+"た!これはバグですか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:81
+#: Frequently-asked-questions.md:101
 msgid ""
 "After perhaps being exposed to the rigor of dependent types, one may "
 "occasionally be surprised: but the short answer is it probably isn't a bug. "
@@ -2982,13 +3302,16 @@ msgid ""
 msgstr ""
 "依存型の厳格さを体感した後では、ときおり驚くことでしょう。\n"
 "しかし短かい答えとして、それはおそらくバグではありません。\n"
-"[これ][16] は入力として異なる型の値 (例えば `string`, `float`, `int`) を受け付ける `list0` の例です。\n"
+"[これ][16] は入力として異なる型の値 (例えば `string`, `float`, `int`) を受け"
+"付ける `list0` の例です。\n"
 "[これ][17] はテンプレートにおける例です。\n"
-"[サブタイピング][18]、とりわけ ATS がどのようにサブタイピングを定義するかに関連することがあります。\n"
-"これはATS2 における問題ではなく、[ATS2 のあるメジャーリリース][19] で起きたことです。"
+"[サブタイピング][18]、とりわけ ATS がどのようにサブタイピングを定義するかに関"
+"連することがあります。\n"
+"これはATS2 における問題ではなく、[ATS2 のあるメジャーリリース][19] で起きたこ"
+"とです。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:86
+#: Frequently-asked-questions.md:106
 msgid ""
 "[16]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x1099.html [17]: "
 "https://sourceforge.net/mailarchive/forum.php?thread_name=Pine."
@@ -3000,40 +3323,47 @@ msgid ""
 "net&forum_name=ats-lang-users"
 msgstr ""
 "[16]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x1099.html\n"
-"[17]: https://sourceforge.net/mailarchive/forum.php?thread_name=Pine.LNX.4.64.1204041554160.22282%40csa2.bu.edu&forum_name=ats-lang-users\n"
-"[18]: http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)\n"
-"[19]: https://sourceforge.net/mailarchive/forum.php?thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge.net&forum_name=ats-lang-users"
+"[17]: https://sourceforge.net/mailarchive/forum.php?thread_name=Pine."
+"LNX.4.64.1204041554160.22282%40csa2.bu.edu&forum_name=ats-lang-users\n"
+"[18]: http://en.wikipedia.org/wiki/"
+"Covariance_and_contravariance_(computer_science)\n"
+"[19]: https://sourceforge.net/mailarchive/forum.php?"
+"thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge."
+"net&forum_name=ats-lang-users"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:88
-#, no-wrap
-msgid "**What are dependent types?**\n"
+#: Frequently-asked-questions.md:108
+#, fuzzy
+#| msgid "**What are dependent types?**\n"
+msgid "### What are dependent types?"
 msgstr "**依存型とは何ですか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:90
+#: Frequently-asked-questions.md:110
 msgid ""
 "A [dependent type][20] is a type that depends on a value. As a simple "
 "example in ATS, `int (5)` is a type such that all integers belonging to it "
 "are equal to 5 (so it is in fact a singleton type)."
 msgstr ""
 "[依存型][20] は値に依存した型です。\n"
-"ATS における単純な例として、`int (5)` は 5 と等しくなるような全ての整数であるような型です。\n"
+"ATS における単純な例として、`int (5)` は 5 と等しくなるような全ての整数である"
+"ような型です。\n"
 "そのため、これは実際にはシングルトン型です。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:92
+#: Frequently-asked-questions.md:112
 msgid "[20]: http://en.wikipedia.org/wiki/Dependent_type"
 msgstr "[20]: http://en.wikipedia.org/wiki/Dependent_type"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:94
-#, no-wrap
-msgid "**What are linear types?**\n"
+#: Frequently-asked-questions.md:114
+#, fuzzy
+#| msgid "**What are linear types?**\n"
+msgid "### What are linear types?"
 msgstr "**線形型とは何ですか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:96
+#: Frequently-asked-questions.md:116
 msgid ""
 "Linear types make use of [linear logic][21]. The notion of linear types may "
 "be explained as viewing variables as resources that are consumed by "
@@ -3045,14 +3375,16 @@ msgid ""
 "types|Linear types]] on this wiki."
 msgstr ""
 "線形型は [線形論理][21] を利用します。\n"
-"線形型の概念は、静的なリソースの追跡ができる式によって消費されるリソースとしての観測値、と説明できます。\n"
+"線形型の概念は、静的なリソースの追跡ができる式によって消費されるリソースとし"
+"ての観測値、と説明できます。\n"
 "例えば、式 `(a or b)` を考えるとき、あなたは新しい式を生成しています。\n"
 "しかし、あなたは `a` と `b` を破棄しなければなりません。\n"
 "これは、例えば、安全で効果的なメモリ確保を扱うのに有用です。\n"
-"より詳しくは、[ATSプログラミング入門][22]、[Wikipedia にある線形型に関する記事][23]、この wiki の [線形型](Linear-types.md) を参照してください。"
+"より詳しくは、[ATSプログラミング入門][22]、[Wikipedia にある線形型に関する記"
+"事][23]、この wiki の [線形型](Linear-types.md) を参照してください。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:100
+#: Frequently-asked-questions.md:120
 msgid ""
 "[21]: http://en.wikipedia.org/wiki/Linear_logic [22]: http://www.ats-lang."
 "org/DOCUMENT/INTPROGINATS/HTML/c3217.html [23]: http://en.wikipedia.org/wiki/"
@@ -3060,25 +3392,28 @@ msgid ""
 msgstr ""
 "[21]: http://en.wikipedia.org/wiki/Linear_logic\n"
 "[22]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/c3217.html\n"
-"[23]: http://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems"
+"[23]: http://en.wikipedia.org/wiki/"
+"Substructural_type_system#Linear_type_systems"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:102
-#, no-wrap
-msgid "**Is there a Windows version of ATS?**\n"
+#: Frequently-asked-questions.md:122
+#, fuzzy
+#| msgid "**Is there a Windows version of ATS?**\n"
+msgid "### Is there a Windows version of ATS?"
 msgstr "**ATS には Windows 版がありますか？**\n"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:104
+#: Frequently-asked-questions.md:124
 msgid ""
 "Not for the near future, at least. However, you can install ATS on top of "
 "[Cygwin][24] using the same build instructions as for other platforms."
 msgstr ""
 "少なくとも近い未来においては入手できません。\n"
-"けれども、他のプラットフォームと同じビルド手順を使って、[Cygwin][24] 上に ATS をインストールすることはできます。"
+"けれども、他のプラットフォームと同じビルド手順を使って、[Cygwin][24] 上に "
+"ATS をインストールすることはできます。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:106
+#: Frequently-asked-questions.md:126
 msgid ""
 "You can also try ATS2 using [this experimental online tool][25], or try "
 "using a virtual machine (see [[building and installing|Building and "
@@ -3089,7 +3424,7 @@ msgstr ""
 "ATS の [ビルドとインストール](Building-and-installing.md) を参照してくだい。"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:109
+#: Frequently-asked-questions.md:129
 msgid ""
 "[24]: http://www.cygwin.com/ [25]: http://xrats.illtyped.com/code/patsopt"
 msgstr ""
@@ -3097,13 +3432,14 @@ msgstr ""
 "[25]: http://xrats.illtyped.com/code/patsopt"
 
 #. type: Plain text
-#: Frequently-asked-questions.md:113
+#: Frequently-asked-questions.md:133
 msgid ""
 "[26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/ [27]: https://github.com/"
 "githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/EFFECTIVATS"
 msgstr ""
 "[26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/\n"
-"[27]: https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/EFFECTIVATS"
+"[27]: https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/"
+"EFFECTIVATS"
 
 #. type: Plain text
 #: atsdoc.md:2
@@ -3119,6 +3455,53 @@ msgstr ""
 msgid ""
 "For more detail, please see following.  http://www.ats-lang.org/htdocs-old/"
 "DOCUMENT/atsdocman/atsdocman.html"
+msgstr ""
+
+#. type: Plain text
+#: features.md:2
+msgid ""
+"This page lists features present in ATS, either in the current version, or "
+"in a prior implementation. Additionally, possible features are listed "
+"(please do not add possible future features without discussing the viability "
+"with the ATS maintainer(s))."
+msgstr ""
+
+#. type: Plain text
+#: features.md:5
+msgid ""
+"## Current features For now, there is no comprehensive list, but please "
+"check [here](http://www.ats-lang.org/) for an overview."
+msgstr ""
+
+#. type: Plain text
+#: features.md:10
+msgid ""
+"## Prior features The last know implementation for the feature is shown in "
+"parentheses.  * Checking that `prfun` and `prfn` implementations exist (ATS/"
+"Anairiats; see [[ATS/LF|ATSLF]]).  * Dependent types for floating point "
+"values (ATS/Geizella or ATS/Proto?). Too complicated both internally (?) and "
+"using in practice."
+msgstr ""
+
+#. type: Plain text
+#: features.md:24
+msgid ""
+"## Possible features * Concurrent val statement evaluation, e.g., If I want "
+"to indicate to the compiler that that `do_this` and `do_that` can be "
+"evaluated in parallel, I use the following syntax: ```ocaml prval (pf1, pf2) "
+"= ... // [pf1] and [pf2] are separated val ... = do_this (pf1 | ...) // "
+"do_this is checked to be pure and ... = do_that (pf2 | ...) // do_that is "
+"checked to be pure ``` Basically, the requirement is that (1) `do_this` and "
+"`do_that` can only manipulate resources they own and (2) they do not share "
+"any resources between them. See [here](https://github.com/githwxi/ATS-"
+"Postiats/issues/79) for possible test code."
+msgstr ""
+
+#. type: Bullet: '* '
+#: features.md:25
+msgid ""
+"Self-hosting compiler in ATS2 ([not anytime soon](https://groups.google.com/"
+"d/msg/ats-lang-users/QIoMx1t6aLI/TAk7ugSsMB0J))."
 msgstr ""
 
 #. type: Plain text
@@ -3257,6 +3640,102 @@ msgid ""
 "In order to switch between using these various packages, [[atspkgreloc|"
 "atspkgreloc]] is a useful tool that may automate the process. It can "
 "additionally be used with other repositories or forms of code storage."
+msgstr ""
+
+#. type: Plain text
+#: effects.md:2
+msgid ""
+"Functions can have various effects that may be tracked by the typechecker "
+"[\\[1\\]][1].  These are described immediately after the : in the function "
+"definition (note that there should be no space between the ':' and the '<>'. "
+"As well as :<> meaning pure and : (no '<>') meaning any effects may occur, "
+"there are various other things that can appear between the '<>' symbols."
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`!exn` - the function possibly raises exceptions"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`!ntm` - the function possibly is non-terminating"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`!ref` - the function possibly updates shared memory"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`0` - the function is pure (has no effects)"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`1` - the function can have all effects"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`fun` - the function is an ordinary, non-closure, function"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`clo` - the function is a stack allocated closure"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`cloptr` - the function is a linear closure that must be explicitly freed"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`cloref` - the function is a peristent closure that requires the garbage "
+"collector to be freed."
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`lin` - the function i slinear and can be called only once"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid "`prf` - the function is a proof function"
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`!wrt` - indicates that a function may write to a location it owns. For "
+"instance, ptr_set incurs such an effect."
+msgstr ""
+
+#. type: Bullet: '* '
+#: effects.md:16
+msgid ""
+"`!ref` - can read from or write to a location that one knows exists but does "
+"not own."
+msgstr ""
+
+#. type: Plain text
+#: effects.md:18
+msgid ""
+"These can be combined, eg. <lincloptr1>. Function effects are all of [[sort|"
+"sort]] `eff`."
+msgstr ""
+
+#. type: Plain text
+#: effects.md:19
+msgid ""
+"[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/function"
+"$20effects/ats-lang-users/88CYxwKl0M0/GAvDQQKkzJ8J"
 msgstr ""
 
 #. type: Plain text
