@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-16 18:03+0900\n"
-"PO-Revision-Date: 2014-08-16 17:58+0900\n"
+"PO-Revision-Date: 2014-08-16 18:47+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -857,26 +857,6 @@ msgstr "この wiki には次のようなページがあります。"
 
 #. type: Plain text
 #: Home.md:20
-#, fuzzy
-#| msgid ""
-#| "- [[Frequently asked questions|Frequently asked questions]].  - "
-#| "[[Building and installing|Building and installing]].  - ATS code style: "
-#| "[[style guide|Style guide]], detecting and avoiding [[memory leaks|Memory "
-#| "leaks]], [[code optimization|Code optimization]].  - Language reference: "
-#| "[[built-in operators|Built-in operators]], [[dependent types|Dependent "
-#| "types]], [[linear types|Linear types]], [[error messages|Error "
-#| "messages]].  - Library reference: [[atslib|atslib]], [[contrib|contrib]], "
-#| "[[built-in datatypes|Built-in datatypes]], [[built-in functions|Built-in "
-#| "functions]], [[input and output|Input and output]], [[Scientific "
-#| "Computing|Scientific Computing]], [[ATS Libraries and C Library bindings|"
-#| "ATS Libraries and C Library bindings]].  - Extensions: [[writing "
-#| "interfaces to C libraries|Writing interfaces to C libraries]], [[ATS/LF|"
-#| "ATS/LF]] (theorem proving).  - ATS internals: [[built-in constraint "
-#| "solving|Built-in constraint solving]], [[stack and heap allocation|Stack "
-#| "and heap allocation]], [[internal types|Internal types]].  - Information "
-#| "on specific keywords in ATS: [[char|char]], [[dataviewtype|"
-#| "dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]].  - "
-#| "Wiki [[TODO|TODO]]: A list of wiki pages that need the most help."
 msgid ""
 "- [[Frequently asked questions|Frequently asked questions]].  - [[Building "
 "and installing|Building and installing]].  - ATS code style: [[style guide|"
@@ -898,24 +878,12 @@ msgid ""
 msgstr ""
 "- [よくある質問](Frequently-asked-questions.md)\n"
 "- [ビルドとインストール](Building-and-installing.md)\n"
-"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク]"
-"(Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)\n"
-"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型]"
-"(Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-"
-"messages.md)\n"
-"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルト"
-"インデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions."
-"md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), "
-"[ATS ライブラリとC言語ライブラリバインディング](ATS-Libraries-and-C-Library-"
-"bindings.md)\n"
-"- 拡張: [Cライブラリへのインターフェイス|Writing-interfaces-to-C-libraries."
-"md], [ATS/LF](ATS-LF.md) (定理証明)\n"
-"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [ス"
-"タックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型]"
-"(Internal-types.md)\n"
-"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype]"
-"(dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type."
-"md)\n"
+"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)\n"
+"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-messages.md), [機能](features.md)\n"
+"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルトインデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions.md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [寄贈されたライブラリ](Contributed-Libraries.md)\n"
+"- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
+"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型](Internal-types.md)\n"
+"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype](dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type.md)\n"
 "- Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト"
 
 #. type: Plain text
@@ -2932,12 +2900,8 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:2
-#, fuzzy
-#| msgid "**Why does my code typecheck but not compile?**\n"
 msgid "### Why does my code typecheck but not compile?"
-msgstr ""
-"**なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？"
-"**\n"
+msgstr "### なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:4
@@ -2951,30 +2915,22 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:6
-#, fuzzy
-#| msgid ""
-#| "**ATS library code is GPLv3, so does this mean my compiled code also must "
-#| "be GPLv3?**\n"
 msgid ""
 "### ATS library code is GPLv3, so does this mean my compiled code also must "
 "be GPLv3?**"
-msgstr ""
-"**ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも "
-"GPLv3 で配布しなければならないのですか？**\n"
+msgstr "### ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも GPLv3 で配布しなければならないのですか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:8
-#, fuzzy, no-wrap
-#| msgid "*Short answer*: **No**.\n"
+#, no-wrap
 msgid "***Short answer***: **No**.\n"
-msgstr "*短かい答*: **いいえ**.\n"
+msgstr "***短かい答***: **いいえ**.\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:10
-#, fuzzy, no-wrap
-#| msgid "*Long answer*: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.\n"
+#, no-wrap
 msgid "***Long answer***: Think of the ATS2 compiler (ATS/Postiats) as if it were GCC.\n"
-msgstr "*長い答*: ATS2 コンパイラ (ATS/Postiats) を GCC のように考えてください。\n"
+msgstr "***長い答***: ATS2 コンパイラ (ATS/Postiats) を GCC のように考えてください。\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:13
@@ -2990,10 +2946,9 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:15
-#, fuzzy, no-wrap
-#| msgid "*Longer answer*: \n"
+#, no-wrap
 msgid "***Longer answer***: \n"
-msgstr "*より長い答*: \n"
+msgstr "***より長い答***: \n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:23
@@ -3048,16 +3003,10 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:45
-#, fuzzy
-#| msgid ""
-#| "**Where can I find information on common pitfalls? Where can I ask newbie "
-#| "questions about writing ATS code?**\n"
 msgid ""
 "### Where can I find information on common pitfalls? Where can I ask newbie "
 "questions about writing ATS code?"
-msgstr ""
-"**よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に"
-"初心者的な質問をどこで聞くことができますか？**\n"
+msgstr "### よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:47
@@ -3120,10 +3069,8 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:61
-#, fuzzy
-#| msgid "**Where can I find tutorials?**\n"
 msgid "### Where can I find tutorials?"
-msgstr "**チュートリアルはどこにありますか？**\n"
+msgstr "### チュートリアルはどこにありますか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:63
@@ -3137,10 +3084,8 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:66
-#, fuzzy
-#| msgid "**Where can I find some code or algorithm examples?**\n"
 msgid "### Where can I find some code or algorithm examples?"
-msgstr "**コードやアルゴリズムの例はどこにありますか？**\n"
+msgstr "### コードやアルゴリズムの例はどこにありますか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:68
@@ -3154,10 +3099,8 @@ msgstr "[8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:72
-#, fuzzy
-#| msgid "**Where can I find a reference or documentation?**\n"
 msgid "### Where can I find a reference or documentation?"
-msgstr "**リファレンスやドキュメントはどこにありますか？**\n"
+msgstr "### リファレンスやドキュメントはどこにありますか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:74
@@ -3185,16 +3128,10 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:80
-#, fuzzy
-#| msgid ""
-#| "**I'm getting type errors or unsolved constraints, but everything looks "
-#| "right. What might I be doing wrong?**\n"
 msgid ""
 "### I'm getting type errors or unsolved constraints, but everything looks "
 "right. What might I be doing wrong?"
-msgstr ""
-"**問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間"
-"違えているのでしょうか？**\n"
+msgstr "### 問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間違えているのでしょうか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:82
@@ -3278,16 +3215,10 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:99
-#, fuzzy
-#| msgid ""
-#| "**I have two different types being used together in the same data "
-#| "structure, and they typecheck! Is this a bug?**\n"
 msgid ""
 "### I have two different types being used together in the same data "
 "structure, and they typecheck! Is this a bug?"
-msgstr ""
-"**同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいまし"
-"た!これはバグですか？**\n"
+msgstr "### 同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいました!これはバグですか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:101
@@ -3333,10 +3264,8 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:108
-#, fuzzy
-#| msgid "**What are dependent types?**\n"
 msgid "### What are dependent types?"
-msgstr "**依存型とは何ですか？**\n"
+msgstr "### 依存型とは何ですか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:110
@@ -3357,10 +3286,8 @@ msgstr "[20]: http://en.wikipedia.org/wiki/Dependent_type"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:114
-#, fuzzy
-#| msgid "**What are linear types?**\n"
 msgid "### What are linear types?"
-msgstr "**線形型とは何ですか？**\n"
+msgstr "### 線形型とは何ですか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:116
@@ -3397,10 +3324,8 @@ msgstr ""
 
 #. type: Plain text
 #: Frequently-asked-questions.md:122
-#, fuzzy
-#| msgid "**Is there a Windows version of ATS?**\n"
 msgid "### Is there a Windows version of ATS?"
-msgstr "**ATS には Windows 版がありますか？**\n"
+msgstr "### ATS には Windows 版がありますか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:124

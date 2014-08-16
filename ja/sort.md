@@ -1,5 +1,6 @@
 This is a list of sorts (*i.e.* static types) that are the basis for the
-static language of ATS.
+static language of ATS; ATS is a layered system: sorts are used to classify
+static terms, and static terms are used to classify dynamic terms.
 
 ## Ground Sorts
 

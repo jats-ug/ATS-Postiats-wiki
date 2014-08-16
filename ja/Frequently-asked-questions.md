@@ -1,19 +1,21 @@
-**なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？**
+### なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？
+
 
 いくつかの理由が考えられますが、特に [コンパイルエラー](compiler-errors.md) の記事にある
 `share/atspre_staload.hats` に注意してください。
 
-**ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも GPLv3 で配布しなければならないのですか？**
+### ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも GPLv3 で配布しなければならないのですか？
 
-*短かい答*: **いいえ**.
 
-*長い答*: ATS2 コンパイラ (ATS/Postiats) を GCC のように考えてください。
+***短かい答***: **いいえ**.
+
+***長い答***: ATS2 コンパイラ (ATS/Postiats) を GCC のように考えてください。
 
 GCC
 を使って所有するC言語ソースコードからオブジェクトを生成すると、あなたは生成されたオブジェクトを所有することになります。そして、ATS/Postiats
 を使ってあなたが所有する ATS ソースコードからC言語コードを生成すると、生成されたC言語コードを所有することになります。
 
-*より長い答*: 
+***より長い答***: 
 
 [ATSLIB](atslib.md) は第一にC言語コードを生成するために使われます。そして、その ATS
 ソースコードの作者によって所有された生成済みC言語コードは、ATS2-Postiats-include のヘッダファイル (つまり CATS ファイル)
@@ -21,7 +23,28 @@ GCC
 ライクライセンスの下で独立してリリースされています。これに関連しますが、ポータブルな ATS コードを書くのであれば、実行オブジェクトの生成時に
 `-latslib` オプションを使わないことをおすすめします。
 
-**よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**
+Another analogy is taken from a GNU-related site:
+
+*Question*: Can I use GPL-covered editors such as GNU Emacs to develop non-free
+programs? Can I use GPL-covered tools such as GCC to compile them?
+(#CanIUseGPLToolsForNF)
+
+*Answer*: Yes, because the copyright on the editors and tools does not cover the
+code you write. Using them does not place any restrictions, legally, on
+the license you use for your code. Some programs copy parts of themselves into 
+the output for technical reasons—for example, Bison copies a standard parser 
+program into its output file. In such cases, the copied text in the output is covered 
+by the same license that covers it in the source code. Meanwhile, the part of
+the output which is derived from the program's input inherits the
+copyright status of the input. As it happens, Bison can also be used 
+to develop non-free programs.
+This is because we decided to explicitly permit the use of the Bison
+standard parser program in Bison output files without restriction. We made
+the decision because there were other tools comparable to Bison which
+already permitted use for non-free programs.
+
+### よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**
+
 
 1番目に、[公式のチュートリアル][1] を読んでください。
 2番目に、[ATS プログラミングのヒント][2] が助けになるかもしれません。
@@ -44,19 +67,22 @@ textbook(s) or introductory ATS notes][7] がその助けになるかもしれ�
 [6]: http://en.wikipedia.org/wiki/Standard_ML
 [7]: http://www.cs.bu.edu/~hwxi/academic/courses/Spring13/CS320.html
 
-**チュートリアルはどこにありますか？**
+### チュートリアルはどこにありますか？
+
 
 この wiki の [チュートリアル](tutorials.md) を参照してください。もしくは [Effective ATS series][26]
 と [その git リポジトリ][27] も参考になります。また、1つ前の質問に対する回答も読んでください。
 
 
-**コードやアルゴリズムの例はどこにありますか？**
+### コードやアルゴリズムの例はどこにありますか？
+
 
 いくつかの例が [ここ][8] にあります。 (ATS1 の例になります)。
 
 [8]: http://www.ats-lang.org/htdocs-old/EXAMPLE/example.html
 
-**リファレンスやドキュメントはどこにありますか？**
+### リファレンスやドキュメントはどこにありますか？
+
 
 ATS1 については、非公式 (そして不完全な) リファレンスが [入手可能です][9]。
 ([そのソースコードもあります。][10])
@@ -67,7 +93,8 @@ ATS2 には [自動生成されたライブラリドキュメント][11] があ�
 [10]: https://github.com/doublec/ats-reference
 [11]: http://www.ats-lang.org/LIBRARY/
 
-**問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間違えているのでしょうか？**
+### 問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間違えているのでしょうか？
+
 
 おそらく、たくさんの原因があると考えられます。
 依存型は強制を意味します。
@@ -96,7 +123,8 @@ https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/bnROVnWcFMU
 [15]:
 https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/oFuXRr4K8ts
 
-**同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいました!これはバグですか？**
+### 同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいました!これはバグですか？
+
 
 依存型の厳格さを体感した後では、ときおり驚くことでしょう。
 しかし短かい答えとして、それはおそらくバグではありません。
@@ -113,7 +141,8 @@ http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
 [19]:
 https://sourceforge.net/mailarchive/forum.php?thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge.net&forum_name=ats-lang-users
 
-**依存型とは何ですか？**
+### 依存型とは何ですか？
+
 
 [依存型][20] は値に依存した型です。
 ATS における単純な例として、`int (5)` は 5 と等しくなるような全ての整数であるような型です。
@@ -121,7 +150,8 @@ ATS における単純な例として、`int (5)` は 5 と等しくなるよう
 
 [20]: http://en.wikipedia.org/wiki/Dependent_type
 
-**線形型とは何ですか？**
+### 線形型とは何ですか？
+
 
 線形型は [線形論理][21] を利用します。
 線形型の概念は、静的なリソースの追跡ができる式によって消費されるリソースとしての観測値、と説明できます。
@@ -136,7 +166,8 @@ ATS における単純な例として、`int (5)` は 5 と等しくなるよう
 [23]:
 http://en.wikipedia.org/wiki/Substructural_type_system#Linear_type_systems
 
-**ATS には Windows 版がありますか？**
+### ATS には Windows 版がありますか？
+
 
 少なくとも近い未来においては入手できません。
 けれども、他のプラットフォームと同じビルド手順を使って、[Cygwin][24] 上に ATS をインストールすることはできます。

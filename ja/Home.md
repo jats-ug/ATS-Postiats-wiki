@@ -16,12 +16,12 @@ ATS にはまた別の [Web サイト][1] があります。(このサイトは 
 - ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避,
 [コードの最適化](Code-optimization.md)
 - 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md),
-[線形型](Linear-types.md), [エラーメッセージ](Error-messages.md)
+[線形型](Linear-types.md), [エラーメッセージ](Error-messages.md), [機能](features.md)
 - ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md),
 [ビルトインデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions.md),
-[入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [ATS
-ライブラリとC言語ライブラリバインディング](ATS-Libraries-and-C-Library-bindings.md)
-- 拡張: [Cライブラリへのインターフェイス|Writing-interfaces-to-C-libraries.md],
+[入出力](Input-and-output.md), [科学計算](Scientific-Computing.md),
+[寄贈されたライブラリ](Contributed-Libraries.md)
+- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-libraries.md],
 [ATS/LF](ATS-LF.md) (定理証明)
 - ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md),
 [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型](Internal-types.md)
