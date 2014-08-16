@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-16 21:36+0900\n"
+"POT-Creation-Date: 2014-08-16 23:56+0900\n"
 "PO-Revision-Date: 2014-08-16 18:47+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2554,18 +2554,27 @@ msgid ""
 "## For and While loops In ATS2, it is usually encouraged to use recursive "
 "functions instead of loops (as it is in most programming languages that "
 "allow functional programming). However, there are cases where it may be "
-"desirable to have for loops or while loops. For loops in particular are "
+"desirable to have `for` loops or `while` loops. For loops in particular are "
 "useful for certain parallel programming environments, such as the [fork–join "
 "model](http://en.wikipedia.org/wiki/Fork%E2%80%93join_model), which is "
 "available in ATS2 through [OpenMP](https://github.com/githwxi/ATS-Postiats-"
-"contrib/tree/master/contrib/OpenMP). While loops naturally lend themselves "
-"towards waiting for some condition to change, but unlike the use-case "
-"mentioned above using for loops, this construct is typically easy to do with "
-"recursive functions, so while loops are rarer in ATS2."
+"contrib/tree/master/contrib/OpenMP). However, note that currently OpenMP "
+"`for` loops are only supported by using embedded or external C code due to "
+"the difficulty in supporting `#pragma omp parallel for` in code generation "
+"(see the `omp_for.dats` example)."
 msgstr ""
 
 #. type: Plain text
-#: loops.md:10
+#: loops.md:9
+msgid ""
+"`while` loops naturally lend themselves towards waiting for some condition "
+"to change, but unlike the use-case mentioned above using for loops, this "
+"construct is typically easy to do with recursive functions, so while loops "
+"are rarer in ATS2."
+msgstr ""
+
+#. type: Plain text
+#: loops.md:12
 #, no-wrap
 msgid ""
 "**Need to copy most info from here**\n"
@@ -2573,23 +2582,23 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: loops.md:13
+#: loops.md:15
 msgid "### A simple example"
 msgstr ""
 
 #. type: Plain text
-#: loops.md:15
+#: loops.md:17
 msgid "### An example using termination metrics"
 msgstr ""
 
 #. type: Plain text
-#: loops.md:17
+#: loops.md:19
 msgid ""
 "### This page discusses briefly several mechanisms for using loops in ATS."
 msgstr ""
 
 #. type: Plain text
-#: loops.md:20
+#: loops.md:22
 #, no-wrap
 msgid ""
 "**Infinitely recursive functions may be a cause for a segfault.** \n"
@@ -2597,18 +2606,18 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: loops.md:24
+#: loops.md:26
 #, no-wrap
 msgid "**A main loop, useful for creating an application that will keep running until something causes it to return.** This can be implemented in several ways.\n"
 msgstr ""
 
 #. type: Plain text
-#: loops.md:26
+#: loops.md:28
 msgid "Firstly,"
 msgstr ""
 
 #. type: Plain text
-#: loops.md:30
+#: loops.md:32
 msgid "```ocaml implement main () = main() where { ... } ```"
 msgstr ""
 
