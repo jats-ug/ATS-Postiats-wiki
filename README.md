@@ -13,14 +13,18 @@
 もし誤訳などを見つけた方は拡張子が ".md" であるmarkdownファイルではなく、
 ["po/ja.po" ファイル](po/ja.po)
 に pull request をいただけたら助かります。
+ja.po の編集方法については、この後の "[3] translate into Japanese" の章を読んでください。
 
 ![](draw/translate_flow.png)
 
-### 詳細な作業ログ
+### [0] write article in English
+
+### [1] git pull & merge
+
+
+#### 作業例
 
 ```
-## 1. Git pull upstream master
-
 $ pwd
 /home/kiwamu/doc/ATS-Postiats-wiki.jats-ug
 $ git branch -a
@@ -61,9 +65,6 @@ Fast-forward
  rename contrib.md => Contrib.md (93%)
  rename ATS-Libraries-and-C-Library-bindings.md =>
 Contributed-Libraries.md (100%)
-
-## 2. Git merge changes into translate_ja
-
 $ git branch
 * master
   translate_ja
@@ -87,9 +88,13 @@ Merge made by the 'recursive' strategy.
  rename contrib.md => Contrib.md (93%)
  rename ATS-Libraries-and-C-Library-bindings.md =>
 Contributed-Libraries.md (100%)
+```
 
-## 3. Updatepo
+### [2] po4a-updatepo
 
+#### 作業例
+
+```
 $ make updatepo
 po4a-updatepo -M utf8 -f text -m compiler-errors.md -m
 Scientific-Computing.md -m Built-in-operators.md -m
@@ -126,9 +131,13 @@ $ git diff|tail -20
  msgstr ""
 
  #. type: Plain text
+```
 
-## 4. Translate using gettext
+### [3] translate into Japanese
 
+### [4] po4a-translate & git push
+
+```
 $ make
 po4a-translate -M utf8 -f text -k 0 -m compiler-errors.md -p po/ja.po
 -l ja/compiler-errors.md
@@ -175,9 +184,6 @@ $ git diff ja/Building-and-installing.md | tail
 +[ATSLIB] code from the upstream github repository.
 
  ## ATS in a virtual machine
-
-## 5. Publish it
-
 $ git add .
 $ git commit -m update
 [translate_ja 4c55ee8] update
