@@ -116,7 +116,7 @@ https://sourceforge.net/mailarchive/forum.php?thread_name=727FCEF6-16CE-4249-97B
 **依存型とは何ですか？**
 
 [依存型][20] は値に依存した型です。
-ATS における単純な例として、`int (5)` は 5 と等しいくなるような全ての整数であるような型です。
+ATS における単純な例として、`int (5)` は 5 と等しくなるような全ての整数であるような型です。
 そのため、これは実際にはシングルトン型です。
 
 [20]: http://en.wikipedia.org/wiki/Dependent_type
