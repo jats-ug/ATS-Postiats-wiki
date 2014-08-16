@@ -21,10 +21,12 @@ ja.po の編集方法については、この後の
 
 ### [0] write article in English
 
+ATS 言語について、共有したい情報がありましたら "ATS 公式 wiki" https://github.com/githwxi/ATS-Postiats/wiki に英語で記事を書いてください。
+この日本語 wiki に日本語で固有の情報を書くことはできません。必ず左記の公式 wiki に書いてから、この wiki リポジトリで日本語に翻訳するようにしてください。
+
 ### [1] git pull & merge
 
-
-#### 作業例
+この作業は [JATS-UG のメンバー](https://github.com/orgs/jats-ug/people) が行ないます。
 
 ```
 $ pwd
@@ -94,7 +96,7 @@ Contributed-Libraries.md (100%)
 
 ### [2] po4a-updatepo
 
-#### 作業例
+この作業は [JATS-UG のメンバー](https://github.com/orgs/jats-ug/people) が行ないます。
 
 ```
 $ make updatepo
@@ -138,6 +140,8 @@ $ git diff|tail -20
 ### [3] translate into Japanese
 
 ### [4] po4a-translate & git push
+
+この作業は [JATS-UG のメンバー](https://github.com/orgs/jats-ug/people) が行ないます。
 
 ```
 $ make
