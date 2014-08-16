@@ -53,6 +53,12 @@ If that does not work, it is worth trying to clean up ATSLIB as well:
 
 The above make rule should be executed whenever one wishes to use updated [ATSLIB] code from the upstream github repository.
 
+## Install ATS using package system
+
+### Debian GNU/Linux unstable(sid)
+
+$ sudo apt-get install ats2-lang
+
 ## ATS in a virtual machine
 
 ATS can be installed in a docker container using the following command:
