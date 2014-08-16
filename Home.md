@@ -17,7 +17,8 @@ This wiki contains the following pages.
 - ATS internals: [[built-in constraint solving|Built-in constraint solving]], [[stack and heap allocation|Stack and heap allocation]], [[internal types|Internal types]].
 - Information on specific keywords in ATS: [[char|char]], [[dataviewtype|dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]].
 - Wiki [[TODO|TODO]]: A list of wiki pages that need the most help.
- 
+- Other [[languages|languages]].
+
 For the first version of ATS, there is a largely unmaintained [wiki][3].
 
 ATS2 is distributed under the GNU General Public License version 3 (GPLv3), or any later version.
