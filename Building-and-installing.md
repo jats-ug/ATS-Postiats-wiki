@@ -57,7 +57,9 @@ The above make rule should be executed whenever one wishes to use updated [ATSLI
 
 ### Debian GNU/Linux unstable(sid)
 
+```
 $ sudo apt-get install ats2-lang
+```
 
 ## ATS in a virtual machine
 
