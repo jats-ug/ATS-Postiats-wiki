@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-16 18:03+0900\n"
+"POT-Creation-Date: 2014-08-16 21:36+0900\n"
 "PO-Revision-Date: 2014-08-16 18:47+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -293,21 +293,36 @@ msgstr ""
 
 #. type: Plain text
 #: Building-and-installing.md:57
-msgid "## ATS in a virtual machine"
+msgid "## Install ATS using package system"
 msgstr ""
 
 #. type: Plain text
 #: Building-and-installing.md:59
-msgid "ATS can be installed in a docker container using the following command:"
+msgid "### Debian GNU/Linux unstable(sid)"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:61
+msgid "$ sudo apt-get install ats2-lang"
 msgstr ""
 
 #. type: Plain text
 #: Building-and-installing.md:63
+msgid "## ATS in a virtual machine"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:65
+msgid "ATS can be installed in a docker container using the following command:"
+msgstr ""
+
+#. type: Plain text
+#: Building-and-installing.md:69
 msgid "``` docker run -ti -v [your source directory]:/src steinwaywhw/ats ```"
 msgstr ""
 
 #. type: Plain text
-#: Building-and-installing.md:66
+#: Building-and-installing.md:72
 msgid ""
 "This gives you the ability to edit/compile any ATS code on any platform as "
 "long as docker is installed.  More information and the docker install file "
@@ -315,14 +330,14 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: Building-and-installing.md:68
+#: Building-and-installing.md:74
 msgid ""
 "A Vagrantfile could be written based on that Dockerfile, which enables "
 "booting up a real virtual machine (instead of a container)."
 msgstr ""
 
 #. type: Plain text
-#: Building-and-installing.md:70
+#: Building-and-installing.md:76
 msgid ""
 "[1]: http://www.ats-lang.org/DOWNLOAD [2]: https://github.com/githwxi/ATS-"
 "Postiats"
@@ -878,12 +893,23 @@ msgid ""
 msgstr ""
 "- [よくある質問](Frequently-asked-questions.md)\n"
 "- [ビルドとインストール](Building-and-installing.md)\n"
-"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)\n"
-"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-messages.md), [機能](features.md)\n"
-"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルトインデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions.md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [寄贈されたライブラリ](Contributed-Libraries.md)\n"
-"- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
-"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型](Internal-types.md)\n"
-"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype](dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type.md)\n"
+"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク]"
+"(Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)\n"
+"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型]"
+"(Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-"
+"messages.md), [機能](features.md)\n"
+"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルト"
+"インデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions."
+"md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [寄"
+"贈されたライブラリ](Contributed-Libraries.md)\n"
+"- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-"
+"libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
+"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [ス"
+"タックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型]"
+"(Internal-types.md)\n"
+"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype]"
+"(dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type."
+"md)\n"
 "- Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト"
 
 #. type: Plain text
@@ -1419,6 +1445,87 @@ msgid ""
 "If you are doing something unsafe with memory, though, particularly when "
 "interfacing with other C code, there are other possibilities. For more "
 "information, see [[memory leaks|Memory leaks]]."
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:2
+msgid "## Sample code"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:4
+msgid "### main.dats"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:8
+msgid ""
+"```ocaml #include \"share/atspre_define.hats\" #include \"share/"
+"atspre_staload.hats\""
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:11
+msgid ""
+"extern fun c_func_kick (int): int = \"mac#\" extern fun ats_func_plus1: "
+"(int) -> int = \"ext#\""
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:13
+msgid "implement ats_func_plus1 (a) = a + 1"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:18
+#, no-wrap
+msgid ""
+"implement main0 () = {\n"
+"  val () = println! (c_func_kick 9)\n"
+"}\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:20
+msgid "### c_func.c"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:23
+msgid "```c extern int ats_func_plus1(int);"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:28
+#, no-wrap
+msgid ""
+"int c_func_kick(int a) {\n"
+"    ats_func_plus1(a);\n"
+"}\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:30
+msgid "## Build and run it"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:35
+msgid "``` $ patscc main.dats c_func.c -o main $ ./main ```"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:37
+msgid "## More detail"
+msgstr ""
+
+#. type: Plain text
+#: Writing-interfaces-to-C-libraries.md:38
+msgid ""
+"See [\"Introduction to Programming in ATS: Interaction with C\"](http://www."
+"ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/c1995.html)."
 msgstr ""
 
 #. type: Plain text
@@ -2901,7 +3008,9 @@ msgstr ""
 #. type: Plain text
 #: Frequently-asked-questions.md:2
 msgid "### Why does my code typecheck but not compile?"
-msgstr "### なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのですか？\n"
+msgstr ""
+"### なぜ私のコードは型検査に通ったにもかかわらずコンパイルできないのです"
+"か？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:4
@@ -2918,7 +3027,9 @@ msgstr ""
 msgid ""
 "### ATS library code is GPLv3, so does this mean my compiled code also must "
 "be GPLv3?**"
-msgstr "### ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも GPLv3 で配布しなければならないのですか？\n"
+msgstr ""
+"### ATS ライブラリコードが GPLv3 ということは、コンパイルされた私のコードも "
+"GPLv3 で配布しなければならないのですか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:8
@@ -3006,7 +3117,9 @@ msgstr ""
 msgid ""
 "### Where can I find information on common pitfalls? Where can I ask newbie "
 "questions about writing ATS code?"
-msgstr "### よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**\n"
+msgstr ""
+"### よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際"
+"に初心者的な質問をどこで聞くことができますか？**\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:47
@@ -3131,7 +3244,9 @@ msgstr ""
 msgid ""
 "### I'm getting type errors or unsolved constraints, but everything looks "
 "right. What might I be doing wrong?"
-msgstr "### 問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を間違えているのでしょうか？\n"
+msgstr ""
+"### 問題がないと思えるのに、型エラーや解決できない強制が発生します。私は何を"
+"間違えているのでしょうか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:82
@@ -3218,7 +3333,9 @@ msgstr ""
 msgid ""
 "### I have two different types being used together in the same data "
 "structure, and they typecheck! Is this a bug?"
-msgstr "### 同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいました!これはバグですか？\n"
+msgstr ""
+"### 同じデータ構造内で異なる2つの型を一緒に使ったのに、型検査を通ってしまいま"
+"した!これはバグですか？\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:101
