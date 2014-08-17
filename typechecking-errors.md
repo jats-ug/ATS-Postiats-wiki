@@ -65,11 +65,91 @@ type of !z: S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), S2Eintinf(7))
 
 which shows that `!z` is now the same type as `x`. This reflects that by default, integers have types parameterized by their values in ATS, as was the case for `x`.
 
-## See also
+### See also
 
 [[Internal Types|Internal-types]], to understand the `S2Eapp`, `S2Ecst`, etc, which often appears in error messages.
 
 [1]: https://sourceforge.net/p/ats-lang/wiki/Error%20messages/
+
+## Constraint-solver limitations
+
+### Supplying static values to the typechecker
+Should generate `unsolved constraint: C3NSTRprop` messages.
+
+In some rare cases, it may be necessary to supply a static value (if a singleton type will do) to the typechecker, as the constraint solver may not be able to infer the constraints. For instance, here is an example below where the typechecker can't solve for an integer `x` such that `2x = 2` ([Fourier-Motzkin elimination](https://en.wikipedia.org/wiki/Fourier%E2%80%93Motzkin_elimination) is for linear inequalities, so this integer equality proves to be more difficult and is currently unsupported by the solver). We can get around this by suggesting that a valid value for static `x` in the `DubInt` type below, when `2x = 2`, is `1`, and we supply `1` explicitly:
+
+```ocaml
+typedef Int = [x:int] int(x)
+typedef IntGT0 = [x:nat] int(x)
+typedef DubInt = [x:int] int(2*x)
+
+fun
+fun1 (x: Int): void = ()
+
+fun
+funGT0 (x: IntGT0): void = ()
+
+fun
+dubx(x: DubInt): void = ()
+
+implement main0 () = {
+val x1:int(1) = 1
+val x2:int(2) = 2
+
+(* These are fine *)
+val () = fun1(x1)
+val () = funGT0(x1)
+
+(*
+This would produce an unsolved constraint due to
+equality constraint:
+
+val () = dubx(x2)
+
+Instead we can do:  *)
+
+val () = dubx(#[ 1 | x2])
+}
+```
+
+Another case may happen when we aren't able to supply the type implicitly since no constraints on the type are generated. In such a case, supplying a static value will work:
+
+```ocaml
+datatype
+either_t0ype_bool_type
+(
+  a:t@ype+, b:t@ype+, bool
+
+) =
+  | Left (a, b, true) of (a)
+  | Right (a, b, false) of (b)
+
+stadef
+either = either_t0ype_bool_type
+typedef
+either (a:t0p, b:t0p) = [c:bool] either(a, b, c)
+
+
+fn{
+a,b:t0p
+} either_left (a:a):<> either(a, b, true) = Left(a)
+
+fn{
+a,b:t0p
+} either_right (b:b):<> either(a, b, false) = Right(b)
+
+
+fun do_either(x : int)
+  : [n:nat; m:nat] either (int n, int m) =
+  (* This would fail to typecheck due to unknown static values (i.e. types) 
+     for 'b' and 'a' in either(_,b,_) and either(a,_,_) respectively:
+  if x > 0 then either_left(0) else either_right(1)                   
+  
+  Instead we can do:                                                    *)
+  if x > 0 then #[0,1 | either_left(0)] else #[0,1 | either_right(1)]
+
+implement main0() = ignoret(do_either(~1))
+``` 
 
 ##Template-related errors##
 
