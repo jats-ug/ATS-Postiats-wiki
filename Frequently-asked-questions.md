@@ -13,7 +13,7 @@ generated C code.
 
 ***Longer answer***: 
 
-[[ATSLIB|atslib]] is primarily used to generate C code, and the generated
+[[ATSLIB|ATSLIB]] is primarily used to generate C code, and the generated
 C code, which is owned by the author of its ATS source, can
 be compiled as long as the header files (that is, CATS-files) in
 ATS2-Postiats-include are available. Currently,

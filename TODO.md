@@ -7,7 +7,6 @@
 
 ## Stubs
 (practically no content)
-* [[atsdoc|atsdoc]]
 * [[Rosetta Stone|Rosetta Stone]]
 
 

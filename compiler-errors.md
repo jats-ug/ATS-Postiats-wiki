@@ -15,7 +15,7 @@ There are a lot of standard template implementations commonly used in ATS2, and 
 ```ocaml
 #include "share/atspre_staload.hats"
 ```
-By default, the ATS compiler only [[staloads|staload]] everything in [[prelude|atslib]] except its template implementations, which is a very common point of confusion for ATS newcomers.
+By default, the ATS compiler only [[staloads|staload]] everything in [[prelude|ATSLIB]] except its template implementations, which is a very common point of confusion for ATS newcomers.
 
 **Template functions on non-abstract types**
 
