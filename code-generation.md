@@ -12,7 +12,7 @@ ATS2 compiler targets a subset of C programming language. There is a library/uti
 The subset is comprised by the following kinds of syntax (see atsparemit.sats):
 
 * s0exp (static expressions, for types)
-* d0exp (dynamic expressions, i.e. expressions that get executed at run-time)
+* d0exp (dynamic expressions, i.e. expressions that get executed at run-time to yield values, but not involving any control flow)
 * instr (low-level instruction nodes, e.g. if-then-else, return, jump, assignment)
 * d0ecl (declarations of types, macros, external functions, and functions compiled from ATS2 source code)
 
