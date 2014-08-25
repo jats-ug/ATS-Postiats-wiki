@@ -40,4 +40,4 @@ For more detail, see
 ## Localized-Template pattern
 
 For more detail, see
-[ATSLIB/prelude/strptr](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach).
+[ATSLIB/prelude/strptr library](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach).
