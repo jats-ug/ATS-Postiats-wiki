@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-19 18:56+0900\n"
+"POT-Creation-Date: 2014-08-25 16:56+0900\n"
 "PO-Revision-Date: 2014-08-17 01:05+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1775,50 +1775,78 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: editors.md:2
-msgid "Several editors support ATS(2)."
-msgstr ""
-
-#. type: Plain text
-#: editors.md:7
+#: Design-patterns.md:3
 msgid ""
-"## Emacs * ATS2-mode supports syntax highlighting of ATS and embedded C "
-"code. For download, see the [official repository](https://github.com/mrd/"
-"ats2-mode) or possible forks ([1](https://github.com/githwxi/ATS-Postiats-"
-"contrib/blob/master/contrib/libats-/bbarker/emacs/ats2-mode.el), [2](../tree/"
-"master/utils/emacs/ats2-mode.el)).  * ATS2-flymake depends on ATS2-mode. It "
-"is available [with ATS2/Postiats](../tree/master/utils/emacs/ats2-flymake."
-"el). It can highlight the location of the source of a type-error pretty well "
-"but it may have some room for improvement. Currently, one can use ` C-x `` "
-"(that is backquote) to locate the source of a type-error. Basically, you can "
-"do the following (with ats2-mode for emacs being turned on):"
+"ATS has some design patterns that are less common in the other languages.  "
+"This page explains the patterns."
 msgstr ""
 
 #. type: Plain text
-#: editors.md:13
+#: Design-patterns.md:5
+msgid "## Takeout-Addback pattern"
+msgstr ""
+
+#. type: Plain text
+#: Design-patterns.md:8
+msgid ""
+"Static meaning with ATS's type isn't good at everything.  Sequence of the "
+"static meaning is divided by event driven architecture or thread."
+msgstr ""
+
+#. type: Plain text
+#: Design-patterns.md:13
+msgid ""
+"In such case, we should use some protocol like a session.  The session is "
+"opened calling takeout static function.  After takeout and before addback, "
+"we can touch and use static meaning associated with the session.  It's "
+"closed calling addback static funcion."
+msgstr ""
+
+#. type: Plain text
+#: Design-patterns.md:15
+msgid "The arrayptr library in prelude is a good example."
+msgstr ""
+
+#. type: Plain text
+#: Design-patterns.md:24
 #, no-wrap
 msgid ""
-"```\n"
-"C-c C-c // for compilation\n"
-"C-x `     // for locating the source of the first error\n"
-"C-x `     // for locating the source of the next error\n"
+"```ocaml\n"
+"(* File: prelude/SATS/arrayptr.sats *)\n"
+"praxi\n"
+"arrayptr_takeout\n"
+"  {a:vt0p}{l:addr}{n:int}\n"
+"(\n"
+"  A: !arrayptr (INV(a), l, n) >> arrayptrout (a?, l, n)\n"
+") : array_v (a, l, n) // end of [arrayptr_takeout]\n"
+msgstr ""
+
+#. type: Plain text
+#: Design-patterns.md:32
+#, no-wrap
+msgid ""
+"praxi\n"
+"arrayptr_addback\n"
+"  {a:vt0p}{l:addr}{n:int}\n"
+"(\n"
+"  pf: array_v (INV(a), l, n) | A: !arrayptrout (a?, l, n) >> arrayptr (a, l, n)\n"
+") : void // end of [arrayptr_addback]\n"
 "```\n"
 msgstr ""
 
 #. type: Plain text
-#: editors.md:16
+#: Design-patterns.md:36
 msgid ""
-"## Vim There is existing code for a vim mode, but most of the ATS users seem "
-"to use emacs. See [this issue](https://github.com/githwxi/ATS-Postiats/"
-"issues/30) for a full discussion and code links."
+"The arrayptr has no static meaning, because it's simple pointer.  The "
+"array_v has static meaning, because it's dataview.  We can use array_v "
+"between takeout and addback."
 msgstr ""
 
 #. type: Plain text
-#: editors.md:18
+#: Design-patterns.md:38
 msgid ""
-"## SublimeText This is just a syntax highlight file, not a full mode. You "
-"can install it at the [Package Control](https://sublime.wbond.net/packages/"
-"ATS%20Syntax%20Highlight)."
+"For more detail, see [ATSLIB/prelude/arrayptr library](http://www.ats-lang."
+"org/LIBRARY/prelude/SATS/DOCUGEN/HTML/arrayptr.html#arrayptr_takeout)."
 msgstr ""
 
 #. type: Plain text
@@ -2005,21 +2033,22 @@ msgid ""
 "- [[Frequently asked questions|Frequently asked questions]].  - [[Building "
 "and installing|Building and installing]].  - ATS code style: [[style guide|"
 "Style guide]], detecting and avoiding [[memory leaks|Memory leaks]], [[code "
-"optimization|Code optimization]].  - Language reference: [[built-in "
-"operators|Built-in operators]], [[dependent types|Dependent types]], "
-"[[linear types|Linear types]], [[error messages|Error messages]], [[features|"
-"features]].  - Library reference: [[ATSLIB|ATSLIB]], [[contrib|contrib]], "
-"[[built-in datatypes|Built-in datatypes]], [[built-in functions|Built-in "
-"functions]], [[input and output|Input and output]], [[scientific computing|"
-"Scientific Computing]], and [[contributed libraries|Contributed "
-"Libraries]].  - Extensions: [[writing interfaces to C libraries|Writing "
-"interfaces to C libraries]], [[ATS/LF|ATSLF]] (theorem proving).  - ATS "
-"internals: [[built-in constraint solving|Built-in constraint solving]], "
-"[[stack and heap allocation|Stack and heap allocation]], [[internal types|"
-"Internal types]].  - Information on specific keywords in ATS: [[char|char]], "
-"[[dataviewtype|dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|"
-"type]].  - Wiki [[TODO|TODO]]: A list of wiki pages that need the most "
-"help.  - Other [[languages|languages]]."
+"optimization|Code optimization]], [[design patterns|Design patterns]].  - "
+"Language reference: [[built-in operators|Built-in operators]], [[dependent "
+"types|Dependent types]], [[linear types|Linear types]], [[error messages|"
+"Error messages]], [[features|features]].  - Library reference: [[ATSLIB|"
+"ATSLIB]], [[contrib|contrib]], [[built-in datatypes|Built-in datatypes]], "
+"[[built-in functions|Built-in functions]], [[input and output|Input and "
+"output]], [[scientific computing|Scientific Computing]], and [[contributed "
+"libraries|Contributed Libraries]].  - Extensions: [[writing interfaces to C "
+"libraries|Writing interfaces to C libraries]], [[ATS/LF|ATSLF]] (theorem "
+"proving).  - ATS internals: [[built-in constraint solving|Built-in "
+"constraint solving]], [[stack and heap allocation|Stack and heap "
+"allocation]], [[internal types|Internal types]].  - Information on specific "
+"[[keywords|keywords]] and terminology in ATS: [[char|char]], [[dataviewtype|"
+"dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]].  - Wiki "
+"[[TODO|TODO]]: A list of wiki pages that need the most help.  - Other "
+"[[languages|languages]]."
 msgstr ""
 "- [よくある質問](Frequently-asked-questions.md)\n"
 "- [ビルドとインストール](Building-and-installing.md)\n"
@@ -2118,7 +2147,8 @@ msgstr ""
 #. type: Bullet: '* '
 #: code-generation.md:18
 msgid ""
-"d0exp (dynamic expressions, i.e. expressions that get executed at run-time)"
+"d0exp (dynamic expressions, i.e. expressions that get executed at run-time "
+"to yield values, but not involving any control flow)"
 msgstr ""
 
 #. type: Bullet: '* '
@@ -2224,6 +2254,36 @@ msgid ""
 "tutorial, originally written in C by [Stephen Paul Weber](https://singpolyma."
 "net/). For additional discussion see [here](https://groups.google.com/d/msg/"
 "ats-lang-users/Df1CBVD5dXA/jUFem797W6AJ)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: keywords.md:4
+msgid ""
+"`castfn` - a function (`fn`) that changes the type, both dynamically and "
+"statically, of its argument. The converted value is returned. When only a "
+"static `castfn` is needed, one can use the `cast` and related functions in "
+"`unsafe.sats` to save time (a common use is converting a pointer from C to "
+"some other viewtype)."
+msgstr ""
+
+#. type: Bullet: '* '
+#: keywords.md:4
+msgid ""
+"`fn` - non-recursive function (`fun`). Used in place of `fun` for "
+"optimization purposes (is this true?) and as well as to check against the "
+"possibility of an accidental infinite loop."
+msgstr ""
+
+#. type: Bullet: '* '
+#: keywords.md:4
+msgid "`fun` - a function that can be recursive."
+msgstr ""
+
+#. type: Bullet: '* '
+#: keywords.md:4
+msgid ""
+"`implement` - used to implement a function that has been defined using `fun` "
+"or `fn`"
 msgstr ""
 
 #. type: Plain text
@@ -2647,6 +2707,33 @@ msgstr ""
 #. type: Plain text
 #: OS-kernels.md:1
 msgid "See [[kernels|kernels]]."
+msgstr ""
+
+#. type: Plain text
+#: Memory-leaks.md:2
+msgid ""
+"The design of ATS helps the programmer to create code without memory leaks. "
+"Still, there are a few ways to create leaky code."
+msgstr ""
+
+#. type: Bullet: '  1. '
+#: Memory-leaks.md:5
+msgid "Using unsafe features in ATS"
+msgstr ""
+
+#. type: Bullet: '  2. '
+#: Memory-leaks.md:5
+msgid "Using C code or other non-ATS code that is not memory-safe"
+msgstr ""
+
+#. type: Plain text
+#: Memory-leaks.md:7
+msgid "Here are some strategies for creating memory-safe code in ATS."
+msgstr ""
+
+#. type: Plain text
+#: Memory-leaks.md:8
+msgid "> Fill me in!"
 msgstr ""
 
 #. type: Plain text
@@ -3325,30 +3412,50 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: Memory-leaks.md:2
+#: editors.md:2
+msgid "Several editors support ATS(2)."
+msgstr ""
+
+#. type: Plain text
+#: editors.md:7
 msgid ""
-"The design of ATS helps the programmer to create code without memory leaks. "
-"Still, there are a few ways to create leaky code."
-msgstr ""
-
-#. type: Bullet: '  1. '
-#: Memory-leaks.md:5
-msgid "Using unsafe features in ATS"
-msgstr ""
-
-#. type: Bullet: '  2. '
-#: Memory-leaks.md:5
-msgid "Using C code or other non-ATS code that is not memory-safe"
-msgstr ""
-
-#. type: Plain text
-#: Memory-leaks.md:7
-msgid "Here are some strategies for creating memory-safe code in ATS."
+"## Emacs * ATS2-mode supports syntax highlighting of ATS and embedded C "
+"code. For download, see the [official repository](https://github.com/mrd/"
+"ats2-mode) or possible forks ([1](https://github.com/githwxi/ATS-Postiats-"
+"contrib/blob/master/contrib/libats-/bbarker/emacs/ats2-mode.el), [2](../tree/"
+"master/utils/emacs/ats2-mode.el)).  * ATS2-flymake depends on ATS2-mode. It "
+"is available [with ATS2/Postiats](../tree/master/utils/emacs/ats2-flymake."
+"el). It can highlight the location of the source of a type-error pretty well "
+"but it may have some room for improvement. Currently, one can use ` C-x `` "
+"(that is backquote) to locate the source of a type-error. Basically, you can "
+"do the following (with ats2-mode for emacs being turned on):"
 msgstr ""
 
 #. type: Plain text
-#: Memory-leaks.md:8
-msgid "> Fill me in!"
+#: editors.md:13
+#, no-wrap
+msgid ""
+"```\n"
+"C-c C-c // for compilation\n"
+"C-x `     // for locating the source of the first error\n"
+"C-x `     // for locating the source of the next error\n"
+"```\n"
+msgstr ""
+
+#. type: Plain text
+#: editors.md:16
+msgid ""
+"## Vim There is existing code for a vim mode, but most of the ATS users seem "
+"to use emacs. See [this issue](https://github.com/githwxi/ATS-Postiats/"
+"issues/30) for a full discussion and code links."
+msgstr ""
+
+#. type: Plain text
+#: editors.md:18
+msgid ""
+"## SublimeText This is just a syntax highlight file, not a full mode. You "
+"can install it at the [Package Control](https://sublime.wbond.net/packages/"
+"ATS%20Syntax%20Highlight)."
 msgstr ""
 
 #. type: Bullet: '* '
@@ -3803,17 +3910,18 @@ msgid "## Stubs (practically no content)  * [[Rosetta Stone|Rosetta Stone]]"
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:23
+#: TODO.md:24
 msgid ""
 "## Incomplete (Of course, it is hard to say what is complete, but here we "
 "mean listings that are highly incomplete or articles that only barely "
 "scratch the surface.)  * [[char|char]] * [[code generation|code generation]] "
-"* [[features|features]] * [[loops|loops]] * [[safety|safety]] * [[Scientific "
-"Computing|Scientific Computing]] * [[sort|sort]] * [[template|template]]"
+"* [[features|features]] * [[keywords|keywords]] * [[loops|loops]] * [[safety|"
+"safety]] * [[Scientific Computing|Scientific Computing]] * [[sort|sort]] * "
+"[[template|template]]"
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:32
+#: TODO.md:33
 msgid ""
 "## Needs Expert Review (Authors are not confident in some important "
 "statements being made.  Also note that you do not have to know everything "
@@ -3822,7 +3930,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: TODO.md:37
+#: TODO.md:38
 msgid ""
 "## Mostly ATS1 (Needs to be updated to ATS2)  * [[Contributed Libraries|"
 "Contributed Libraries]] * [[loops|loops]]"
