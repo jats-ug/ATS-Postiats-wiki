@@ -36,3 +36,8 @@ We can use array_v between takeout and addback.
 
 For more detail, see
 [ATSLIB/prelude/arrayptr library](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/arrayptr.html#arrayptr_takeout).
+
+## Localized-Template pattern
+
+For more detail, see
+[ATSLIB/prelude/strptr](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach).
