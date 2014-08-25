@@ -15,6 +15,7 @@
 * [[char|char]]
 * [[code generation|code generation]]
 * [[features|features]]
+* [[keywords|keywords]]
 * [[loops|loops]]
 * [[safety|safety]]
 * [[Scientific Computing|Scientific Computing]]
