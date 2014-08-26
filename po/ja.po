@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-26 21:51+0900\n"
-"PO-Revision-Date: 2014-08-17 01:05+0900\n"
+"PO-Revision-Date: 2014-08-26 22:06+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -457,10 +457,11 @@ msgstr "### Debian GNU/Linux unstable(sid)"
 
 #. type: Plain text
 #: Building-and-installing.md:63
-#, fuzzy
-#| msgid "$ sudo apt-get install ats2-lang"
 msgid "``` $ sudo apt-get install ats2-lang ```"
-msgstr "$ sudo apt-get install ats2-lang"
+msgstr ""
+"```\n"
+"$ sudo apt-get install ats2-lang\n"
+"```"
 
 #. type: Plain text
 #: Building-and-installing.md:65
@@ -822,29 +823,31 @@ msgstr ""
 
 #. type: Plain text
 #: internationalization.md:166
-#, fuzzy, no-wrap
-#| msgid "    make -f codegen/Makefile_atslib cleanall\n"
+#, no-wrap
 msgid "     make -f codegen/Makefile_atslib cleanall\n"
-msgstr "    make -f codegen/Makefile_atslib cleanall\n"
+msgstr "     make -f codegen/Makefile_atslib cleanall\n"
 
 #. type: Plain text
 #: internationalization.md:170
-#, fuzzy, no-wrap
-#| msgid "The above make rule should be executed whenever one wishes to use updated [ATSLIB] code from the upstream github repository."
+#, no-wrap
 msgid ""
 " The above make rule should be executed whenever one wishes to use updated\n"
 "-[atslib] code from the upstream github repository.\n"
 "+[ATSLIB] code from the upstream github repository.\n"
-msgstr "github リポジトリで更新された [ATSLIB] コードを使うときは、上記の make ターゲットを必ず実行すべきです。"
+msgstr ""
+" The above make rule should be executed whenever one wishes to use updated\n"
+"-[atslib] code from the upstream github repository.\n"
+"+[ATSLIB] code from the upstream github repository.\n"
 
 #. type: Plain text
 #: internationalization.md:173
-#, fuzzy, no-wrap
-#| msgid "## ATS in a virtual machine"
+#, no-wrap
 msgid ""
 " ## ATS in a virtual machine\n"
 "```\n"
-msgstr "## 仮想環境での ATS"
+msgstr ""
+" ## ATS in a virtual machine\n"
+"```\n"
 
 #. type: Plain text
 #: internationalization.md:175
@@ -1090,15 +1093,6 @@ msgstr "***より長い答***: \n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:23
-#, fuzzy
-#| msgid ""
-#| "[[ATSLIB|atslib]] is primarily used to generate C code, and the generated "
-#| "C code, which is owned by the author of its ATS source, can be compiled "
-#| "as long as the header files (that is, CATS-files) in ATS2-Postiats-"
-#| "include are available. Currently, ATS2-Postiats-include-0.1.1.tgz is "
-#| "released separately under a BSD-like license. Related to this, the "
-#| "preferred way to write portable ATS code should avoid using `-latslib` to "
-#| "generate executables."
 msgid ""
 "[[ATSLIB|ATSLIB]] is primarily used to generate C code, and the generated C "
 "code, which is owned by the author of its ATS source, can be compiled as "
@@ -1106,14 +1100,7 @@ msgid ""
 "available. Currently, ATS2-Postiats-include-0.1.1.tgz is released separately "
 "under a BSD-like license. Related to this, the preferred way to write "
 "portable ATS code should avoid using `-latslib` to generate executables."
-msgstr ""
-"[ATSLIB](atslib.md) は第一にC言語コードを生成するために使われます。そして、そ"
-"の ATS ソースコードの作者によって所有された生成済みC言語コードは、ATS2-"
-"Postiats-include のヘッダファイル (つまり CATS ファイル) さえあればコンパイル"
-"できます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD ライクライセンス"
-"の下で独立してリリースされています。これに関連しますが、ポータブルな ATS コー"
-"ドを書くのであれば、実行オブジェクトの生成時に `-latslib` オプションを使わな"
-"いことをおすすめします。"
+msgstr "[ATSLIB](ATSLIB.md) は第一にC言語コードを生成するために使われます。そして、その ATS ソースコードの作者によって所有された生成済みC言語コードは、ATS2-Postiats-include のヘッダファイル (つまり CATS ファイル) さえあればコンパイルできます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD ライクライセンスの下で独立してリリースされています。これに関連しますが、ポータブルな ATS コードを書くのであれば、実行オブジェクトの生成時に `-latslib` オプションを使わないことをおすすめします。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:25
@@ -1908,11 +1895,8 @@ msgstr ""
 
 #. type: Plain text
 #: Design-patterns.md:73
-#, fuzzy
-#| msgid ""
-#| "ATS can be installed in a docker container using the following command:"
 msgid "The above code can be compiled with the following command."
-msgstr "ATS は次コマンドで docker コンテナにインストールすることができます:"
+msgstr "上記のコードは以下のコマンドでコンパイルできます。"
 
 #. type: Plain text
 #: Design-patterns.md:80
@@ -2094,26 +2078,6 @@ msgstr "この wiki には次のようなページがあります。"
 
 #. type: Plain text
 #: Home.md:21
-#, fuzzy
-#| msgid ""
-#| "- [[Frequently asked questions|Frequently asked questions]].  - "
-#| "[[Building and installing|Building and installing]].  - ATS code style: "
-#| "[[style guide|Style guide]], detecting and avoiding [[memory leaks|Memory "
-#| "leaks]], [[code optimization|Code optimization]].  - Language reference: "
-#| "[[built-in operators|Built-in operators]], [[dependent types|Dependent "
-#| "types]], [[linear types|Linear types]], [[error messages|Error "
-#| "messages]], [[features|features]].  - Library reference: [[atslib|"
-#| "atslib]], [[contrib|contrib]], [[built-in datatypes|Built-in datatypes]], "
-#| "[[built-in functions|Built-in functions]], [[input and output|Input and "
-#| "output]], [[scientific computing|Scientific Computing]], and "
-#| "[[contributed libraries|Contributed Libraries]].  - Extensions: [[writing "
-#| "interfaces to C libraries|Writing interfaces to C libraries]], [[ATS/LF|"
-#| "ATSLF]] (theorem proving).  - ATS internals: [[built-in constraint "
-#| "solving|Built-in constraint solving]], [[stack and heap allocation|Stack "
-#| "and heap allocation]], [[internal types|Internal types]].  - Information "
-#| "on specific keywords in ATS: [[char|char]], [[dataviewtype|"
-#| "dataviewtype]], [[overload|overload]], [[sort|sort]], [[type|type]].  - "
-#| "Wiki [[TODO|TODO]]: A list of wiki pages that need the most help."
 msgid ""
 "- [[Frequently asked questions|Frequently asked questions]].  - [[Building "
 "and installing|Building and installing]].  - ATS code style: [[style guide|"
@@ -2137,24 +2101,14 @@ msgid ""
 msgstr ""
 "- [よくある質問](Frequently-asked-questions.md)\n"
 "- [ビルドとインストール](Building-and-installing.md)\n"
-"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク]"
-"(Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md)\n"
-"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型]"
-"(Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-"
-"messages.md), [機能](features.md)\n"
-"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルト"
-"インデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions."
-"md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [寄"
-"贈されたライブラリ](Contributed-Libraries.md)\n"
-"- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-"
-"libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
-"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [ス"
-"タックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型]"
-"(Internal-types.md)\n"
-"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype]"
-"(dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type."
-"md)\n"
-"- Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト"
+"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md), [デザインパターン](Design-patterns.md)\n"
+"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-messages.md), [機能](features.md)\n"
+"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルトインデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions.md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [寄贈されたライブラリ](Contributed-Libraries.md)\n"
+"- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
+"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型](Internal-types.md)\n"
+"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype](dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type.md)\n"
+"- Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト\n"
+"- 他の [言語](languages.md) で読むには"
 
 #. type: Plain text
 #: Home.md:23
@@ -2386,19 +2340,20 @@ msgstr ""
 #. type: Plain text
 #: typechecking-errors.md:6
 msgid "For instance, the following line of code"
-msgstr ""
+msgstr "例えば、次のコードの行は..."
 
 #. type: Plain text
 #: typechecking-errors.md:10
 msgid "```ocaml val () = assertloc (sum = showtype(1+2+3+4+5.0))  ```"
 msgstr ""
+"```ocaml\n"
+"val () = assertloc (sum = showtype(1+2+3+4+5.0))\n"
+"```"
 
 #. type: Plain text
 #: typechecking-errors.md:12
-#, fuzzy
-#| msgid "This wiki contains the following pages."
 msgid "generates the following messages:"
-msgstr "この wiki には次のようなページがあります。"
+msgstr "次のようなメッセージを引き起します:"
 
 #. type: Plain text
 #: typechecking-errors.md:18
@@ -2412,6 +2367,11 @@ msgid ""
 "357(line=27, offs=10) -- 394(line=27, offs=47): error(3): mismatch of static "
 "terms (tyleq): ```"
 msgstr ""
+"```\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): the symbol [=] cannot be resolved as no match is found.\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): [/home/hwxi/research/Postiats/git/src/pats_trans3_util.dats]: d3exp_trdn: the dynamic expression cannot be assigned the type [S2Eapp(S2Ecst(bool_bool_t0ype); S2EVar(10))].\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): mismatch of static terms (tyleq):\n"
+"```"
 
 #. type: Plain text
 #: typechecking-errors.md:20
