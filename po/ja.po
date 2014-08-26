@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-26 21:51+0900\n"
-"PO-Revision-Date: 2014-08-26 22:06+0900\n"
+"PO-Revision-Date: 2014-08-26 22:22+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -4067,17 +4067,20 @@ msgstr ""
 #. type: Plain text
 #: dynload.md:2
 msgid "The sole purpose of dynload is for doing initialization."
-msgstr ""
+msgstr "dynload の唯一の目的は初期化を行なうことです。"
 
 #. type: Plain text
 #: dynload.md:4
 msgid "Say in a file named 'foo.dats', we have the following line:"
-msgstr ""
+msgstr "次の行を含むファイル 'foo.dats' があったとします:"
 
 #. type: Plain text
 #: dynload.md:8
 msgid "```ocaml dynload \"bar.dats\" ```"
 msgstr ""
+"```ocaml\n"
+"dynload \"bar.dats\"\n"
+"```"
 
 #. type: Plain text
 #: dynload.md:12
@@ -4085,7 +4088,7 @@ msgid ""
 "This line gets compiled to a call to the initialization function associated "
 "with 'bar.dats'. Without this line, a link-time error message of the form "
 "\"..._dynload_flag is undefined\" is to be reported."
-msgstr ""
+msgstr "この行は 'bar.dats' に関連する初期化関数の呼び出しにコンパイルされます。この行がない場合には、リンク時のエラー \"..._dynload_flag is undefined\" が発生します。"
 
 #. type: Plain text
 #: dynload.md:16
@@ -4093,25 +4096,30 @@ msgid ""
 "If you don't want the initialization function (generated automatically by "
 "the compiler for any .dats file) for 'bar.dats' to be called, then please "
 "add the following line in 'bar.dats':"
-msgstr ""
+msgstr "もし 'bar.dats' の初期化関数 (この初期化関数は全ての .dats ファイルにコンパイラが自動的に生成します) を呼び出したくない場合には、次の行を 'bar.dats' に追加してください:"
 
 #. type: Plain text
 #: dynload.md:21
 msgid "```ocaml #define ATS_DYNLOADFLAG 0 ``` Please do this with caution."
 msgstr ""
+"```ocaml\n"
+"#define ATS_DYNLOADFLAG 0\n"
+"```\n"
+"\n"
+"これには注意が必要です。"
 
 #. type: Plain text
 #: dynload.md:24
 msgid ""
 "Normally, 'dynload' lines should only occur in the file that contains the "
 "implementation of the 'main' function [\\[1\\]][1]"
-msgstr ""
+msgstr "通常、'main' 関数の実装を含むファイルにおいてのみ 'dynload' 行を配置する必要があります [\\[1\\]][1] 。"
 
 #. type: Plain text
 #: dynload.md:25
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/jqFEAf1drXc/uv5x_rx3aMEJ"
-msgstr ""
+msgstr "[1]: https://groups.google.com/d/msg/ats-lang-users/jqFEAf1drXc/uv5x_rx3aMEJ"
 
 #. type: Plain text
 #: implementations.md:1
