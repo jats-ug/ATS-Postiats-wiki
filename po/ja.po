@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-26 21:51+0900\n"
-"PO-Revision-Date: 2014-08-26 22:22+0900\n"
+"PO-Revision-Date: 2014-08-26 22:33+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -2281,6 +2281,8 @@ msgid ""
 "terrier) is an ARM-based operating system and a fork of [Puppy](http://"
 "github.com/mrd/puppy). It is nearly 9% ATS and 84% C."
 msgstr ""
+"## ATS を用いた OS の kernel\n"
+"* [Terrier](https://github.com/mrd/terrier) は ARM アーキティクチャの OS で [Puppy](http://github.com/mrd/puppy) のフォークです。その 9% は ATS、84% は C言語で設計されています。"
 
 #. type: Plain text
 #: kernels.md:5
@@ -2294,6 +2296,8 @@ msgid ""
 "net/). For additional discussion see [here](https://groups.google.com/d/msg/"
 "ats-lang-users/Df1CBVD5dXA/jUFem797W6AJ)."
 msgstr ""
+"## kernel 開発に関する情報\n"
+"* いくつかの kernel 開発チュートリアルが [contrib](Contrib.md) の [KernelBuilding](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/projects/MEDIUM/KernelBuilding) ディレクトリにあります。特に、元はC言語で [Stephen Paul Weber](https://singpolyma.net/) によって書かれた [singpolyma-kernel](https://singpolyma.net/category/singpolyma-kernel/) kernel プログラミングチュートリアルをベースにしたチュートリアルがあります。さらなる議論については [ここ](https://groups.google.com/d/msg/ats-lang-users/Df1CBVD5dXA/jUFem797W6AJ) を参照してください。"
 
 #. type: Bullet: '* '
 #: keywords.md:4
