@@ -15,6 +15,6 @@ linset_choose (xs: !set a, x0: &a? >> opt (a, b)) : #[b:bool] bool (b)
   - `#[ ...  | ... ]` - Provides static values (witnesses) to the type checker when they are missing or cannot be inferred. See [typechecking errors ](https://github.com/githwxi/ATS-Postiats/wiki/typechecking-errors#supplying-static-values-to-the-typechecker) for examples.
 
 
-[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.
+[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.html
 [2]: https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ
 [3]: https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J
