@@ -36,3 +36,50 @@ We can use array_v between takeout and addback.
 
 For more detail, see
 [ATSLIB/prelude/arrayptr library](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/arrayptr.html#arrayptr_takeout).
+
+## Localized-Template pattern
+
+Many functional languages use closure to inject localized processing into a function.
+ATS also can use closure. However it's sometimes bad idea,
+because closure is a resource and should be maintained by linear type or GC.
+
+ATS code can use locallized template for the situation.
+In following code,
+"plus1" is defined as default function template implementation on global name space,
+and "call_plus1" is also defined as function templete.
+Simply calling "call_plus1" produces that "plus1" as default implementation is called.
+On the other hand,
+calling "call_plus1" binding "plus1" with local implementation produces that the "plus1" is called.
+
+```ocaml
+(* File: test_template.dats *)
+#include "share/atspre_staload.hats"
+
+extern fun{} plus1: () -> int
+extern fun{} call_plus1: () -> int
+
+implement{} plus1 () = 0 + 1                (* default implementation *)
+implement{} call_plus1 () = plus1 ()
+
+implement main0 () = {
+  val () = println! (call_plus1 ())         (* => 1 *)
+  val v = 10
+  val () = let implement{} plus1 () = v + 1 (* local implementation *)
+           in println! (call_plus1 ()) end  (* => 11 *)
+}
+```
+
+The above code can be compiled with the following command.
+
+```
+$ patscc -o test_template test_template.dats
+$ ./test_template
+1
+11
+```
+
+Note "call_plus1" should be defined as templete,
+if you would like to localize the child function using template.
+
+For more detail, see
+[ATSLIB/prelude/strptr library](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach).
