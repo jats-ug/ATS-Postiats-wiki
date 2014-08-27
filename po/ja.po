@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 20:01+0900\n"
-"PO-Revision-Date: 2014-08-27 21:09+0900\n"
+"PO-Revision-Date: 2014-08-27 21:47+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -4244,7 +4244,7 @@ msgstr ""
 #. type: Plain text
 #: Code-optimization.md:2
 msgid "## When not to attempt clever code optimization ##"
-msgstr ""
+msgstr "## 賢いコードの最適化を試みるべきでない場合 ##"
 
 #. type: Plain text
 #: Code-optimization.md:4
@@ -4253,13 +4253,13 @@ msgid ""
 "functions would be inconvenient. [Using macros probably does not make your "
 "code run more quickly][1], since `gcc -O2` already inlines functions very "
 "aggressively."
-msgstr ""
+msgstr "- ATS2 における `macdef` は型を含むことができます。関数を使うのが不便な場合においてのみマクロを使ってください。[たいていマクロ使ってもあなたのコードが速くなることはありません][1]。`gcc -O2` が積極的に関数のインライン化を行なうためです。"
 
 #. type: Plain text
 #: Code-optimization.md:6
 #, no-wrap
 msgid "  [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7kJ3Ww0J\n"
-msgstr ""
+msgstr "  [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7kJ3Ww0J\n"
 
 #. type: Bullet: ' - '
 #: Code-optimization.md:8
@@ -4267,7 +4267,7 @@ msgid ""
 "Making use of the knowledge that separate val declarations within the same "
 "scope technically denote different vals on the stack should not preclude one "
 "from using a natural style. For instance:"
-msgstr ""
+msgstr "同じスコープでスタックに異なる val を宣言を分けるという知識を利用することは、自然なコーディングスタイルです。例えば:"
 
 #. type: Plain text
 #: Code-optimization.md:13
@@ -4285,7 +4285,7 @@ msgid ""
 "here no extra space is allocated for the second 'x' due to constant "
 "propagation. It is in generally unlikely that such a coding style would "
 "incur any penalty."
-msgstr ""
+msgstr "この場合、定数伝搬 (constant propagation) によって、二番目の 'x' のために追加のメモリ領域が確保されることはありません。このようなコーディングスタイルがなんらかのペナルティになることは一般にありえません。"
 
 #. type: Plain text
 #: Code-optimization.md:17
