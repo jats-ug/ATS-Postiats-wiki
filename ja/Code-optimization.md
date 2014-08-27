@@ -1,68 +1,61 @@
-## When not to attempt clever code optimization ##
+## 賢いコードの最適化を試みるべきでない場合 ##
 
-- A `macdef` in ATS2 can involve type. Use macros only in cases where using
-functions would be inconvenient. [Using macros probably does not make your
-code run more quickly][1], since `gcc -O2` already inlines functions very
-aggressively.
+- ATS2 における `macdef`
+は型を含むことができます。関数を使うのが不便な場合においてのみマクロを使ってください。[たいていマクロ使ってもあなたのコードが速くなることはありません][1]。`gcc
+-O2` が積極的に関数のインライン化を行なうためです。
 
   [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7kJ3Ww0J
 
- - Making use of the knowledge that separate val declarations within the
-   same scope technically denote different vals on the stack should not
-   preclude one from using a natural style. For instance:
+- 同じスコープでスタックに異なる val を宣言を分けるという知識を利用することは、自然なコーディングスタイルです。例えば:
 
-~~~~~~~~~~~~~~~
+~~~ocaml
     val x = 5
     val x = 7
-~~~~~~~~~~~~~~~
+~~~
 
-here no extra space is allocated for the second 'x' due to constant
-propagation. It is in generally unlikely that such a coding style would
-incur any penalty.
+この場合、定数伝搬 (constant propagation) によって、二番目の 'x'
+のために追加のメモリ領域が確保されることはありません。このようなコーディングスタイルがなんらかのペナルティになることは一般にありえません。
 
-## Optimization tips ##
+## 最適化のヒント ##
 
-- Instead of freeing an instance of a linear type and immediately creating
-and returning a new one with the same value in a case expression, like this
+- 以下のように、線形型のインスタンスを解放し、すぐに同じ値を新しく生成して返すような case 式を書く代わりに:
 
         case+ x of
         | ~GRgenes (genes) => GRgenes (genes)
 
-    do this
+    次のように書きます:
 
         case+ x of
         | GRgenes _ => (fold@ x; x)
 
-    because `@fold` is compiled into a "noop".
+    なぜなら、`@fold` は "ノーオペレーション" にコンパイルされるためです。
 
 
 
-- Remove anonymous closure definitions from function calls when possible, to
-avoid having them created each time the loop is called. For instance, a
-simple string comparison function can be created like so:
+-
+可能な場合には関数呼び出しから無名のクロージャ定義を取り除いてください。これはループが呼び出されるたびにそれらが生成されるのを避けるためです。例えば、単純な文字列の比較関数は次のように作ることができます:
 
         val cmp_str = lam(x:string,y:string):int =<cloref> compare (x, y)
 
 
-## Making Lean Code ##
+## ひきしまったコードを作る ##
 
-When the size of your code matters, for instance, in embedded applications,
-consider the following:
+例えば組み込みアプリケーションのようにコードサイズが重要な場合、次を検討してみてください:
 
-### Exception-free-code ###
+### 例外を使わないコード ###
 
-Note that using exceptions at all may cause memory leaks or require a GC, so
-there is already some potential for overhead due to this. If your ATS code
-does not make use of exceptions, then you can add the following flag when
-compiling the code[\[1\]][1]:
+例外の使用は、メモリリークを引き起こしたり GC が必要になったり、またオーバーヘッドの可能性もあることに注意してください。もし、あなたの ATS
+コードで例外を利用しないのであれば、そのコードをコンパイルする際に次のフラグを使うことができます [\[1\]][1]:
 
 \-D_ATS_EXCEPTION_NONE
 
-This will make the generated object code even more compact.
+これでより小さいオブジェクトコードが生成されるようになります。
 
-Let hello.dats be a file containing the following line:
+次の行を含む hello.dats ファイルで試してみましょう:
 
-```ocaml implement main0 () = print "Hello, world!\n" ```
+```ocaml
+implement main0 () = print "Hello, world!\n"
+```
 
 ```
 patscc -o hello1 hello.dats
