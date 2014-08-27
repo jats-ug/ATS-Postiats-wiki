@@ -4,12 +4,12 @@
 
   [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7kJ3Ww0J
 
- - Making use of the knowledge that separate val declarations within the same scope technically denote different vals on the stack should not preclude one from using a natural style. For instance:
+- Making use of the knowledge that separate val declarations within the same scope technically denote different vals on the stack should not preclude one from using a natural style. For instance:
 
-~~~~~~~~~~~~~~~
+~~~ocaml
     val x = 5
     val x = 7
-~~~~~~~~~~~~~~~
+~~~
 
 here no extra space is allocated for the second 'x' due to constant propagation. It is in generally unlikely that such a coding style would incur any penalty.
 
