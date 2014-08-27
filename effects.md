@@ -9,7 +9,7 @@ Functions can have various effects that may be tracked by the typechecker [\[1\]
 * `clo` - the function is a stack allocated closure
 * `cloptr` - the function is a linear closure that must be explicitly freed
 * `cloref` - the function is a peristent closure that requires the garbage collector to be freed. 
-* `lin` - the function i slinear and can be called only once
+* `lin` - the function is linear and can be called only once
 * `prf` - the function is a proof function
 * `!wrt` - indicates that a function may write to a location it owns. For instance, ptr_set incurs such an effect. 
 * `!ref` - can read from or write to a location that one knows exists but does not own.
