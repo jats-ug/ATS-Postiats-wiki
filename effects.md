@@ -1,4 +1,4 @@
-Functions can have various effects that may be tracked by the typechecker [\[1\]][1].  These are described immediately after the : in the function definition (note that there should be no space between the ':' and the '<>'. As well as :<> meaning pure and : (no '<>') meaning any effects may occur, there are various other things that can appear between the '<>' symbols.
+Functions can have various effects that may be tracked by the typechecker [\[1\]][1].  These are described immediately after the : in the function definition (note that there should be no space between the ':' and the '<>'.) As well as :<> meaning pure and : (no '<>') meaning any effects may occur, there are various other things that can appear between the '<>' symbols.
 
 * `!exn` - the function possibly raises exceptions
 * `!ntm` - the function possibly is non-terminating
