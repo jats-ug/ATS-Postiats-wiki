@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-27 21:47+0900\n"
+"PO-Revision-Date: 2014-08-28 01:31+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -250,12 +250,6 @@ msgstr ""
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
-#, fuzzy
-#| msgid ""
-#| "`=/=>` - Similar to `=>>` but indicates to the typechecker that the proof "
-#| "following `=/=>` must prove falsehood. During compilation (after "
-#| "typechecking), the third clause is removed as it can never be chosen at "
-#| "run-time [because matching v against yields falsehood][3]."
 msgid ""
 "`=/=>` - Similar to `=>>` but indicates to the typechecker that the proof "
 "following `=/=>` must prove falsehood. During compilation (after "
@@ -4266,11 +4260,7 @@ msgid ""
 "functions would be inconvenient. [Using macros probably does not make your "
 "code run more quickly][1], since `gcc -O2` already inlines functions very "
 "aggressively."
-msgstr ""
-"- ATS2 における `macdef` は型を含むことができます。関数を使うのが不便な場合に"
-"おいてのみマクロを使ってください。[たいていマクロ使ってもあなたのコードが速く"
-"なることはありません][1]。`gcc -O2` が積極的に関数のインライン化を行なうため"
-"です。"
+msgstr "- ATS2 における `macdef` は型を含むことができます。関数を使うのが不便な場合においてのみマクロを使ってください。[たいていマクロ使ってもあなたのコードが速くなることはありません][1]。`gcc -O2` が積極的に関数のインライン化を行なうためです。"
 
 #. type: Plain text
 #: Code-optimization.md:6
@@ -4280,18 +4270,11 @@ msgstr "  [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7k
 
 #. type: Plain text
 #: Code-optimization.md:8
-#, fuzzy
-#| msgid ""
-#| "Making use of the knowledge that separate val declarations within the "
-#| "same scope technically denote different vals on the stack should not "
-#| "preclude one from using a natural style. For instance:"
 msgid ""
 "- Making use of the knowledge that separate val declarations within the same "
 "scope technically denote different vals on the stack should not preclude one "
 "from using a natural style. For instance:"
-msgstr ""
-"同じスコープでスタックに異なる val を宣言を分けるという知識を利用することは、"
-"自然なコーディングスタイルです。例えば:"
+msgstr "- 同じスコープでスタックに異なる val を宣言を分けるという知識を利用することは、自然なコーディングスタイルです。例えば:"
 
 #. type: Plain text
 #: Code-optimization.md:13
@@ -4302,6 +4285,10 @@ msgid ""
 "    val x = 7\n"
 "~~~\n"
 msgstr ""
+"~~~ocaml\n"
+"    val x = 5\n"
+"    val x = 7\n"
+"~~~\n"
 
 #. type: Plain text
 #: Code-optimization.md:15
@@ -4317,14 +4304,14 @@ msgstr ""
 #. type: Plain text
 #: Code-optimization.md:17
 msgid "## Optimization tips ##"
-msgstr ""
+msgstr "## 最適化のヒント ##"
 
 #. type: Plain text
 #: Code-optimization.md:19
 msgid ""
 "- Instead of freeing an instance of a linear type and immediately creating "
 "and returning a new one with the same value in a case expression, like this"
-msgstr ""
+msgstr "- 以下のように、線形型のインスタンスを解放し、すぐに同じ値を新しく生成して返すような case 式を書く代わりに:"
 
 #. type: Plain text
 #: Code-optimization.md:22
@@ -4333,12 +4320,14 @@ msgid ""
 "        case+ x of\n"
 "        | ~GRgenes (genes) => GRgenes (genes)\n"
 msgstr ""
+"        case+ x of\n"
+"        | ~GRgenes (genes) => GRgenes (genes)\n"
 
 #. type: Plain text
 #: Code-optimization.md:24
 #, no-wrap
 msgid "    do this\n"
-msgstr ""
+msgstr "    次のように書きます:\n"
 
 #. type: Plain text
 #: Code-optimization.md:27
@@ -4347,12 +4336,14 @@ msgid ""
 "        case+ x of\n"
 "        | GRgenes _ => (fold@ x; x)\n"
 msgstr ""
+"        case+ x of\n"
+"        | GRgenes _ => (fold@ x; x)\n"
 
 #. type: Plain text
 #: Code-optimization.md:29
 #, no-wrap
 msgid "    because `@fold` is compiled into a \"noop\".\n"
-msgstr ""
+msgstr "    なぜなら、`@fold` は \"ノーオペレーション\" にコンパイルされるためです。\n"
 
 #. type: Plain text
 #: Code-optimization.md:33
@@ -4360,30 +4351,30 @@ msgid ""
 "- Remove anonymous closure definitions from function calls when possible, to "
 "avoid having them created each time the loop is called. For instance, a "
 "simple string comparison function can be created like so:"
-msgstr ""
+msgstr "- 可能な場合には関数呼び出しから無名のクロージャ定義を取り除いてください。これはループが呼び出されるたびにそれらが生成されるのを避けるためです。例えば、単純な文字列の比較関数は次のように作ることができます:"
 
 #. type: Plain text
 #: Code-optimization.md:35
 #, no-wrap
 msgid "        val cmp_str = lam(x:string,y:string):int =<cloref> compare (x, y)\n"
-msgstr ""
+msgstr "        val cmp_str = lam(x:string,y:string):int =<cloref> compare (x, y)\n"
 
 #. type: Plain text
 #: Code-optimization.md:38
 msgid "## Making Lean Code ##"
-msgstr ""
+msgstr "## ひきしまったコードを作る ##"
 
 #. type: Plain text
 #: Code-optimization.md:40
 msgid ""
 "When the size of your code matters, for instance, in embedded applications, "
 "consider the following:"
-msgstr ""
+msgstr "例えば組み込みアプリケーションのようにコードサイズが重要な場合、次を検討してみてください:"
 
 #. type: Plain text
 #: Code-optimization.md:42
 msgid "### Exception-free-code ###"
-msgstr ""
+msgstr "### 例外を使わないコード ###"
 
 #. type: Plain text
 #: Code-optimization.md:44
@@ -4392,27 +4383,30 @@ msgid ""
 "there is already some potential for overhead due to this. If your ATS code "
 "does not make use of exceptions, then you can add the following flag when "
 "compiling the code[\\[1\\]][1]:"
-msgstr ""
+msgstr "例外の使用は、メモリリークを引き起こしたり GC が必要になったり、またオーバーヘッドの可能性もあることに注意してください。もし、あなたの ATS コードで例外を利用しないのであれば、そのコードをコンパイルする際に次のフラグを使うことができます [\\[1\\]][1]:"
 
 #. type: Plain text
 #: Code-optimization.md:46
 msgid "\\-D_ATS_EXCEPTION_NONE"
-msgstr ""
+msgstr "\\-D_ATS_EXCEPTION_NONE"
 
 #. type: Plain text
 #: Code-optimization.md:48
 msgid "This will make the generated object code even more compact."
-msgstr ""
+msgstr "これでより小さいオブジェクトコードが生成されるようになります。"
 
 #. type: Plain text
 #: Code-optimization.md:50
 msgid "Let hello.dats be a file containing the following line:"
-msgstr ""
+msgstr "次の行を含む hello.dats ファイルで試してみましょう:"
 
 #. type: Plain text
 #: Code-optimization.md:54
 msgid "```ocaml implement main0 () = print \"Hello, world!\\n\" ```"
 msgstr ""
+"```ocaml\n"
+"implement main0 () = print \"Hello, world!\\n\"\n"
+"```"
 
 #. type: Plain text
 #: Code-optimization.md:60
@@ -4424,6 +4418,11 @@ msgid ""
 "   text    data     bss     dec     hex filename\n"
 "   3434     668      40    4142    102e hello1\n"
 msgstr ""
+"```\n"
+"patscc -o hello1 hello.dats\n"
+"size hello1\n"
+"   text    data     bss     dec     hex filename\n"
+"   3434     668      40    4142    102e hello1\n"
 
 #. type: Plain text
 #: Code-optimization.md:66
@@ -4435,12 +4434,17 @@ msgid ""
 "   1787     512      32    2331     91b hello2\n"
 "```\n"
 msgstr ""
+"patscc -D_ATS_EXCEPTION_NONE -o hello2 hello.dats\n"
+"size hello2\n"
+"   text    data     bss     dec     hex filename\n"
+"   1787     512      32    2331     91b hello2\n"
+"```\n"
 
 #. type: Plain text
 #: Code-optimization.md:67
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/NEJDC7yY9cw/IWeK_0YRhksJ"
-msgstr ""
+msgstr "[1]: https://groups.google.com/d/msg/ats-lang-users/NEJDC7yY9cw/IWeK_0YRhksJ"
 
 #. type: Plain text
 #: features.md:2
