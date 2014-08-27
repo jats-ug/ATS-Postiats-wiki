@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-28 02:12+0900\n"
+"PO-Revision-Date: 2014-08-28 08:57+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1991,86 +1991,86 @@ msgid ""
 "definition (note that there should be no space between the ':' and the '<>'. "
 "As well as :<> meaning pure and : (no '<>') meaning any effects may occur, "
 "there are various other things that can appear between the '<>' symbols."
-msgstr ""
+msgstr "関数は様々な作用を持つことができます。この作用は型検査器によって追跡されます [\\[1\\]][1]。この作用は関数定義中の : 直後に配置します。(また ':' と '<>' の間にスペースを入れてはいけないことに注意してください。) :<> は純粋であることを意味し、('<>' のない) : はどのような作用も起きうることを意味します。'<>' の間にはその他の様々な作用を配置できます。"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`!exn` - the function possibly raises exceptions"
-msgstr ""
+msgstr "`!exn` - その関数が例外を発生させる可能性がある"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`!ntm` - the function possibly is non-terminating"
-msgstr ""
+msgstr "`!ntm` - その関数が停止しない可能性がある"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`!ref` - the function possibly updates shared memory"
-msgstr ""
+msgstr "`!ref` - その関数が共有メモリを更新する可能性がある"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`0` - the function is pure (has no effects)"
-msgstr ""
+msgstr "`0` - その関数は純粋である (作用を持たない)"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`1` - the function can have all effects"
-msgstr ""
+msgstr "`1` - その関数は全ての作用を持つことができる"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`fun` - the function is an ordinary, non-closure, function"
-msgstr ""
+msgstr "`fun` - その関数は通常のクロージャではない関数である"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`clo` - the function is a stack allocated closure"
-msgstr ""
+msgstr "`clo` - その関数はスタックに確保されたクロージャである"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid ""
 "`cloptr` - the function is a linear closure that must be explicitly freed"
-msgstr ""
+msgstr "`cloptr` - その関数は明示的に解放されるべき線形クロージャである"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid ""
 "`cloref` - the function is a peristent closure that requires the garbage "
 "collector to be freed."
-msgstr ""
+msgstr "`cloref` - その関数はガベージコレクタによって解放される永続的なクロージャである"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`lin` - the function i slinear and can be called only once"
-msgstr ""
+msgstr "`lin` - その関数は線形で、一度だけ呼び出すことができる"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid "`prf` - the function is a proof function"
-msgstr ""
+msgstr "`prf` - その関数は証明関数である"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid ""
 "`!wrt` - indicates that a function may write to a location it owns. For "
 "instance, ptr_set incurs such an effect."
-msgstr ""
+msgstr "`!wrt` - その関数はそれが所有する場所に書き込みを行なう可能性がある。例えば ptr_set はそのような作用を持つ"
 
 #. type: Bullet: '* '
 #: effects.md:16
 msgid ""
 "`!ref` - can read from or write to a location that one knows exists but does "
 "not own."
-msgstr ""
+msgstr "`!ref` - その関数は存在を知っているが所有していない場所に対して読み込みもしくは書き込みを行なう可能性がある"
 
 #. type: Plain text
 #: effects.md:18
 msgid ""
 "These can be combined, eg. <lincloptr1>. Function effects are all of [[sort|"
 "sort]] `eff`."
-msgstr ""
+msgstr "これらは `<lincloptr1>` のように結合させることができます。全ての関数の作用は [種](sort.md) `eff` です。"
 
 #. type: Plain text
 #: effects.md:19
