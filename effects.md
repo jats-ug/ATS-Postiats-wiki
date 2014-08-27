@@ -14,6 +14,6 @@ Functions can have various effects that may be tracked by the typechecker [\[1\]
 * `!wrt` - indicates that a function may write to a location it owns. For instance, ptr_set incurs such an effect. 
 * `!ref` - can read from or write to a location that one knows exists but does not own.
 
-These can be combined, eg. <lincloptr1>. Function effects are all of [[sort|sort]] `eff`.
+These can be combined, eg. `<lincloptr1>`. Function effects are all of [[sort|sort]] `eff`.
 
 [1]: https://groups.google.com/forum/#!searchin/ats-lang-users/function$20effects/ats-lang-users/88CYxwKl0M0/GAvDQQKkzJ8J
