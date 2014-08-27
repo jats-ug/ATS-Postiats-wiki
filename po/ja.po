@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-26 21:51+0900\n"
+"POT-Creation-Date: 2014-08-27 20:01+0900\n"
 "PO-Revision-Date: 2014-08-27 20:00+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,7 +210,10 @@ msgid ""
 "`!=` - \"Not equal to\" (float/double/int). Also the same as <>, but "
 "preferred since it is easier to read for most and does not share the same "
 "string as the function effect <>."
-msgstr "`!=` - \"等しくない\" (float/double/int)。<> でも同じ意味になります。しかしほとんどの人に読みやすく、関数の作用 <> と同じ文字列であるため、こちらの演算子を推奨します。"
+msgstr ""
+"`!=` - \"等しくない\" (float/double/int)。<> でも同じ意味になります。しかしほ"
+"とんどの人に読みやすく、関数の作用 <> と同じ文字列であるため、こちらの演算子"
+"を推奨します。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -218,14 +221,18 @@ msgid ""
 "`<>` - \"Not equal to\" (float/double/int). Also the same as !=, but not "
 "recommended in general since it is less common than != in most programming "
 "languages and does not share the same string as the function effect <>."
-msgstr "`<>` - \"等しくない\" (float/double/int)。!= でも同じ意味になります。しかしほとんどのプログラミング言語では != よりも一般的ではなく、関数の作用 <> と同じ文字列であるため、この演算子は推奨されません。"
+msgstr ""
+"`<>` - \"等しくない\" (float/double/int)。!= でも同じ意味になります。しかしほ"
+"とんどのプログラミング言語では != よりも一般的ではなく、関数の作用 <> と同じ"
+"文字列であるため、この演算子は推奨されません。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
 msgid ""
 "`=>` - Similar to `=`, but used to define the body of a lambda function or a "
 "case expression."
-msgstr "`=>` - `=` と似ていますが、ラムダ関数や case 式の本体を定義するのに使います。"
+msgstr ""
+"`=>` - `=` と似ていますが、ラムダ関数や case 式の本体を定義するのに使います。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -235,7 +242,11 @@ msgid ""
 "value that matches it does not match the pattern guards associated with any "
 "previous clauses. For more information, see [Sequentiality of Pattern "
 "Matching][1] or the [forums][2]."
-msgstr "`=>>` - `=>` と似ていますが、この節が連続していると仮定して型検査される必要があることを型検査器に指示します。すなわち、その節にマッチする値がそれ以前の節のパターンガードの全てにマッチしなかったと仮定します。詳細は [パターンマッチの連続性][1] や [フォーラム][2] を参照してください。"
+msgstr ""
+"`=>>` - `=>` と似ていますが、この節が連続していると仮定して型検査される必要が"
+"あることを型検査器に指示します。すなわち、その節にマッチする値がそれ以前の節"
+"のパターンガードの全てにマッチしなかったと仮定します。詳細は [パターンマッチ"
+"の連続性][1] や [フォーラム][2] を参照してください。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -248,7 +259,7 @@ msgstr ""
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
-msgid "`=/=>>` combines the features of `=/=>` and `=>>`."
+msgid "`=/=>>` - combines the features of `=/=>` and `=>>`."
 msgstr ""
 
 #. type: Bullet: '  - '
@@ -261,14 +272,22 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: Built-in-operators.md:16
-#, no-wrap
+#: Built-in-operators.md:18
+#, fuzzy, no-wrap
+#| msgid ""
+#| "```ocaml\n"
+#| "fun{a:t@ype}\n"
+#| "linset_choose (xs: !set a, x0: &a? >> opt (a, b)) : #[b:bool] bool (b)\n"
+#| "```\n"
+#| "  - `#[ ...  | ... ]` - Provides static values (witnesses) to the type checker when they are missing or cannot be inferred. See [typechecking errors ](https://github.com/githwxi/ATS-Postiats/wiki/typechecking-errors#supplying-static-values-to-the-typechecker) for examples.\n"
 msgid ""
 "```ocaml\n"
 "fun{a:t@ype}\n"
 "linset_choose (xs: !set a, x0: &a? >> opt (a, b)) : #[b:bool] bool (b)\n"
 "```\n"
 "  - `#[ ...  | ... ]` - Provides static values (witnesses) to the type checker when they are missing or cannot be inferred. See [typechecking errors ](https://github.com/githwxi/ATS-Postiats/wiki/typechecking-errors#supplying-static-values-to-the-typechecker) for examples.\n"
+"  - `!` - Dereferences pointer. Given a pointer `p` of the type `ptr(L)` for some `L`, `!p` yields the value stored at the memory location `L`. The typechecker first searches for a proof of the view `T@L` for some `T` among all the currently available proofs when typechecking `!p`; if such a proof `pf` is found, then `!p` dereferences the pointer.\n"
+"  - `:=` - Assign new value to dynamic or static value.\n"
 msgstr ""
 "```ocaml\n"
 "fun{a:t@ype}\n"
@@ -278,14 +297,21 @@ msgstr ""
 "  - `#[ ...  | ... ]` - 静的な変数 (証明) が見つからなかったり推論できなかった場合に、その静的な変数を型検査器に与えます。[型検査エラー](https://github.com/githwxi/ATS-Postiats/wiki/typechecking-errors#supplying-static-values-to-the-typechecker) にいくつか例があります。"
 
 #. type: Plain text
-#: Built-in-operators.md:20
+#: Built-in-operators.md:21
+#, fuzzy
+#| msgid ""
+#| "[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.  [2]: "
+#| "https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ "
+#| "[3]: https://groups.google.com/d/msg/ats-lang-users/"
+#| "NpQZuB7W9PU/5pwjoDi4oj0J"
 msgid ""
-"[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.  [2]: https://"
-"groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ [3]: https://"
-"groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
+"[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.html [2]: "
+"https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ [3]: "
+"https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
 msgstr ""
 "[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.\n"
-"[2]: https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ\n"
+"[2]: https://groups.google.com/d/msg/ats-lang-users/"
+"g3A2fzeKM3A/2UYOjNLVZ5sJ\n"
 "[3]: https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
 
 #. type: Plain text
@@ -526,7 +552,10 @@ msgid ""
 "Internal types are introduced in the file `pats_staexp2.sats`, and having a "
 "better understanding of how these types relate to actual ATS types will be "
 "[[helpful in debugging|Error messages]]."
-msgstr "内部の型は `pats_staexp2.sats` ファイルで導入されています。これらの型がどのように実際の ATS の型に結び付いているのか理解することは [デバッグの役に立つ](Error-messages.md) でしょう。"
+msgstr ""
+"内部の型は `pats_staexp2.sats` ファイルで導入されています。これらの型がどのよ"
+"うに実際の ATS の型に結び付いているのか理解することは [デバッグの役に立つ]"
+"(Error-messages.md) でしょう。"
 
 #. type: Bullet: '* '
 #: Internal-types.md:12
@@ -558,7 +587,9 @@ msgstr "`S2Eint` - マシン精度整数"
 msgid ""
 "`S2Eintinf` - infinite precision integer; commonly used for integer sorts in "
 "most compiled versions of atsopt (patsopt)."
-msgstr "`S2Eintinf` - 任意精度整数; atsopt (patsopt) のほとんどのバージョンにおいて整数種として一般に利用されます"
+msgstr ""
+"`S2Eintinf` - 任意精度整数; atsopt (patsopt) のほとんどのバージョンにおいて整"
+"数種として一般に利用されます"
 
 #. type: Bullet: '* '
 #: Internal-types.md:12
@@ -580,7 +611,8 @@ msgstr "`S2Etop (1; T)` は `T?!` を意味します `//Need to verify in ATS2`"
 msgid ""
 "`S2EVar` - an (existentially quantified) unification variable introduced by "
 "the typechecker."
-msgstr "`S2EVar` - 型検査器によって導入された (存在量化された) ユニフィケーション変数"
+msgstr ""
+"`S2EVar` - 型検査器によって導入された (存在量化された) ユニフィケーション変数"
 
 #. type: Plain text
 #: internationalization.md:2
@@ -1109,7 +1141,14 @@ msgid ""
 "available. Currently, ATS2-Postiats-include-0.1.1.tgz is released separately "
 "under a BSD-like license. Related to this, the preferred way to write "
 "portable ATS code should avoid using `-latslib` to generate executables."
-msgstr "[ATSLIB](ATSLIB.md) は第一にC言語コードを生成するために使われます。そして、その ATS ソースコードの作者によって所有された生成済みC言語コードは、ATS2-Postiats-include のヘッダファイル (つまり CATS ファイル) さえあればコンパイルできます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD ライクライセンスの下で独立してリリースされています。これに関連しますが、ポータブルな ATS コードを書くのであれば、実行オブジェクトの生成時に `-latslib` オプションを使わないことをおすすめします。"
+msgstr ""
+"[ATSLIB](ATSLIB.md) は第一にC言語コードを生成するために使われます。そして、そ"
+"の ATS ソースコードの作者によって所有された生成済みC言語コードは、ATS2-"
+"Postiats-include のヘッダファイル (つまり CATS ファイル) さえあればコンパイル"
+"できます。現時点では、ATS2-Postiats-include-0.1.1.tgz は BSD ライクライセンス"
+"の下で独立してリリースされています。これに関連しますが、ポータブルな ATS コー"
+"ドを書くのであれば、実行オブジェクトの生成時に `-latslib` オプションを使わな"
+"いことをおすすめします。"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:25
@@ -2110,12 +2149,24 @@ msgid ""
 msgstr ""
 "- [よくある質問](Frequently-asked-questions.md)\n"
 "- [ビルドとインストール](Building-and-installing.md)\n"
-"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md), [デザインパターン](Design-patterns.md)\n"
-"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-messages.md), [機能](features.md)\n"
-"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルトインデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions.md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [寄贈されたライブラリ](Contributed-Libraries.md)\n"
-"- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
-"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型](Internal-types.md)\n"
-"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype](dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type.md)\n"
+"- ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク]"
+"(Memory-leaks.md) の検出と回避, [コードの最適化](Code-optimization.md), [デザ"
+"インパターン](Design-patterns.md)\n"
+"- 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型]"
+"(Dependent-types.md), [線形型](Linear-types.md), [エラーメッセージ](Error-"
+"messages.md), [機能](features.md)\n"
+"- ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md), [ビルト"
+"インデータ型](Built-in-datatypes.md), [ビルトイン関数](Built-in-functions."
+"md), [入出力](Input-and-output.md), [科学計算](Scientific-Computing.md), [寄"
+"贈されたライブラリ](Contributed-Libraries.md)\n"
+"- 拡張: [Cライブラリへのインターフェイスを書くには|Writing-interfaces-to-C-"
+"libraries.md], [ATS/LF](ATS-LF.md) (定理証明)\n"
+"- ATS の内部実装: [ビルトインの強制解決](Built-in-constraint-solving.md), [ス"
+"タックとヒープへのメモリ確保](Stack-and-heap-allocation.md), [内部の型]"
+"(Internal-types.md)\n"
+"- ATS における特殊なキーワードについて: [char](char.md), [dataviewtype]"
+"(dataviewtype.md), [overload](overload.md), [sort](sort.md), [type](type."
+"md)\n"
 "- Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト\n"
 "- 他の [言語](languages.md) で読むには"
 
@@ -2291,7 +2342,9 @@ msgid ""
 "github.com/mrd/puppy). It is nearly 9% ATS and 84% C."
 msgstr ""
 "## ATS を用いた OS の kernel\n"
-"* [Terrier](https://github.com/mrd/terrier) は ARM アーキティクチャの OS で [Puppy](http://github.com/mrd/puppy) のフォークです。その 9% は ATS、84% は C言語で設計されています。"
+"* [Terrier](https://github.com/mrd/terrier) は ARM アーキティクチャの OS で "
+"[Puppy](http://github.com/mrd/puppy) のフォークです。その 9% は ATS、84% は C"
+"言語で設計されています。"
 
 #. type: Plain text
 #: kernels.md:5
@@ -2306,7 +2359,14 @@ msgid ""
 "ats-lang-users/Df1CBVD5dXA/jUFem797W6AJ)."
 msgstr ""
 "## kernel 開発に関する情報\n"
-"* いくつかの kernel 開発チュートリアルが [contrib](Contrib.md) の [KernelBuilding](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/projects/MEDIUM/KernelBuilding) ディレクトリにあります。特に、元はC言語で [Stephen Paul Weber](https://singpolyma.net/) によって書かれた [singpolyma-kernel](https://singpolyma.net/category/singpolyma-kernel/) kernel プログラミングチュートリアルをベースにしたチュートリアルがあります。さらなる議論については [ここ](https://groups.google.com/d/msg/ats-lang-users/Df1CBVD5dXA/jUFem797W6AJ) を参照してください。"
+"* いくつかの kernel 開発チュートリアルが [contrib](Contrib.md) の "
+"[KernelBuilding](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/"
+"projects/MEDIUM/KernelBuilding) ディレクトリにあります。特に、元はC言語で "
+"[Stephen Paul Weber](https://singpolyma.net/) によって書かれた [singpolyma-"
+"kernel](https://singpolyma.net/category/singpolyma-kernel/) kernel プログラミ"
+"ングチュートリアルをベースにしたチュートリアルがあります。さらなる議論につい"
+"ては [ここ](https://groups.google.com/d/msg/ats-lang-users/Df1CBVD5dXA/"
+"jUFem797W6AJ) を参照してください。"
 
 #. type: Bullet: '* '
 #: keywords.md:4
@@ -2381,9 +2441,14 @@ msgid ""
 "terms (tyleq): ```"
 msgstr ""
 "```\n"
-"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): the symbol [=] cannot be resolved as no match is found.\n"
-"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): [/home/hwxi/research/Postiats/git/src/pats_trans3_util.dats]: d3exp_trdn: the dynamic expression cannot be assigned the type [S2Eapp(S2Ecst(bool_bool_t0ype); S2EVar(10))].\n"
-"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): mismatch of static terms (tyleq):\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): "
+"the symbol [=] cannot be resolved as no match is found.\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): [/"
+"home/hwxi/research/Postiats/git/src/pats_trans3_util.dats]: d3exp_trdn: the "
+"dynamic expression cannot be assigned the type "
+"[S2Eapp(S2Ecst(bool_bool_t0ype); S2EVar(10))].\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): "
+"mismatch of static terms (tyleq):\n"
 "```"
 
 #. type: Plain text
@@ -2905,7 +2970,10 @@ msgid ""
 "Runtime errors are unusual in ATS, particularly segmentation faults, but "
 "there are a few common reasons for this. Also see the [[memory leaks|Memory "
 "leaks]] article."
-msgstr "ATS では実行時エラー、特にセグメンテーションフォールトが起きるのは稀です。それでもそのようなエラーが起きることがあります。また [メモリリーク](Memory-leaks.md) の記事も参照してください。"
+msgstr ""
+"ATS では実行時エラー、特にセグメンテーションフォールトが起きるのは稀です。そ"
+"れでもそのようなエラーが起きることがあります。また [メモリリーク](Memory-"
+"leaks.md) の記事も参照してください。"
 
 #. type: Plain text
 #: runtime-errors.md:5
@@ -2915,7 +2983,8 @@ msgid ""
 msgstr ""
 "## C言語コンパイラの意図しない挙動\n"
 "\n"
-"コンパイラ毎にいくらか異なるために、コンパイラ最適化は時々実行時エラーを引き起こします。"
+"コンパイラ毎にいくらか異なるために、コンパイラ最適化は時々実行時エラーを引き"
+"起こします。"
 
 #. type: Plain text
 #: runtime-errors.md:8
@@ -2925,7 +2994,8 @@ msgid ""
 msgstr ""
 "### GCC\n"
 "\n"
-"* GCC 4.8: ループ最適化による問題: `--fno-aggressive-loop-optimization` が必要かもしれません"
+"* GCC 4.8: ループ最適化による問題: `--fno-aggressive-loop-optimization` が必"
+"要かもしれません"
 
 #. type: Plain text
 #: runtime-errors.md:11
@@ -2941,7 +3011,13 @@ msgid ""
 "[[termination metrics|termination metrics]], or if no termination proof is "
 "to be provided, the compiler can generate run‑time termination checks, if it "
 "is passed this command‑line option: `-D_ATS_TERMINATION_CHECK`."
-msgstr "めったにないことですが、意図しない無限再帰が起きることがあります; これを見つけるのは一般に簡単です。詳細は [ループ](loops.md) の記事を読んでください。一般に、これらは [停止性メトリクス](termination-metrics.md) を使用することで回避できます。また、もし停止性の証明を与えない場合には、コマンドラインオプション `-D_ATS_TERMINATION_CHECK` を渡すことで、コンパイラは実行時の停止性検査を生成するようになります。"
+msgstr ""
+"めったにないことですが、意図しない無限再帰が起きることがあります; これを見つ"
+"けるのは一般に簡単です。詳細は [ループ](loops.md) の記事を読んでください。一"
+"般に、これらは [停止性メトリクス](termination-metrics.md) を使用することで回"
+"避できます。また、もし停止性の証明を与えない場合には、コマンドラインオプショ"
+"ン `-D_ATS_TERMINATION_CHECK` を渡すことで、コンパイラは実行時の停止性検査を"
+"生成するようになります。"
 
 #. type: Plain text
 #: runtime-errors.md:14
@@ -2949,7 +3025,10 @@ msgid ""
 "If you are doing something unsafe with memory, though, particularly when "
 "interfacing with other C code, there are other possibilities. For more "
 "information, see [[memory leaks|Memory leaks]]."
-msgstr "もし安全でないメモリアクセスを行なっていたり、C言語コードと連動している場合には、また別の可能性があります。詳細は [メモリリーク](Memory-leaks.md) を参照してください。"
+msgstr ""
+"もし安全でないメモリアクセスを行なっていたり、C言語コードと連動している場合に"
+"は、また別の可能性があります。詳細は [メモリリーク](Memory-leaks.md) を参照し"
+"てください。"
 
 #. type: Plain text
 #: staload.md:3
@@ -4107,7 +4186,10 @@ msgid ""
 "This line gets compiled to a call to the initialization function associated "
 "with 'bar.dats'. Without this line, a link-time error message of the form "
 "\"..._dynload_flag is undefined\" is to be reported."
-msgstr "この行は 'bar.dats' に関連する初期化関数の呼び出しにコンパイルされます。この行がない場合には、リンク時のエラー \"..._dynload_flag is undefined\" が発生します。"
+msgstr ""
+"この行は 'bar.dats' に関連する初期化関数の呼び出しにコンパイルされます。この"
+"行がない場合には、リンク時のエラー \"..._dynload_flag is undefined\" が発生し"
+"ます。"
 
 #. type: Plain text
 #: dynload.md:16
@@ -4115,7 +4197,10 @@ msgid ""
 "If you don't want the initialization function (generated automatically by "
 "the compiler for any .dats file) for 'bar.dats' to be called, then please "
 "add the following line in 'bar.dats':"
-msgstr "もし 'bar.dats' の初期化関数 (この初期化関数は全ての .dats ファイルにコンパイラが自動的に生成します) を呼び出したくない場合には、次の行を 'bar.dats' に追加してください:"
+msgstr ""
+"もし 'bar.dats' の初期化関数 (この初期化関数は全ての .dats ファイルにコンパイ"
+"ラが自動的に生成します) を呼び出したくない場合には、次の行を 'bar.dats' に追"
+"加してください:"
 
 #. type: Plain text
 #: dynload.md:21
@@ -4132,13 +4217,16 @@ msgstr ""
 msgid ""
 "Normally, 'dynload' lines should only occur in the file that contains the "
 "implementation of the 'main' function [\\[1\\]][1]"
-msgstr "通常、'main' 関数の実装を含むファイルにおいてのみ 'dynload' 行を配置する必要があります [\\[1\\]][1] 。"
+msgstr ""
+"通常、'main' 関数の実装を含むファイルにおいてのみ 'dynload' 行を配置する必要"
+"があります [\\[1\\]][1] 。"
 
 #. type: Plain text
 #: dynload.md:25
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/jqFEAf1drXc/uv5x_rx3aMEJ"
-msgstr "[1]: https://groups.google.com/d/msg/ats-lang-users/jqFEAf1drXc/uv5x_rx3aMEJ"
+msgstr ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/jqFEAf1drXc/uv5x_rx3aMEJ"
 
 #. type: Plain text
 #: implementations.md:1
