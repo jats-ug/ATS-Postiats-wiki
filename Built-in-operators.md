@@ -5,7 +5,7 @@ This page lists built-in operators for ATS.
   - `=>` - Similar to `=`, but used to define the body of a lambda function or a case expression.
   - `=>>` - Similar to `=>`, but indicates to the typechecker that this clause needs to be typechecked under the sequentiality assumption that the given value that matches it does not match the pattern guards associated with any previous clauses. For more information, see [Sequentiality of Pattern Matching][1] or the [forums][2].
   - `=/=>` - Similar to `=>>`  but indicates to the typechecker that the proof following `=/=>` must prove falsehood. During compilation (after typechecking), the third clause is removed as it can never be chosen at run-time [because matching v against yields falsehood][3].
-  - `=/=>>` combines the features of `=/=>` and `=>>`.
+  - `=/=>>` - combines the features of `=/=>` and `=>>`.
   - `#[ ... ]` - Allows static variables present in a function return type to be used in the statics of the function's arguments. For example, if we want `b` from the return type to be in the scope of the statics in the arguments, (that is, `b` in `opt (a,b)`):
 
 ```ocaml
