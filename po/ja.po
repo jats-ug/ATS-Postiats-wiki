@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-27 20:01+0900\n"
+"POT-Creation-Date: 2014-08-27 21:48+0900\n"
 "PO-Revision-Date: 2014-08-27 21:47+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -250,12 +250,21 @@ msgstr ""
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
+#, fuzzy
+#| msgid ""
+#| "`=/=>` - Similar to `=>>` but indicates to the typechecker that the proof "
+#| "following `=/=>` must prove falsehood. During compilation (after "
+#| "typechecking), the third clause is removed as it can never be chosen at "
+#| "run-time [because matching v against yields falsehood][3]."
 msgid ""
 "`=/=>` - Similar to `=>>` but indicates to the typechecker that the proof "
 "following `=/=>` must prove falsehood. During compilation (after "
-"typechecking), the third clause is removed as it can never be chosen at run-"
-"time [because matching v against yields falsehood][3]."
-msgstr "`=/=>` - `=>>` と似ていますが、`=/=>` 後の証明がウソであることを型検査器に指示します。(型検査後の) コンパイル中において、実行時に選択される可能性がないので、この節は削除されます。[なぜなら、そのマッチがウソを生成するためです][3]。"
+"typechecking), the clause is removed as it can never be chosen at run-time "
+"[because matching v against yields falsehood][3]."
+msgstr ""
+"`=/=>` - `=>>` と似ていますが、`=/=>` 後の証明がウソであることを型検査器に指"
+"示します。(型検査後の) コンパイル中において、実行時に選択される可能性がないの"
+"で、この節は削除されます。[なぜなら、そのマッチがウソを生成するためです][3]。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -269,7 +278,10 @@ msgid ""
 "used in the statics of the function's arguments. For example, if we want `b` "
 "from the return type to be in the scope of the statics in the arguments, "
 "(that is, `b` in `opt (a,b)`):"
-msgstr "`#[ ... ]` - 関数の引数の静的な部分で使われいた型を、その関数の返り値の静的な変数が含むことを許します。例えば、引数の静的なスコープ中にある返り値の型で `b` を作りたい場合は (つまり `opt (a,b)` 中の `b` です):"
+msgstr ""
+"`#[ ... ]` - 関数の引数の静的な部分で使われいた型を、その関数の返り値の静的な"
+"変数が含むことを許します。例えば、引数の静的なスコープ中にある返り値の型で "
+"`b` を作りたい場合は (つまり `opt (a,b)` 中の `b` です):"
 
 #. type: Plain text
 #: Built-in-operators.md:18
@@ -299,7 +311,8 @@ msgid ""
 "https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
 msgstr ""
 "[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.html\n"
-"[2]: https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ\n"
+"[2]: https://groups.google.com/d/msg/ats-lang-users/"
+"g3A2fzeKM3A/2UYOjNLVZ5sJ\n"
 "[3]: https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
 
 #. type: Plain text
@@ -4253,7 +4266,11 @@ msgid ""
 "functions would be inconvenient. [Using macros probably does not make your "
 "code run more quickly][1], since `gcc -O2` already inlines functions very "
 "aggressively."
-msgstr "- ATS2 における `macdef` は型を含むことができます。関数を使うのが不便な場合においてのみマクロを使ってください。[たいていマクロ使ってもあなたのコードが速くなることはありません][1]。`gcc -O2` が積極的に関数のインライン化を行なうためです。"
+msgstr ""
+"- ATS2 における `macdef` は型を含むことができます。関数を使うのが不便な場合に"
+"おいてのみマクロを使ってください。[たいていマクロ使ってもあなたのコードが速く"
+"なることはありません][1]。`gcc -O2` が積極的に関数のインライン化を行なうため"
+"です。"
 
 #. type: Plain text
 #: Code-optimization.md:6
@@ -4261,22 +4278,29 @@ msgstr "- ATS2 における `macdef` は型を含むことができます。関�
 msgid "  [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7kJ3Ww0J\n"
 msgstr "  [1]: https://groups.google.com/d/msg/ats-lang-users/Ql64LA9Wi88/fwrR7kJ3Ww0J\n"
 
-#. type: Bullet: ' - '
+#. type: Plain text
 #: Code-optimization.md:8
+#, fuzzy
+#| msgid ""
+#| "Making use of the knowledge that separate val declarations within the "
+#| "same scope technically denote different vals on the stack should not "
+#| "preclude one from using a natural style. For instance:"
 msgid ""
-"Making use of the knowledge that separate val declarations within the same "
+"- Making use of the knowledge that separate val declarations within the same "
 "scope technically denote different vals on the stack should not preclude one "
 "from using a natural style. For instance:"
-msgstr "同じスコープでスタックに異なる val を宣言を分けるという知識を利用することは、自然なコーディングスタイルです。例えば:"
+msgstr ""
+"同じスコープでスタックに異なる val を宣言を分けるという知識を利用することは、"
+"自然なコーディングスタイルです。例えば:"
 
 #. type: Plain text
 #: Code-optimization.md:13
 #, no-wrap
 msgid ""
-"~~~~~~~~~~~~~~~\n"
+"~~~ocaml\n"
 "    val x = 5\n"
 "    val x = 7\n"
-"~~~~~~~~~~~~~~~\n"
+"~~~\n"
 msgstr ""
 
 #. type: Plain text
@@ -4285,7 +4309,10 @@ msgid ""
 "here no extra space is allocated for the second 'x' due to constant "
 "propagation. It is in generally unlikely that such a coding style would "
 "incur any penalty."
-msgstr "この場合、定数伝搬 (constant propagation) によって、二番目の 'x' のために追加のメモリ領域が確保されることはありません。このようなコーディングスタイルがなんらかのペナルティになることは一般にありえません。"
+msgstr ""
+"この場合、定数伝搬 (constant propagation) によって、二番目の 'x' のために追加"
+"のメモリ領域が確保されることはありません。このようなコーディングスタイルがな"
+"んらかのペナルティになることは一般にありえません。"
 
 #. type: Plain text
 #: Code-optimization.md:17
