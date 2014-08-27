@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-28 01:31+0900\n"
+"PO-Revision-Date: 2014-08-28 02:12+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -3603,7 +3603,7 @@ msgid ""
 "[[effects|effects]], which is not really helpful for most types of "
 "programming. It is used by writing `$effmask_all(...)` where the `...` is a "
 "function call [\\[1\\]][1]."
-msgstr ""
+msgstr "`$effmask_all` - 実際にはプログラミングの型の役に立たないような、関数の [作用](effects.md) の追跡を無視するよう型検査器に指示します。使う場合には `$effmask_all(...)` のように書き、`...` には関数呼び出しを記述します [\\[1\\]][1]。"
 
 #. type: Bullet: '* '
 #: Typechecking-directives.md:3
@@ -3613,14 +3613,14 @@ msgid ""
 "exact meaning of the output can still be cryptic for more complicated cases. "
 "See [[internal types|Internal types]] for more information and [[error "
 "messages|Error messages]] for an example."
-msgstr ""
+msgstr "`$showtype` - 値や変数の型を ATS の内部の型表現で印字します。型エラーの理解に非常に有用ですが、複雑な場合にはその出力の正確な意味はまだ謎めいて見えるかもしれません。より詳しくは [内部の型](Internal-types.md) を参照してください。また [エラーメッセージ](Error-messages.md) にはその例があります。"
 
 #. type: Plain text
 #: Typechecking-directives.md:4
 msgid ""
 "[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/mask$20effect/"
 "ats-lang-users/yqldklykEuM/021vPg65v9gJ"
-msgstr ""
+msgstr "[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/mask$20effect/ats-lang-users/yqldklykEuM/021vPg65v9gJ"
 
 #. type: Plain text
 #: emacs.md:1
