@@ -1,23 +1,21 @@
-Runtime errors are unusual in ATS, particularly segmentation faults, but
-there are a few common reasons for this. Also see the [[memory leaks|Memory
-leaks]] article.
+ATS では実行時エラー、特にセグメンテーションフォールトが起きるのは稀です。それでもそのようなエラーが起きることがあります。また
+[メモリリーク](Memory-leaks.md) の記事も参照してください。
 
-## Unexpected behavior from a C compiler Compiler optimization issues crop
-up from time to time, as every compiler is different for some cases.
+## C言語コンパイラの意図しない挙動
 
-### GCC * GCC 4.8: possible loop optimization issues: may need
-`--fno-aggressive-loop-optimization`
+コンパイラ毎にいくらか異なるために、コンパイラ最適化は時々実行時エラーを引き起こします。
+
+### GCC
+
+* GCC 4.8: ループ最適化による問題: `--fno-aggressive-loop-optimization` が必要かもしれません
 
 
-## Segmentation faults
+## セグメンテーションフォールト
 
-These are generally pretty rare, and can occur because of an unintended
-infinite recursion; these are generally easy to find. For more information,
-see the [[loops|loops]] article. These can generally be avoid by using
-[[termination metrics|termination metrics]], or if no termination proof is
-to be provided, the compiler can generate run‑time termination checks, if it
-is passed this command‑line option: `-D_ATS_TERMINATION_CHECK`.
+めったにないことですが、意図しない無限再帰が起きることがあります; これを見つけるのは一般に簡単です。詳細は [ループ](loops.md)
+の記事を読んでください。一般に、これらは [停止性メトリクス](termination-metrics.md)
+を使用することで回避できます。また、もし停止性の証明を与えない場合には、コマンドラインオプション `-D_ATS_TERMINATION_CHECK`
+を渡すことで、コンパイラは実行時の停止性検査を生成するようになります。
 
-If you are doing something unsafe with memory, though, particularly when
-interfacing with other C code, there are other possibilities. For more
-information, see [[memory leaks|Memory leaks]].
+もし安全でないメモリアクセスを行なっていたり、C言語コードと連動している場合には、また別の可能性があります。詳細は
+[メモリリーク](Memory-leaks.md) を参照してください。

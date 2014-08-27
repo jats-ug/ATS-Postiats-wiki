@@ -1,20 +1,23 @@
-The sole purpose of dynload is for doing initialization.
+dynload の唯一の目的は初期化を行なうことです。
 
-Say in a file named 'foo.dats', we have the following line:
+次の行を含むファイル 'foo.dats' があったとします:
 
-```ocaml dynload "bar.dats" ```
+```ocaml
+dynload "bar.dats"
+```
 
-This line gets compiled to a call to the initialization function associated
-with 'bar.dats'. Without this line, a link-time error message of the form
-"..._dynload_flag is undefined" is to be reported.
+この行は 'bar.dats' に関連する初期化関数の呼び出しにコンパイルされます。この行がない場合には、リンク時のエラー
+"..._dynload_flag is undefined" が発生します。
 
-If you don't want the initialization function (generated automatically by
-the compiler for any .dats file) for 'bar.dats' to be called, then please
-add the following line in 'bar.dats':
+もし 'bar.dats' の初期化関数 (この初期化関数は全ての .dats ファイルにコンパイラが自動的に生成します)
+を呼び出したくない場合には、次の行を 'bar.dats' に追加してください:
 
-```ocaml #define ATS_DYNLOADFLAG 0 ``` Please do this with caution.
+```ocaml
+#define ATS_DYNLOADFLAG 0
+```
 
-Normally, 'dynload' lines should only occur in the file that contains the
-implementation of the 'main' function [\[1\]][1]
+これには注意が必要です。
+
+通常、'main' 関数の実装を含むファイルにおいてのみ 'dynload' 行を配置する必要があります [\[1\]][1] 。
 
 [1]: https://groups.google.com/d/msg/ats-lang-users/jqFEAf1drXc/uv5x_rx3aMEJ

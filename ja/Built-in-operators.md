@@ -1,32 +1,28 @@
-This page lists built-in operators for ATS.
+このページでは ATS のビルトイン演算子を紹介します。
 
-  - `!=` - "Not equal to" (float/double/int). Also the same as <>, but
-    preferred since it is easier to read for most and does not share the
-    same string as the function effect <>.
-  - `<>` - "Not equal to" (float/double/int). Also the same as !=, but not
-    recommended in general since it is less common than != in most
-    programming languages and does not share the same string as the function
-    effect <>.
-  - `=>` - Similar to `=`, but used to define the body of a lambda function
-    or a case expression.
-  - `=>>` - Similar to `=>`, but indicates to the typechecker that this
-    clause needs to be typechecked under the sequentiality assumption that
-    the given value that matches it does not match the pattern guards
-    associated with any previous clauses. For more information, see
-    [Sequentiality of Pattern Matching][1] or the [forums][2].
-  - `=/=>` - Similar to `=>>` but indicates to the typechecker that the
-    proof following `=/=>` must prove falsehood. During compilation (after
-    typechecking), the third clause is removed as it can never be chosen at
-    run-time [because matching v against yields falsehood][3].
-  - `=/=>>` combines the features of `=/=>` and `=>>`.
-  - `#` - Allows static variables present in a function return type to be
-    used in the statics of the function's arguments. For example, if we want
-    `b` from the return type to be in the scope of the statics in the
-    arguments, (that is, `b` in `opt (a,b)`):
+  - `!=` - "等しくない" (float/double/int)。<> でも同じ意味になります。しかしほとんどの人に読みやすく、関数の作用
+    <> と同じ文字列であるため、こちらの演算子を推奨します。
+  - `<>` - "等しくない" (float/double/int)。!= でも同じ意味になります。しかしほとんどのプログラミング言語では !=
+    よりも一般的ではなく、関数の作用 <> と同じ文字列であるため、この演算子は推奨されません。
+  - `=>` - `=` と似ていますが、ラムダ関数や case 式の本体を定義するのに使います。
+  - `=>>` - `=>`
+    と似ていますが、この節が連続していると仮定して型検査される必要があることを型検査器に指示します。すなわち、その節にマッチする値がそれ以前の節のパターンガードの全てにマッチしなかったと仮定します。詳細は
+    [パターンマッチの連続性][1] や [フォーラム][2] を参照してください。
+  - `=/=>` - `=>>` と似ていますが、`=/=>` 後の証明がウソであることを型検査器に指示します。(型検査後の)
+    コンパイル中において、実行時に選択される可能性がないので、この節は削除されます。[なぜなら、そのマッチがウソを生成するためです][3]。
+  - `=/=>>` - `=/=>` と `=>>` の機能を結合したものです。
+  - `#[ ... ]` -
+    関数の引数の静的な部分で使われいた型を、その関数の返り値の静的な変数が含むことを許します。例えば、引数の静的なスコープ中にある返り値の型で
+    `b` を作りたい場合は (つまり `opt (a,b)` 中の `b` です):
 
-```ocaml fun{a:t@ype} linset_choose (xs: !set a, x0: &a? >> opt (a, b)) :
-#[b:bool] bool (b)  ```
+```ocaml
+fun{a:t@ype}
+linset_choose (xs: !set a, x0: &a? >> opt (a, b)) : #[b:bool] bool (b)
+```
+  - `#[ ...  | ... ]` - 静的な変数 (証明) が見つからなかったり推論できなかった場合に、その静的な変数を型検査器に与えます。[型検査エラー](https://github.com/githwxi/ATS-Postiats/wiki/typechecking-errors#supplying-static-values-to-the-typechecker) にいくつか例があります。
+  - `!` - ポインタをデリファレンスします。どこか `L` について型 `ptr(L)` のポインタ `p` が与えられた時、`!p` はメモリ位置 `L` に保存された値を生じます。`!p` を型検査すると、型検査器はまずはじめに現在有効な全ての証明の中で `T について観 `T@L` の証明を検索します: もしそのような証明 `pf` が見つかったら、!p はそのポインタをデリファレンスします。
+  - `:=` - 静的もしくは動的な値に新しい値を代入します。
 
-[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.  [2]:
-https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ [3]:
-https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J
+[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.html
+[2]: https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ
+[3]: https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J

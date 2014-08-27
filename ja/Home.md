@@ -14,7 +14,7 @@ ATS にはまた別の [Web サイト][1] があります。(このサイトは 
 - [よくある質問](Frequently-asked-questions.md)
 - [ビルドとインストール](Building-and-installing.md)
 - ATS のコードスタイル: [スタイルガイド](Style-guide.md), [メモリリーク](Memory-leaks.md) の検出と回避,
-[コードの最適化](Code-optimization.md)
+[コードの最適化](Code-optimization.md), [デザインパターン](Design-patterns.md)
 - 言語リファレンス: [ビルトイン演算子](Built-in-operators.md), [依存型](Dependent-types.md),
 [線形型](Linear-types.md), [エラーメッセージ](Error-messages.md), [機能](features.md)
 - ライブラリリファレンス: [atslib](atslib.md), [contrib](contrib.md),
@@ -28,7 +28,8 @@ ATS にはまた別の [Web サイト][1] があります。(このサイトは 
 - ATS における特殊なキーワードについて: [char](char.md), [dataviewtype](dataviewtype.md),
 [overload](overload.md), [sort](sort.md), [type](type.md)
 - Wiki [TODO](TODO.md): 助けが必要な wiki ページのリスト
- 
+- 他の [言語](languages.md) で読むには
+
 旧バージョンの ATS については、ほとんどメンテナンスされていない [wiki][3] があります。
 
 ATS2 は、GNU General Public License version 3 (GPLv3)、またはこれ以降のバージョンで配布されています。

@@ -1,16 +1,13 @@
-Internal types are introduced in the file `pats_staexp2.sats`, and having a
-better understanding of how these types relate to actual ATS types will be
-[[helpful in debugging|Error messages]].
+内部の型は `pats_staexp2.sats` ファイルで導入されています。これらの型がどのように実際の ATS
+の型に結び付いているのか理解することは [デバッグの役に立つ](Error-messages.md) でしょう。
 
-* `S2Eapp` - an application term.
-* `S2Ecst` - a type constant (for instance, int, bool, list, etc.)
-* `S2Eeff` - function effects.
-* `S2Eexi` - an existentially quantified type.
-* `S2Eint` - machine precision integer.
-* `S2Eintinf` - infinite precision integer; commonly used for integer sorts
-  in most compiled versions of atsopt (patsopt).
-* `S2Evar` - a (typically universally quantified) variable.
-* `S2Etop (0; T)` means `T?` `//Need to verify in ATS2`
-* `S2Etop (1; T)` means `T?!` `//Need to verify in ATS2`
-* `S2EVar` - an (existentially quantified) unification variable introduced
-  by the typechecker.
+* `S2Eapp` - 関数適用の項
+* `S2Ecst` - 型定数 (例: int, bool, list, など)
+* `S2Eeff` - 関数の作用
+* `S2Eexi` - 存在量化された型
+* `S2Eint` - マシン精度整数
+* `S2Eintinf` - 任意精度整数; atsopt (patsopt) のほとんどのバージョンにおいて整数種として一般に利用されます
+* `S2Evar` - (一般に全勝量化された) 変数
+* `S2Etop (0; T)` は `T?` を意味します `//Need to verify in ATS2`
+* `S2Etop (1; T)` は `T?!` を意味します `//Need to verify in ATS2`
+* `S2EVar` - 型検査器によって導入された (存在量化された) ユニフィケーション変数

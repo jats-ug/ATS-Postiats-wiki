@@ -61,7 +61,9 @@ github リポジトリで更新された [ATSLIB] コードを使うときは、
 
 ### Debian GNU/Linux unstable(sid)
 
+```
 $ sudo apt-get install ats2-lang
+```
 
 ## 仮想環境での ATS
 

@@ -30,7 +30,7 @@ highly recommended.
 
 **Rosetta Code** has several [entries for ATS](http://rosettacode.org/wiki/Category:ATS).
 
-Once familiar enough with the language, [[atslib|atslib]] is also a great
+Once familiar enough with the language, [[ATSLIB|ATSLIB]] is also a great
 source to find many algorithms implemented in ATS, sometimes in several
 different ways (linear, non-linear, etc.)
 

@@ -13,15 +13,15 @@ name to the new page name. For instance, the old page might have only "See
 ## General TODO * Consider improving the [[wiki homepage|home]] to be more
 beginner-friendly and easy on the eyes, e.g. https://wiki.python.org/moin/
 
-## Stubs (practically no content)  * [[atsdoc|atsdoc]] * [[Rosetta
-Stone|Rosetta Stone]]
+## Stubs (practically no content)  * [[Rosetta Stone|Rosetta Stone]]
 
 
 ## Incomplete (Of course, it is hard to say what is complete, but here we
 mean listings that are highly incomplete or articles that only barely
 scratch the surface.)  * [[char|char]] * [[code generation|code generation]]
-* [[features|features]] * [[loops|loops]] * [[safety|safety]] * [[Scientific
-Computing|Scientific Computing]] * [[sort|sort]] * [[template|template]]
+* [[features|features]] * [[keywords|keywords]] * [[loops|loops]] *
+[[safety|safety]] * [[Scientific Computing|Scientific Computing]] *
+[[sort|sort]] * [[template|template]]
 
 
 ## Needs Expert Review (Authors are not confident in some important

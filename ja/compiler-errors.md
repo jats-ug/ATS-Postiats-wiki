@@ -13,7 +13,7 @@ programming, it is best not to load what one doesn't need). This can usually
 be fixed by adding this at the start of your file:
 
 ```ocaml #include "share/atspre_staload.hats" ``` By default, the ATS
-compiler only [[staloads|staload]] everything in [[prelude|atslib]] except
+compiler only [[staloads|staload]] everything in [[prelude|ATSLIB]] except
 its template implementations, which is a very common point of confusion for
 ATS newcomers.
 
