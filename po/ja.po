@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-26 21:51+0900\n"
-"PO-Revision-Date: 2014-08-27 01:15+0900\n"
+"PO-Revision-Date: 2014-08-27 20:00+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -202,7 +202,7 @@ msgstr ""
 #. type: Plain text
 #: Built-in-operators.md:2
 msgid "This page lists built-in operators for ATS."
-msgstr ""
+msgstr "このページでは ATS のビルトイン演算子を紹介します。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -210,7 +210,7 @@ msgid ""
 "`!=` - \"Not equal to\" (float/double/int). Also the same as <>, but "
 "preferred since it is easier to read for most and does not share the same "
 "string as the function effect <>."
-msgstr ""
+msgstr "`!=` - \"等しくない\" (float/double/int)。<> でも同じ意味になります。しかしほとんどの人に読みやすく、関数の作用 <> と同じ文字列であるため、こちらの演算子を推奨します。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -218,14 +218,14 @@ msgid ""
 "`<>` - \"Not equal to\" (float/double/int). Also the same as !=, but not "
 "recommended in general since it is less common than != in most programming "
 "languages and does not share the same string as the function effect <>."
-msgstr ""
+msgstr "`<>` - \"等しくない\" (float/double/int)。!= でも同じ意味になります。しかしほとんどのプログラミング言語では != よりも一般的ではなく、関数の作用 <> と同じ文字列であるため、この演算子は推奨されません。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
 msgid ""
 "`=>` - Similar to `=`, but used to define the body of a lambda function or a "
 "case expression."
-msgstr ""
+msgstr "`=>` - `=` と似ていますが、ラムダ関数や case 式の本体を定義するのに使います。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -235,7 +235,7 @@ msgid ""
 "value that matches it does not match the pattern guards associated with any "
 "previous clauses. For more information, see [Sequentiality of Pattern "
 "Matching][1] or the [forums][2]."
-msgstr ""
+msgstr "`=>>` - `=>` と似ていますが、この節が連続していると仮定して型検査される必要があることを型検査器に指示します。すなわち、その節にマッチする値がそれ以前の節のパターンガードの全てにマッチしなかったと仮定します。詳細は [パターンマッチの連続性][1] や [フォーラム][2] を参照してください。"
 
 #. type: Bullet: '  - '
 #: Built-in-operators.md:10
@@ -270,6 +270,12 @@ msgid ""
 "```\n"
 "  - `#[ ...  | ... ]` - Provides static values (witnesses) to the type checker when they are missing or cannot be inferred. See [typechecking errors ](https://github.com/githwxi/ATS-Postiats/wiki/typechecking-errors#supplying-static-values-to-the-typechecker) for examples.\n"
 msgstr ""
+"```ocaml\n"
+"fun{a:t@ype}\n"
+"linset_choose (xs: !set a, x0: &a? >> opt (a, b)) : #[b:bool] bool (b)\n"
+"```\n"
+"\n"
+"  - `#[ ...  | ... ]` - 静的な変数 (証明) が見つからなかったり推論できなかった場合に、その静的な変数を型検査器に与えます。[型検査エラー](https://github.com/githwxi/ATS-Postiats/wiki/typechecking-errors#supplying-static-values-to-the-typechecker) にいくつか例があります。"
 
 #. type: Plain text
 #: Built-in-operators.md:20
@@ -278,6 +284,9 @@ msgid ""
 "groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ [3]: https://"
 "groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
 msgstr ""
+"[1]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x2683.\n"
+"[2]: https://groups.google.com/d/msg/ats-lang-users/g3A2fzeKM3A/2UYOjNLVZ5sJ\n"
+"[3]: https://groups.google.com/d/msg/ats-lang-users/NpQZuB7W9PU/5pwjoDi4oj0J"
 
 #. type: Plain text
 #: Building-and-installing.md:2
