@@ -16,6 +16,6 @@ Once familiar enough with the language, [[ATSLIB|ATSLIB]] is also a great source
 
 ## Other small tutorials
 
-An example demonstrating [dataviewtype]s.
+An example demonstrating [[dataviewtype|dataviewtype]]s.
 
 An [ATS wiki book](http://en.wikibooks.org/wiki/ATS:_Programming_with_Theorem-Proving) exists, but currently only has a few pages (and appears to be rather dated, i.e. uses ATS1).
