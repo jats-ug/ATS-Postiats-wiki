@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-28 22:49+0900\n"
+"PO-Revision-Date: 2014-08-29 01:51+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1871,19 +1871,19 @@ msgstr ""
 msgid ""
 "ATS has some design patterns that are less common in the other languages.  "
 "This page explains the patterns."
-msgstr ""
+msgstr "ATS には他の言語ではあまり一般的ではないような、いくつかのデザインパターンがあります。このページではそんなパターンを説明します。"
 
 #. type: Plain text
 #: Design-patterns.md:5
 msgid "## Takeout-Addback pattern"
-msgstr ""
+msgstr "## Takeout-Addback パターン"
 
 #. type: Plain text
 #: Design-patterns.md:8
 msgid ""
 "Static meaning with ATS's type isn't good at everything.  Sequence of the "
 "static meaning is divided by event driven architecture or thread."
-msgstr ""
+msgstr "ATS の型を用いた静的な意味は万能ではありません。静的な意味の列は、イベントドリブンなアーキティクチャやスレッドによって分断されてしまいます。"
 
 #. type: Plain text
 #: Design-patterns.md:13
@@ -1892,12 +1892,12 @@ msgid ""
 "opened calling takeout static function.  After takeout and before addback, "
 "we can touch and use static meaning associated with the session.  It's "
 "closed calling addback static funcion."
-msgstr ""
+msgstr "そのような場合、セッションのようななんらかのプロトコルを使う必要があります。そのセッションは静的な関数 takeout を呼び出して開くことにします。takeout から addback までの間で、そのセッションに関連した静的な意味を使うことができます。最後に静的な関数 addback を呼び出してセッションを閉じます。"
 
 #. type: Plain text
 #: Design-patterns.md:15
 msgid "The arrayptr library in prelude is a good example."
-msgstr ""
+msgstr "prelude の arrayptr ライブラリは良い例です。"
 
 #. type: Plain text
 #: Design-patterns.md:24
@@ -1912,6 +1912,14 @@ msgid ""
 "  A: !arrayptr (INV(a), l, n) >> arrayptrout (a?, l, n)\n"
 ") : array_v (a, l, n) // end of [arrayptr_takeout]\n"
 msgstr ""
+"```ocaml\n"
+"(* File: prelude/SATS/arrayptr.sats *)\n"
+"praxi\n"
+"arrayptr_takeout\n"
+"  {a:vt0p}{l:addr}{n:int}\n"
+"(\n"
+"  A: !arrayptr (INV(a), l, n) >> arrayptrout (a?, l, n)\n"
+") : array_v (a, l, n) // end of [arrayptr_takeout]\n"
 
 #. type: Plain text
 #: Design-patterns.md:32
@@ -1925,6 +1933,13 @@ msgid ""
 ") : void // end of [arrayptr_addback]\n"
 "```\n"
 msgstr ""
+"praxi\n"
+"arrayptr_addback\n"
+"  {a:vt0p}{l:addr}{n:int}\n"
+"(\n"
+"  pf: array_v (INV(a), l, n) | A: !arrayptrout (a?, l, n) >> arrayptr (a, l, n)\n"
+") : void // end of [arrayptr_addback]\n"
+"```\n"
 
 #. type: Plain text
 #: Design-patterns.md:36
@@ -1932,19 +1947,19 @@ msgid ""
 "The arrayptr has no static meaning, because it's simple pointer.  The "
 "array_v has static meaning, because it's dataview.  We can use array_v "
 "between takeout and addback."
-msgstr ""
+msgstr "arrayptr は単純なポインタで、静的な意味を持ちません。array_v は dataview で、静的な意味を持っています。takeout と addback の間において array_v を使うことができます。"
 
 #. type: Plain text
 #: Design-patterns.md:39
 msgid ""
 "For more detail, see [ATSLIB/prelude/arrayptr library](http://www.ats-lang."
 "org/LIBRARY/prelude/SATS/DOCUGEN/HTML/arrayptr.html#arrayptr_takeout)."
-msgstr ""
+msgstr "詳しくは [ATSLIB/prelude/arrayptr ライブラリ](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/arrayptr.html#arrayptr_takeout) を参照してください。"
 
 #. type: Plain text
 #: Design-patterns.md:41
 msgid "## Localized-Template pattern"
-msgstr ""
+msgstr "## Localized-Template パターン"
 
 #. type: Plain text
 #: Design-patterns.md:45
@@ -1952,7 +1967,7 @@ msgid ""
 "Many functional languages use closure to inject localized processing into a "
 "function.  ATS also can use closure. However it's sometimes bad idea, "
 "because closure is a resource and should be maintained by linear type or GC."
-msgstr ""
+msgstr "関数にローカルな処理を注入するために、多くの関数型言語はクロージャを使います。ATS もまたクロージャを使うことができます。けれどもそのようなクロージャの使用は時に良い考えではありません。なぜならクロージャはリソースで、線形型や GC によって管理しなければならないからです。"
 
 #. type: Plain text
 #: Design-patterns.md:53
@@ -1963,7 +1978,7 @@ msgid ""
 "calling \"call_plus1\" produces that \"plus1\" as default implementation is "
 "called.  On the other hand, calling \"call_plus1\" binding \"plus1\" with "
 "local implementation produces that the \"plus1\" is called."
-msgstr ""
+msgstr "このような場合 ATS コードではローカライズされたテンプレートを使うことができます。次のコードでは、\"plus1\" はグローバルな名前空間でのデフォルト関数テンプレート実装として定義され、\"call_plus1\" もまた関数テンプレートとして定義されています。単に \"call_plus1\" を呼び出すと、デフォルト実装である \"plus1\" が呼び出されます。一方で、\"plus1\" にローカルな実装を束縛した後に \"call_plus1\" を呼び出すと、その \"plus1\" が呼び出されます。"
 
 #. type: Plain text
 #: Design-patterns.md:57
@@ -1971,11 +1986,13 @@ msgid ""
 "```ocaml (* File: test_template.dats *)  #include \"share/atspre_staload.hats"
 "\""
 msgstr ""
+"```ocaml\n"
+"(* File: test_template.dats *)  #include \"share/atspre_staload.hats\""
 
 #. type: Plain text
 #: Design-patterns.md:60
 msgid "extern fun{} plus1: () -> int extern fun{} call_plus1: () -> int"
-msgstr ""
+msgstr "extern fun{} plus1: () -> int extern fun{} call_plus1: () -> int"
 
 #. type: Plain text
 #: Design-patterns.md:63
@@ -1984,6 +2001,8 @@ msgid ""
 "implement{} plus1 () = 0 + 1                (* default implementation *)\n"
 "implement{} call_plus1 () = plus1 ()\n"
 msgstr ""
+"implement{} plus1 () = 0 + 1                (* default implementation *)\n"
+"implement{} call_plus1 () = plus1 ()\n"
 
 #. type: Plain text
 #: Design-patterns.md:71
@@ -1997,6 +2016,13 @@ msgid ""
 "}\n"
 "```\n"
 msgstr ""
+"implement main0 () = {\n"
+"  val () = println! (call_plus1 ())         (* => 1 *)\n"
+"  val v = 10\n"
+"  val () = let implement{} plus1 () = v + 1 (* local implementation *)\n"
+"           in println! (call_plus1 ()) end  (* => 11 *)\n"
+"}\n"
+"```\n"
 
 #. type: Plain text
 #: Design-patterns.md:73
@@ -2008,20 +2034,24 @@ msgstr "上記のコードは以下のコマンドでコンパイルできます
 msgid ""
 "``` $ patscc -o test_template test_template.dats $ ./test_template 1 11 ```"
 msgstr ""
+"```\n"
+"$ patscc -o test_template test_template.dats\n"
+"$ ./test_template 1 11\n"
+"```"
 
 #. type: Plain text
 #: Design-patterns.md:83
 msgid ""
 "Note \"call_plus1\" should be defined as templete, if you would like to "
 "localize the child function using template."
-msgstr ""
+msgstr "テンプレートを使って子供の関数をローカライズしたい場合には、\"call_plus1\" もテンプレートとして定義しなければならないことに注意してください。"
 
 #. type: Plain text
 #: Design-patterns.md:85
 msgid ""
 "For more detail, see [ATSLIB/prelude/strptr library](http://www.ats-lang.org/"
 "LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach)."
-msgstr ""
+msgstr "詳しくは [ATSLIB/prelude/strptr ライブラリ](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach) を参照してください。"
 
 #. type: Plain text
 #: languages.md:3
@@ -2029,13 +2059,16 @@ msgid ""
 "The wiki is also available in: * [Japanese](https://github.com/jats-ug/ATS-"
 "Postiats-wiki)"
 msgstr ""
+"この wiki は次の言語でも読めます:\n"
+"\n"
+"* [日本語](https://github.com/jats-ug/ATS-Postiats-wiki)"
 
 #. type: Plain text
 #: languages.md:4
 msgid ""
 "For information on translating the wiki or related content, see "
 "[[internationalization|internationalization]]."
-msgstr ""
+msgstr "wiki の翻訳に関する情報などについては [国際化](internationalization.md) を参照してください。"
 
 #. type: Plain text
 #: Rosetta-Stone.md:1
