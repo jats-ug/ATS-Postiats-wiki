@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-28 14:44+0900\n"
+"PO-Revision-Date: 2014-08-28 16:09+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -172,7 +172,7 @@ msgid ""
 "safety]] scientific computing. The language's focus on safety and efficiency "
 "is obvious, but actually making efficient scientific code is often far from "
 "easy (in any language)."
-msgstr ""
+msgstr "ATS には、科学計算を実際的に有用に [安全に](safety.md) するための多くのしくみがあります。この言語が安全性と効率にフォーカスしていることは明らかですが、実際に効果的な科学計算コードを作るのはしばしば (どのような言語よりも) はるかに簡単です。"
 
 #. type: Plain text
 #: Scientific-Computing.md:6
@@ -184,6 +184,10 @@ msgid ""
 "For shared and/or distributed memory systems; stands for [Message Passing "
 "Interface](https://en.wikipedia.org/wiki/Message_Passing_Interface)."
 msgstr ""
+"## Parallel programming\n"
+"\n"
+"* [OpenMP](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/OpenMP) 共有メモリシステムにおいて [Open Multi-Processing](https://en.wikipedia.org/wiki/Openmp) の使用を支援します。\n"
+"* [MPI](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/MPI) 共有もしくは分散メモリシステムにおいて [Message Passing Interface](https://en.wikipedia.org/wiki/Message_Passing_Interface) の使用を支援します。"
 
 #. type: Plain text
 #: Scientific-Computing.md:9
@@ -191,6 +195,9 @@ msgid ""
 "## Optimization * Linear and convex optimization: [Gurobi interface](https://"
 "github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/gurobi)"
 msgstr ""
+"## 最適化\n"
+"\n"
+"* 線形な凸最適化: [Gurobi インターフェイス](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/gurobi)"
 
 #. type: Plain text
 #: Scientific-Computing.md:12
@@ -200,27 +207,36 @@ msgid ""
 "though the R language has a notable lead with available statistics software "
 "(particularly related to Biology)."
 msgstr ""
+"## Python [コード生成](code-generation.md)\n"
+"\n"
+"R 言語が (特に生物学に関連する) 統計ソフトウェアをリードしていますが、Python は MATLAB と並んで、おそらくもっとも人気のある科学計算言語の1つでしょう。"
 
 #. type: Plain text
 #: Scientific-Computing.md:15
 msgid ""
 "## Matrix operations Efficient matrix operations are difficult in practice."
 msgstr ""
+"## 行列操作\n"
+"\n"
+"効率的な行列操作は実際には困難です。"
 
 #. type: Plain text
 #: Scientific-Computing.md:17
 msgid "### Native ATS2 matrix algebra implementations"
-msgstr ""
+msgstr "### ATS2 ネイティブの行列代数実装"
 
 #. type: Plain text
 #: Scientific-Computing.md:20
 msgid "### BLAS interfaces (none yet?)"
 msgstr ""
+"### BLAS インターフェイス\n"
+"\n"
+"(まだない？)"
 
 #. type: Plain text
 #: Scientific-Computing.md:21
 msgid "### Benchmarks"
-msgstr ""
+msgstr "### ベンチマーク"
 
 #. type: Plain text
 #: Built-in-operators.md:2
@@ -638,7 +654,7 @@ msgid ""
 "The first (and so far only) translation effort for ATS content is in "
 "Japanese. There is a workflow for translating the wiki and keeping it up to "
 "date using [po4a](http://po4a.alioth.debian.org/)."
-msgstr ""
+msgstr "The first (and so far only) translation effort for ATS content is in Japanese. There is a workflow for translating the wiki and keeping it up to date using [po4a](http://po4a.alioth.debian.org/)."
 
 #. type: Plain text
 #: internationalization.md:4
@@ -939,7 +955,7 @@ msgstr ""
 #. type: Bullet: '* '
 #: operating-systems.md:2
 msgid "For kernels and drivers in ATS, see [[kernels|kernels]]."
-msgstr ""
+msgstr "ATS における kernel とドライバについては [kernel](kernels.md) を参照してください。"
 
 #. type: Bullet: '* '
 #: operating-systems.md:2
@@ -947,7 +963,7 @@ msgid ""
 "For operating systems supporting ATS development, currently Linux, Mac OS X, "
 "and Windows/Cygwin are supported, but see the [download page](http://www.ats-"
 "lang.org/DOWNLOAD/) for more information."
-msgstr ""
+msgstr "ATS 開発をサポートする OS としては、今のところ Linux, Mac OS X, Windows/Cygwin をサポートしています。詳しくは [ダウンロードページ](http://www.ats-lang.org/DOWNLOAD/) を参照してください。"
 
 #. type: Plain text
 #: tutorials.md:2
@@ -958,7 +974,7 @@ msgid ""
 "exactly a tutorial, demonstrates these principles. [Discussion on the "
 "calculator example is located here](https://groups.google.com/forum/?"
 "fromgroups=#!topic/ats-lang-users/ad5S6SY0I0E)."
-msgstr ""
+msgstr "初心者にとっては、おそらく最も重要な学習ツールは *良い関数型スタイル* と *抽象* でしょう。正確にはチュートリアルではありませんが、この [電卓のコード例](http://www.cs.bu.edu/~hwxi/academic/courses/CS320/Spring13/code/calculator/) はこれらの原則を良く説明しています。[この電卓の例に対する議論がここにあります](https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/ad5S6SY0I0E)。"
 
 #. type: Plain text
 #: tutorials.md:4
@@ -967,7 +983,7 @@ msgid ""
 "ats-lang.org/DOCUMENT/), several of which are described below. There is also "
 "a more [dense tutorial or language overview reference](http://cs.likai.org/"
 "ats/ml-programmers-guide-to-ats) that is highly recommended."
-msgstr ""
+msgstr "今のところ、ATS サイトには [いくつかのチュートリアルとリファレンス](http://www.ats-lang.org/DOCUMENT/) があり、そのいくつかはこれまで紹介しました。またより [深いチュートリアルもしくは言語のオーバービュー](http://cs.likai.org/ats/ml-programmers-guide-to-ats) もあり、こちらもおすすめです。"
 
 #. type: Bullet: '* '
 #: tutorials.md:8
@@ -978,7 +994,7 @@ msgid ""
 "there may be [resources not mentioned here](https://www.google.com/search?"
 "as_q=ATS+language&as_epq=&as_oq=tutorial+blog"
 "+programming&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&tbs=&as_filetype=&as_rights=)."
-msgstr ""
+msgstr "Chris Double は [ATS に関する多くのブログ記事](http://www.bluishcoder.co.nz/tags/ats/) を書いています。ATS サイトにも [多くの有用な話題を含むチュートリアル](http://www.ats-lang.org/htdocs-old/TUTORIAL/tutorial.html) があります。もちろん、[ここで紹介していない文書](https://www.google.com/search?as_q=ATS+language&as_epq=&as_oq=tutorial+blog+programming&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&tbs=&as_filetype=&as_rights=) があるかもしれません。"
 
 #. type: Bullet: '* '
 #: tutorials.md:8
@@ -986,31 +1002,31 @@ msgid ""
 "[[A Tutorial on Programming Features in ATS|http://www.ats-lang.org/DOCUMENT/"
 "ATS2TUTORIAL/HTML/book1.html]] covers several topics common to many "
 "programming languaages, as well as some tutorials on linear types."
-msgstr ""
+msgstr "[ATS におけるプログラミングの機能のチュートリアル](http://www.ats-lang.org/DOCUMENT/ATS2TUTORIAL/HTML/book1.html) は多くのプログラミング言語に共通するいくつかの話題をカバーしています。また線形型に関するいくつかのチュートリアルも含んでいます。"
 
 #. type: Bullet: '* '
 #: tutorials.md:8
 msgid ""
 "[Graphics tutorial using ATS/Cairo](http://www.ats-lang.org/DOCUMENT/"
 "ATS2CAIRO/HTML/book1.html)."
-msgstr ""
+msgstr "[ATS/Cairo を使ったグラフィクスのチュートリアル](http://www.ats-lang.org/DOCUMENT/ATS2CAIRO/HTML/book1.html) もあります。"
 
 #. type: Plain text
 #: tutorials.md:10
 msgid "## Algorithms in ATS"
-msgstr ""
+msgstr "## ATS でのアルゴリズム"
 
 #. type: Plain text
 #: tutorials.md:12
 #, no-wrap
 msgid "**[[The ATS Book|http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html]]** is a good source of algorithms at various levels of rigor.\n"
-msgstr ""
+msgstr "**[ATS Book](http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html)** は様々な厳密さのレベルにおけるアルゴリズムの良い情報源です。\n"
 
 #. type: Plain text
 #: tutorials.md:14
 #, no-wrap
 msgid "**Rosetta Code** has several [entries for ATS](http://rosettacode.org/wiki/Category:ATS).\n"
-msgstr ""
+msgstr "**Rosetta Code** にはいくつかの [ATS に関するエントリ](http://rosettacode.org/wiki/Category:ATS) があります。\n"
 
 #. type: Plain text
 #: tutorials.md:16
@@ -1018,17 +1034,17 @@ msgid ""
 "Once familiar enough with the language, [[ATSLIB|ATSLIB]] is also a great "
 "source to find many algorithms implemented in ATS, sometimes in several "
 "different ways (linear, non-linear, etc.)"
-msgstr ""
+msgstr "この言語に一旦慣れたら、ATS で実装された多くのアルゴリズムを見つけるのに [ATSLIB](ATSLIB.md) も重要な情報源になります。それらはいくつかの異なる方法 (線形, 非線形など) で実装されているます。"
 
 #. type: Plain text
 #: tutorials.md:18
 msgid "## Other small tutorials"
-msgstr ""
+msgstr "## その他、小さなチュートリアル"
 
 #. type: Plain text
 #: tutorials.md:20
 msgid "An example demonstrating [dataviewtype]s."
-msgstr ""
+msgstr "[dataviewtype] を説明する例があります。"
 
 #. type: Plain text
 #: tutorials.md:21
@@ -1036,7 +1052,7 @@ msgid ""
 "An [ATS wiki book](http://en.wikibooks.org/wiki/ATS:"
 "_Programming_with_Theorem-Proving) exists, but currently only has a few "
 "pages (and appears to be rather dated, i.e. uses ATS1)."
-msgstr ""
+msgstr "[ATS wiki book](http://en.wikibooks.org/wiki/ATS:_Programming_with_Theorem-Proving) もありますが、今現在ではそのページ数は多くありません (またその内容はやや古く、ATS1 を使っているます)。"
 
 #. type: Plain text
 #: Strings.md:2
