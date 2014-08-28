@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-28 19:11+0900\n"
+"PO-Revision-Date: 2014-08-28 22:49+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1656,18 +1656,18 @@ msgstr "[1]: https://groups.google.com/d/msg/ats-lang-users/enDXT0GaoaM/HKJcjCJS
 msgid ""
 "ATS2 has many safety features, though they are not all obvious. Here we list "
 "a few examples"
-msgstr ""
+msgstr "ATS2 は多くの安全性に関する機能があります。ここではいくつかの例を列挙します"
 
 #. type: Bullet: '*  '
 #: safety.md:3
 msgid ""
 "[Arithmetic overflow](../tree/master/doc/EXAMPLE/MISC/arith_overflow.dats)"
-msgstr ""
+msgstr "[Arithmetic overflow](https://github.com/githwxi/ATS-Postiats/blob/master/doc/EXAMPLE/MISC/arith_overflow.dats)"
 
 #. type: Plain text
 #: Contrib.md:2
 msgid "## Downloading Contrib"
-msgstr ""
+msgstr "## contrib のダウンロード"
 
 #. type: Plain text
 #: Contrib.md:4
@@ -1676,19 +1676,19 @@ msgid ""
 "projects/ats2-lang-contrib/]], though those developing libraries for ATS "
 "contrib should use the [[github repository|https://github.com/githwxi/ATS-"
 "Postiats-contrib]]."
-msgstr ""
+msgstr "ATS contrib のリリース版は [sourceforge にあり](https://sourceforge.net/projects/ats2-lang-contrib/)、開発版ライブラリを使うには [github リポジトリ](https://github.com/githwxi/ATS-Postiats-contrib) を参照してください。"
 
 #. type: Plain text
 #: Contrib.md:6
 msgid "## Setting up for using Contrib"
-msgstr ""
+msgstr "## contrib の設定"
 
 #. type: Plain text
 #: Contrib.md:8
 msgid ""
 "An example of how to set up environment variables for ATS-contrib (alongside "
 "ATS):"
-msgstr ""
+msgstr "(ATS と一緒に) ATS-contrib を使うための環境変数の設定例です:"
 
 #. type: Plain text
 #: Contrib.md:12
@@ -1696,22 +1696,27 @@ msgid ""
 "```bash export POSTIATS=${HOME}/research/Postiats/git export "
 "POSTIATS_contrib=${HOME}/research/Postiats-contrib/git"
 msgstr ""
+"```bash\n"
+"export POSTIATS=${HOME}/research/Postiats/git\n"
+"export POSTIATS_contrib=${HOME}/research/Postiats-contrib/git"
 
 #. type: Plain text
 #: Contrib.md:14
 msgid "######"
-msgstr ""
+msgstr "######"
 
 #. type: Plain text
 #: Contrib.md:18
 msgid ""
 "export PATSHOME=${POSTIATS} export PATSHOMERELOC=${POSTIATS_contrib} ```"
 msgstr ""
+"export PATSHOME=${POSTIATS} export PATSHOMERELOC=${POSTIATS_contrib}\n"
+"```"
 
 #. type: Plain text
 #: Contrib.md:21
 msgid "## Using ATS Contrib"
-msgstr ""
+msgstr "## ATS contrib を使用する"
 
 #. type: Plain text
 #: Contrib.md:24
@@ -1722,7 +1727,7 @@ msgid ""
 "of ATS contrib. For instance, there is a user directory `contrib/libats-/"
 "bbarker/OpenMP` for OpenMP, and a curated version of OpenMP in `contrib/"
 "OpenMP`."
-msgstr ""
+msgstr "既存のパッケージに貢献したくなる場合があるでしょう。もしくは新しいパッケージを作って、徐々にメインの `contrib` ディレクトリに監督/配置したいかもしれません。一般にユーザコードは ATS contrib の切り離されたサブディレクトリに配置します。例えば、OpenMP ためのユーザディレクトリ `contrib/libats-/bbarker/OpenMP` と、`contrib/OpenMP` にOpenMP の監督されたバージョンがあります。"
 
 #. type: Plain text
 #: Contrib.md:25
@@ -1730,12 +1735,12 @@ msgid ""
 "In order to switch between using these various packages, [[atspkgreloc|"
 "atspkgreloc]] is a useful tool that may automate the process. It can "
 "additionally be used with other repositories or forms of code storage."
-msgstr ""
+msgstr "これらの様々なパッケージの使用を切り換えるために、[atspkgreloc](atspkgreloc.md) は有用なツールで、このプロセスを自動化できます。さらに他のリポジトリやコードストレージのようなものを使うこともできます。"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:2
 msgid "## Overview of the stack and heap ##"
-msgstr ""
+msgstr "## スタックとヒープの概観 ##"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:4
@@ -1746,7 +1751,7 @@ msgid ""
 "deallocation functions (e.g. malloc and free), or by using a garbage "
 "collector (GC). The popular [Boehm GC](http://www.hpl.hp.com/personal/"
 "Hans_Boehm/gc/) is known to be supported in ATS2."
-msgstr ""
+msgstr "このページでは ATS での一般的な型を、スタックもしくはヒープもしくはその両方に確保されるかどうかに従って列挙します。ヒープに確保されたデータは、線形型と関連したメモリ確保/解放関数 (例: malloc と free) を使って破棄するか、ガーベッジコレクタ (GC) を使って回収します。一般の [Boehm GC](http://www.hpl.hp.com/personal/Hans_Boehm/gc/) が ATS2 ではサポートされています。"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:6
@@ -1754,7 +1759,7 @@ msgid ""
 "The following types are allocated on the stack when used in val or var "
 "assignments: types associated with ground sorts (int, bool, char, and addr). "
 "Any type with sort `t@ype` (e.g. integers) or type (e.g. addresses)."
-msgstr ""
+msgstr "val や var 割り当てを使った時、次の型はスタックに確保されます: 基礎種 (int, bool, char, addr), 種 `t@ype` (例: 整数) もしくは種 type (例: アドレス) の型。"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:8
@@ -1771,11 +1776,13 @@ msgid ""
 "instance, datatypes are for use with a GC, whereas dataviewtypes are linear "
 "types managed by the programmer."
 msgstr ""
+"次の型はヒープにに確保されます:\n"
+"ボックス化タプル, viewtype, datatype, dataviewtype, 例外 (それらは dataytpe です), lazy 型, ポインタでアクセスするC言語型, ref 型。[文字列](Strings.md) は通常、この分類に該当します。例えば、それは abstype として表現されるか、ヒープに確保されたC言語文字列を表わす viewtype です。viewtype はスタックに確保した変数としても使うことができることに注意してください。けれども [var との使用](http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x3352.html) を除いて、この用法はあまり一般的ではありません。ヒープに確保された型は、GC を使うか線形型になるかのどちらか一方に従い、通常は両方を使うことはありません。例えば、datatype は GC を使う一方、dataviewtype は線形型でプログラマによって管理されます。"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:11
 msgid "## Using the GC ##"
-msgstr ""
+msgstr "## GC の使用 ##"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:13
@@ -1786,43 +1793,43 @@ msgid ""
 "SMALL/calculator) for an example Makefile [\\[1\\]][1]. If using gcc "
 "directly on ATS-generated C files for the purpose of portable code, use the -"
 "lgc."
-msgstr ""
+msgstr "メモリの確保/解放に libgc (Bohem GC) を使用するためには、フラグ -DATS_MEMALLOC_GCBDW を gcc に渡します。Makefile の例として、この [小さなプロジェクト](https://github.com/githwxi/ATS-Postiats/tree/master/doc/PROJECT/SMALL/calculator) を参照してください [\\[1\\]][1]。ポータブルなコードにするために ATS が生成したC言語ファイルを直接 gcc から使う場合には、-lgc を使ってください。"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:15
 msgid "## Linear Malloc and Free Functions ##"
-msgstr ""
+msgstr "## 線形の malloc と free 関数 ##"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:17
 msgid "#### Built-in ATS (de)allocation functions ####"
-msgstr ""
+msgstr "#### ATS ビルトインの確保/解放関数 ####"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:19
 msgid ""
 "Unlike in C/C++, malloc in ATS does not return null if enough memory is not "
 "available, but aborts instead [\\[2\\]][2]."
-msgstr ""
+msgstr "C/C++ と異なり、十分なメモリがない場合でも、ATS の malloc は NULL を返しません。その代わりにアボートします [\\[2\\]][2]。"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:21
 msgid "#### Custom memory (de)allocation functions ####"
-msgstr ""
+msgstr "#### カスタムなメモリ確保/解放関数 ####"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:23
 msgid ""
 "Here is an example showing a simple way to use user-defined malloc/free "
 "[\\[3\\]][3]:"
-msgstr ""
+msgstr "ここではユーザが定義した malloc/free を使うための単純な方法の例を示します [\\[3\\]][3]:"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:25
 msgid ""
 "https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/CA-HSR2/"
 "program-1-2"
-msgstr ""
+msgstr "https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/CA-HSR2/program-1-2"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:28
@@ -1832,17 +1839,21 @@ msgid ""
 "more details on interoperability between C and ATS, see this [chapter on "
 "interaction with C](http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/"
 "c1960.html)):"
-msgstr ""
+msgstr "フラグ -DATS_MEMALLOC_USER はメモリの確保/解放に次の2つの関数を使うよう、ATS コンパイラに指示します (C言語と ATS の相互運用の詳細については、この [章 \"C言語との相互呼び出し\"] (http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/c1960.html) を参照してください):"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:33
 msgid "```C extern void *atsruntime_malloc_user (size_t bsz) ;"
 msgstr ""
+"```C\n"
+"extern void *atsruntime_malloc_user (size_t bsz) ;"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:37
 msgid "extern void atsruntime_mfree_user (void* ptr) ; ````"
 msgstr ""
+"extern void atsruntime_mfree_user (void* ptr) ;\n"
+"````"
 
 #. type: Plain text
 #: Stack-and-heap-allocation.md:40
@@ -1851,6 +1862,9 @@ msgid ""
 "[2]: https://groups.google.com/d/msg/ats-lang-users/eAMszM15vIE/MYi3Rfxe48QJ "
 "[3]: https://groups.google.com/d/msg/ats-lang-users/uRQami8woQQ/l44QkqGq-IoJ"
 msgstr ""
+"[1]: https://groups.google.com/d/msg/ats-lang-users/SL7fb01wsnk/vU3d9pv-RTkJ\n"
+"[2]: https://groups.google.com/d/msg/ats-lang-users/eAMszM15vIE/MYi3Rfxe48QJ\n"
+"[3]: https://groups.google.com/d/msg/ats-lang-users/uRQami8woQQ/l44QkqGq-IoJ"
 
 #. type: Plain text
 #: Design-patterns.md:3
