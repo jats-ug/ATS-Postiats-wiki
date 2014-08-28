@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-28 08:57+0900\n"
+"PO-Revision-Date: 2014-08-28 14:44+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,18 +19,18 @@ msgstr ""
 #. type: Plain text
 #: compiler-errors.md:2
 msgid "##Template-related errors"
-msgstr ""
+msgstr "## テンプレートに関連したエラー"
 
 #. type: Plain text
 #: compiler-errors.md:4
 #, no-wrap
 msgid "**Not loading template implementations**\n"
-msgstr ""
+msgstr "**テンプレート実装を読み込んでいない**"
 
 #. type: Plain text
 #: compiler-errors.md:6
 msgid "Errors look like:"
-msgstr ""
+msgstr "このエラーは次のようなものです:"
 
 #. type: Plain text
 #: compiler-errors.md:12
@@ -38,6 +38,11 @@ msgid ""
 "``` // gcc 'XXX' undeclared (first use in this function)  expected "
 "expression before ‘YYY’ ```"
 msgstr ""
+"```\n"
+"// gcc\n"
+"'XXX' undeclared (first use in this function)\n"
+"expected expression before ‘YYY’\n"
+"```"
 
 #. type: Plain text
 #: compiler-errors.md:14
@@ -46,7 +51,7 @@ msgid ""
 "and they are not loaded by default (for instance, in kernel or embedded "
 "programming, it is best not to load what one doesn't need). This can usually "
 "be fixed by adding this at the start of your file:"
-msgstr ""
+msgstr "ATS2 で一般的に使用される多くの標準的なテンプレート実装があり、それらはデフォルトでは読み込まれません。(例えば、kernel や組み込みプログラミングでは、必要ないものは読み込まないべきでしょう。) 通常、この問題はファイルの先頭に次の行を追加すれば解決します:"
 
 #. type: Plain text
 #: compiler-errors.md:19
@@ -56,12 +61,17 @@ msgid ""
 "its template implementations, which is a very common point of confusion for "
 "ATS newcomers."
 msgstr ""
+"```ocaml\n"
+"#include \"share/atspre_staload.hats\"\n"
+"```\n"
+"\n"
+"通常、ATS コンパイラはテンプレート実装を除く [prelude](ATSLIB.md) のみを [staload](staload.md) します。これが ATS 初心者を混乱させるよくある原因です。"
 
 #. type: Plain text
 #: compiler-errors.md:21
 #, no-wrap
 msgid "**Template functions on non-abstract types**\n"
-msgstr ""
+msgstr "**抽象型でないテンプレート関数**\n"
 
 #. type: Plain text
 #: compiler-errors.md:23
@@ -69,7 +79,7 @@ msgid ""
 "Using a function template on a non-abstract type can result in this (the "
 "rules for templates are not all written down and the implementation is not "
 "finished):"
-msgstr ""
+msgstr "抽象型ではない関数テンプレートは次のようなエラーを生じることがあります。(テンプレートの規則は完全に書き起こされていませんし、またその実装も完了していません。):"
 
 #. type: Plain text
 #: compiler-errors.md:31
@@ -83,37 +93,44 @@ msgid ""
 "    falcon_cnfize_dats.c:1698:1: error: expected expression before â)â token\n"
 "    exec(gcc -std=c99 -D_XOPEN_SOURCE -I/home/brandon/ATS-Postiats -I/home/brandon/ATS-Postiats/ccomp/runtime -I/home/brandon/ATS-Postiats/contrib -DATS_MEMALLOC_LIBC -D_GNU_SOURCE -c falcon_cnfize_dats.c) = 256\n"
 msgstr ""
+"    falcon_cnfize_dats.c: In function âATSLIB_056_prelude__list_vt_freelin__clear__7__1â:\n"
+"    falcon_cnfize_dats.c:1698:1: error: âPMVtmpltcstmatâ undeclared (first use in this function)\n"
+"    falcon_cnfize_dats.c:1698:1: note: each undeclared identifier is reported only once for each function     it appears in\n"
+"    falcon_cnfize_dats.c:1698:1: error: âgclear_refâ undeclared (first use in this function)\n"
+"    falcon_cnfize_dats.c:1698:1: warning: implicit declaration of function âS2EVarâ [-Wimplicit-function-declaration]\n"
+"    falcon_cnfize_dats.c:1698:1: error: expected expression before â)â token\n"
+"    exec(gcc -std=c99 -D_XOPEN_SOURCE -I/home/brandon/ATS-Postiats -I/home/brandon/ATS-Postiats/ccomp/runtime -I/home/brandon/ATS-Postiats/contrib -DATS_MEMALLOC_LIBC -D_GNU_SOURCE -c falcon_cnfize_dats.c) = 256\n"
 
 #. type: Plain text
 #: compiler-errors.md:33
 msgid ""
 "To avoid this, either don't use a template (for now), or try to use an "
 "abstract type:"
-msgstr ""
+msgstr "この問題を回避する方法は、(現時点では) テンプレートの使用をあきらめるか、抽象型を使ってみることです:"
 
 #. type: Plain text
 #: compiler-errors.md:35
 #, no-wrap
 msgid "    abstype mytype = ptr\n"
-msgstr ""
+msgstr "    abstype mytype = ptr\n"
 
 #. type: Plain text
 #: compiler-errors.md:37
 msgid ""
 "Then you introduce cast functions where needed to convert between the "
 "abstract type and other (view)types."
-msgstr ""
+msgstr "それから、その抽象型と別の(観)型とを変換するのに必要なキャスト関数を導入してください。"
 
 #. type: Plain text
 #: compiler-errors.md:39
 msgid "## Missing Linker Flag Errors"
-msgstr ""
+msgstr "## リンカフラグの不足によるエラー"
 
 #. type: Plain text
 #: compiler-errors.md:41
 #, no-wrap
 msgid "**Didn't specify which memory allocation functions to use**\n"
-msgstr ""
+msgstr "**メモリ確保関数の使用を指定していない**\n"
 
 #. type: Plain text
 #: compiler-errors.md:44
@@ -121,7 +138,7 @@ msgid ""
 "Usually you'll want to properly pass -DATS_MEMALLOC_LIBC to patscc. The main "
 "thing you'll see here is `undefined reference to `atsruntime_malloc_undef'` "
 "(usually several times)."
-msgstr ""
+msgstr "通常この問題の解決策は -DATS_MEMALLOC_LIBC を patscc に適切に渡すことでしょう。ここで見られるエラーは主に `undefined reference to `atsruntime_malloc_undef'` です。(通常このエラーは複数回発生します。)"
 
 #. type: Plain text
 #: compiler-errors.md:51
@@ -134,13 +151,19 @@ msgid ""
 "    gurobi_mip1_dats.c:(.text+0x54e): undefined reference to `atsruntime_malloc_undef'\n"
 "    collect2: ld returned 1 exit status\n"
 msgstr ""
+"    /tmp/cchxHdy9.o: In function atspre_arrayptr_free':\n"
+"    gurobi_mip1_dats.c:(.text+0x1d4): undefined reference toatsruntime_mfree_undef'\n"
+"    /tmp/cchxHdy9.o: In function  _057_media_057_RAID5_057_home_057_brandon_057_ATS_055_Postiats_057_contrib_057_libats_055_bbarker_057_ats    optml_057_TEST_057_gurobi_mip1_056_dats__mytest_main':\n"
+"    gurobi_mip1_dats.c:(.text+0x4dc): undefined reference toatsruntime_malloc_undef'\n"
+"    gurobi_mip1_dats.c:(.text+0x54e): undefined reference to `atsruntime_malloc_undef'\n"
+"    collect2: ld returned 1 exit status\n"
 
 #. type: Plain text
 #: compiler-errors.md:52
 msgid ""
 "Alternatively, for more customization, see [[Stack and heap allocation|Stack "
 "and heap allocation]]."
-msgstr ""
+msgstr "よりカスタマイズしたい場合には [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md) を参照してください。"
 
 #. type: Plain text
 #: Scientific-Computing.md:2
