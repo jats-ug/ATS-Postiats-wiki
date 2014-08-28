@@ -1,22 +1,17 @@
-ATS/LF ([Logical
-Framework](https://en.wikipedia.org/wiki/Logical_framework)) supports a form
-of (interactive) theorem-proving; ATS advocates a programmer-centric
-approach to program verification that combines programming with
-theorem-proving in a syntactically intertwined manner.
+ATS/LF ([論理フレームワーク](https://en.wikipedia.org/wiki/Logical_framework)) は
+(対話的な) 定理証明をサポートしています; ATS
+は構文的に融合した手法で定理証明とプログラミングを統合してプログラムを検証する、プログラマ中心のアプローチを指示しています。
 
-## Axioms, Proofs, and Theorems
+## 公理, 証明, 定理
 
-* axiom - `praxi`; it states a theorem without proof.
-* proof - `prfn`; it is the non-recursive version of prfun
-* proof - `prfun`; it states a theorem where the author is required to give
-  a proof. In ATS2, the requirement is not currently enforced, making prfun
-  similar to praxi in practice [\[1\]][1].
-* theorem - `prop`; it is for classifying a type in ATS that represents a
-  theorem.
+* 公理 (axiom) - `praxi`; 証明なしの定理を宣言します。
+* 証明 (proof) - `prfn`; prfun の再帰しないバージョンです。
+* 証明 (proof) - `prfun`; 証明を与えることが要求される定理を宣言します。現在の ATS2 ではこの要求は強制されず、prfun
+  は実際には praxi と似た扱いになっています [\[1\]][1]。
+* 定理 (theorem) - `prop`; 定理を表現する ATS の型を分類します。
 
-Note that proof functions can (and should) be implemented using the
-`primplement` keyword, similar to `implement` for dynamic function
-implementations. More details can be found in the ATS2 Book.
+証明関数は `primplement` キーワードを使って実装できる (もしくはその必要がある)
+ことに注意してください。このキーワードは動的な関数を実装する際の `implement` に似ています。ATS2 Book により詳細な情報があります。
 
 
 [1]:

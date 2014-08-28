@@ -1,33 +1,30 @@
-## Downloading Contrib
+## contrib のダウンロード
 
-Releases are currently available [[at
-sourceforge|https://sourceforge.net/projects/ats2-lang-contrib/]], though
-those developing libraries for ATS contrib should use the [[github
-repository|https://github.com/githwxi/ATS-Postiats-contrib]].
+ATS contrib のリリース版は [sourceforge
+にあり](https://sourceforge.net/projects/ats2-lang-contrib/)、開発版ライブラリを使うには
+[github リポジトリ](https://github.com/githwxi/ATS-Postiats-contrib) を参照してください。
 
-## Setting up for using Contrib
+## contrib の設定
 
-An example of how to set up environment variables for ATS-contrib (alongside
-ATS):
+(ATS と一緒に) ATS-contrib を使うための環境変数の設定例です:
 
-```bash export POSTIATS=${HOME}/research/Postiats/git export
-POSTIATS_contrib=${HOME}/research/Postiats-contrib/git
+```bash
+export POSTIATS=${HOME}/research/Postiats/git
+export POSTIATS_contrib=${HOME}/research/Postiats-contrib/git
 
 ######
 
-export PATSHOME=${POSTIATS} export PATSHOMERELOC=${POSTIATS_contrib} ```
+export PATSHOME=${POSTIATS} export PATSHOMERELOC=${POSTIATS_contrib}
+```
 
 
-## Using ATS Contrib
+## ATS contrib を使用する
 
-It may be the case that you want to contribute to an existing package, or
-create a new package that will gradually be curated to be in the main
-`contrib` directory. User codes are generally put in a separate subdirectory
-of ATS contrib. For instance, there is a user directory
-`contrib/libats-/bbarker/OpenMP` for OpenMP, and a curated version of OpenMP
-in `contrib/OpenMP`.
+既存のパッケージに貢献したくなる場合があるでしょう。もしくは新しいパッケージを作って、徐々にメインの `contrib`
+ディレクトリに監督/配置したいかもしれません。一般にユーザコードは ATS contrib
+の切り離されたサブディレクトリに配置します。例えば、OpenMP ためのユーザディレクトリ
+`contrib/libats-/bbarker/OpenMP` と、`contrib/OpenMP` にOpenMP
+の監督されたバージョンがあります。
 
-In order to switch between using these various packages,
-[[atspkgreloc|atspkgreloc]] is a useful tool that may automate the
-process. It can additionally be used with other repositories or forms of
-code storage.
+これらの様々なパッケージの使用を切り換えるために、[atspkgreloc](atspkgreloc.md)
+は有用なツールで、このプロセスを自動化できます。さらに他のリポジトリやコードストレージのようなものを使うこともできます。

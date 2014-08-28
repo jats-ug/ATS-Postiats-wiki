@@ -1,61 +1,54 @@
-## Overview of the stack and heap ##
+## スタックとヒープの概観 ##
 
-This page lists common types found in ATS according to whether they are
-allocated on the stack or heap, or both. Data that is heap allocated can be
-disposed of using linear types and associated memory allocation and
-deallocation functions (e.g. malloc and free), or by using a garbage
-collector (GC). The popular [Boehm
-GC](http://www.hpl.hp.com/personal/Hans_Boehm/gc/) is known to be supported
-in ATS2.
+このページでは ATS
+での一般的な型を、スタックもしくはヒープもしくはその両方に確保されるかどうかに従って列挙します。ヒープに確保されたデータは、線形型と関連したメモリ確保/解放関数
+(例: malloc と free) を使って破棄するか、ガーベッジコレクタ (GC) を使って回収します。一般の [Boehm
+GC](http://www.hpl.hp.com/personal/Hans_Boehm/gc/) が ATS2 ではサポートされています。
 
-The following types are allocated on the stack when used in val or var
-assignments: types associated with ground sorts (int, bool, char, and
-addr). Any type with sort `t@ype` (e.g. integers) or type (e.g. addresses).
+val や var 割り当てを使った時、次の型はスタックに確保されます: 基礎種 (int, bool, char, addr), 種 `t@ype`
+(例: 整数) もしくは種 type (例: アドレス) の型。
 
-The following types are allocated on the heap: boxed tuples, viewtypes,
-datatypes, dataviewtypes, exceptions (they are a dataytpe), lazy types,
-c-types accessed by pointer, and ref types. [[Strings|Strings]] usually fall
-under this classification, for instance, they are usually represented as
-abstypes and/or viewtypes for heap-allocated C strings. Note that a viewtype
-can be used for stack-allocated variables as well , though this seems to be
-less common, outside of its [use with
-var](http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x3352.html). It is
-usually the case that heap-allocated types are only amenable to use with the
-GC or to linear types, not both. For instance, datatypes are for use with a
-GC, whereas dataviewtypes are linear types managed by the programmer.
+次の型はヒープにに確保されます:
+ボックス化タプル, viewtype, datatype, dataviewtype, 例外 (それらは dataytpe です), lazy 型,
+ポインタでアクセスするC言語型, ref 型。[文字列](Strings.md) は通常、この分類に該当します。例えば、それは abstype
+として表現されるか、ヒープに確保されたC言語文字列を表わす viewtype です。viewtype
+はスタックに確保した変数としても使うことができることに注意してください。けれども [var
+との使用](http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x3352.html)
+を除いて、この用法はあまり一般的ではありません。ヒープに確保された型は、GC
+を使うか線形型になるかのどちらか一方に従い、通常は両方を使うことはありません。例えば、datatype は GC を使う一方、dataviewtype
+は線形型でプログラマによって管理されます。
 
 
-## Using the GC ##
+## GC の使用 ##
 
-The flag -DATS_MEMALLOC_GCBDW is passed to gcc to support the use of libgc
-(Bohem GC) for handling memory allocation/deallocation. See this [small
-project](https://github.com/githwxi/ATS-Postiats/tree/master/doc/PROJECT/SMALL/calculator)
-for an example Makefile [\[1\]][1]. If using gcc directly on ATS-generated C
-files for the purpose of portable code, use the -lgc.
+メモリの確保/解放に libgc (Bohem GC) を使用するためには、フラグ -DATS_MEMALLOC_GCBDW を gcc
+に渡します。Makefile の例として、この
+[小さなプロジェクト](https://github.com/githwxi/ATS-Postiats/tree/master/doc/PROJECT/SMALL/calculator)
+を参照してください [\[1\]][1]。ポータブルなコードにするために ATS が生成したC言語ファイルを直接 gcc から使う場合には、-lgc
+を使ってください。
 
-## Linear Malloc and Free Functions ##
+## 線形の malloc と free 関数 ##
 
-#### Built-in ATS (de)allocation functions ####
+#### ATS ビルトインの確保/解放関数 ####
 
-Unlike in C/C++, malloc in ATS does not return null if enough memory is not
-available, but aborts instead [\[2\]][2].
+C/C++ と異なり、十分なメモリがない場合でも、ATS の malloc は NULL を返しません。その代わりにアボートします
+[\[2\]][2]。
 
-#### Custom memory (de)allocation functions ####
+#### カスタムなメモリ確保/解放関数 ####
 
-Here is an example showing a simple way to use user-defined malloc/free
-[\[3\]][3]:
+ここではユーザが定義した malloc/free を使うための単純な方法の例を示します [\[3\]][3]:
 
 https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/CA-HSR2/program-1-2
 
-The flag -DATS_MEMALLOC_USER indicates to the ATS compiler that the
-following two functions are used for memory allocation/deallocation (for
-more details on interoperability between C and ATS, see this [chapter on
-interaction with
-C](http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/c1960.html)):
+フラグ -DATS_MEMALLOC_USER はメモリの確保/解放に次の2つの関数を使うよう、ATS コンパイラに指示します (C言語と ATS
+の相互運用の詳細については、この [章 "C言語との相互呼び出し"]
+(http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/c1960.html) を参照してください):
 
-```C extern void *atsruntime_malloc_user (size_t bsz) ;
+```C
+extern void *atsruntime_malloc_user (size_t bsz) ;
     
-extern void atsruntime_mfree_user (void* ptr) ; ````
+extern void atsruntime_mfree_user (void* ptr) ;
+````
 
 [1]: https://groups.google.com/d/msg/ats-lang-users/SL7fb01wsnk/vU3d9pv-RTkJ
 [2]: https://groups.google.com/d/msg/ats-lang-users/eAMszM15vIE/MYi3Rfxe48QJ

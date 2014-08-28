@@ -23,25 +23,15 @@ GCC
 ライクライセンスの下で独立してリリースされています。これに関連しますが、ポータブルな ATS コードを書くのであれば、実行オブジェクトの生成時に
 `-latslib` オプションを使わないことをおすすめします。
 
-Another analogy is taken from a GNU-related site:
+別の例えを GNU 関連のサイトから引いてみましょう:
 
-*Question*: Can I use GPL-covered editors such as GNU Emacs to develop non-free
-programs? Can I use GPL-covered tools such as GCC to compile them?
+*質問*: 自由でないプログラムを開発するために GNU Emacs のような GPL ライセンスのエディタを使うことができますか？
+それらをコンパイルするのに GCC のような GPL ライセンスのツールを使うことができますか？
 (#CanIUseGPLToolsForNF)
 
-*Answer*: Yes, because the copyright on the editors and tools does not cover the
-code you write. Using them does not place any restrictions, legally, on
-the license you use for your code. Some programs copy parts of themselves into 
-the output for technical reasons—for example, Bison copies a standard parser 
-program into its output file. In such cases, the copied text in the output is covered 
-by the same license that covers it in the source code. Meanwhile, the part of
-the output which is derived from the program's input inherits the
-copyright status of the input. As it happens, Bison can also be used 
-to develop non-free programs.
-This is because we decided to explicitly permit the use of the Bison
-standard parser program in Bison output files without restriction. We made
-the decision because there were other tools comparable to Bison which
-already permitted use for non-free programs.
+*回答*: はい、なぜならばエディタやツールの著作権はあなたが書くコードには影響しないからです。法的には、あなたがどんなツールを使っても、あなたがご自分のコードに適用するライセンスに関しては何の制限も課されません。
+プログラムによっては、技術的な都合から自身の一部を出力結果にコピーするものがあります。たとえば、Bisonは標準パーザ・プログラムを出力ファイルにコピーします。そのような場合、出力結果にコピーされたテキストはそのソースコードに及ぶものと同じライセンスによってライセンスされます。一方、プログラムに与えられた入力から派生した出力結果の一部は入力側の著作権状態を継承します。
+たまたま、Bisonは自由でないプログラムを開発するのにも使うことができます。これは、わたしたちがBisonの出力結果に含まれるBisonの標準パーザ・プログラムは制限なしに利用できるということを明確に認めることを決定したからです。わたしたちがこう決めたのは、Bisonと同様の他のツールで自由でないプログラムでの利用を認めているものがすでに存在したからです。
 
 ### よくありがちな落とし穴に関する情報はどこにありますか？ATS コードを書く際に初心者的な質問をどこで聞くことができますか？**
 
