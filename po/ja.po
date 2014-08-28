@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-29 01:51+0900\n"
+"PO-Revision-Date: 2014-08-29 02:19+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -2076,7 +2076,7 @@ msgid ""
 "This is meant to be a listing of common functions and types that can be "
 "quickly used and are analogous to other popular programming languages (e.g. "
 "C)."
-msgstr ""
+msgstr "ここでは一般的な関数や、すぐに使える型、他の一般的なプログラミング言語 (例: C言語) に類似した型を挙げます。"
 
 #. type: Plain text
 #: effects.md:2
@@ -2172,7 +2172,7 @@ msgstr "これらは `<lincloptr1>` のように結合させることができ�
 msgid ""
 "[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/function"
 "$20effects/ats-lang-users/88CYxwKl0M0/GAvDQQKkzJ8J"
-msgstr ""
+msgstr "[1]: https://groups.google.com/forum/#!searchin/ats-lang-users/function$20effects/ats-lang-users/88CYxwKl0M0/GAvDQQKkzJ8J"
 
 #. type: Plain text
 #: Home.md:2
