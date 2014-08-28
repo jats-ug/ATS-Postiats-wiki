@@ -1,17 +1,14 @@
-ATS has some design patterns that are less common in the other languages.
-This page explains the patterns.
+ATS には他の言語ではあまり一般的ではないような、いくつかのデザインパターンがあります。このページではそんなパターンを説明します。
 
-## Takeout-Addback pattern
+## Takeout-Addback パターン
 
-Static meaning with ATS's type isn't good at everything.  Sequence of the
-static meaning is divided by event driven architecture or thread.
+ATS の型を用いた静的な意味は万能ではありません。静的な意味の列は、イベントドリブンなアーキティクチャやスレッドによって分断されてしまいます。
 
-In such case, we should use some protocol like a session.  The session is
-opened calling takeout static function.  After takeout and before addback,
-we can touch and use static meaning associated with the session.  It's
-closed calling addback static funcion.
+そのような場合、セッションのようななんらかのプロトコルを使う必要があります。そのセッションは静的な関数 takeout
+を呼び出して開くことにします。takeout から addback までの間で、そのセッションに関連した静的な意味を使うことができます。最後に静的な関数
+addback を呼び出してセッションを閉じます。
 
-The arrayptr library in prelude is a good example.
+prelude の arrayptr ライブラリは良い例です。
 
 ```ocaml
 (* File: prelude/SATS/arrayptr.sats *)
@@ -30,28 +27,26 @@ arrayptr_addback
 ) : void // end of [arrayptr_addback]
 ```
 
-The arrayptr has no static meaning, because it's simple pointer.  The
-array_v has static meaning, because it's dataview.  We can use array_v
-between takeout and addback.
+arrayptr は単純なポインタで、静的な意味を持ちません。array_v は dataview で、静的な意味を持っています。takeout と
+addback の間において array_v を使うことができます。
 
-For more detail, see [ATSLIB/prelude/arrayptr
-library](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/arrayptr.html#arrayptr_takeout).
+詳しくは [ATSLIB/prelude/arrayptr
+ライブラリ](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/arrayptr.html#arrayptr_takeout)
+を参照してください。
 
-## Localized-Template pattern
+## Localized-Template パターン
 
-Many functional languages use closure to inject localized processing into a
-function.  ATS also can use closure. However it's sometimes bad idea,
-because closure is a resource and should be maintained by linear type or GC.
+関数にローカルな処理を注入するために、多くの関数型言語はクロージャを使います。ATS
+もまたクロージャを使うことができます。けれどもそのようなクロージャの使用は時に良い考えではありません。なぜならクロージャはリソースで、線形型や GC
+によって管理しなければならないからです。
 
-ATS code can use locallized template for the situation.  In following code,
-"plus1" is defined as default function template implementation on global
-name space, and "call_plus1" is also defined as function templete.  Simply
-calling "call_plus1" produces that "plus1" as default implementation is
-called.  On the other hand, calling "call_plus1" binding "plus1" with local
-implementation produces that the "plus1" is called.
+このような場合 ATS コードではローカライズされたテンプレートを使うことができます。次のコードでは、"plus1"
+はグローバルな名前空間でのデフォルト関数テンプレート実装として定義され、"call_plus1" もまた関数テンプレートとして定義されています。単に
+"call_plus1" を呼び出すと、デフォルト実装である "plus1" が呼び出されます。一方で、"plus1" にローカルな実装を束縛した後に
+"call_plus1" を呼び出すと、その "plus1" が呼び出されます。
 
-```ocaml (* File: test_template.dats *)  #include
-"share/atspre_staload.hats"
+```ocaml
+(* File: test_template.dats *)  #include "share/atspre_staload.hats"
 
 extern fun{} plus1: () -> int extern fun{} call_plus1: () -> int
 
@@ -68,10 +63,13 @@ implement main0 () = {
 
 上記のコードは以下のコマンドでコンパイルできます。
 
-``` $ patscc -o test_template test_template.dats $ ./test_template 1 11 ```
+```
+$ patscc -o test_template test_template.dats
+$ ./test_template 1 11
+```
 
-Note "call_plus1" should be defined as templete, if you would like to
-localize the child function using template.
+テンプレートを使って子供の関数をローカライズしたい場合には、"call_plus1" もテンプレートとして定義しなければならないことに注意してください。
 
-For more detail, see [ATSLIB/prelude/strptr
-library](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach).
+詳しくは [ATSLIB/prelude/strptr
+ライブラリ](http://www.ats-lang.org/LIBRARY/prelude/SATS/DOCUGEN/HTML/strptr.html#strnptr_foreach)
+を参照してください。

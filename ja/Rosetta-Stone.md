@@ -1,3 +1,1 @@
-This is meant to be a listing of common functions and types that can be
-quickly used and are analogous to other popular programming languages
-(e.g. C).
+ここでは一般的な関数や、すぐに使える型、他の一般的なプログラミング言語 (例: C言語) に類似した型を挙げます。
