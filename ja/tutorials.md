@@ -1,44 +1,37 @@
-For a beginner, perhaps the most important tool to learn is *good functional
-style* and *abstraction*. This [code example for a
-calculator](http://www.cs.bu.edu/~hwxi/academic/courses/CS320/Spring13/code/calculator/),
-while not exactly a tutorial, demonstrates these principles. [Discussion on
-the calculator example is located
-here](https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/ad5S6SY0I0E).
+初心者にとっては、おそらく最も重要な学習ツールは *良い関数型スタイル* と *抽象* でしょう。正確にはチュートリアルではありませんが、この
+[電卓のコード例](http://www.cs.bu.edu/~hwxi/academic/courses/CS320/Spring13/code/calculator/)
+はこれらの原則を良く説明しています。[この電卓の例に対する議論がここにあります](https://groups.google.com/forum/?fromgroups=#!topic/ats-lang-users/ad5S6SY0I0E)。
 
-Currently, the ATS site has [several tutorials and
-references](http://www.ats-lang.org/DOCUMENT/), several of which are
-described below. There is also a more [dense tutorial or language overview
-reference](http://cs.likai.org/ats/ml-programmers-guide-to-ats) that is
-highly recommended.
+今のところ、ATS サイトには [いくつかのチュートリアルとリファレンス](http://www.ats-lang.org/DOCUMENT/)
+があり、そのいくつかはこれまで紹介しました。またより
+[深いチュートリアルもしくは言語のオーバービュー](http://cs.likai.org/ats/ml-programmers-guide-to-ats)
+もあり、こちらもおすすめです。
 
-* Chris Double has written [many blogs on
-  ATS](http://www.bluishcoder.co.nz/tags/ats/). There are also [many useful
-  topical
-  tutorials](http://www.ats-lang.org/htdocs-old/TUTORIAL/tutorial.html) on
-  the ATS site. Of course, there may be [resources not mentioned
-  here](https://www.google.com/search?as_q=ATS+language&as_epq=&as_oq=tutorial+blog+programming&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&tbs=&as_filetype=&as_rights=).
-* [[A Tutorial on Programming Features in
-  ATS|http://www.ats-lang.org/DOCUMENT/ATS2TUTORIAL/HTML/book1.html]] covers
-  several topics common to many programming languaages, as well as some
-  tutorials on linear types.
-* [Graphics tutorial using
-  ATS/Cairo](http://www.ats-lang.org/DOCUMENT/ATS2CAIRO/HTML/book1.html).
+* Chris Double は [ATS に関する多くのブログ記事](http://www.bluishcoder.co.nz/tags/ats/)
+  を書いています。ATS サイトにも
+  [多くの有用な話題を含むチュートリアル](http://www.ats-lang.org/htdocs-old/TUTORIAL/tutorial.html)
+  があります。もちろん、[ここで紹介していない文書](https://www.google.com/search?as_q=ATS+language&as_epq=&as_oq=tutorial+blog+programming&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&safe=images&tbs=&as_filetype=&as_rights=)
+  があるかもしれません。
+* [ATS
+  におけるプログラミングの機能のチュートリアル](http://www.ats-lang.org/DOCUMENT/ATS2TUTORIAL/HTML/book1.html)
+  は多くのプログラミング言語に共通するいくつかの話題をカバーしています。また線形型に関するいくつかのチュートリアルも含んでいます。
+* [ATS/Cairo
+  を使ったグラフィクスのチュートリアル](http://www.ats-lang.org/DOCUMENT/ATS2CAIRO/HTML/book1.html)
+  もあります。
 
-## Algorithms in ATS
+## ATS でのアルゴリズム
 
-**[[The ATS Book|http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html]]** is a good source of algorithms at various levels of rigor.
+**[ATS Book](http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html)** は様々な厳密さのレベルにおけるアルゴリズムの良い情報源です。
 
-**Rosetta Code** has several [entries for ATS](http://rosettacode.org/wiki/Category:ATS).
+**Rosetta Code** にはいくつかの [ATS に関するエントリ](http://rosettacode.org/wiki/Category:ATS) があります。
 
-Once familiar enough with the language, [[ATSLIB|ATSLIB]] is also a great
-source to find many algorithms implemented in ATS, sometimes in several
-different ways (linear, non-linear, etc.)
+この言語に一旦慣れたら、ATS で実装された多くのアルゴリズムを見つけるのに [ATSLIB](ATSLIB.md)
+も重要な情報源になります。それらはいくつかの異なる方法 (線形, 非線形など) で実装されているます。
 
-## Other small tutorials
+## その他、小さなチュートリアル
 
-An example demonstrating [dataviewtype]s.
+[dataviewtype] を説明する例があります。
 
-An [ATS wiki
+[ATS wiki
 book](http://en.wikibooks.org/wiki/ATS:_Programming_with_Theorem-Proving)
-exists, but currently only has a few pages (and appears to be rather dated,
-i.e. uses ATS1).
+もありますが、今現在ではそのページ数は多くありません (またその内容はやや古く、ATS1 を使っているます)。

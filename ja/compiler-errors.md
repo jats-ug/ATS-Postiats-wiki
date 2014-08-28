@@ -1,27 +1,27 @@
-##Template-related errors
+## テンプレートに関連したエラー
 
-**Not loading template implementations**
+**テンプレート実装を読み込んでいない**
+このエラーは次のようなものです:
 
-Errors look like:
+```
+// gcc
+'XXX' undeclared (first use in this function)
+expected expression before ‘YYY’
+```
 
-``` // gcc 'XXX' undeclared (first use in this function)  expected
-expression before ‘YYY’ ```
+ATS2 で一般的に使用される多くの標準的なテンプレート実装があり、それらはデフォルトでは読み込まれません。(例えば、kernel
+や組み込みプログラミングでは、必要ないものは読み込まないべきでしょう。) 通常、この問題はファイルの先頭に次の行を追加すれば解決します:
 
-There are a lot of standard template implementations commonly used in ATS2,
-and they are not loaded by default (for instance, in kernel or embedded
-programming, it is best not to load what one doesn't need). This can usually
-be fixed by adding this at the start of your file:
+```ocaml
+#include "share/atspre_staload.hats"
+```
 
-```ocaml #include "share/atspre_staload.hats" ``` By default, the ATS
-compiler only [[staloads|staload]] everything in [[prelude|ATSLIB]] except
-its template implementations, which is a very common point of confusion for
-ATS newcomers.
+通常、ATS コンパイラはテンプレート実装を除く [prelude](ATSLIB.md) のみを [staload](staload.md)
+します。これが ATS 初心者を混乱させるよくある原因です。
 
-**Template functions on non-abstract types**
+**抽象型でないテンプレート関数**
 
-Using a function template on a non-abstract type can result in this (the
-rules for templates are not all written down and the implementation is not
-finished):
+抽象型ではない関数テンプレートは次のようなエラーを生じることがあります。(テンプレートの規則は完全に書き起こされていませんし、またその実装も完了していません。):
 
     falcon_cnfize_dats.c: In function âATSLIB_056_prelude__list_vt_freelin__clear__7__1â:
     falcon_cnfize_dats.c:1698:1: error: âPMVtmpltcstmatâ undeclared (first use in this function)
@@ -31,21 +31,18 @@ finished):
     falcon_cnfize_dats.c:1698:1: error: expected expression before â)â token
     exec(gcc -std=c99 -D_XOPEN_SOURCE -I/home/brandon/ATS-Postiats -I/home/brandon/ATS-Postiats/ccomp/runtime -I/home/brandon/ATS-Postiats/contrib -DATS_MEMALLOC_LIBC -D_GNU_SOURCE -c falcon_cnfize_dats.c) = 256
 
-To avoid this, either don't use a template (for now), or try to use an
-abstract type:
+この問題を回避する方法は、(現時点では) テンプレートの使用をあきらめるか、抽象型を使ってみることです:
     
     abstype mytype = ptr
 
-Then you introduce cast functions where needed to convert between the
-abstract type and other (view)types.
+それから、その抽象型と別の(観)型とを変換するのに必要なキャスト関数を導入してください。
 
-## Missing Linker Flag Errors
+## リンカフラグの不足によるエラー
 
-**Didn't specify which memory allocation functions to use**
+**メモリ確保関数の使用を指定していない**
 
-Usually you'll want to properly pass -DATS_MEMALLOC_LIBC to patscc. The main
-thing you'll see here is `undefined reference to `atsruntime_malloc_undef'`
-(usually several times).
+通常この問題の解決策は -DATS_MEMALLOC_LIBC を patscc に適切に渡すことでしょう。ここで見られるエラーは主に
+`undefined reference to `atsruntime_malloc_undef'` です。(通常このエラーは複数回発生します。)
 
     /tmp/cchxHdy9.o: In function atspre_arrayptr_free':
     gurobi_mip1_dats.c:(.text+0x1d4): undefined reference toatsruntime_mfree_undef'
@@ -54,5 +51,4 @@ thing you'll see here is `undefined reference to `atsruntime_malloc_undef'`
     gurobi_mip1_dats.c:(.text+0x54e): undefined reference to `atsruntime_malloc_undef'
     collect2: ld returned 1 exit status
 
-Alternatively, for more customization, see [[Stack and heap allocation|Stack
-and heap allocation]].
+よりカスタマイズしたい場合には [スタックとヒープへのメモリ確保](Stack-and-heap-allocation.md) を参照してください。

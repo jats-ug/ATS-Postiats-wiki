@@ -1,28 +1,37 @@
-ATS has many facilities that enable effective, efficient, and
-[[safe|safety]] scientific computing. The language's focus on safety and
-efficiency is obvious, but actually making efficient scientific code is
-often far from easy (in any language).
+ATS には、科学計算を実際的に有用に [安全に](safety.md)
+するための多くのしくみがあります。この言語が安全性と効率にフォーカスしていることは明らかですが、実際に効果的な科学計算コードを作るのはしばしば
+(どのような言語よりも) はるかに簡単です。
 
-## Parallel programming *
+## Parallel programming
+
+*
 [OpenMP](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/OpenMP)
-For shared memory systems; stands for [Open
-Multi-Processing](https://en.wikipedia.org/wiki/Openmp).  *
+共有メモリシステムにおいて [Open Multi-Processing](https://en.wikipedia.org/wiki/Openmp)
+の使用を支援します。
+*
 [MPI](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/MPI)
-For shared and/or distributed memory systems; stands for [Message Passing
-Interface](https://en.wikipedia.org/wiki/Message_Passing_Interface).
+共有もしくは分散メモリシステムにおいて [Message Passing
+Interface](https://en.wikipedia.org/wiki/Message_Passing_Interface)
+の使用を支援します。
 
-## Optimization * Linear and convex optimization: [Gurobi
-interface](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/gurobi)
+## 最適化
 
-## Python [[code generation|code generation]] Python is perhaps one of the
-most popular general scientific computing languages, alongside MATLAB,
-though the R language has a notable lead with available statistics software
-(particularly related to Biology).
+* 線形な凸最適化: [Gurobi
+インターフェイス](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/contrib/gurobi)
 
-## Matrix operations Efficient matrix operations are difficult in practice.
+## Python [コード生成](code-generation.md)
 
-### Native ATS2 matrix algebra implementations
+R 言語が (特に生物学に関連する) 統計ソフトウェアをリードしていますが、Python は MATLAB
+と並んで、おそらくもっとも人気のある科学計算言語の1つでしょう。
 
-### BLAS interfaces (none yet?)
+## 行列操作
 
-### Benchmarks
+効率的な行列操作は実際には困難です。
+
+### ATS2 ネイティブの行列代数実装
+
+### BLAS インターフェイス
+
+(まだない？)
+
+### ベンチマーク

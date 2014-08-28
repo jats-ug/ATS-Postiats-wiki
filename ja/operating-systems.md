@@ -1,4 +1,3 @@
-* For kernels and drivers in ATS, see [[kernels|kernels]].
-* For operating systems supporting ATS development, currently Linux, Mac OS
-  X, and Windows/Cygwin are supported, but see the [download
-  page](http://www.ats-lang.org/DOWNLOAD/) for more information.
+* ATS における kernel とドライバについては [kernel](kernels.md) を参照してください。
+* ATS 開発をサポートする OS としては、今のところ Linux, Mac OS X, Windows/Cygwin
+  をサポートしています。詳しくは [ダウンロードページ](http://www.ats-lang.org/DOWNLOAD/) を参照してください。

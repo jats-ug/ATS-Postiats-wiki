@@ -1,29 +1,22 @@
-Functions can have various effects that may be tracked by the typechecker
-[\[1\]][1].  These are described immediately after the : in the function
-definition (note that there should be no space between the ':' and the
-'<>'. As well as :<> meaning pure and : (no '<>') meaning any effects may
-occur, there are various other things that can appear between the '<>'
-symbols.
+関数は様々な作用を持つことができます。この作用は型検査器によって追跡されます [\[1\]][1]。この作用は関数定義中の : 直後に配置します。(また
+':' と '<>' の間にスペースを入れてはいけないことに注意してください。) :<> は純粋であることを意味し、('<>' のない) :
+はどのような作用も起きうることを意味します。'<>' の間にはその他の様々な作用を配置できます。
 
-* `!exn` - the function possibly raises exceptions
-* `!ntm` - the function possibly is non-terminating
-* `!ref` - the function possibly updates shared memory
-* `0` - the function is pure (has no effects)
-* `1` - the function can have all effects
-* `fun` - the function is an ordinary, non-closure, function
-* `clo` - the function is a stack allocated closure
-* `cloptr` - the function is a linear closure that must be explicitly freed
-* `cloref` - the function is a peristent closure that requires the garbage
-  collector to be freed.
-* `lin` - the function i slinear and can be called only once
-* `prf` - the function is a proof function
-* `!wrt` - indicates that a function may write to a location it owns. For
-  instance, ptr_set incurs such an effect.
-* `!ref` - can read from or write to a location that one knows exists but
-  does not own.
+* `!exn` - その関数が例外を発生させる可能性がある
+* `!ntm` - その関数が停止しない可能性がある
+* `!ref` - その関数が共有メモリを更新する可能性がある
+* `0` - その関数は純粋である (作用を持たない)
+* `1` - その関数は全ての作用を持つことができる
+* `fun` - その関数は通常のクロージャではない関数である
+* `clo` - その関数はスタックに確保されたクロージャである
+* `cloptr` - その関数は明示的に解放されるべき線形クロージャである
+* `cloref` - その関数はガベージコレクタによって解放される永続的なクロージャである
+* `lin` - その関数は線形で、一度だけ呼び出すことができる
+* `prf` - その関数は証明関数である
+* `!wrt` - その関数はそれが所有する場所に書き込みを行なう可能性がある。例えば ptr_set はそのような作用を持つ
+* `!ref` - その関数は存在を知っているが所有していない場所に対して読み込みもしくは書き込みを行なう可能性がある
 
-These can be combined, eg. <lincloptr1>. Function effects are all of
-[[sort|sort]] `eff`.
+これらは `<lincloptr1>` のように結合させることができます。全ての関数の作用は [種](sort.md) `eff` です。
 
 [1]:
 https://groups.google.com/forum/#!searchin/ats-lang-users/function$20effects/ats-lang-users/88CYxwKl0M0/GAvDQQKkzJ8J
