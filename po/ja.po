@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-28 16:09+0900\n"
+"PO-Revision-Date: 2014-08-28 19:11+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -1059,12 +1059,12 @@ msgstr "[ATS wiki book](http://en.wikibooks.org/wiki/ATS:_Programming_with_Theor
 msgid ""
 "There are many different string types available in ATS2 (see some of these "
 "in `prelude/basics_sta.sats`). Which should be used?"
-msgstr ""
+msgstr "ATS2 には多くの異なる文字列型があります (それらのいくつかは `prelude/basics_sta.sats` に見られます)。どれを使うべきなのでしょうか？"
 
 #. type: Plain text
 #: Strings.md:4
 msgid "For something relatively small, using 'strptr1' for strings is fine."
-msgstr ""
+msgstr "比較的小さい対象には、文字列に 'strptr1' を使うのが良いでしょう。"
 
 #. type: Plain text
 #: Strings.md:7
@@ -1073,19 +1073,22 @@ msgid ""
 "want to use ref-counted strings. In ATS2, there is a type [strobjref]"
 "(https://github.com/githwxi/ATS-Postiats/blob/master/libats/SATS/strobjref."
 "sats) for reference-counted strings."
-msgstr ""
+msgstr "文字列の共有が必要になるようなより複雑なアプリケーションでは、リファレンスカウント文字列を使いたくなるかもしれません。ATS2 にはリファレンスカウント文字列を扱う [strobjref](https://github.com/githwxi/ATS-Postiats/blob/master/libats/SATS/strobjref.sats) 型があります。"
 
 #. type: Plain text
 #: Strings.md:10
 msgid ""
 "At the beginning of a project, it is usually uncertain what kind of string "
 "is needed.  An abstract type can be introduced:"
-msgstr ""
+msgstr "プロジェクトの初期では、どの種類の文字列が必要になるのかわからないかもしれません。そんな時、抽象型を導入できます:"
 
 #. type: Plain text
 #: Strings.md:14
 msgid "```ocaml absviewtype mystring (l:addr)  ```"
 msgstr ""
+"```ocaml\n"
+"absviewtype mystring (l:addr)\n"
+"```"
 
 #. type: Plain text
 #: Strings.md:17
@@ -1093,7 +1096,7 @@ msgid ""
 "First, `mystring` can be implemented based on `strptr`. Later, the "
 "implementation can be easily changed, making it based on `strobjref` or "
 "something else."
-msgstr ""
+msgstr "最初は、`strptr` を元に `mystring` を実装します。後でその実装は用意に変更できます。`strobjref` や他の実装を元にすることができるのです。"
 
 #. type: Plain text
 #: Strings.md:21
@@ -1102,13 +1105,13 @@ msgid ""
 "difficult to prevent.  For instance, there are many leaks in graphviz "
 "(according to bug reports). ATS is very good for stopping this kind of "
 "problems[\\[1\\]][1]."
-msgstr ""
+msgstr "実際には、文字列の共有を許可するとメモリリークを防止することが著しく困難になります。例えば、(バグレポートによれば) graphviz には多くのメモリリークがあります。ATS はこの種の問題を防止するのにとても有用です [\\[1\\]][1]。"
 
 #. type: Plain text
 #: Strings.md:22
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/MrWe5tFnR_8/4uTj6ER67OoJ"
-msgstr ""
+msgstr "[1]: https://groups.google.com/d/msg/ats-lang-users/MrWe5tFnR_8/4uTj6ER67OoJ"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:2
@@ -1187,7 +1190,7 @@ msgstr ""
 #. type: Plain text
 #: Frequently-asked-questions.md:25
 msgid "Another analogy is taken from a GNU-related site:"
-msgstr ""
+msgstr "別の例えを GNU 関連のサイトから引いてみましょう:"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:29
@@ -1197,6 +1200,9 @@ msgid ""
 "programs? Can I use GPL-covered tools such as GCC to compile them?\n"
 "(#CanIUseGPLToolsForNF)\n"
 msgstr ""
+"*質問*: 自由でないプログラムを開発するために GNU Emacs のような GPL ライセンスのエディタを使うことができますか？\n"
+"それらをコンパイルするのに GCC のような GPL ライセンスのツールを使うことができますか？\n"
+"(#CanIUseGPLToolsForNF)\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:43
@@ -1216,6 +1222,9 @@ msgid ""
 "the decision because there were other tools comparable to Bison which\n"
 "already permitted use for non-free programs.\n"
 msgstr ""
+"*回答*: はい、なぜならばエディタやツールの著作権はあなたが書くコードには影響しないからです。法的には、あなたがどんなツールを使っても、あなたがご自分のコードに適用するライセンスに関しては何の制限も課されません。\n"
+"プログラムによっては、技術的な都合から自身の一部を出力結果にコピーするものがあります。たとえば、Bisonは標準パーザ・プログラムを出力ファイルにコピーします。そのような場合、出力結果にコピーされたテキストはそのソースコードに及ぶものと同じライセンスによってライセンスされます。一方、プログラムに与えられた入力から派生した出力結果の一部は入力側の著作権状態を継承します。\n"
+"たまたま、Bisonは自由でないプログラムを開発するのにも使うことができます。これは、わたしたちがBisonの出力結果に含まれるBisonの標準パーザ・プログラムは制限なしに利用できるということを明確に認めることを決定したからです。わたしたちがこう決めたのは、Bisonと同様の他のツールで自由でないプログラムでの利用を認めているものがすでに存在したからです。\n"
 
 #. type: Plain text
 #: Frequently-asked-questions.md:45
@@ -1596,22 +1605,22 @@ msgid ""
 "advocates a programmer-centric approach to program verification that "
 "combines programming with theorem-proving in a syntactically intertwined "
 "manner."
-msgstr ""
+msgstr "ATS/LF ([論理フレームワーク](https://en.wikipedia.org/wiki/Logical_framework)) は (対話的な) 定理証明をサポートしています; ATS は構文的に融合した手法で定理証明とプログラミングを統合してプログラムを検証する、プログラマ中心のアプローチを指示しています。"
 
 #. type: Plain text
 #: ATSLF.md:4
 msgid "## Axioms, Proofs, and Theorems"
-msgstr ""
+msgstr "## 公理, 証明, 定理"
 
 #. type: Bullet: '* '
 #: ATSLF.md:9
 msgid "axiom - `praxi`; it states a theorem without proof."
-msgstr ""
+msgstr "公理 (axiom) - `praxi`; 証明なしの定理を宣言します。"
 
 #. type: Bullet: '* '
 #: ATSLF.md:9
 msgid "proof - `prfn`; it is the non-recursive version of prfun"
-msgstr ""
+msgstr "証明 (proof) - `prfn`; prfun の再帰しないバージョンです。"
 
 #. type: Bullet: '* '
 #: ATSLF.md:9
@@ -1619,14 +1628,14 @@ msgid ""
 "proof - `prfun`; it states a theorem where the author is required to give a "
 "proof. In ATS2, the requirement is not currently enforced, making prfun "
 "similar to praxi in practice [\\[1\\]][1]."
-msgstr ""
+msgstr "証明 (proof) - `prfun`; 証明を与えることが要求される定理を宣言します。現在の ATS2 ではこの要求は強制されず、prfun は実際には praxi と似た扱いになっています [\\[1\\]][1]。"
 
 #. type: Bullet: '* '
 #: ATSLF.md:9
 msgid ""
 "theorem - `prop`; it is for classifying a type in ATS that represents a "
 "theorem."
-msgstr ""
+msgstr "定理 (theorem) - `prop`; 定理を表現する ATS の型を分類します。"
 
 #. type: Plain text
 #: ATSLF.md:11
@@ -1634,13 +1643,13 @@ msgid ""
 "Note that proof functions can (and should) be implemented using the "
 "`primplement` keyword, similar to `implement` for dynamic function "
 "implementations. More details can be found in the ATS2 Book."
-msgstr ""
+msgstr "証明関数は `primplement` キーワードを使って実装できる (もしくはその必要がある) ことに注意してください。このキーワードは動的な関数を実装する際の `implement` に似ています。ATS2 Book により詳細な情報があります。"
 
 #. type: Plain text
 #: ATSLF.md:13
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/enDXT0GaoaM/HKJcjCJSdoYJ)"
-msgstr ""
+msgstr "[1]: https://groups.google.com/d/msg/ats-lang-users/enDXT0GaoaM/HKJcjCJSdoYJ)"
 
 #. type: Plain text
 #: safety.md:2
