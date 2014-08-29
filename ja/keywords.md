@@ -1,11 +1,7 @@
-* `castfn` - a function (`fn`) that changes the type, both dynamically and
-  statically, of its argument. The converted value is returned. When only a
-  static `castfn` is needed, one can use the `cast` and related functions in
-  `unsafe.sats` to save time (a common use is converting a pointer from C to
-  some other viewtype).
-* `fn` - non-recursive function (`fun`). Used in place of `fun` for
-  optimization purposes (is this true?) and as well as to check against the
-  possibility of an accidental infinite loop.
-* `fun` - a function that can be recursive.
-* `implement` - used to implement a function that has been defined using
-  `fun` or `fn`
+* `castfn` - その引数の動的/静的の型を変更する関数 (`fn`)。変換された値を返します。静的な `castfn`
+  のみが必要な場合、手早く済ませるために `cast` と `unsafe.sats`
+  にある関連する関数を使うことができます。(一般的な用法はC言語からのポインタをなんらかの別の viewtype に変換することです。)
+* `fn` - 再帰的でない関数 (`fun`)。最適化のために、`fun` を使う場所で使います
+  (これは本当？)。また予想外の無限ループの可能性を防止することができます。
+* `fun` - 再帰できる関数。
+* `implement` - `fun` や `fn` を用いて既に定義された関数を実装するのに使います。
