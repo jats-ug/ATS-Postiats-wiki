@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-29 17:08+0900\n"
+"PO-Revision-Date: 2014-08-29 18:29+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -2513,6 +2513,9 @@ msgid ""
 "d/msg/ats-lang-users/-zsdyZWglRs/SUZt89SjYNcJ), and some experience will "
 "make reading the error messages a matter of course."
 msgstr ""
+"## エラーメッセージを読む\n"
+"\n"
+"おそらく ATS 初心者が遭遇するほとんどの一般的なエラーは型検査エラーでしょう。このため最初の段階では、それほど難しくない型検査のエラーメッセージを読めるようになることで、型検査のエラーメッセージに慣れることが重要です。はじめはそのようなエラーメッセージが古臭く感じるかもしれませんが、[簡単な方法はありません](https://groups.google.com/d/msg/ats-lang-users/-zsdyZWglRs/SUZt89SjYNcJ)。またもちろん経験をつめばエラーメッセージが読めるようになります。"
 
 #. type: Plain text
 #: typechecking-errors.md:6
@@ -2545,45 +2548,40 @@ msgid ""
 "terms (tyleq): ```"
 msgstr ""
 "```\n"
-"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): "
-"the symbol [=] cannot be resolved as no match is found.\n"
-"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): [/"
-"home/hwxi/research/Postiats/git/src/pats_trans3_util.dats]: d3exp_trdn: the "
-"dynamic expression cannot be assigned the type "
-"[S2Eapp(S2Ecst(bool_bool_t0ype); S2EVar(10))].\n"
-"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): "
-"mismatch of static terms (tyleq):\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): the symbol [=] cannot be resolved as no match is found.\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): [/home/hwxi/research/Postiats/git/src/pats_trans3_util.dats]: d3exp_trdn: the dynamic expression cannot be assigned the type [S2Eapp(S2Ecst(bool_bool_t0ype); S2EVar(10))].\n"
+"/tmp/abcde.dats: 357(line=27, offs=10) -- 394(line=27, offs=47): error(3): mismatch of static terms (tyleq):\n"
 "```"
 
 #. type: Plain text
 #: typechecking-errors.md:20
 msgid "It means:"
-msgstr ""
+msgstr "これは次のような意味です:"
 
 #. type: Bullet: '1. '
 #: typechecking-errors.md:25
 msgid "the overloaded operator = cannot be resolved"
-msgstr ""
+msgstr "オーバロードされた演算子 = を解決できません"
 
 #. type: Bullet: '2. '
 #: typechecking-errors.md:25
 msgid ""
 "the compiler assigns a error-type (S2Eerr) to the expression: sum = "
 "showtype(1+2+3+4+5.0)"
-msgstr ""
+msgstr "コンパイラが次の式にエラー型 (S2Eerr) を割り当てます: sum = showtype(1+2+3+4+5.0)"
 
 #. type: Bullet: '3. '
 #: typechecking-errors.md:25
 msgid ""
 "S2Eapp(S2Ecst(bool_bool_t0ype); S2EVar(10)) stands for bool_bool_t0ype(...)"
-msgstr ""
+msgstr "S2Eapp(S2Ecst(bool_bool_t0ype); S2EVar(10)) は bool_bool_t0ype(...) を表わします"
 
 #. type: Bullet: '4. '
 #: typechecking-errors.md:25
 msgid ""
 "assertloc expects a value of type bool_bool_t0ype(...), but a value of error-"
 "type (S2Eerr) is provided."
-msgstr ""
+msgstr "assertloc は bool_bool_t0ype(...) 型の値を要求しているにもかかわらず、エラー型 (S2Eerr) の値が与えられています。"
 
 #. type: Plain text
 #: typechecking-errors.md:31
@@ -2594,11 +2592,16 @@ msgid ""
 "code. If not, then one may get lost even if type-error messages are "
 "prettified.** For example, in the following simple example:"
 msgstr ""
+"## $showtype demonstration\n"
+"\n"
+"値の型を印字する `$showtype` 命令は非常に有用なツールです。 **ATS でプログラミングするとき、この命令はコード中の *どのような* 式の型も教えてくれます。そうでなければ、型エラーメッセージがどんなに飾りたてられても、迷子になってしまうでしょう。** 例えば、次はその単純な例です:"
 
 #. type: Plain text
 #: typechecking-errors.md:35
 msgid "```ocaml val x = 7 val _ = $showtype x"
 msgstr ""
+"```ocaml\n"
+"val x = 7 val _ = $showtype x"
 
 #. type: Plain text
 #: typechecking-errors.md:41
@@ -2607,6 +2610,12 @@ msgid ""
 "think `!y` and `x` should have the same type. This can be checked by the `"
 "$showtype` output when running the typechecker:"
 msgstr ""
+"val y = ref<int> 7\n"
+"val _ = $showtype y\n"
+"val _ = $showtype !y\n"
+"```\n"
+"\n"
+"私達は `!y` と `x` が同じ型だろうと考えるかもしれません。型検査器を実行するときの `$showtype` の出力で、これを確認することができます:"
 
 #. type: Plain text
 #: typechecking-errors.md:45
@@ -2616,11 +2625,14 @@ msgid ""
 "    **SHOWTYPE**(/home/myhome/showtype_test.dats: 183(line=15, offs=19) -- 184(line=15, offs=20)): S2Eapp(S2Ecst(ref_vt0ype_type); S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind)))\n"
 "    **SHOWTYPE**(/home/myhome/showtype_test.dats: 203(line=16, offs=19) -- 205(line=16, offs=21)): S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind))\n"
 msgstr ""
+"    **SHOWTYPE**(/home/myhome/showtype_test.dats: 143(line=12, offs=19) -- 144(line=12, offs=20)): S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), S2Eintinf(7))\n"
+"    **SHOWTYPE**(/home/myhome/showtype_test.dats: 183(line=15, offs=19) -- 184(line=15, offs=20)): S2Eapp(S2Ecst(ref_vt0ype_type); S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind)))\n"
+"    **SHOWTYPE**(/home/myhome/showtype_test.dats: 203(line=16, offs=19) -- 205(line=16, offs=21)): S2Eapp(S2Ecst(g0int_t0ype); S2Ecst(int_kind))\n"
 
 #. type: Plain text
 #: typechecking-errors.md:48
 msgid "More concisely,"
-msgstr ""
+msgstr "より簡潔には、"
 
 #. type: Plain text
 #: typechecking-errors.md:54
@@ -2636,12 +2648,16 @@ msgstr ""
 msgid ""
 "So we can see that the assumption proved incorrect. Let's try again with a "
 "new value, `z`:"
-msgstr ""
+msgstr "これで私達は先程の仮定が間違っていることを理解できました。新しい値 `z` を試してみましょう:"
 
 #. type: Plain text
 #: typechecking-errors.md:61
 msgid "```ocaml val z = ref<int(7)> 7 val _ = $showtype !z ````"
 msgstr ""
+"```ocaml\n"
+"val z = ref<int(7)> 7\n"
+"val _ = $showtype !z\n"
+"````"
 
 #. type: Plain text
 #: typechecking-errors.md:65
@@ -2649,6 +2665,9 @@ msgid ""
 "```` type of !z: S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), "
 "S2Eintinf(7))  ```"
 msgstr ""
+"````\n"
+"type of !z: S2Eapp(S2Ecst(g1int_int_t0ype); S2Ecst(int_kind), S2Eintinf(7))\n"
+"```"
 
 #. type: Plain text
 #: typechecking-errors.md:67
@@ -2656,29 +2675,29 @@ msgid ""
 "which shows that `!z` is now the same type as `x`. This reflects that by "
 "default, integers have types parameterized by their values in ATS, as was "
 "the case for `x`."
-msgstr ""
+msgstr "この結果は `!z` が `x` と同じ型であることを示しています。またこれは `x` の場合のように、整数はデフォルトでは ATS の値でパラメータ化された型を持っていることを示しています。"
 
 #. type: Plain text
 #: typechecking-errors.md:69
 msgid "### See also"
-msgstr ""
+msgstr "### 関連項目"
 
 #. type: Plain text
 #: typechecking-errors.md:71
 msgid ""
 "[[Internal Types|Internal-types]], to understand the `S2Eapp`, `S2Ecst`, "
 "etc, which often appears in error messages."
-msgstr ""
+msgstr "[内部の型](Internal-types.md) は `S2Eapp`, `S2Ecst`, などを理解するのに役立ちます。それらエラーメッセージにしばしば見られます。"
 
 #. type: Plain text
 #: typechecking-errors.md:73 Error-messages.md:5
 msgid "[1]: https://sourceforge.net/p/ats-lang/wiki/Error%20messages/"
-msgstr ""
+msgstr "[1]: https://sourceforge.net/p/ats-lang/wiki/Error%20messages/"
 
 #. type: Plain text
 #: typechecking-errors.md:75
 msgid "## Constraint-solver limitations"
-msgstr ""
+msgstr "## 制約ソルバの制限"
 
 #. type: Plain text
 #: typechecking-errors.md:78
@@ -2686,6 +2705,9 @@ msgid ""
 "### Supplying static values to the typechecker Should generate `unsolved "
 "constraint: C3NSTRprop` messages."
 msgstr ""
+"### 型検査器へ静的な値を与える\n"
+"\n"
+"`unsolved constraint: C3NSTRprop` メッセージを表示すべきです。"
 
 #. type: Plain text
 #: typechecking-errors.md:80
