@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-29 16:51+0900\n"
+"PO-Revision-Date: 2014-08-29 17:08+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -2480,7 +2480,7 @@ msgid ""
 "static `castfn` is needed, one can use the `cast` and related functions in "
 "`unsafe.sats` to save time (a common use is converting a pointer from C to "
 "some other viewtype)."
-msgstr ""
+msgstr "`castfn` - その引数の動的/静的の型を変更する関数 (`fn`)。変換された値を返します。静的な `castfn` のみが必要な場合、手早く済ませるために `cast` と `unsafe.sats` にある関連する関数を使うことができます。(一般的な用法はC言語からのポインタをなんらかの別の viewtype に変換することです。)"
 
 #. type: Bullet: '* '
 #: keywords.md:4
@@ -2488,19 +2488,19 @@ msgid ""
 "`fn` - non-recursive function (`fun`). Used in place of `fun` for "
 "optimization purposes (is this true?) and as well as to check against the "
 "possibility of an accidental infinite loop."
-msgstr ""
+msgstr "`fn` - 再帰的でない関数 (`fun`)。最適化のために、`fun` を使う場所で使います (これは本当？)。また予想外の無限ループの可能性を防止することができます。"
 
 #. type: Bullet: '* '
 #: keywords.md:4
 msgid "`fun` - a function that can be recursive."
-msgstr ""
+msgstr "`fun` - 再帰できる関数。"
 
 #. type: Bullet: '* '
 #: keywords.md:4
 msgid ""
 "`implement` - used to implement a function that has been defined using `fun` "
 "or `fn`"
-msgstr ""
+msgstr "`implement` - `fun` や `fn` を用いて既に定義された関数を実装するのに使います。"
 
 #. type: Plain text
 #: typechecking-errors.md:4
