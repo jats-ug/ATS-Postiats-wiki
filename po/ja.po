@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2014-08-27 21:48+0900\n"
-"PO-Revision-Date: 2014-08-29 02:19+0900\n"
+"PO-Revision-Date: 2014-08-29 16:51+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -654,7 +654,7 @@ msgid ""
 "The first (and so far only) translation effort for ATS content is in "
 "Japanese. There is a workflow for translating the wiki and keeping it up to "
 "date using [po4a](http://po4a.alioth.debian.org/)."
-msgstr "The first (and so far only) translation effort for ATS content is in Japanese. There is a workflow for translating the wiki and keeping it up to date using [po4a](http://po4a.alioth.debian.org/)."
+msgstr ""
 
 #. type: Plain text
 #: internationalization.md:4
@@ -2294,7 +2294,7 @@ msgid ""
 "While the usual way to interact with other languages is to interact through "
 "C interfaces in both ATS and the other language, in some cases it may be "
 "desirable to directly compile ATS to another language."
-msgstr ""
+msgstr "別の言語とやりとりするためには ATS と別の言語をC言語のインターフェイスを通して繋ぐのが通常の方法です。しかし、いくつかのケースでは ATS を直接別の言語にコンパイルすることが望ましいでしょう。"
 
 #. type: Plain text
 #: code-generation.md:7
@@ -2306,11 +2306,16 @@ msgid ""
 "github.com/githwxi/ATS-Postiats-contrib/tree/master/projects/MEDIUM/ATS-"
 "parse-emit/Python)"
 msgstr ""
+"現状では、次の言語にコンパイルすることが可能です:\n"
+"\n"
+"* C言語 (デフォルトの動作です。GCC, LLVM/Clang, TinyCC を含むいくつかのコンパイラで動作します。)\n"
+"* Javascript (C言語コードを Javascript にコンパイルする emscripten コンパイラをサポートしています [\\[1\\]][1]。)\n"
+"* [Python](https://github.com/githwxi/ATS-Postiats-contrib/tree/master/projects/MEDIUM/ATS-parse-emit/Python)"
 
 #. type: Plain text
 #: code-generation.md:9
 msgid "### Introduction"
-msgstr ""
+msgstr "### はじめに"
 
 #. type: Plain text
 #: code-generation.md:11
@@ -2319,40 +2324,40 @@ msgid ""
 "utility ATS-parse-emit (see above for a link) that parses ATS2 compiler "
 "output and transforms it into executable code in other programming languages "
 "(e.g., currently, Python)."
-msgstr ""
+msgstr "ATS2 コンパイラはC言語のサブセットをターゲットにしています。ATS2 コンパイラの出力を解析して、別のプログラミング言語 (例: 現状では Python です) の実行可能コードに変換する、ATS-parse-emit (上記のリンク参照) ライブラリ/ユーティリティがあります。"
 
 #. type: Plain text
 #: code-generation.md:13
 msgid ""
 "The subset is comprised by the following kinds of syntax (see atsparemit."
 "sats):"
-msgstr ""
+msgstr "そのサブセットは次の構文から成ります (atsparemit.sats を参照)。"
 
 #. type: Bullet: '* '
 #: code-generation.md:18
 msgid "s0exp (static expressions, for types)"
-msgstr ""
+msgstr "s0exp (型を表わす静的な式)"
 
 #. type: Bullet: '* '
 #: code-generation.md:18
 msgid ""
 "d0exp (dynamic expressions, i.e. expressions that get executed at run-time "
 "to yield values, but not involving any control flow)"
-msgstr ""
+msgstr "d0exp (動的な式、つまり実行時に実行されて値を作る式。しかしどのような制御フローも意味しません。)"
 
 #. type: Bullet: '* '
 #: code-generation.md:18
 msgid ""
 "instr (low-level instruction nodes, e.g. if-then-else, return, jump, "
 "assignment)"
-msgstr ""
+msgstr "instr (低レベルな命令ノード。例: if-then-else, return, jump, assignment)"
 
 #. type: Bullet: '* '
 #: code-generation.md:18
 msgid ""
 "d0ecl (declarations of types, macros, external functions, and functions "
 "compiled from ATS2 source code)"
-msgstr ""
+msgstr "d0ecl (型宣言, マクロ, 外部の関数, ATS2 ソースコードからコンパイルされた関数)"
 
 #. type: Plain text
 #: code-generation.md:20
@@ -2364,32 +2369,32 @@ msgid ""
 "emitted twice: firstly, as a forward-declaration (contains no body, "
 "arguments might be unnamed), and secondly, as a definition (in this case, "
 "body is present)."
-msgstr ""
+msgstr "関数宣言 (f0decl) は、(外部の静的な) 関数のカインド, ヘッディング (すなわちシグニチャ、つまり (名前の付いた) 引数のリストと返り値の型), 任意で本体 (ローカルな変数定義のリストと命令のリスト) で構成されています。さらにC言語の規則に従って、あらゆる関数は2回発行されます: 1度目は前方宣言として (この場合、本体は含まず、引数には名前がないかもしれません)、そして2度目は定義としてです (この場合、本体があることになります)。"
 
 #. type: Plain text
 #: code-generation.md:22
 msgid "### Language translating functions"
-msgstr ""
+msgstr "### 関数の変換言語"
 
 #. type: Plain text
 #: code-generation.md:24
 msgid "For more complete documentation, please see:"
-msgstr ""
+msgstr "より完全には次のドキュメントを参照してください:"
 
 #. type: Plain text
 #: code-generation.md:26
 msgid "https://github.com/hsk/docs/blob/master/ats/compiled_c_macro.md"
-msgstr ""
+msgstr "https://github.com/hsk/docs/blob/master/ats/compiled_c_macro.md"
 
 #. type: Bullet: '* '
 #: code-generation.md:36
 msgid "`ATSINSlab/ATSINSgoto` are used for pattern matching compilation."
-msgstr ""
+msgstr "`ATSINSlab/ATSINSgoto` パターンマッチをコンパイルするために使われます。"
 
 #. type: Bullet: '* '
 #: code-generation.md:36
 msgid "`ATSINSflab/ATSINSfgoto` are used to support tail-call optimization."
-msgstr ""
+msgstr "`ATSINSflab/ATSINSfgoto` 末尾再帰最適化をサポートするために使われます。"
 
 #. type: Plain text
 #: code-generation.md:36
@@ -2403,6 +2408,12 @@ msgid ""
 "tmp = (v1, v2, ..., vn) # (python)\n"
 "```\n"
 msgstr ""
+"* `ATSmove_boxrec(tmp, T)` 型 T の未初期化レコードを生成して、それを tmp に割り当てます。\n"
+"* `ATSmove_boxrec` は常にフィールドの初期化を表わす代入をともないます; それらはたいてい一緒にグループにされ、次のように変換されます:\n"
+"\n"
+"```python\n"
+"tmp = (v1, v2, ..., vn) # (python)\n"
+"```\n"
 
 #. type: Plain text
 #: code-generation.md:40
@@ -2410,19 +2421,22 @@ msgid ""
 "### Python For compiling code to Python, there is currently no plan to "
 "handle pointer operations.  Or one may go the Cython road."
 msgstr ""
+"### Python\n"
+"\n"
+"コードを Python にコンパイルに際して、現状ではポインタ操作を扱う計画はありません。または Cython を使うことになるかもしれません。"
 
 #. type: Plain text
 #: code-generation.md:43
 msgid ""
 "Because Python does not support jumps, ATSINSgoto and ATSINSfgoto need to be "
 "removed. I will try to do it."
-msgstr ""
+msgstr "Python はジャンプをサポートしていないので、ATSINSgoto と ATSINSfgoto を削除する必要があります。私はこの対策を行なう予定です。"
 
 #. type: Plain text
 #: code-generation.md:46
 msgid ""
 "[1]: https://groups.google.com/d/msg/ats-lang-users/WVje4zG4bKA/p-XulrfBFwIJ"
-msgstr ""
+msgstr "[1]: https://groups.google.com/d/msg/ats-lang-users/WVje4zG4bKA/p-XulrfBFwIJ"
 
 #. type: Plain text
 #: kernels.md:3
