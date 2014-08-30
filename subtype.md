@@ -1,0 +1,1 @@
+For now, see https://github.com/githwxi/ATS-Postiats/wiki/Frequently-asked-questions#i-have-two-different-types-being-used-together-in-the-same-data-structure-and-they-typecheck-is-this-a-bug
