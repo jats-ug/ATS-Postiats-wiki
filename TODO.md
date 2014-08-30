@@ -8,6 +8,7 @@
 ## Stubs
 (practically no content)
 * [[Rosetta Stone|Rosetta Stone]]
+* [[subtype|subtype]]
 
 
 ## Incomplete 
