@@ -66,6 +66,12 @@ Put the above line in a file, say `define.hats`, then just put the following lin
 
 ### Making a C constant available to ATS
 
+This is a little more tricky, but can be done by exploiting macro expansion (however, the ATS constant will necessarily have a different name in order to avoid infinite recursion). Say we have a macro in C named MY_MACRO. The following can be put in a file, say `mymacro_hats`.
 
+```ocaml
+#define __ATS(x) x
 
+__ATS(#define ATS_MY_MACRO MY_MACRO)
+```
 
+Then use `gcc -E`, for example, to preprocess `mymacro_hats` to generate a HATS file `mymacro.hats`, which can be included in ATS code directly.
