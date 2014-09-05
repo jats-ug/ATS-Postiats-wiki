@@ -47,6 +47,22 @@ macdef stdin_ref = $extval(FILEref, "stdin")
 ```ocaml
 macdef atoi = $extval(string -> int, "atoi")
 ```
+* Paste C code embedded in a `.[ds]ats` file into an unspecified location in the `_[ds]ats.c` file.:
+```
+%{ C code goes here %}
+```
+* Paste C code embedded in a `.[ds]ats` file at the beginning of the `_[ds]ats.c` file.:
+```
+%{^ C code goes here %}
+```
+* Paste C code embedded in a `.[ds]ats` file at the end of the `_[ds]ats.c` file.:
+```
+%{$ C code goes here %}
+```
+* Paste C code embedded in a `.sats` to a  `_dats.c` file in which the corresponding `.dats` file [[staloads|staload]] the `.sats` file.:
+```
+%{# C code goes here %}
+```
 
 ## Writing interfaces to C libraries
 As mentioned above, [[contrib|contrib]] has numerous examples, and will be a good place to start to get a feel for how it is done. 
