@@ -67,7 +67,25 @@ macdef atoi = $extval(string -> int, "atoi")
 ## Writing interfaces to C libraries
 As mentioned above, [[contrib|contrib]] has numerous examples, and will be a good place to start to get a feel for how it is done. 
 
-(Fill in more here)
+When creating an interface to a C library, there are typically three directories that need to be created: `SATS`, `CATS`, and `DATS`. The first two are very common, and the third is less common, since often all dynamics are already taken care of by the C library functions. The primary functional interfaces in ATS are defined in `[lib].sats` in the `SATS` directory, where `[lib]` is our library of interest. The `[lib].sats` file will reference a `.cats` file in the `CATS` directory, which is essentially a C wrapper for the C library functions, e.g., the following form is typically found in `[lib].sats`:
+
+```ocaml
+%{#
+//
+#include "[lib]/CATS/[lib].cats"
+//
+%} // end of [%{#]
+```
+
+The `[lib].cats` file accomplishes two things: it annotates existing functions and definitions in the C library that are intended to be included in the ATS interface, and more importantly, it often defines C wrappers that more directly reflect the function signature in ATS. The `[lib].cats` file is a C file, and should include the relevant C library wrappers. Often this is just one C include file:
+
+```C
+#include <[lib].h>
+```
+
+The `[lib].dats` file in the `DATS` directory, if it exists, should implement functions that are implemented in ATS but not in the C library (or functions that are implemented in ATS and are preferred over the implementation in C).
+
+''(Fill in more here)''
 
 
 ## Sharing constants statically and dynamically between ATS and C
