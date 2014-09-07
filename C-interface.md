@@ -38,6 +38,26 @@ static fun myfun (n: int, res: int): int
 * typedef a C type in ATS; use `$extype`, e.g.:
 ```ocaml
 typedef Cint2 = $extype"struct{ int x; int y; }"
+
+(* Rather using a cast to convert between Cint2 and @(int,int) in ATS,
+   something like the following example can be done using the 'of' keyword  *)
+
+typedef Cint2 =
+$extype_struct"struct{int x;int y;}" of { x= int, y= int }
+
+implement
+main0 () =
+{
+//
+var xy: Cint2;
+val () = xy.x :=  1
+val () = xy.y :=  2
+//
+val () = println! ("xy.x = ", xy.x)
+val () = println! ("xy.y = ", xy.y)
+//
+} (* end of [main0] *)
+
 ```
 * Access a C value in ATS; use `$extval(ATS-type, "C-variable")`, e.g.:
 ```ocaml
