@@ -15,7 +15,7 @@ absviewtype mystring (l:addr)
 First, `mystring` can be implemented based on `strptr`. Later, the implementation can be easily changed,
 making it based on `strobjref` or something else.
 
-In practice, if string sharing is allowed. then memory leaks are often very difficult to prevent.
+In practice, if string sharing is allowed, then memory leaks are often very difficult to prevent.
 For instance, there are many leaks in graphviz (according to bug reports). ATS is very good
 for stopping this kind of problems[\[1\]][1].
 

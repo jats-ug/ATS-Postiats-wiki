@@ -99,7 +99,7 @@ Finally, for some guidance on understanding certain errors, see [[error messages
 
 After perhaps being exposed to the rigor of dependent types, one may occasionally be surprised: but the short answer is it probably isn't a bug. [Here][16] is an example where `list0` will accept multiple values, each with a distinct type, as inputs (for example, `string`s, `float`s, or `int`s). [Here][17] is an example with templates. The notion has to do with ["subtypes"][18], and specifically, how ATS defines subtypes. This should not be a problem in ATS2, and is one of the [major reasons for ATS2][19].
 
-[16]: http://www.ats-lang.org/DOCUMENT/INTPROGINATS/HTML/x1099.html
+[16]: http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/x1210.html
 [17]: https://sourceforge.net/mailarchive/forum.php?thread_name=Pine.LNX.4.64.1204041554160.22282%40csa2.bu.edu&forum_name=ats-lang-users
 [18]: http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
 [19]: https://sourceforge.net/mailarchive/forum.php?thread_name=727FCEF6-16CE-4249-97B6-750CBB2B2371%40users.sourceforge.net&forum_name=ats-lang-users
@@ -126,8 +126,6 @@ You can also try ATS2 using [this experimental online tool][25], or try using a 
 
 [24]: http://www.cygwin.com/
 [25]: http://xrats.illtyped.com/code/patsopt
-
-
 
 [26]: http://www.ats-lang.org/EXAMPLE/EFFECTIVATS/
 [27]: https://github.com/githwxi/ATS-Postiats/tree/master/doc/EXAMPLE/EFFECTIVATS
