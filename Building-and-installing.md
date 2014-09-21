@@ -53,6 +53,20 @@ If that does not work, it is worth trying to clean up ATSLIB as well:
 
 The above make rule should be executed whenever one wishes to use updated [ATSLIB] code from the upstream github repository.
 
+
+***
+
+When trying to build ATS2, it is possible that the version of GMP used for the build of ATS1 is no longer the same as that being used for the current build procedure. In that case, do the following, then repeat the build cleanup and make procedures outlined above:
+
+```
+cd ${ATSHOME}
+atslib libc/SATS/gmp.sats
+atslib libc/DATS/gmp.dats
+
+```
+
+
+
 ## Install ATS using package system
 
 ### Debian GNU/Linux unstable(sid)
