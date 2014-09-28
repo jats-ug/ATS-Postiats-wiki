@@ -9,6 +9,7 @@
 * `dataviewtype`  - introduce a named algebraic view type definition [2], a linear data‑type; see [[type]] and [[dataviewtype]].
 * `datavtype`  - introduce a linear data‑type; see [[dataviewtype]].
 * `dynload` - declare a module initialization dependency, typically from the module defining `main`; see [[dynload]].
+* `extern` - declare an entity / definition as extern; the defined item may be a macro or an element in a separate compilation unit; see [[Writing interfaces to C libraries]] and [[C interface]].
 * `fn` - non-recursive function (`fun`). Used in place of `fun` for optimization purposes (is this true?) and as well as to check against the possibility of an accidental infinite loop.
 * `fun` - a function that can be recursive.
 * `infix` - like `symintr`, but with fixity; see [[overload]].
