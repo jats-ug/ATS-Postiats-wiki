@@ -6,7 +6,7 @@
 * `dataprop` - introduce a named algebraic proposition definition [2]; see [[type]].
 * `datatype` - introduce a named algebraic type definition [2]; see [[type]].
 * `dataview` - introduce a named algebraic view definition [2]; see [[type]].
-* `dataviewtype`  - introduce a named algebraic view type definition [2], a linear data‑type; see [[type]] and[[dataviewtype]].
+* `dataviewtype`  - introduce a named algebraic view type definition [2], a linear data‑type; see [[type]] and [[dataviewtype]].
 * `datavtype`  - introduce a linear data‑type; see [[dataviewtype]].
 * `dynload` - declare a module initialization dependency, typically from the module defining `main`; see [[dynload]].
 * `fn` - non-recursive function (`fun`). Used in place of `fun` for optimization purposes (is this true?) and as well as to check against the possibility of an accidental infinite loop.
