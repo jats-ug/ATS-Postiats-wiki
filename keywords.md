@@ -14,3 +14,10 @@
 * `postfix` - like `symintr`, but with fixity; see [[overload]].
 * `symintr` - introduce the name of a symbol (without fixity) to be overloaded (this does not introduce the overloading), with the later help of `overload` and `with`; see [[overload]].
 * `with` - adds an overloading to a symbol introduced with `symintr`; this tells with what it is overloaded; see [[overload]].
+
+## See also
+
+These are not syntactically keywords, but may informally be seen as such. Like keywords, new items can't be created (see [Creating new effects?](https://groups.google.com/forum/#!topic/ats-lang-users/L38Bzie5lsE)) and thus form a fixed set (may still vary with future ATS versions).
+
+* [[Effects|effects]]
+* [[Sorts|sort]]
