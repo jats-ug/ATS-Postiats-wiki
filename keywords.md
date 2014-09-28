@@ -12,6 +12,7 @@
 * `overload` - overloads a symbol previously introduced with `symintr`; this tells what is overloaded; see [[overload]].
 * `prefix` - like `symintr`, but with fixity; see [[overload]].
 * `postfix` - like `symintr`, but with fixity; see [[overload]].
+* `staload` - either loads a name‑space assigning it to a named prefix or opens a name‑space (anonymously, without a prefix); see [[staload]].
 * `symintr` - introduce the name of a symbol (without fixity) to be overloaded (this does not introduce the overloading), with the later help of `overload` and `with`; see [[overload]].
 * `with` - adds an overloading to a symbol introduced with `symintr`; this tells with what it is overloaded; see [[overload]].
 
