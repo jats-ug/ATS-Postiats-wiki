@@ -1,6 +1,14 @@
-The sole purpose of dynload is for doing initialization.
+The sole purpose of dynload is for doing initialization. For instance, val- and var-bindings introduced at the top-level need to be initialized properly.
 
-Say in a file named 'foo.dats', we have the following line:
+Say a module named 'bar.dats' exists and contains the following code:
+
+```ocaml
+val x = fact(5)
+```
+
+where 'fact' is a factorial function, defined elsewhere.
+
+Now, the value of [x] must be initialized and it is done in the dynload function (i.e., the initilization function) associated with module 'bar.dats'. Say in a file named 'foo.dats', we have the following line:
 
 ```ocaml
 dynload "bar.dats"
