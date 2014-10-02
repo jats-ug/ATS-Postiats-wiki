@@ -35,6 +35,15 @@ extern fun myfun (n: int, res: int): int = "sta#"
 static fun myfun (n: int, res: int): int
 ```
 
+* Call a C function directly
+
+```ocaml
+val N = 21
+val _ = $extfcall(int, "fprintf", stdout_ref, "The answer to everything is %i\n", 2*N)
+(* Note that the first argument to $extfcall is the return type in ATS of the C function,
+in this case 'int' and 'fprintf' respectively. *) 
+```
+
 * typedef a C type in ATS; use `$extype`, e.g.:
 ```ocaml
 typedef Cint2 = $extype"struct{ int x; int y; }"
