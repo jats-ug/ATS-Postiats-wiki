@@ -58,3 +58,9 @@ fun use_dvt(d0: !dvt):void = case+ d0 of               (* a    -    -    -   -  
     )
   | _ =>  ()
 ```
+
+### Suggestions
+
+It may be recommended (not required), to avoid systematically running head‑first to using `dataviewtype` / linear‑type, and to start a type as a `datatype` instead, which may or may not be turned into a `dataviewtype`, later. Similar comments applies to `abstype` and `absviewtype`. See this thread on *ats-lang-users* for a talk and big line rationales on this matter: [Rust lang memory management](https://groups.google.com/forum/#!topic/ats-lang-users/a17ftxArgIw).
+
+You may use `datavtype` as a shorter substitute keyword for `dataviewtype` and `absvtype` as a shorter substitute keyword for `absviewtype`.
