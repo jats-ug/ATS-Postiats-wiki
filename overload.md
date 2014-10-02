@@ -67,7 +67,7 @@ work in the same scope.
 Bracket overloading uses the pair of symbols `[` and `]` to allow functions to be called using a subscripting style, where the argument to the left of `[` (and the first argument of the function being overloaded) is usually thought of as the "data object" and the arguments between `[` and `]` are thought of as somehow being an index or parameterizing the value on the left of the `[`. That is only the convention though, with array and matrix subscripting being prominent examples; in principle it could be used in other ways. 
 
 Note the following rules:
-* The last function argument may be used as an r-value in the overloaded operator expression, e.g. 
+* The last function argument **of a function returning void** may be used as an r-value in the overloaded operator expression, e.g. 
 ```
 f(x,y) -> void
 // replaced by
