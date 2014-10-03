@@ -35,6 +35,15 @@ extern fun myfun (n: int, res: int): int = "sta#"
 static fun myfun (n: int, res: int): int
 ```
 
+* Call a C function directly
+
+```ocaml
+val N = 21
+val _ = $extfcall(int, "fprintf", stdout_ref, "The answer to everything is %i\n", 2*N)
+(* Note that the first argument to $extfcall is the return type in ATS of the C function,
+in this case 'int' and 'fprintf' respectively. *) 
+```
+
 * typedef a C type in ATS; use `$extype`, e.g.:
 ```ocaml
 typedef Cint2 = $extype"struct{ int x; int y; }"
@@ -59,6 +68,25 @@ val () = println! ("xy.y = ", xy.y)
 } (* end of [main0] *)
 
 ```
+
+* Typedef an ATS type in C, for example:
+
+```ocaml
+extern
+typedef
+"int_and_string" = (int, string)
+```
+```c
+// This is now available in C essentially as follows: 
+typedef
+struct {
+  int atslab__0; void *atslab__1; 
+} int_and_string ;
+
+```
+This can be done with [[datatypes|datatype]]; see the section *Exporting Types in ATS for Use in C* in the [[ATS book|http://www.ats-lang.org/DOCUMENT/INT2PROGINATS/HTML/book1.html]] for details.  The above mechanism can also work with [[viewtypes|viewtype]] (using `vtypedef`), but this is a more advanced topic covered in related sections of the ATS Book. 
+
+
 * Access a C value in ATS; use `$extval(ATS-type, "C-variable")`, e.g.:
 ```ocaml
 macdef stdin_ref = $extval(FILEref, "stdin")
